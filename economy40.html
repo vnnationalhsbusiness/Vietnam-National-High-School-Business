@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>West Lake Lotus Tea: A Quintessence of Hanoians</h1>
+      <p class="meta">7:59:47 AM | 9/21/2024</p>
+      <p><b>When mentioning the traditional craft of making lotus tea, it is impossible not to mention Quang An ward. Over time, today lotus tea has brought pride to the people here. It is no coincidence that West Lake lotus tea is known as "the most ancient tea", West Lake lotus scented tea is an elegant drink in the culture of Hanoians. This drink has a refined flavor, not too strong but extremely fragrant and pleasant. The flavor of West Lake lotus tea is a blend of the rich flavor of tea leaves and fragrant Bach Diep lotus rice. Not only is it a simple drink, but West Lake lotus tea also carries the cultural and delicate features of Hanoians, a precious gift for those who go far away to remember the capital.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy40.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Hien Xiem lotus tea products
+        </figcaption>
+      </figure>
+      <br>
+      
+      <p>However, under the competition of the market, with manual methods, and many pressures, the number of households following the craft of making lotus tea is very small.</p><br>
+
+      <p>From the end of May to the beginning of September every year, many traditional tea makers are busy with each step of making lotus tea. The work of scenting lotus tea requires meticulousness, the craftsman must put all his heart and soul into each lotus grain and tea bud. Each flower is picked and brought back to separate the rice — which is likened to the lotus's scent bag — before being scented. Collecting lotus rice requires high care and meticulousness from the craftsman; keeping the lotus rice flavorful and uncrushed is not something that everyone can do. Under the skillful hands of the craftsmen, the petals, pistils, and lotus rice are separated.</p>
+
+      <figure style="text-align:center; margin:0;">
+        <img src="economy40_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </figure>
+      <br>
+      <p>Ms. Bich Tra, Xuan La ward, Tay Ho shared: "To collect 100g of lotus rice, it will take about 900 - 1000 flowers. Separating the lotus rice is the most difficult step, requiring quick and skillful hands to keep the lotus rice white, not crushed, and retain its fragrance."</p><br>
+
+      <p>After being brewed long enough and dried, lotus rice and lotus pistil will be put into the lotus flower with small-petaled Tan Cuong tea, scented to the right degree, then wrapped tightly with lotus leaves. After wrapping the tea, the lotus flower will be placed overnight so that the lotus scent can permeate the tea. Each handful of tea will have a fragrant aroma mixed with lotus.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy40_2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Mrs. Luu Thi Hien and her husband separate the petals to harvest lotus rice to make tea
+        </figcaption>
+      </figure>
+      <br>
+      <p>According to artisan Luu Thi Hien, the lotus tea-making profession is inherently hard work, staying up late, waking up early, and having to sleep for each batch of tea to be dried manually, on hot days, few people can stand the heat in the charcoal kiln to dry the tea, so many households have given up the profession. If you are not passionate, you cannot pursue this profession. Knowing that the profession is hard, Mrs. Hien still wants to keep the family profession, currently, Mrs. Hien has passed on the secret of making tea to her children to continue to preserve the profession.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy40_3.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Tourists participate in making lotus tea
+        </figcaption>
+      </figure>
+      <br>
+      <p>Artisan Luu Thi Hien's family has been in the lotus tea scenting profession for many generations. Every day, the whole family scents lotus tea together. In particular, the tea must be dried traditionally with charcoal to produce a characteristic aroma. The more times it is infused, the more the lotus scent blends, the longer the tea is fragrant. To infuse 1kg of lotus tea, it takes 1,500 lotus flowers, and the lotus flowers used to infuse tea are the Bach Diep Lotus grown in West Lake - a type of flower with 100 petals that is both colored and fragrant because it has a lot of lotus rice, plus delicious, clean tea, must go through 21 days with 7 times of infusing lotus rice and 7 times of drying to get perfect lotus tea. The Hien Xiem lotus tea brand of artisan Luu Thi Hien's family is the only representative to achieve 4-star OCOP certification in the 2023 OCOP product assessment. Hien Xiem lotus tea products have been selected and allowed to be served at many important events in the country. Over the years, people who make lotus tea in Tay Ho district have always received attention from leaders at all levels, creating conditions to preserve the craft village, and participating in major events, and trade fairs connecting with districts, towns, and provinces across the country.</p>
+
+      <figure style="text-align:center; margin:0;">
+        <img src="economy40_4.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </figure>
+      <br>
+      <p>Facing many challenges, the traditional West Lake lotus tea-making profession is facing many difficulties because Bach Diep lotus flowers are becoming scarcer and more expensive. Mr. Tran Gia Hung, Head of the Economic Department of Tay Ho district, said: Faced with the fact that the lotus growing area is shrinking, the Hanoi Department of Agriculture and Rural Development and the Tay Ho District People's Committee are implementing a project to restore and develop lotus planting on several small lakes in the area around West Lake with Bach Diep lotus varieties with an area of ​​7.5 hectares. At the same time, we continue to care for and support people in the profession in terms of plant varieties, and techniques, and to disseminate experiences and new advanced technologies in caring for lotus plants - the main source of raw materials for lotus tea production. According to Mr. Hung, up to now, Tay Ho district has over 200 households producing traditional lotus tea, with 40 OCOP products achieving 3 stars, including 1 4-star product, Hien Xiem lotus tea of ​​business household Luu Thi Hien. In the coming time, the district will continue to develop OCOP products to meet the requirements of economic development and craft village tourism in the area; at the same time, preserve and spread the product brand.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

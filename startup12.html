@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start-up</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Start-up</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" class="active" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>The 'Credit Score for the Unbanked': How Trusting Social's AI Brain Powered a Strategic Alliance with Masan</h1>
+      <p class="meta">10:11:39 AM | 4/9/2025</p>
+      <p><b>Founded by data scientist Dr. Nguyễn An Nguyên, the fintech startup bypassed a traditional exit, instead becoming the indispensable AI "brain" for one of Vietnam's largest consumer-retail ecosystems.</b></p>
+      <br>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup12.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <br>
+      <p>Among Vietnam's "unicorn" and high-growth startups, <b>Trusting Social</b> stands apart. It doesn’t run a popular e-commerce site, a super app, or a delivery fleet. Its success is less visible to the public but is arguably one of the most significant in Vietnam's <b>deep-tech</b> space.</p><br>
+
+      <p>This is not a story of a typical M&A (Mergers & Acquisitions). It is a case study of how a company with highly specialized, world-class technology—in this case, using <b>Artificial Intelligence (AI)</b> and <b>Big Data</b> to credit score the "unbanked"—became so strategically valuable that a conglomerate, <b>Masan Group</b>, invested heavily to secure it as the exclusive "brain" for its future financial ambitions.</p><br>
+
+      <p><b>Phase 1: The Founder’s Vision & The “Big Data” Hypothesis</b></p><br>
+
+      <p>The story of <b>Trusting Social</b> begins with its brilliant and highly regarded founder, <b>Dr. Nguyễn An Nguyên</b>. A data scientist with a PhD in Economics, Nguyên identified one of the largest financial problems in emerging markets: billions of people are “credit invisible.”</p><br>
+
+      <p>In countries like Vietnam, India, and Indonesia, the majority of the population does not have a traditional bank account, credit card, or loan history. For banks, they are “unbankable” because they pose an unknown risk.</p><br>
+
+      <p>Nguyên’s hypothesis was that traditional credit history was obsolete. He believed that <b>alternative data</b>—specifically, <b>telco data</b> (call patterns, data usage, top-up frequency) and other digital footprints—could, when analyzed by sophisticated AI, predict a person’s creditworthiness more accurately than a bank statement.</p><br>
+
+      <p>The mission was born: to build an AI-powered platform that could instantly generate a “Trust Score” for any of the billions of unbanked, unlocking access to credit for the first time.</p><br>
+
+      <p><b>Phase 2: Building the B2B “AI-as-a-Service” Engine</b></p><br>
+
+      <p><b>Trusting Social’s</b> business model was always <b>B2B (Business-to-Business)</b>. It did not aim to become a lender itself. Instead, it positioned itself as the enabling technology for other institutions.</p><br>
+
+      <p>Its value proposition to banks, e-wallets, and fintech lenders was simple:</p><br>
+
+      <p><i>“You are rejecting millions of potential customers because you can’t score them. Use our AI agent to analyze their alternative data. We will give you a real-time ‘Trust Score’ so you can lend to them confidently, instantly, and at scale.”</i></p><br>
+
+      <p>This <b>AI-as-a-Service</b> model proved incredibly effective. <b>Trusting Social</b> quietly built a powerful platform that became the scoring engine behind many financial institutions, proving its AI could dramatically reduce default rates while opening up entirely new mass-market customer segments.</p><br>
+
+      <p><b>Phase 3: The Strategic Masterstroke (The Masan / The CrownX Deal)</b></p><br>
+
+      <p>While successful as a B2B provider, <b>Trusting Social’s</b> “big win” came not from an acquisition, but from a profound strategic partnership.</p><br>
+
+      <p>In 2021–2022, Vietnam’s <b>Masan Group</b> was aggressively building its <b>“Point-of-Life”</b> ecosystem. Through its retail arm, <b>The CrownX</b> (which owns <b>WinCommerce / WinMart</b> and <b>Masan Consumer</b>), Masan had a physical relationship with millions of Vietnamese consumers who bought groceries and goods every day.</p><br>
+
+      <p>Masan’s grand vision was to merge retail with financial services. It wanted to offer <b>Buy Now, Pay Later (BNPL)</b>, small loans, and other financial products directly to its customers at the point of sale.</p><br>
+
+      <p>But Masan faced the same problem as the banks: how do you score a housewife buying groceries at WinMart?</p><br>
+
+      <p>This is where <b>Trusting Social</b> became the “golden key.” Masan didn’t just need a credit scoring partner; it needed the best one—and it needed to secure that technology for itself.</p><br>
+
+      <p>In a landmark <b>$65 million investment</b>, <b>The CrownX</b> acquired a <b>25% stake</b> in <b>Trusting Social</b>. This was not a full acquisition—it was a strategic alliance. <b>Trusting Social</b> became the exclusive provider of credit scoring services for Masan’s entire consumer-retail ecosystem.</p><br>
+
+      <p><b>A New Model of Success: The Indispensable Partner</b></p><br>
+
+      <p>The <b>Trusting Social</b> case study redefines startup success in Vietnam. It proved that a deep-tech company, by solving a complex and critical problem, can achieve a massive valuation and strategic victory without being fully acquired.</p><br>
+
+      <p>Instead of “exiting,” <b>Trusting Social</b> “embedded” itself. It became the irreplaceable AI brain powering the fintech ambitions of one of the nation’s largest conglomerates, securing its future and scaling its technology to millions of consumers overnight.</p><br>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="startup1.png" alt="Ad 1">
+      <a href="startup1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">From Gamer to Giant: Lê Hồng Minh and the Making of VNG, Vietnam's First Unicorn</p></a>
+      <img src="startup2.png" alt="Ad 2">
+      <a href="startup2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The QR Code Unicorn: How VNLife Forged an Empire from a Single Scan</p></a>
+      <img src="startup3.png" alt="Ad 3">
+      <a href="startup3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The Global Blockchain Disruption: How Sky Mavis Built a Billion-Dollar Metaverse with Axie Infinity</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

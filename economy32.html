@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Bringing Traditional Hand Embroidery to the World</h1>
+      <p class="meta">9:48:45 AM | 12/13/2024</p>
+      <p><b>Born and raised in the cradle of the traditional embroidery village of My Duc district, Hanoi, understands better than anyone the soul, culture and uniqueness of hand embroidery. Over the years, artisan Nguyen Thi Hang has continued and promoted the profession of her ancestors. With the desire to bring traditional Vietnamese hand embroidery to the world.</b></p>
+      <img src="economy32.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      <br>
+      <p><b>The first artisan to bring painting into traditional hand embroidery</b></p><br>
+
+      <p>According to Ms. Nguyen Thi Hang, in modern society, although there are many new industrial products, the distinct value of traditional hand embroidery is the convergence of the quintessence of national culture through the skillful hands of the craftsman. Each stage is meticulously, carefully and carefully done down to the smallest detail so that the painting has a soul in it.</p><br>
+
+      <p>With the thought of preserving and developing the traditional profession, artisan Nguyen Thi Hang opened a painting shop on Nguyen Thai Hoc street - Hanoi. After more than 20 years of effort, perseverance and constant creativity, her paintings have spread to many countries in the European, North American, Japanese, Korean and Southeast Asian markets, not only because of their beautiful products and unique designs, but also because they carry the typical beauty of Hanoi's traditional craft villages.</p><br>
+
+      <p>By bringing paintings into embroidery, artisan Nguyen Thi Hang and her husband, a painter, have created a new and unique method. This is the method that makes Hang Khoa's products different. She confided: "The traditional hand embroidery profession not only requires meticulousness and dexterity in each needle and thread, but also requires the eye of an artist. The craftsman is also an artist to bring unique creations to the embroidery". What makes embroidery more special than other types of paintings is that it carries so much hard work and meticulousness. Each needle and thread, although simple and elegant, is actually extremely elaborate and skillful.</p>
+
+      <img src="economy32_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      <br>
+      <p>To create paintings, embroiderers sometimes have to spend months with many steps such as: drawing patterns, stretching the background, changing the style, choosing colored threads, and then embroidering. For paintings with artistic value, the embroiderer also has to practice hard and have an aesthetic sense. While embroidering, they also need to pay attention to and be meticulous with every detail, especially the curved or raised lines, the color transitions, etc., which all require sophistication in the use of techniques. Such as depicting images of water waves, sunlight, facial wrinkles, etc. are steps that require skillful hands to create smooth and natural color transitions. Therefore, each painting created is a work of art, containing the heart and effort of the embroiderer.</p><br>
+
+      <p><b>Preserving and conserving traditional crafts</b></p><br>
+
+      <p>According to artisan Nguyen Thi Hang, up to this point, her pursuit of embroidery is due to her passion and special love for the profession. The most wonderful thing about doing this job for her is helping future generations inherit, preserve, maintain and develop traditional crafts.</p>
+
+      <img src="economy32_2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      <br>
+      <p>Restoring and developing the traditional embroidery craft in My Duc not only helps to solve the problem of employment, reduce poverty, serve production, consumption and export, but also contributes to preserving, conserving and promoting the national cultural identity. Therefore, she and her husband are determined to record videos of the embroidery paintings, from the first needle until the finished work, and upload them to the Youtube channel, both to preserve and for viewers to see the intricacy and value of a hand-made work. In addition, she and her husband are willing to teach the craft to the younger generation, participate in free classes to spread the love for traditional embroidery.</p><br>
+
+      <p>Honored to be an individual dedicated to preserving the quintessence of traditional hand embroidery in 2024, Hang Khoa Gallery's embroidery products were recognized by the Hanoi People's Committee as 3-star OCOP products at the city level. It is a precious honor for a child who always wants to keep the fire burning for the traditional hand embroidery craft to shine and develop.</p><br>
+
+      <p>Hang Khoa Gallery always carefully selects embroidery products, focusing on product quality. Therefore, when participating in the OCOP program, we understand more clearly and enhance our responsibility to standardize products, focus on the quality of embroidery products, innovate designs, update according to the market but still always rely on the cultural values ​​that have been built before. The products not only help consumers use the function effectively but also preserve the traditional cultural values ​​of My Duc embroidery," Ms. Hang shared.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start-up</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Start-up</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" class="active" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>From Gamer to Giant: Lê Hồng Minh and the Making of VNG, Vietnam's First Unicorn</h1>
+      <p class="meta">9:29:15 AM | 8/4/2025</p>
+      <p><b>How a founder's passionate bet on a single online game evolved into a multi-billion dollar technology conglomerate dominating communication, payments, and cloud services in Vietnam.</b></p>
+      <br>
+      <p>In the narrative of Vietnam's burgeoning tech scene, one company stands as the original benchmark for success: <b>VNG Corporation</b>. But behind this multi-billion dollar "unicorn," and long before its current status as a diversified tech giant, lies the story of its co-founder and CEO, <b>Lê Hồng Minh</b>. His journey from an avid gamer to a visionary tech leader exemplifies the very spirit of Vietnam's startup ecosystem.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <br>
+      <p>VNG's story is not just a case study of market success; it's a 19-year masterclass in strategic evolution, relentless adaptation, and the foresight to build an ecosystem where global giants struggled to compete.</p>
+      <br>
+      <p><b>Phase 1: The Founder's Gambit (Vinagame)</b></p><br>
+
+      <p>The <b>VNG</b> story begins in 2004, not in a high-tech lab, but in the nascent world of Vietnamese internet cafes. <b>Lê Hồng Minh</b>, having returned to Vietnam after studying finance in Australia, was first and foremost a passionate gamer. He recognized a massive, untapped market for high-quality, localized online entertainment.</p><br>
+
+      <p>At the time, the company was known as <b>Vinagame</b>. Its defining moment came when Minh and his founding team made a bold, high-stakes bet. They flew to China to negotiate the rights to publish <b>Võ Lâm Truyền Kỳ (JX Online)</b> from Kingsoft.</p><br>
+
+      <p>This bet paid off spectacularly. The game was an instant cultural phenomenon in Vietnam, capturing the hearts of millions of players and generating enormous revenue. This initial success provided <b>Vinagame</b> with three critical assets:</p><br>
+      <ol style="margin-left: 35px;">
+        <li><b>Massive capital</b> to fund future ventures.</li><br>
+        <li><b>Deep technical expertise</b> in managing high-traffic digital platforms.</li><br>
+        <li><b>An enormous, loyal user base </b>that trusted the brand.</li><br>
+      </ol>
+      <p><b>Phase 2: The Strategic Pivot (Beyond Gaming)</b></p><br>
+
+      <p>While gaming was lucrative, <b>Lê Hồng Minh</b> and his team understood that the market was notoriously volatile and trend-driven. True long-term success required diversification. This foresight marked the company's first major evolution.</p><br>
+
+      <p>The shift from "<b>Vinagame</b>" to "<b>VNG Corporation</b>" was a clear signal of this broader ambition. The goal was no longer just to be a game publisher, but to build a foundational technology company for Vietnam's digital future. They began investing in new verticals, experimenting with e-commerce and social media, looking for their next big hit.</p><br>
+
+      <p><b>Phase 3: The Super App Revolution (Zalo)</b></p><br>
+
+      <p><b>VNG’s</b> most audacious and successful pivot came in 2012 with the launch of <b>Zalo</b>. At the time, the Vietnamese messaging market was fragmented and contested by global behemoths like WhatsApp, Viber, and Skype.</p><br>
+
+      <p>Instead of copying them, <b>Zalo’s</b> development team, under the leadership of key figures like <b>Vương Quang Khải</b>, focused relentlessly on a simple, localized strategy: stability. <b>Zalo</b> was engineered to perform exceptionally well on Vietnam’s weak and unstable 2G and 3G networks, a pain point its international rivals had ignored.</p><br>
+
+      <p>This hyper-local focus worked. <b>Zalo</b> quickly became the dominant messaging app. But <b>VNG</b> didn’t stop there. Leveraging its dominant position, <b>VNG</b> transformed <b>Zalo</b> from a simple messenger into Vietnam’s definitive “super app.” Today, it integrates:</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Communication:</b> Messaging, voice, and video calls.</li>
+        <br>
+        <li><b>Social Media:</b> A “Timeline” feature similar to Facebook.</li>
+        <br>
+        <li><b>B2C Platform:</b> Zalo Official Accounts for brands and stores.</li>
+        <br>
+        <li><b>Government Services:</b> A key portal for citizens to access public records, pay bills, and interact with local authorities.</li>
+        <br>
+      </ul>
+
+      <p><b>Phase 4: Building the Ecosystem (Fintech & Cloud)</b></p><br>
+
+      <p>With tens of millions of active users on <b>Zalo</b>, <b>VNG</b> began executing a classic ecosystem strategy to secure its long-term dominance.</p><br>
+
+      <p>First came fintech. <b>ZaloPay</b>, <b>VNG’s</b> e-wallet, was seamlessly integrated into the <b>Zalo</b> app. This gave it a powerful distribution channel that few competitors could match, creating a frictionless payment solution for everything from peer-to-peer transfers to utility bills and in-store purchases.</p><br>
+
+      <p>Simultaneously, <b>VNG</b> pushed into the high-growth B2B sector with <b>VNG Cloud</b>. Leveraging the robust infrastructure built to support its own massive gaming and messaging platforms, <b>VNG</b> began offering cloud computing services to Vietnamese enterprises. This move positions <b>VNG</b> as a key infrastructure provider for the country’s national digital transformation.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup1_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <br>
+      <p><b>The Legacy of Vietnam’s First Unicorn</b></p><br>
+
+      <p><b>VNG’s</b> evolution—from <b>Lê Hồng Minh’s</b> initial bet on a single game to a formidable four-pillar conglomerate spanning <b>Games</b>, <b>Communications (Zalo)</b>, <b>Fintech (ZaloPay)</b>, and <b>Cloud Infrastructure</b>—is the definitive case study for Vietnamese startups.</p><br>
+
+      <p>It demonstrated that a local company, led by founders with deep market understanding and a long-term vision, could not only defend its home turf but decisively outperform global competitors. For Vietnam’s vibrant tech scene, <b>VNG</b> is more than just its first unicorn; it’s the company that wrote the playbook.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="startup2.png" alt="Ad 2">
+      <a href="startup2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The QR Code Unicorn: How VNLife Forged an Empire from a Single Scan</p></a>
+      <img src="startup3.png" alt="Ad 3">
+      <a href="startup3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The Global Blockchain Disruption: How Sky Mavis Built a Billion-Dollar Metaverse with Axie Infinity</p></a>
+      <img src="startup4.png" alt="Ad 1">
+      <a href="startup4.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The Super App Ascent: How MoMo Conquered Vietnam’s Digital Landscape</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

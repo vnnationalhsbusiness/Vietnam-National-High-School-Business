@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start-up</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Start-up</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" class="active" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>From Reviews to Riches: The Foody Story and Vietnam's Landmark Startup Exit</h1>
+      <p class="meta">10:13:49 AM | 26/8/2025</p>
+      <p><b>How founder Đặng Hoàng Minh turned a simple "Yelp for Vietnam" into a food-tech giant, leading to a blockbuster acquisition by Sea Ltd. and laying the foundation for what is now the ShopeeFood empire.</b></p>
+      <br>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup11.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <br>
+      <p>In Vietnam's startup hall of fame, <b>Foody</b> holds a special place. While others became “unicorns” by raising capital at massive valuations, <b>Foody</b> wrote the playbook for a different kind of victory: the landmark, nine-figure strategic exit.</p><br>
+
+      <p>Its journey from a simple review website into a multi-faceted food-tech platform—culminating in its acquisition by <b>Sea Ltd.</b> (the parent company of <b>Shopee</b> and <b>Garena</b>)—is a quintessential case study in product-market fit, strategic pivots, and ecosystem warfare. Today, its legacy lives on as the powerful delivery arm, <b>ShopeeFood</b>.</p><br>
+
+      <p><b>Phase 1: The Founder’s Problem & The Content “Moat”</b></p><br>
+
+      <p>The <b>Foody</b> story began in 2012 with its founder, <b>Đặng Hoàng Minh</b>. Like <b>Vexere’s</b> founders, Minh faced a uniquely Vietnamese problem: “Ăn gì, ở đâu?” (“What to eat, and where?”). In a country with one of the world’s richest and most fragmented street food cultures, there was no reliable, centralized, or user-friendly way to discover new places, read trusted reviews, or even see a menu before arriving.</p><br>
+
+      <p><b>Foody</b> was born to solve this. Its initial strategy was not transactions, but content.</p><br>
+
+      <p>The platform was meticulously designed to be a “Yelp for Vietnam.” It incentivized users to become “Foodies”—writing reviews, uploading photos of dishes, and adding new venues to the database. This User-Generated Content (UGC) strategy was its first masterstroke. Within a few years, <b>Foody</b> had built the largest and most comprehensive <b>F&B (Food & Beverage)</b> database in Vietnam—a powerful “moat” that competitors could not easily replicate.</p><br>
+
+      <p><b>Phase 2: The Pivot from Discovery to Transaction (DeliveryNow)</b></p><br>
+
+      <p>By 2015, <b>Foody</b> was the undisputed leader in food discovery. However, a pure-review site is notoriously difficult to monetize. The company’s leadership understood that the platform’s true value lay in its ability to close the loop: from discovering a restaurant to transacting with it.</p><br>
+
+      <p>This led to the launch of its most important venture: <b>DeliveryNow</b>, its in-house food delivery service.</p><br>
+
+      <p>This was a high-stakes, capital-intensive pivot. <b>Foody</b> was no longer just a software company—it was now a logistics company, managing a fleet of drivers, payment gateways, and real-time order processing. This move put it in direct competition with other emerging delivery players. However, <b>Foody</b> had a critical advantage that others lacked: a massive, built-in audience of millions of “Foodies” who already used the app to decide what to eat.</p><br>
+
+      <p>Alongside delivery, <b>Foody</b> also expanded its transactional services to include:</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Foody Reservation:</b> An integrated restaurant booking system for customers to reserve tables easily.</li><br>
+        <li><b>Restaurant POS Software:</b> Solutions helping restaurants digitize operations and sync with delivery systems.</li>
+      </ul><br>
+
+      <p>These expansions solidified <b>Foody’s</b> position as an all-in-one platform for the F&B industry.</p><br>
+
+      <p><b>Phase 3: The Landmark Exit (The Sea Ltd. Acquisition)</b></p><br>
+
+      <p>By 2017, <b>Foody</b> was a dominant force, but the food delivery war was escalating and required immense capital. This set the stage for one of Vietnam’s most significant acquisitions.</p><br>
+
+      <p><b>Sea Ltd.</b>, the Singaporean tech giant behind <b>Garena</b> (gaming) and <b>Shopee</b> (e-commerce), was aggressively expanding its regional ecosystem. Sea saw <b>Foody</b> as the perfect missing piece.</p><br>
+
+      <p>In 2017, Sea acquired an <b>82% stake</b> in <b>Foody</b> for a reported ~$64 million. This was a blockbuster deal for the Vietnamese startup scene, proving that a local company could build a platform so valuable that a regional giant would pay a premium for it.</p><br>
+
+      <p><b>Sea’s rationale was purely strategic:</b></p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Synergy:</b> Foody’s high-frequency transactions (people order food daily) would drive traffic to its lower-frequency <b>Shopee</b> e-commerce platform.</li><br>
+        <li><b>Fintech:</b> Food delivery was the perfect “Trojan Horse” to drive adoption for its e-wallet, <b>AirPay</b> (now <b>ShopeePay</b>). By offering deep discounts for users paying with AirPay, Sea could rapidly build a user base for its financial services.</li><br>
+        <li><b>Logistics:</b> Foody’s delivery fleet complemented Shopee’s own logistics needs, creating operational synergy.</li>
+      </ul><br>
+
+      <p><b>Phase 4: The Evolution into ShopeeFood</b></p><br>
+
+      <p>Following the acquisition, <b>Foody’s</b> evolution was swift, reflecting its new role within Sea’s “Shopee Universe.”</p><br>
+
+      <p>First, the delivery arm <b>DeliveryNow</b> was rebranded to <b>Now</b>, a simple, catchy name for its on-demand services (which also included grocery and parcel delivery).</p><br>
+
+      <p>Then, in 2021, to complete the integration and create a single, unified brand, <b>Now</b> was officially rebranded to <b>ShopeeFood</b>.</p><br>
+
+      <p>Today, <b>ShopeeFood</b> is a core pillar of the <b>Shopee</b> super app, fully integrated with its marketplace and <b>ShopeePay</b> wallet. The original <b>Foody</b> platform still exists as a review and discovery site, but its transactional engine has been fully absorbed and amplified—becoming the “food” button inside one of Southeast Asia’s largest technology ecosystems.</p><br>
+
+      <p><b>Foody’s legacy</b> is twofold: it created a solution that digitized an entire industry, and it provided a landmark exit that inspired a generation of Vietnamese founders and investors.</p><br>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="startup1.png" alt="Ad 1">
+      <a href="startup1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">From Gamer to Giant: Lê Hồng Minh and the Making of VNG, Vietnam's First Unicorn</p></a>
+      <img src="startup2.png" alt="Ad 2">
+      <a href="startup2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The QR Code Unicorn: How VNLife Forged an Empire from a Single Scan</p></a>
+      <img src="startup3.png" alt="Ad 3">
+      <a href="startup3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The Global Blockchain Disruption: How Sky Mavis Built a Billion-Dollar Metaverse with Axie Infinity</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

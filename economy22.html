@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Effectively Utilizing FTAs for Sustainable and Long-Term Growth</h1>
+      <p class="meta">9:59:43 AM | 5/12/2025</p>
+      <p><b>Free trade agreements (FTAs) provide Vietnam with an opportunity for deeper global integration, but leveraging their benefits depends on each enterprise's capabilities. Therefore, businesses must carefully study FTAs to define their own strategy, ensuring they maximize opportunities and contribute to the country's sustainable economic development.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy22.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Vietnam’s textile industry is struggling with challenges like order shortages and supply chain shifts
+        </figcaption>
+      </figure>
+      <br>
+      <p>With over 300 booths, this year’s exhibition highlighted cutting-edge technologies and equipment across core sectors such as automation, metalworking, welding and cutting, cast iron and steel, mining and control systems. Particularly, the Common House exhibition area of Ho Chi Minh City drew significant interest for an array of its core industrial products and showcased its clear direction on supporting industrial development and business support policies. This space also functioned as a strategic trade navigation hub for companies to easily access investment and cooperation opportunities.</p><br>
+
+      <p>Besides the exhibition, a series of specialized events were held, including digital transformation and smart industry forums, welding skills competitions, and business networking sessions between Vietnamese and international companies in hardware, hand tools and mining equipment. Field visits to major industrial parks in Hanoi, Bac Ninh, Bac Giang and Hai Duong were also organized, offering both local and foreign businesses deeper insights into opportunities for building factories and developing new industrial projects in Vietnam.</p><br>
+
+      <p>Opportunity to prove internal capabilities and join global supply chain</p><br>
+
+      <p>Speaking at the event, Dr. Bui Van Hanh, Chairman of the Vietnam Welding Society, emphasized the role of Vinamac Expo in enabling Vietnamese businesses to present domestically manufactured equipment that is increasingly competitive against imported products.</p><br>
+
+      <p>The exhibition attracted strong international participation, including more than 180 companies from China showcasing advanced metallurgy, hardware and automation technologies. Mr. He Dongquan, a representative of Boyue Company (China), expressed high regard for the Vietnamese market's potential and came to seek long-term cooperation opportunities through events like Vinamac Expo.</p><br>
+
+      <p>Many Vietnamese companies also saw the event as a chance to assert their capabilities and expand their supply chains. Ms. Truong Thi Viet Hang, representative of Dai Hong Phat Company, said that her company exhibited an array of mechanical shaft transmission products, not only for the domestic market but also for export to Southeast Asian countries. Meanwhile, Mr. Nguyen Viet Toan, Director of ETEC Automation Technology Co., Ltd., noted that the presence of international exhibitors created a healthy competitive environment and motivated Vietnamese companies to invest in quality improvement and deeper integration into global supply chains.</p><br>
+
+      <p>According to the organizers, this year’s event reaffirmed Vinamac Expo’s vital role in connecting markets and strengthening domestic industrial capacity. It also acted as a stepping stone for Vietnam to develop its supporting industries more strongly, a key pillar in the country’s industrialization and modernization process.</p><br>
+
+      <p><b>Growing scale of trade</b></p><br>
+
+      <p>Over the past two decades, Vietnam has established itself as a key player in global economic integration. As of 2025, Vietnam has signed or is negotiating 20 free trade agreements, with 16 already in effect, including new-generation agreements like the Comprehensive and Progressive Agreement for Trans-Pacific Partnership (CPTPP), the European Union-Vietnam Free Trade Agreement (EVFTA), the United Kingdom-Vietnam Free Trade Agreement (UKVFTA), and the Regional Comprehensive Economic Partnership (RCEP). These deals have granted access to a vast market of over 60 countries and territories, representing around 90% of global Gross Domestic Product (GDP).</p><br>
+
+      <p>The success of FTA implementation in Vietnam is evident in the impressive figures. Over the past three years, Vietnam has consistently ranked among the top 20 countries in global trade volume, with an annual export growth rate of around 12.5%. In 2024, total export turnover reached US$786 billion, with exports surpassing US$405 billion and a trade surplus of nearly US$25 billion, marking the 9th consecutive year of surplus. As a result, Vietnam ranked 17th among the 20 largest trading economies worldwide. Exports to FTA partner markets such as the EU, Canada and CPTPP countries have all seen positive growth. Specifically, Vietnam's exports to the EU in 2024 reached US$52.1 billion, a 19.3% increase from 2023, while exports to Canada reached about US$7.5 billion, a 22.7% increase. Vietnamese enterprises are expected to utilize around 37% of tariff incentives under FTAs in 2024. These agreements not only help diversify markets and reduce reliance on traditional ones, but also attract high-quality FDI from major partners like Korea, Japan and Singapore, providing Vietnamese businesses with deeper participation in the global supply chain.</p><br>
+
+      <p>According to Trinh Minh Anh, Chief of the Office of the Interagency Steering Committee for International Economic Integration, while Vietnam has seen positive results from FTAs, their exploitation is still below potential. Many businesses, particularly small and medium-sized ones, lack information and understanding of rules of origin and preferential tariff procedures. Additionally, rising non-tariff barriers, such as technical standards, environmental regulations and labor requirements, challenge the ability of Vietnamese goods to comply. The low localization rate in some industries further limits the ability to take advantage of FTA benefits.</p><br>
+
+      <p>The textile and garment industry, which has seen strong growth from FTAs, is facing significant difficulties, as noted by Bach Thang Long, Deputy General Director of the Garment 10 Corporation – Joint Stock Company. The industry struggles with a lack of orders and shifting supply chains, as major importers in the U.S. and EU are moving orders to countries like Bangladesh, India and Indonesia due to lower costs and better support policies. International retailers also impose stricter requirements on traceability, green certification and carbon reduction. Moreover, the U.S. has imposed reciprocal tariffs of up to 46% on some Vietnamese textile and garment products, putting pressure on the competitiveness of local enterprises.</p><br>
+
+      <p><b>Finding sustainable and long-term solutions</b></p><br>
+
+      <p>The global trade landscape is currently facing significant fluctuations, with challenges arising from geopolitical conflicts, climate change, rising protectionism, and the potential imposition of reciprocal tariff measures by the United States on Vietnamese exports. However, the 90-day tariff deferral and the application of a 10% tariff rate during the negotiation period present opportunities for Vietnam. These measures allow for negotiations, market diversification (EU, Japan, ASEAN), and supply chain restructuring to minimize risks.</p><br>
+
+      <p>As a long-standing and pioneering textile and garment enterprise, Garment 10 Corporation remains committed to innovation and enhancing its competitiveness to "weather the storm," according to Mr. Bach Thang Long. The company has undergone a comprehensive digital transformation, incorporating AI into production and management. It is also focusing on green transformation, investing in energy-saving technologies, reducing emissions and building factories that meet international green standards. Additionally, Garment 10 Corporation has diversified its export markets, actively promoted FTA markets and explored niche markets, while also developing domestic brands and fashion retail chains.</p><br>
+
+      <p>According to Mr. Trinh Minh Anh, export enterprises must take more decisive actions to fully leverage existing FTAs, expand markets, reduce reliance on traditional markets, and adapt to increasingly stringent trade standards in order to achieve sustainable and long-term goals. For the textile and garment industry, Mr. Bach Thang Long suggested promoting programs that connect businesses with global distribution systems and supporting market expansion in potential regions such as the Middle East, Africa and South America.</p><br>
+
+      <p>Mr. Trinh Minh Anh recommended that Vietnamese enterprises improve their awareness and understanding of FTAs by carefully studying regulations on tariffs, rules of origin (C/O), technical standards and non-trade commitments (such as labor, environment, and sustainable development) in each FTA (e.g., CPTPP, EVFTA, UKVFTA). He advised businesses to participate in seminars and courses organized by the Ministry of Industry and Trade, the Vietnam Chamber of Commerce and Industry (VCCI), or industry associations to gain insights on how to leverage FTA incentives. Additionally, enterprises should utilize the FTA Information Portal of the Ministry of Industry and Trade (ftaportal.moit.gov.vn) to access tariff schedules, regulations and FTA implementation guidelines, and stay informed on trade defense cases through early warning systems. Close coordination with state management agencies is also crucial for receiving support and addressing any issues that arise during FTA implementation.</p><br>
+
+      <p>It is essential to optimize the rules of origin (C/O) to ensure that products meet the necessary criteria for tariff preferences, such as the required localization rate or pure origin specified in each FTA. This involves connecting with domestic suppliers or partners within FTA regions to increase the use of domestic raw materials and reduce dependence on imports from outside the region.</p><br>
+
+      <p>Additionally, many economic experts emphasize the need for Vietnam to enhance its competitiveness by improving product quality. This includes investing in technology, innovating designs, and meeting technical standards, food safety and hygiene regulations of FTA markets, such as the EU's green standards. Businesses should also participate in industry associations to stay informed about market trends, address challenges like transportation costs and technical barriers, and manage international disputes. Complying with non-commercial commitments, such as labor, environmental and sustainable development requirements, is crucial to avoid legal risks or commercial lawsuits.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

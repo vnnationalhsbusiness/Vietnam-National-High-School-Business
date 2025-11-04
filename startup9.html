@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start-up</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Start-up</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" class="active" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>From Chaotic Bus Stations to One-Click Booking: How Vexere Digitized Vietnam's Transport Industry</h1>
+      <p class="meta">10:05:10 AM | 16/7/2025</p>
+      <p><b>Led by co-founders Trần Nguyễn Lê Văn, Đào Việt Thắng, and Lương Ngọc Long, Vexere revolutionized a fragmented, offline industry by first empowering bus operators with software, then aggregating their inventory to create Vietnam's largest online ticketing platform.</b></p>
+      <br>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup9.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <br>
+      <p>For decades, booking an intercity bus ticket in Vietnam was an ordeal. It was a chaotic process defined by confusing phone calls to multiple operators (<i>nhà xe</i>), long queues at crowded bus stations (<i>bến xe</i>), price inconsistencies, and the uncertainty of securing a seat—especially during peak holiday seasons like Tết.</p><br>
+
+      <p>The entire industry was fragmented, notoriously non-transparent, and stubbornly offline. This was the problem that <b>Vexere</b>—founded in 2013 by <b>Trần Nguyễn Lê Văn</b> (CEO), <b>Đào Việt Thắng</b> (CTO), and <b>Lương Ngọc Long</b> (COO)—set out to solve. Their journey is a quintessential case study in taming a traditional industry through technology.</p><br>
+
+      <p><b>Phase 1: The Founder's Frustration and a Two-Sided Problem</b></p><br>
+
+      <p>The idea for <b>Vexere</b> was born from the personal frustration of its founders. As students, they—like millions of other Vietnamese—struggled to book bus tickets to return home for the holidays. They saw a classic, two-sided market failure:</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>For Consumers:</b> There was no central place to find information. Travelers had no way to easily compare prices, check schedules, or verify the quality of different bus operators.</li><br>
+        <li><b>For Bus Operators:</b> The <i>“nhà xe”</i> were stuck in the past. Most managed their entire operations—tens of thousands of seats across hundreds of routes—using pen, paper, and complicated Excel sheets. They had no digital tools to manage their inventory or reach online customers.</li>
+      </ul><br>
+
+      <p><b>Vexere’s</b> founders realized they couldn’t just build a consumer-facing website. They first had to solve the bus operators’ core problem.</p><br>
+
+      <p><b>Phase 2: The B2B 'Trojan Horse' (VMS Software)</b></p><br>
+
+      <p><b>Vexere’s</b> most critical strategic decision was its <b>B2B-first approach</b>. Before they could sell a single ticket to a customer, they had to give the bus companies a reason to digitize their inventory.</p><br>
+
+      <p>They developed the <b>Vexere Management System (VMS)</b>, a cloud-based SaaS platform (<i>Phần mềm như một Dịch vụ</i>). This software was tailor-made for bus operators, allowing them to:</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li>Digitally manage their bus/seat maps and schedules.</li><br>
+        <li>Control pricing and promotions in real-time.</li><br>
+        <li>Manage bookings from all sources (phone, counter, and online) in one system.</li>
+      </ul><br>
+
+      <p>By offering this powerful tool—often at low or no cost initially—<b>Vexere</b> gave operators an irresistible incentive to put their seat inventory online. This "Trojan Horse" strategy was the key to unlocking the industry's supply.</p><br>
+
+      <p><b>Phase 3: The B2C Marketplace and Market Transparency</b></p><br>
+
+      <p>Once hundreds of bus operators were managing their inventory on the VMS, <b>Vexere</b> had the “supply” it needed to launch its consumer platform: <b>Vexere.com</b> and the <b>Vexere app</b>.</p><br>
+
+      <p>This marketplace aggregated the newly digitized inventory, and for the first time, Vietnamese travelers could:</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Search and Compare:</b> Instantly see all available bus options for their route.</li><br>
+        <li><b>See Transparent Pricing:</b> Compare prices, see photos of the buses, and read verified customer reviews.</li><br>
+        <li><b>Book 24/7:</b> Select their exact seat and pay online instantly, receiving an e-ticket without ever visiting a bus station.</li>
+      </ul><br>
+
+      <p><b>Vexere</b> didn’t just sell tickets—it sold transparency, reliability, and convenience. It single-handedly <i>“minh bạch hóa”</i> (made transparent) an opaque industry, forcing operators to compete on quality and price, not just on who had the loudest ticket-sellers at the station.</p><br>
+
+      <p><b>The 'Agoda for Buses' Becomes a Transport Hub</b></p><br>
+
+      <p>Today, <b>Vexere</b> is the undisputed leader in its field, processing millions of tickets and partnering with thousands of operators across Vietnam and Cambodia.</p><br>
+
+      <p>Its success is a testament to a patient, <b>B2B-first strategy</b>. By solving the core operational problem for traditional businesses, <b>Vexere</b> built a platform that created immense value for consumers. It transformed a chaotic, offline industry into an efficient, digitized ecosystem—proving that even the most “analog” sectors of the economy are ready for a digital revolution.</p><br>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="startup1.png" alt="Ad 1">
+      <a href="startup1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">From Gamer to Giant: Lê Hồng Minh and the Making of VNG, Vietnam's First Unicorn</p></a>
+      <img src="startup2.png" alt="Ad 2">
+      <a href="startup2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The QR Code Unicorn: How VNLife Forged an Empire from a Single Scan</p></a>
+      <img src="startup3.png" alt="Ad 3">
+      <a href="startup3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The Global Blockchain Disruption: How Sky Mavis Built a Billion-Dollar Metaverse with Axie Infinity</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

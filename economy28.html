@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Net Zero Journey of Vietnamese Businesses</h1>
+      <p class="meta">8:45:17 AM | 1/6/2025</p>
+      <p><b>Around 145 countries have declared their support for the common goal of Net Zero. Being no exception, Vietnam is committed to joining and aiming for the Net Zero goal by 2050. Vietnamese businesses are also making efforts to join hands for a sustainable green planet.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy28.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Vinamilk Green Farm, an eco-friendly farming model
+        </figcaption>
+      </figure>
+      <br>
+      <p><b>Major risks ahead</b></p><br>
+
+      <p>Vietnam is one of the top five countries likely to be most affected by climate change. According to the report “Charting a path for Vietnam to achieve its Net-zero goals” by McKinsey, a US strategy consultant, Vietnam faces two major threats. The first are physical risks posed by climate change, which is likely to have a huge impact on urban areas. For example, a 1.8-meter sea level rise scenario may submerge 66% of Ho Chi Minh City, posing the risk of blackouts and road and transit closures.</p><br>
+
+      <p>In addition, Vietnam derives a high proportion of its GDP from high-carbon sectors and much of its capital stock is tied up in fossil fuel–based power. As a result, Vietnam has struggled to attract financing for planned coal-fired thermal power plants. Emissions reduction is thus essential for Vietnam to mitigate physical and economic risks.</p><br>
+
+      <p>Vietnam’s emissions could nearly quadruple by 2050 if the country’s industries continue to grow at planned rates without technological change, industrial-base changes, and successful implementation of policy changes. As with other countries in ASEAN, Vietnam’s emissions come from energy and land-use systems. About 30% of total greenhouse gas emissions are from the power sector, a further 30% are from industry, and about 10% come from transport.</p><br>
+
+      <p>At the UN Climate Change Conference (COP26) in 2021, Prime Minister Pham Minh Chinh announced the country’s commitment to phase out coal power generation by the 2040s and achieve net-zero carbon emissions by 2050.</p><br>
+
+      <p>Most recently, in its National Strategy on Climate Change, Vietnam announced a 43.5% emissions-reduction target by 2030 with practical international support and effect, sector-specific emissions targets for 2030 and 2050, and qualitative suggestions for achieving these goals.</p><br>
+
+      <p>With the approval of the National Strategy on Climate Change and the National Green Growth Strategy for the 2021-2030 period, with a vision to 2050, the Vietnamese government has demonstrated its determination and aspiration to develop a strong, prosperous and sustainable country. As a developing nation, Vietnam has boldly made strong commitments to sustainable development with the consistent view of “not accepting growth at all costs.”</p><br>
+
+      <p>Over the past year, Vietnam has focused on perfecting policy mechanisms - one of the most important first steps in implementing commitments, issuing decrees and decisions of the Prime Minister on reducing greenhouse gas emissions and protecting the ozone layer among others. In general, in terms of policy mechanisms, Vietnam has gradually perfected the legal corridor to help achieve its commitments smoothly.</p><br>
+
+      <p>In the past five years, the state budget for these issues has always exceeded VND21 trillion a year. This large investment has demonstrated the Government's determination to protect natural resources and respond to climate change.</p><br>
+
+      <p>In the business sector, up to now, more than 50 Vietnamese businesses in many industries have committed to Net Zero, including giant firms like Vingroup, Hoa Phat Group, FPT Corporation and Masan Group, aiming for sustainable community development with specific solutions like investing in new energy sources, reducing fuels, transforming technology, reusing packaging and using renewable energy.</p><br>
+
+      <p>These actions require great efforts and time to change. However, Vietnam also has advantages that can be implemented to get closer to the Net Zero goal, e.g. protecting forests, restoring resources and developing sustainable forestry. Many businesses, including ABBANK, Vinamilk, Sungroup, and Novaland, are actively investing in this direction.</p><br>
+
+      <p><b>Government and businesses join hands to achieve common goals</b></p><br>
+
+      <p>Despite investment from the Government and large corporations, in the face of mounting challenges, State and corporate financing remains insufficient to meet the demand. To tackle this intricacy, in addition to prioritizing public resources, the Government is actively mobilizing private resources and international organizations. In particular, developing green financial markets and carbon markets are key solutions. Developing these two markets will provide opportunities for businesses and investors to join environmental protection and contribute to promoting green growth and responding to climate change.</p><br>
+
+      <p>According to Dr. Ha Quang Anh, Director of the Low Carbon Development Center, the Department of Climate Change under the Ministry of Natural Resources and Environment, to realize the Net Zero goals, businesses need to convert awareness into specific actions and follow examples from big companies in Vietnam that have already built emissions reduction and carbon neutralization strategies. At the same time, they need to plan resources to inventory greenhouse gases, propose and manage mitigation activities.</p><br>
+
+      <p>They need to quickly learn about the impact of emissions generated by their business activities. After knowing the degree of impact, they can quickly develop action strategies, thereby creating competitive advantages and leaving good impressions on investors, shareholders, customers and stakeholders.</p><br>
+
+      <p>In the energy sector alone, according to McKinsey, Vietnam has many potential pathways to achieve Net Zero emissions by 2050, such as high technical potential for wind and solar power, maximum pumped storage hydropower potential, consumer willingness to switch to alternative modes of transport, and available land for reforestation.</p><br>
+
+      <p>To accelerate the energy transition and achieve Net Zero commitments, McKinsey believed that businesses need to invest much and increase cooperation for segments that help reduce emissions quickly. For example, construction and real-estate companies can use their expertise in developing large local capital projects to build renewable energy installations. Fecon, a local construction company, has partnered with Corio, an offshore wind portfolio company of Macquarie Green Investment Group, to develop offshore wind power. Local oil and gas companies could pivot to developing renewables as many overseas players have done - for example, Equinor recently partnered with PetroVietnam to develop renewable power.</p><br>
+
+      <p>In the future, a large renewable base could position Vietnam to become a leader in the growing green hydrogen economy and to serve as a net exporter of green electrons. This is a time-sensitive activity as developers are already competing for the most economical sites.</p><br>
+
+      <p>Although the commitment to reach Net Zero by 2050 is extremely difficult, Vietnam has a roadmap in place. By harnessing opportunities across the economy to capture new value pools, Vietnam can meet its pledge, grow its GDP, and improve life for its residents.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

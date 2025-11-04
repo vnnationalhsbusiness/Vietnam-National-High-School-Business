@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</h1>
+      <p class="meta">10:09:27 AM | 10/2/2025</p>
+      <p><b>Vietnam is the only Southeast Asian economy that saw an improvement in its 2025 growth forecast to 6.7 percent from ADB’s earlier April forecast of 6.6 percent.Vietnam is the only Southeast Asian economy that saw an improvement in its 2025 growth forecast to 6.7 percent from ADB’s earlier April forecast of 6.6 percent.</b></p>
+      <br>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          ADB Country Director for Viet Nam Shantanu Chakraborty at the press conference, Ha Noi, September 30, 2025 - Photo: VGP
+        </figcaption>
+      </figure>
+      <br>
+      <p>
+        In the Asian Development Outlook September which was released on September 30, the ADB noted that Viet Nam notched a multi-year high GDP growth of 7.52 per cent in the first half of 2025, driven by robust exports, strong improvement in the manufacturing and services sectors, as well as a surge in foreign direct investment disbursements.
+      </p>
+      <br>
+      <p>
+        Industrial output is forecast to grow by 7.7 percent in 2025 from higher manufactured exports, but may face headwinds from higher U.S. tariffs. Viet Nam's industrial production index increased strongly in the first 8 months of 2025. The surge was driven largely by firms ramping up production and exports to preempt the new U.S. tariffs, creating a short-term spike in output.
+      </p>
+      <br>
+      <p>
+        Industry and construction grew by a strong 8.3 percent in the first half compared to 7.5 percent in the first half last year. A surge in new orders to front-load exports ahead of U.S. reciprocal tariffs drove manufacturing up by 10.1 percent. Although public investment remained below the annual plan, actual disbursements helped drive construction up by 9.6 percent compared with 7.3 percent in the first half last year.
+      </p>
+      <br>
+      <p>
+        Fiscal growth and the recovery of tourism and its associated industries led services up by 8.1 percent. Agriculture grew by a stronger 3.8 percent, resilient against external uncertainties and helped by price stability.
+      </p>
+      <br>
+      <p>
+        On the demand side, strong trade growth and a surge in foreign direct investment (FDI) disbursements helped drive the economy in the first half. Gross capital formation rose by 8 percent, driven by a 42.3 percent year on year jump in public investment in the first half of this year, reaching 30 percent of the annual target.
+      </p>
+      <br>
+      <p>
+        Monetary and fiscal stimulus further boosted domestic demand, with final consumption increasing by 8 percent compared to 5.8 percent a year earlier.
+      </p>
+      <br>
+      <p>For 2026, growth is expected to moderate to 6 percent, down from an earlier estimate of 6.5 percent.</p>
+      <br>
+      <p>ADB expects Viet Nam's economy to remain resilient, supported by expansionary fiscal and monetary policies that have boosted domestic consumption.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+      <img src="economy4.png" alt="Ad 2">
+      <a href="economy4.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam’s Exports to U.S.: Short-term Breakthroughs but Risks Ahead</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

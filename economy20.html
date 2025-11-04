@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Hanoi Successfully Wraps Up Rural Program Ahead of Schedule</h1>
+      <p class="meta">1:50:52 PM | 5/23/2025</p>
+      <p><b>The Resolution of the 17th Hanoi Party Congress set the goal of completing new rural development across the city by 2025. With the participation of the entire political system and the support of the people, Hanoi has so far achieved all 8 required targets to fulfill this goal.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy20.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          High-tech vegetable growing model in Phu Cuong commune, Soc Son district
+        </figcaption>
+      </figure>
+      <br>
+      <p>In the National Target Program on New Rural Development, Hanoi has affirmed its leading role not only through impressive results in the number of communes and districts meeting standards but also through a methodical, determined approach and proactive resource management. The allocation of substantial, effective investment capital and strict avoidance of overdue debts in basic construction have been key factors enabling Hanoi to “reach the finish line” early and sustainably in developing new-style rural areas.</p><br>
+
+      <p><b>Allocating major resources</b></p><br>
+
+      <p>With the allocation of substantial and proactive capital for projects under the New Rural Development Program during the 2021–2025 period, Hanoi has achieved impressive results. Data as of the end of April 2025 shows that 100% of communes (382/382) have been recognized as meeting new rural standards, completing the target four years ahead of schedule. Among these, 229 communes meet advanced new rural standards, and 109 meet model new rural standards. The entire city, including all 17 districts and Son Tay town, meets new rural standards, with five districts officially recognized by the Prime Minister as meeting advanced standards.</p><br>
+
+      <p>Proper investment has brought positive improvements to infrastructure and people’s lives. Currently, 100% of commune, inter-commune, village, inter-village and hamlet roads are solid and spacious. Additionally, schools, medical stations, cultural houses, and other communal facilities have all been upgraded and brought up to standard.</p><br>
+
+      <p>Hanoi has focused not only on infrastructure but also on developing the rural economy. A range of high-tech agricultural production models and production-consumption chains have been introduced, providing stable incomes for local people. Many traditional craft villages have received support to invest in machinery and expand trade, helping preserve cultural identity and create sustainable livelihoods. According to local authorities, the current average income in rural areas is about VND73.8 million per person per year, up VND18.8 million from 2020. Some localities have even higher average incomes, such as Hoai Duc and Dan Phuong with VND86 million per person per year; Dong Anh with over VND85.8 million; and Gia Lam with VND83 million.</p><br>
+
+      <p>Particularly, Hanoi prioritizes resources for mountainous communes and ethnic minority areas to ensure they keep pace in the development process. As a result, these areas have made significant progress in poverty reduction, education and health care.</p><br>
+
+      <p>According to Ngo Van Ngon, Deputy Director of the Hanoi Coordination Office of the New Rural Development Program, a key achievement in Hanoi’s recent new rural construction is the absence of outstanding debt in basic construction. The city has rigorously approved and selected projects, strictly controlled investments, and only carried out projects with guaranteed funding as per the allocation plan. Priority is given to essential projects that serve people’s lives. This demonstrates the effectiveness of Hanoi’s public financial management and builds trust among residents and businesses partnering with the State in rural development.</p><br>
+
+      <p><b>New rural development is ongoing</b></p><br>
+
+      <p>According to Mr. Ngo Van Ngon, under the strong leadership of the Hanoi Party Committee and Hanoi People’s Committee, the Hanoi Coordination Office of the New Rural Development Program has finalized the report and supporting documents. The Hanoi People’s Committee has submitted Document 49/TTr-UBND to the Ministry of Agriculture and Environment, requesting appraisal, review and official recognition of Hanoi’s completion of the new rural area development task in 2024.</p><br>
+      
+      <p>Completing the task of building new rural areas is not only a political achievement that fulfills the targets set by the Resolution of the 17th Hanoi Party Congress but also confirms Hanoi’s role as the “leading flag” nationwide in implementing the National Target Program on new rural development.</p><br>
+
+      <p>According to Nguyen Xuan Dai, Director of the Hanoi Department of Agriculture and Environment, Hanoi aims to build civilized rural areas with modern, synchronized infrastructure and services in the coming period. 
+        <span style="float: right; width: 280px; border: 1px solid #ccc; padding: 10px 12px; font-style: italic; font-size: 14px; margin: 5px 0 10px 15px; text-align: justify; display: block;">
+          In 2024, Hanoi met and even surpassed five targets one year ahead of the deadline set by Program 04-CTr/TU for the end of 2025.<br>
+          Specifically: 17 out of 17 districts met new rural standards; 5 out of 17 districts met advanced new rural standards; 382 out of 382 communes met new rural standards; 229 communes met advanced new rural standards; and 109 communes met model new rural standards.
+        </span>
+        This will be achieved by promoting each locality’s strengths and potentials, closely linking rural development with urbanization, and ensuring efficiency and sustainability.
+      </p><br>
+
+      <p>To achieve this goal, in 2025 and beyond, Hanoi will prioritize investment to maintain existing new rural standards while raising criteria for advanced and model new rural areas, following the spirit of “building new rural areas with a starting point but no end.” Localities are also urged to proactively manage and allocate budgets to meet these targets. At the same time, it is essential to strengthen communication efforts, ensuring they are diverse, regular, continuous, focused and targeted, to foster internal strength and inspire solidarity, responsibility and consensus among the people for effective and sustainable new rural development.</p><br>
+
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

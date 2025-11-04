@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnamese Firms Aim to Deepen Integration into Global Supply Chains</h1>
+      <p class="meta">8:58:04 AM | 8/13/2024</p>
+      <p><b>As global supply chains increasingly shift and evolve, Vietnam has emerged as a preferred manufacturing hub for many international corporations. To capitalize on this trend, Vietnamese companies must enhance their involvement and integration in global supply and production networks.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business54.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Vietnamese companies are urged to strengthen their integration and participation in global supply and production networks
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>Attracting many large investors</b></p><br>
+
+      <p>Dr. Nguyen Quoc Viet, Deputy Director of the Vietnam Institute for Economic and Policy Research (VEPR), said, cooperation in supply chains, particularly in research and development (R&D) and the transfer of advanced technology, has enabled businesses to achieve sustainable growth, enhance competitiveness, and adapt more effectively, helping them expand their export markets and leverage the benefits of new-generation free trade agreements.</p><br>
+
+      <p>Since the end of 2023, many giant tech firms have shifted their supply chains to Vietnam. In the first five months of 2024, Vietnam ranked 2nd in the region in investment value. This not only proved that the business environment is relatively attractive but also that Vietnam has been chosen to become a new address in the production chain and supply chain diversification strategy of countries and world-leading corporations.</p><br>
+
+      <p>In addition, despite not yet making direct investments in Vietnam, several major corporations, including globally renowned tech giants such as Apple and Amazon, have redirected their orders to the country.</p><br>
+
+      <p>In recent years, major companies have progressively adopted advanced technologies. In Vietnam, in 2021-2023, 63% of FDI firms used technologies at an average level. In the coming years, 94% plan to apply technologies from low to very high levels. Therefore, when looking for partners in Vietnam, the level of innovation and the adoption of modern technology are always the top factors. Participation in supply chains and R&D-driven collaborations to develop new, high-quality technologies and solutions presents a valuable opportunity for Vietnamese companies. It enables them to achieve sustainable development, enhance competitiveness and adaptability, expand and develop markets, boost exports, and fully leverage the advantages offered by new-generation free trade agreements. However, to take advantage of the investment environment and see Vietnam as a manufacturing destination, in both macro and micro perspectives, Vietnam needs to make more efforts.</p><br>
+
+      <p><b>Yet to capitalize on advantages</b></p><br>
+
+      <p>The Economic Complexity Index (ECI) of the Vietnamese economy, while having improved from a weak position a decade ago to an average level, remains lower compared to other countries with similar economic profiles in the region, Viet said.</p><br>
+
+      <p>The complexity of an economy is influenced by the level of technology and technological innovation within its businesses, particularly domestic ones. Currently, the rate of technological advancement and innovation among Vietnamese companies is relatively low. The added value of industrial sectors, particularly the processing and manufacturing industry which requires high levels of expertise and deep participation in supply chains, is also very weak. For example, the added value of the textile and garment industry can reach 50% but the electronics, machinery and equipment industry has not yet reached that level. High-tech manufacturing and smart equipment industries join only about 10%, with inputs mainly imported from Northeast Asian countries and China for assembling, manufacturing and export.</p><br>
+
+      <p>Although there are opportunities, businesses still face numerous challenges from their deep participation in supply chains. Vietnam has advantages in human resources but they are largely employed by foreign-invested firms. Besides, facilities of domestic companies need to be upgraded to meet requirements, including factories, warehouses, machinery, technology and means of transport.</p><br>
+
+      <p>Some companies face difficulties with waste treatment standards, especially small ones that cannot invest in modern waste treatment systems. Although Vietnam has a credit support fund for small and medium-sized enterprises (SMEs) participating in supporting industry chains, the credit scale is not large and the access to the fund remains challenging for businesses. It takes them a long time to complete the application for access to the fund credit.</p><br>
+
+      <p><b>Enhancing support policies to facilitate deeper integration of businesses into supply chains</b></p><br>
+
+      <p>Vietnamese businesses are increasingly seeking the development of timely support policies to facilitate their deeper integration into global value chains. Vietnam needs to conduct reforms to support them to join global value chains more effectively and resources must be "sufficient" for them to invest in technological innovations to meet requirements imposed by large manufacturers to take part in supply chains, he noted. It needs to further reform procedures, ratify documents quickly and promptly because orders from foreign businesses have delivery deadlines and the implementation time is 2-3 months for products to meet requirements.</p><br>
+
+      <p>Mr. Nguyen Van Hoi, Director of the Vietnam Institute of Strategy and Policy for Industry and Trade under the Ministry of Industry and Trade, said: Vietnam must design and refine policies to support enterprises in achieving deeper integration into higher-value global supply chains. Accordingly, it needs to organize fairs, promote trade and investment, develop markets, diversify forms of promotion, and introduce export products. Specially, it is necessary to focus on building and developing brands and raising business awareness of labor and environment requirements in FTAs, rules of origin and trade defense. Enterprises also need to diversify export markets.</p><br>
+
+      <p>In addition, Vietnam needs to focus on establishing technical barriers, such as implementing import technical standards, pursuing anti-dumping measures, and imposing environmental duties, to safeguard and strengthen domestic production, he noted.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

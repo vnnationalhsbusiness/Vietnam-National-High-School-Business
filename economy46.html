@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>HCM City Economy Surges, Outpaces Previous Year</h1>
+      <p class="meta">9:57:15 AM | 7/11/2024</p>
+      <p><b>Ho Chi Minh City's economy surged with promising signs of recovery in the first half of 2024, as indicated by a 6.46% year-on-year increase in Gross Regional Domestic Product (GRDP). This growth surpasses the national average of 6.42% and marks the city's highest economic expansion in three years.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy46.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          HCM city's economy surged with a 6.46% year-on-year increase in GRDP in the first half of 2024, surpassing the national average and marking its highest growth in three years
+        </figcaption>
+      </figure>
+      <br>
+      <p>A recent preliminary report from the HCM City Statistics Office underscores these achievements, highlighting resilient socioeconomic indicators amid complex global economic challenges.</p><br>
+
+      <p><b>Highest IIP growth in three years</b></p><br>
+
+      <p>The H1 Industrial Production Index (IIP) advanced 5.6%, the highest growth since 2022. In June alone, the index grew 0.3% month on month and 7.8% year on year.</p><br>
+
+      <p>By sector, the mining sector reported the highest growth of 42.9%. The processing and manufacturing sector went up only 5.3%. The electricity production and distribution sector jumped 11.5%. The water supply and waste treatment edged up 0.8%.</p><br>
+
+      <p>By secondary sector, 17 out of 30 sectors had growing IIP in the first half of 2024 as compared from a year-earlier period. Good performers included the manufacturing of rubber and plastic products (29.1%), chemical and chemical products (21.1%), bed, cabinet, table and chair products (14.1%), wood processing, woodwork and bamboo products (14.0%), prefabricated metal products (13.2%), and other non-metallic products (11.7%).</p><br>
+
+      <p>Meanwhile, the IIP Index of three traditional industries (textile, garment and footwear) slid 2.3% year on year in the first half. This showed that the city's industrial production recovery was not sustainable.</p><br>
+
+      <p>In the city’s GRDP growth of 6.46%, the trade and service sector contributed the most with 4.34 percentage points and staged the highest YoY growth of 7.26%, followed by the industrial and construction sector with 1.2 percentage points and 5.55%, respectively (the industry contributed 1.05 percentage points and the construction contributed 0.15 percentage points). The agricultural sector contributed 0.38 percentage points and grew 0.18%.</p><br>
+
+      <p>By the economic structure, based on current prices, the trade and service sector accounted for the biggest share of 65.6%, followed by the industrial and construction sector with 21.0%, taxes minus subsidies with 12.9%, and the agricultural, forestry and fishery sector with the lowest share of 0.5%.</p><br>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy46_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Trade and service industries in HCM City experienced positive growth, with the transportation and warehousing sector leading with an 18.47% increase rate
+        </figcaption>
+      </figure>
+      <br>
+      <p><b>Robust performance in trade and services</b></p><br>
+
+      <p>The nine pivotal service sectors significantly bolstered Ho Chi Minh City's H1 GRDP, collectively contributing 59.9% to its growth and representing 91.3% of the service sector's impact. Notably, four sectors demonstrated exceptional performance, accounting for 63.1% of the service sector's growth: trade (16.4%), transportation and warehousing (10.5%), finance and banking (9.1%), and professional, scientific and technological services (5.4%).</p><br>
+
+      <p>Overall, all nine key service subsectors advanced, with the transportation and warehousing sector recording the best growth of 18.47% and the real estate sector with the worst growth of 2.94%.</p><br>
+
+      <p>In trade and services, total retail revenue of consumer goods and services in the first six months of 2024 were estimated to grow as high as 10% from a year earlier. Particularly, the retail revenue of goods rose by 10.2%, accommodation and dining revenue by 8.1%, travel services revenue by 63.3% and other services by 7.2%.</p><br>
+
+      <p>The HCM City Statistics Office conducted a survey on business trends in the processing and manufacturing sector. The outcome showed that manufacturing and business activities in the second quarter were better than in the first quarter. 37% of surveyed businesses said their production and business performance was getting better, while 36.6% kept it stable and 26.4% said it was more difficult. 80% of State-owned enterprises (SOEs) saw better operations in the second quarter following a stable first quarter. 72.7% of private companies and 73.6% of FDI firms shared a similar viewpoint.</p><br>
+
+      <p>To better support business recovery and development, in the third quarter and from now until the end of the year, Ho Chi Minh City will focus on carrying out many consistent solutions to remove difficulties and obstacles for the business community and investors. At the same time, many business support mechanisms and policies will be in place. The city will continue to transform its production models and boost digital application and shape green production and green export to enhance the competitiveness and position of Vietnamese exports in the international market.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

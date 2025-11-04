@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Lessons</title>
+</head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { font-size: 20px; font-weight: bold; color: #c00; }
+    .menu {
+      position: fixed;
+      top: 0; left: -100%;
+      width: 70%; height: 100%;
+      background: #fff;
+      display: flex; flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 9;
+    }
+    .menu.active { left: 0; }
+    .menu a { text-decoration: none; color: #111; font-weight: bold; }
+    .menu-toggle {
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ARTICLE PAGE (mobile-first) */
+    .article-page {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+    .article-content { flex: 3; }
+    .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+    .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+    .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+    .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+    blockquote {
+      border-left: 4px solid #c00;
+      padding-left: 10px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #333;
+    }
+
+    /* ADS */
+    .article-ads {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; display:block; }
+
+    /* OTHER NEWS */
+    .other-news { padding: 20px; background: #f9f9f9; }
+    .other-news h2 { margin-bottom: 15px; color: #c00; }
+    .other-news ul { list-style: none; }
+    .other-news li { margin: 8px 0; }
+    .other-news a { text-decoration: none; color: #000; }
+    .other-news a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+    /* Desktop/Tablet layout: 2 cột, cột phải cố định bề ngang */
+    @media (min-width: 992px) {
+      .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+      .menu-toggle { display: none; }
+
+      .article-page {
+        display: grid;
+        grid-template-columns: 1fr minmax(280px, 340px);
+        gap: 28px;
+        align-items: start;
+      }
+      .article-content { min-width: 0; }
+      .right-rail { min-width: 0; display:flex; flex-direction:column; gap:16px; }
+    }
+
+    /* ===== TOC style giống ảnh mẫu ===== */
+    /* Ẩn TOC trên mobile; chỉ hiện >=768px */
+    /* .toc{ display:none; } */
+    /* TOC: tránh bị nội dung bên dưới “lọt” qua khi sticky */
+    @media (min-width:768px){
+      .toc{
+        /* background:#fff;           bật nền trắng để che nội dung phía dưới */
+        /* border:1px solid #e5e7eb;  viền nhẹ, giống ảnh mẫu */
+        border-radius:12px;
+        padding:12px 12px 12px 0;  /* chừa chỗ cho vạch dọc + mũi tên */
+        /* box-shadow:0 6px 18px rgba(0,0,0,.06); */
+        z-index: 5;                /* nổi lên trên ảnh/caption Ads */
+      }
+      .toc-title{ margin:0 0 10px 0; font-size:20px; font-weight:700; color:#111; }
+      .toc-list{
+        list-style:none; margin:0; padding:0 0 0 16px;
+        border-left:2px solid #e5e7eb; /* vạch dọc bên trái */
+      }
+      .toc-list li{ margin:6px 0; }
+      .toc a{
+        position:relative; display:block; color:#111; text-decoration:none;
+        font-size:15px; line-height:1.4; padding:6px 0;
+      }
+      .toc a:hover{ text-decoration:underline; }
+      .toc a.active{ font-weight:700; }
+      .toc a.active::before{
+        content:""; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
+        width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent;
+        border-left:7px solid #2563eb; /* mũi tam giác xanh */
+      }
+    }
+
+    /* Nếu dùng dark mode tự động, bạn có thể thêm: */
+    /* @media (prefers-color-scheme: dark){
+      .toc{ background:#0b1020; border-color:#1e293b; box-shadow:0 10px 28px rgba(0,0,0,.45); }
+      .toc-title, .toc a{ color:#e5e7eb; }
+      .toc-list{ border-left-color:#1e293b; }
+    } */
+
+    /* Khi cuộn tới tiêu đề, chừa khoảng cho header sticky */
+    .anchor-target { scroll-margin-top: 88px; }
+    .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Insights & Lessons</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" class="active" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page">
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Market Segmentation and Targeting: Keys to Effective Audience Reach</h1>
+      <p class="meta">8:01:05 PM | 13/10/2024</p>
+      <img src="insights&lesson8.png" alt="Main Article Image" class="article-img">
+
+    <p>
+        In today’s hyper-competitive and saturated marketplace, the notion of marketing a product to "everyone" is a recipe for strategic failure. Effective market strategy demands precision. The powerful combination of <b>Market Segmentation</b> and Targeting provides the essential framework for businesses to move beyond generic marketing and connect directly with the specific groups of consumers most likely to value and purchase their offering, thereby maximizing marketing efficiency and return on investment (ROI).
+    </p>
+    <br>
+    <p id="1" class="anchor-target"><b><i style="color: black;font-size: 20px;">1. Market Segmentation: Dividing the Whole into Profitable Parts</i></b></p>
+    <br>
+    <p>
+    <b>Market Segmentation</b> is the process of dividing a broad consumer or business market, which typically consists of existing and potential customers, into subgroups of consumers (segments) based on some type of shared characteristics. The core assumption is that consumers within a segment will respond in a similar way to a given marketing mix (product, price, promotion, and place).
+    </p>
+    <br>
+    <p><b>The Four Primary Bases for Segmentation:</b></p>
+    <br>
+    <p>Strategic segmentation is typically conducted across four key dimensions:</p>
+    <br>
+    <li style="margin-left: 35px;">
+        <ul>
+            <li>
+                <b>Geographic Segmentation</b>: Dividing the market based on physical location, such as nation, region, city size, or climate. This is crucial for businesses whose products are affected by local tastes, weather, or distribution infrastructure.
+            </li>
+            <br>
+            <li>
+                <b>Demographic Segmentation</b>: Dividing the market based on measurable characteristics of a population, such as age, gender, income, education, family size, occupation, and religion. This is often the easiest and most common approach because data is readily available.
+            </li>
+            <br>
+            <li>
+                <b>Psychographic Segmentation</b>: Dividing the market based on lifestyle, values, attitudes, interests, and personality traits. This seeks to understand the "why" behind purchasing decisions, moving beyond simple demographics to capture psychological motivators.
+            </li>
+            <br>
+            <li>
+                <b>Behavioral Segmentation</b>: Dividing the market based on customer knowledge, attitudes, usage rates, loyalty status, and response to a product. This is arguably the most powerful base, as it focuses on actual consumer actions, such as heavy versus light users, or brand advocates versus switchers.
+            </li>
+            <br>
+        </ul>
+    </li>
+    <p>
+    For the strategic investor, analyzing a company’s segmentation strategy reveals how deeply it understands its customer base and how effectively it has focused its resources. Poorly defined segments lead to marketing expenditure leakage.
+    </p>
+    <br>
+    <p id="2" class="anchor-target"><b><i style="color: black;font-size: 20px;">2. Market Targeting: Selecting the Battleground</i></b></p>
+    <p>
+    <b>Targeting</b> is the process of evaluating the attractiveness of each market segment and selecting one or more segments to enter. A segment’s attractiveness is judged not only by its size and growth rate but also by its structural factors, such as the level of competition (analyzed via Porter’s Five Forces) and the firm’s available resources.
+    </p>
+    <br>
+    <p><b>Three Core Targeting Strategies:</b></p>
+    <br>
+    <p>Firms must choose a strategy that aligns with their resources, product offering, and competitive position:</p>
+    <br>
+    <li style="margin-left: 35px;">
+        <ul>
+            <li>
+                <b>Undifferentiated (Mass) Marketing</b>: The firm decides to ignore market segment differences and target the whole market with one offer. This strategy relies on mass production, distribution, and promotion. While cost-effective, it is rarely successful today because it fails to satisfy any specific niche completely.
+            </li>
+            <br>
+            <li>
+                <b>Differentiated (Segmented) Marketing</b>: The firm targets several market segments and designs separate offers for each. This strategy aims for higher total sales and a stronger position within each segment (e.g., a car manufacturer producing different models for different income brackets). While expensive, this often achieves higher market share and customer loyalty.
+            </li>
+            <br>
+            <li>
+                <b>Concentrated (Niche) Marketing</b>: The firm goes after a large share of one or a few smaller segments or niches. This is highly effective for smaller companies or startups, allowing them to focus their limited resources on serving the specific needs of a narrow customer base extremely well, often building high brand equity and insulation from larger competitors.
+            </li>
+            <br>
+        </ul>
+    </li>
+    <p>
+    The targeting decision is fundamentally a strategic choice about <b>resource allocation</b>—where the firm can generate the most profitable and sustainable sales volume.
+    </p>
+    <br>
+    <p id="3" class="anchor-target"><b><i style="color: black;font-size: 20px;">3. Strategic Integration: The Path to Effective Reach</i></b></p>
+    <p>
+    The true power of segmentation and targeting is realized through their integration with the entire marketing mix. Segmentation provides the blueprint, and targeting selects the specific destination, allowing the firm to craft a highly effective message.
+    </p>
+    <br>
+    <li style="margin-left: 35px;">
+        <ul>
+            <li>
+                <b>Enhancing Communication Efficiency</b>: By defining the target audience, marketers can choose the most relevant media channels (e.g., using TikTok for Generation Z audiences versus LinkedIn for B2B executives) and customize their language and imagery. This reduces marketing waste and ensures that advertising dollars are spent on the most receptive consumers.
+            </li>
+            <br>
+            <li>
+                <b>Improving Product Development</b>: Precise segmentation allows product developers to identify unfulfilled customer needs within a specific niche. This leads to the creation of highly relevant, differentiated products—a core driver of pricing power and competitive advantage. <i>For instance, discovering a segment of consumers who value sustainable, locally-sourced packaging allows a company to differentiate on these attributes.</i>
+            </li>
+            <br>
+            <li>
+                <b>Optimizing Pricing Strategy</b>: Understanding a target segment’s income level (demographics) and their price sensitivity (behavioral data/psychographics) is crucial. A highly differentiated product targeting an affluent, brand-loyal segment can command a significant price premium, maximizing profit margins.
+            </li>
+            <br>
+        </ul>
+    </li>
+    <p>
+    In conclusion, Market Segmentation and Targeting are not merely tactical marketing exercises; they are strategic imperatives that dictate a company’s focus, resource deployment, and long-term profitability. By systematically dissecting the market and selecting the most attractive battlegrounds, businesses ensure that their efforts are not scattered, but precisely aligned to achieve maximum effective audience reach and sustainable value creation.
+    </p>
+    <br>
+    <hr>
+    <br>
+    <b><p>Resource: Hai Dang - Bachelor in Vin University</p></b>
+
+    </div>
+
+    <div class="right-rail">
+      <nav class="toc" aria-label="Table of Contents">
+        <h3 class="toc-title">Table of Contents</h3>
+        <ol class="toc-list" style="text-decoration: none;">
+          <li><a href="#1">Market Segmentation: Dividing the Whole into Profitable Parts</a></li><!-- (Bạn có thể đổi tên hiển thị theo ý) -->
+          <li><a href="#2">Market Targeting: Selecting the Battleground</a></li>
+          <li><a href="#3">Strategic Integration: The Path to Effective Reach</a></li>
+        </ol>
+      </nav>
+
+      <aside class="article-ads">
+        <img src="insights&lesson15.png" alt="Ad 1">
+        <a href="insights&lesson15.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Why We Buy What We Buy: Introduction to Consumer Rationality and Heuristics – An Expanded Behavioral Analysis</p></a>
+        <img src="insights&lesson14.png" alt="Ad 2">
+        <a href="insights&lesson14.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Absolute vs. Comparative Advantage: Why Nations Specialize and Trade</p></a>
+        <img src="insights&lesson13.png" alt="Ad 3">
+        <a href="insights&lesson13.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Understanding Credit, Debt, and Interest Rates: The Cost of Future Consumption – An Advanced Look</p></a>
+      </aside>
+    </div>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    // Toggle mobile menu
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // TOC: smooth scroll + scrollspy (hỗ trợ ID số: #1 #2 #3 #4)
+    (function() {
+      const header = document.querySelector('header');
+      const offset = (header?.offsetHeight || 0) + 12;
+      const toc = document.querySelector('.toc');
+      if (!toc) return;
+
+      const links = Array.from(toc.querySelectorAll('a'));
+      const sections = links
+        .map(a => document.getElementById((a.hash || '').slice(1)))
+        .filter(Boolean);
+
+      function setActive(id) {
+        links.forEach(a => {
+          const isActive = (a.hash || '').slice(1) === id;
+          a.classList.toggle('active', isActive);
+          if (isActive) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      }
+
+      // Click: cuộn mượt với offset header
+      links.forEach(a => {
+        a.addEventListener('click', e => {
+          const id = (a.hash || '').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          setActive(id);
+          history.replaceState(null, '', '#' + id);
+        });
+      });
+
+      // Scrollspy
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, {
+        root: null,
+        rootMargin: `-${offset + 10}px 0px -55% 0px`,
+        threshold: 0.1
+      });
+      sections.forEach(sec => io.observe(sec));
+
+      // Init active when hash present
+      if (location.hash) {
+        const initId = location.hash.slice(1);
+        if (document.getElementById(initId)) setActive(initId);
+      }
+    })();
+  </script>
+</body>
+</html>

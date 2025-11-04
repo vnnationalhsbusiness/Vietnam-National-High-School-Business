@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Building Resilient and United ASEAN in New Era</h1>
+      <p class="meta">12:23:48 PM | 3/10/2025</p>
+      <p><b>The ASEAN Future Forum 2025 (AFF 2025), themed “Building a United, Inclusive and Resilient ASEAN amidst Global Transformations,” clearly demonstrated Vietnam’s proactive role in working collectively with member countries to sustain ASEAN’s central position and promote its voice for peace, stability, and development.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy26.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Prime Minister Pham Minh Chinh delivers his opening remarks at the ASEAN Future Forum (AFF) 2025, Hanoi, February 25
+        </figcaption>
+      </figure>
+      <br>
+      <p>Speaking at the opening session of the ASEAN Future Forum 2025, Prime Minister Pham Minh Chinh said AFF 2025 was a very meaningful event at the time of commemorating the 10th anniversary of the ASEAN community and 30 years of Vietnam’s participation in ASEAN. This year, ASEAN is also set to adopt Vision 2045, which will guide the region into a new era of unity, resilience and innovation with a people-centered approach.</p><br>
+
+      <p>According to Prime Minister Pham Minh Chinh, the world and the Asia-Pacific region are experiencing profound changes, with challenges and opportunities increasingly intertwined; however, the challenges and difficulties are greater. Global issues are evolving more rapidly, with greater complexity and unpredictability.</p><br>
+
+      <p>Today's world is facing political polarization, population aging and resource depletion. Meanwhile, markets, products and supply chains are diversifying; production, business and services are becoming greener; and digitization is transforming every aspect of human activity. That context poses many difficult problems but also opens up opportunities for ASEAN to affirm its position and make a breakthrough.</p>
+
+      <figure style="text-align:center; margin:0;">
+        <img src="economy26_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          ASEAN Future Forum (AFF) 2025 draws over 600 delegates, including more than 230 international participants, February 25–26, Hanoi 
+        </figcaption>
+      </figure>
+      <br>
+
+      <p>Prime Minister Pham Minh Chinh said that from just five founding members, ASEAN has grown into a community of 10 unified yet diverse nations. Today, it stands as the world's 5th largest economy with a leading growth rate, serves as a hub for regional and global integration, and acts as a bridge for dialogue and cooperation for peace and development, playing a vital role in shaping a new world order.</p><br>
+
+      <p>Entering a new development phase, ASEAN is forecast to become the third largest economy in the world with a GDP exceeding US$10,000 billion, a consumer market of more than 800 million people, and will also be the center of technology, digital economy and innovation, with a digital economy expected to be US$1,000 billion by 2030. For that forecast to become a reality, ASEAN needs not only unity and consensus, but also breakthrough thinking, strategic approaches, practical roadmaps, concentrated resources and decisive action.</p><br>
+
+      <p>On that basis, Prime Minister Pham Minh Chinh proposed three strategic priorities and three breakthrough actions. The strategic priorities are: strengthening ASEAN's strategic autonomy by enhancing solidarity and its central role; building an economically resilient ASEAN; and upholding ASEAN's values and identity.</p><br>
+
+      <p>Three breakthrough actions include: First, establishing a more flexible, effective, and accountable decision-making mechanism that upholds consensus while providing specific processes for strategic initiatives.</p>
+
+      <figure style="text-align:center; margin:0;">
+        <img src="economy26_2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Prime Minister Pham Minh Chinh speaks at the plenary session of AFF 2025
+        </figcaption>
+      </figure>
+      <br>
+      <p>Second, promoting public-private partnership to mobilize all resources for ASEAN regional development, especially key projects; encouraging greater participation of the private sector in total social investment; further eliminating traditional trade barriers and restrictions; developing a digital, smart and safe economic environment to serve ASEAN trade and investment.</p><br>
+
+      <p>Third, further strengthening ASEAN connectivity, especially infrastructure connectivity, people-to-people exchanges and institutional harmonization; making efforts to further shorten the decision-making process and simplify administrative procedures and processes in each ASEAN country to effectively implement cooperation activities.</p><br>
+
+      <p>In the current context when ASEAN and Vietnam are standing at a new historical starting point, together moving toward aspirational goals, Prime Minister Pham Minh Chinh said that Vietnam strongly believes in the solidarity, unity, spirit of cooperation, vitality and strategic values of ASEAN. He also pledged that Vietnam will be a proactive and responsible member in building a united, inclusive and resilient ASEAN community. Vietnam is committed to realizing the ASEAN Community Vision 2045 for the benefit of all peoples in the region and will work closely with member countries, partners and international friends to continue writing proud new chapters in ASEAN's development journey.</p><br>
+
+      <p>According to Deputy Prime Minister and Foreign Minister Bui Thanh Son, after two days of lively discussions, AFF 2025 wrapped up its agenda, gathering hundreds of contributions and in-depth recommendations on critical issues, from megatrends and the role of women in peacebuilding to reassessing ASEAN's core principles and governing emerging technologies, among others.</p><br>
+
+      <p>From the discussions, AFF 2025 reached clear consensus. The world order is undergoing massive transformations marked by unprecedented uncertainties and complexities. Recent shifts in relations among major countries, especially in the arena of global competition, clearly demonstrate these changes and shape ASEAN's vision. “With ASEAN, steering through the uncertain transition of the global order may be the defining issue for our generation,” said Deputy Prime Minister and Foreign Minister Bui Thanh Son.</p>
+
+      <div style="border: 1px solid #ccc; padding: 20px; max-width: 700px; align-items: center;margin: 0 auto;">
+        <p><b><i>José Ramos-Horta, President of East Timor</i></b></p><br>
+
+        <p><i>In the current complex context, ASEAN needs to promote diplomacy to effectively prevent conflicts from escalating, contributing to resolving issues such as the East Sea and Myanmar; together moving toward a more resilient, sustainable and prosperous Southeast Asia.</i></p><br>
+
+        <p><i>ASEAN’s development is remarkable. Overcoming poverty, political instability and many other challenges, ASEAN has become a stable, dynamic economy, and plays an important role in the international arena.</i></p><br>
+
+        <p><i>Looking back on the journey since ASEAN's establishment with many ups and downs, what affirms the important role of ASEAN is solidarity, cohesion, organizations built to ensure institutional strength, common foundation, common vision, common principles and the ability to forecast and adapt.</i></p><br>
+
+        <p><b><i>Paetongtarn Shinawatra, Prime Minister of Thailand</i></b></p><br>
+
+        <p><i>A resilient ASEAN is an extremely important factor in responding to new challenges, toward sustainable and inclusive growth. A united ASEAN will help us navigate the rapidly changing global political landscape and respond effectively to emerging threats and challenges. ASEAN needs to coordinate more closely to deal with security threats to ensure the safety and well-being of its people, and at the same time, it needs to affirm a common stance on regional and global issues, based on common interests and principles.</i></p><br>
+
+        <p><i>ASEAN needs to VNHSBMze every opportunity to bring positive changes to the people and the region; concrete steps are needed toward deeper economic development, towards digital transformation, green transformation, responding to climate change, economic disruptions and social upheavals.</i></p><br>
+
+        <p><i>Thailand is committed to actively contributing to building a united, inclusive and sustainable ASEAN community in the current complex global context. With solidarity, we can overcome all challenges and move toward a brighter future for the people of ASEAN.</i></p><br>
+
+        <p><b><i>Ursula von der Leyen, President of the European Commission</i></b></p><br>
+
+        <p><i>The relationship between the European Union and ASEAN is closer than ever. This not only reflects the relationship between the two institutions, but also shows the practicality of bilateral cooperation, helping to bring real benefits to the people of the two regions.</i></p><br>
+
+        <p><i>Through the Global Gateway initiative, it is forecast that by 2027, Europe will invest €10 billion in ASEAN countries. The relationship between the two sides is closer than ever, bringing real benefits to the two regions. It is worth mentioning that clean energy projects not only create jobs but also promote cooperation between the two sides to effectively respond to climate change.</i></p><br>
+
+        <p><i>The trade relationship between the two sides has also been strengthened and developed over time, as the EU is currently the third largest trading partner of ASEAN. The EU has also signed free trade agreements with two ASEAN member countries and is negotiating with four other countries.</i></p><br>
+
+        <p><b><i>Kao Kim Hourn, Secretary-General of ASEAN</i></b></p><br>
+
+        <p><i>Hopefully, the ASEAN Future Forum 2025 will find solutions to ASEAN’s significant challenges, from geopolitical crises and emerging technologies to climate change. In the context of increasing competition between major powers, ASEAN must maintain its commitment to cooperation and its central role, and utilize its diplomatic capacity and soft power in international cooperation.</i></p><br>
+
+        <p><i>ASEAN’s resilience must start from within, among member states. This approach brings benefits to ASEAN in various aspects, laying the foundation for ASEAN to become an attractive partner globally. In the context of multilateralism being challenged, ASEAN remains a symbol of regional cooperation, adaptation and self-reliance amid many fluctuations.</i></p>
+
+      </div>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

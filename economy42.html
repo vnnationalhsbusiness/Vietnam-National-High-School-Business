@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Promoting Export for Handicraft Products, Traditional Village Products, Gift Items, and Hanoi’s OCOP Products</h1>
+      <p class="meta">5:59:13 PM | 8/28/2024</p>
+      <p><b>The Formex International Handicraft Fair in Sweden, held from August 27 to 29, 2024, is the largest event in Northern Europe. It brings together national pavilions from various countries, including the Netherlands, Denmark, Norway, France, Spain, Germany, Colombia, Japan, and Qatar.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy42.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Delegates cut the ribbon to launch the Vietnam pavilion at the fair
+        </figcaption>
+      </figure>
+      <br>
+        <p>The fair brings buyers, agents, designers, manufacturers, and media representatives from domestic and international markets across various fields, including interior design, handicrafts, and gifts. With the participation of numerous artisans, producers, and distributors from countries worldwide, the Formex Fair in Sweden has a rich history of over 64 years and is held twice a year. It is a prestigious and traditional annual event in Europe, attracting over 3,000 businesses from over 100 countries. Over one million visitors attend the fair for direct transactions and shopping, while approximately 37,300 people receive information about Formex through Instagram, and 61,000 through the fair’s newsletter. The fair provides opportunities for networking, product introductions, and brand licensing cooperation between Hanoi-based enterprises and the European and global markets. Additionally, Formex offers insights into trends, inspiration, and knowledge through exhibitions and presentations.</p><br>
+
+        <p>The fair aims to support Hanoi-based businesses in understanding global market trends, expanding export markets, and promoting handicrafts, traditional village products, and Hanoi’s OCOP items in Europe and worldwide.</p>
+
+      <figure style="text-align:center; margin:0;">
+        <img src="economy42_6.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          A pavilion of Vietnamese products makers at The Formex International Handicraft Fair in Sweden
+        </figcaption>
+      </figure>
+      <br>
+    <p>With an area of 90 square meters, the Hanoi Pavilion is part of the Vietnamese Pavilion at the Formex International Handicraft Fair in Sweden. It brings together ten businesses that specialize in strong export-oriented products, with competitive potential for the Swedish, Northern European, and European markets. These products include decorative ceramics, household ceramics, baskets, rugs, kitchenware such as trays and bowls, handmade blankets, decorative pillows, bags, fabric coasters, fabric plate liners, and various fabric accessories like laptop sleeves, phone cases, glass covers, and Christmas decorations. Additionally, the pavilion features a variety of woven items made from materials such as rattan, bamboo, and straw, including trays, baskets, lampshades, and mirrors. Silk products, such as face towels, silk bathrobes, scarves, silk fabric, silk curtains, and silk bed linens, are also showcased.</p><br>
+
+    <p><i>According to Mr. Nguyen Dinh Hoa</i>, Deputy Director of the Hanoi Department of Agriculture and Rural Development and head of the delegation, the Formex Fair in Sweden serves as a gateway for Vietnamese businesses, especially those from Hanoi, to market their products, enhance exports, and participate in distribution chains in the European market and other countries. This event is an unmissable opportunity for trade and promotion, aiming to boost exports to this market.</p><br>
+
+    <p>The Hanoi Pavilion at the Formex Handicraft Fair is uniquely designed with the theme <i>‘Hanoi Craft Villages - Traditional Values - Modern Design,’</i> reflecting the rich cultural heritage of Thang Long (Hanoi) in Vietnam. Notably, the pavilion proudly represents the vibrant colors and identity of Vietnam, making it an essential destination for international visitors.</p>
+
+    <figure style="text-align:center; margin:0;">
+      <div style="line-height:0;">
+        <img src="economy42_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <img src="economy42_2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </div>
+    </figure>
+    <br>
+    <p>In addition to participating in the exhibition, Hanoi-based businesses also attended forums, conferences, and workshops alongside the Formex International Handicraft Fair in Sweden in 2024. These events covered various topics, allowing participants to gain professional insights into international brand building, product promotion strategies, and current trends in handicraft and gift product design worldwide. Additionally, they had the opportunity to connect with exhibitors and share information on social media platforms.</p><br>
+
+    <p>During a business networking session between Hanoi enterprises and European distribution networks from countries such as Sweden, Northern Europe, and Denmark, the Hanoi delegation provided an overview of the city’s craft villages and showcased over 500 exquisite products. Represented by ten enterprises specializing in various craft villages, Hanoi aimed to establish connections in the Swedish and European markets.</p><br>
+
+    <p>Notably, a significant collaboration was forged during the event: the <i>Hanoi Department of Agriculture and Rural Development (Vietnam)</i> signed a cooperation program with <i>Lund University (Sweden)</i> for design collaboration in 2025. This program aims to detail joint efforts in designing product models that meet the export demands of the European market. The university’s leadership and European businesses were also invited to participate in an international craft preservation and development festival organized by Hanoi in 2025.</p><br>
+
+    <p><i>Formex International Handicraft Fair 2024</i></p>
+
+    <figure style="text-align:center; margin:0;">
+      <div style="line-height:0;">
+        <img src="economy42_3.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <img src="economy42_4.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <img src="economy42_5.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </div>
+    </figure>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

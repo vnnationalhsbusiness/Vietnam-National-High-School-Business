@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start-up</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Start-up</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" class="active" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>The Premium E-Commerce Challenger: How Tiki Built Trust and Speed in Vietnam’s Digital Marketplace</h1>
+      <p class="meta">10:39:28 AM | 20/5/2025</p>
+      <p><i>Focusing on quality control and pioneering next-day, then two-hour delivery (<b>TikiNOW</b>), <b>Tiki</b> differentiated itself in a crowded market to become one of Vietnam's leading e-commerce platforms.</i></p>
+      <br>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup5.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <br>
+
+      <p>In a fierce Vietnamese e-commerce battleground often dominated by global giants with deep pockets, <b>Tiki</b> carved out a formidable position by doubling down on two promises: <b>uncompromising quality</b> and <b>unparalleled speed</b>. Founded initially as an online book retailer, <b>Tiki</b> quickly transformed into a general merchandise platform, utilizing an asset-heavy approach to logistics that redefined customer expectations and secured its place as one of the “Big Four” e-commerce players in the country.</p><br>
+
+      <p><b>The Founder and the Focus on Fulfillment</b></p><br>
+
+      <p><b>Tiki’s</b> journey is largely credited to its founder, <b>Mr. Tran Ngoc Thai Son</b> (CEO), a visionary who identified early on that the Achilles’ heel of Southeast Asian e-commerce was fulfillment. While competitors relied heavily on third-party logistics (3PL) that often led to inconsistent quality and slow delivery, <b>Mr. Son</b> committed <b>Tiki</b> to building its own infrastructure.</p><br>
+
+      <p>This asset-heavy, quality-first strategy attracted significant investment, including capital from major Asian tech players like <b>JD.com</b> and <b>VNG</b>, confirming international confidence in <b>Tiki’s</b> differentiated model.</p><br>
+
+      <p><b>Phase 1: From Books to the Warehouse (The Quality Pledge)</b></p><br>
+
+      <p><b>Tiki’s</b> early distinction was its absolute control over inventory and logistics, a sharp contrast to the <b>C2C (Consumer-to-Consumer)</b> marketplace models that dominated the region.</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Guaranteed Authenticity:</b> By operating a majority of its inventory through a “retail model” (buying and storing goods directly), <b>Tiki</b> minimized counterfeit issues and maintained strict quality control. This approach created a strong layer of trust—a critical factor for consumers in a market skeptical of online products—and branded <b>Tiki</b> as the platform for authentic, high-quality goods.</li>
+        <br>
+        <li><b>Internalized Logistics:</b> Instead of outsourcing, <b>Tiki</b> systematically built a network of fulfillment centers and its own delivery fleet. This not only ensured quality handling but set the stage for its most disruptive innovation.</li>
+      </ul><br>
+
+      <p><b>Phase 2: The TikiNOW Revolution</b></p><br>
+
+      <p>The pivot from a simple e-commerce site to a major contender was solidified by its breakthrough logistics service: <b>TikiNOW</b>.</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Pioneering Speed:</b> Introduced as a premium subscription service, <b>TikiNOW</b> promised and delivered two-hour or next-day delivery in major metropolitan areas. This was a significant shift from the standard week-long delivery times common across the region, turning logistics from a necessary cost into a powerful competitive advantage and a core value proposition.</li>
+        <br>
+        <li><b>Enhanced Customer Loyalty:</b> The reliability and speed of <b>TikiNOW</b> increased customer loyalty and pushed the Average Order Value (AOV) higher, as customers were willing to pay a premium for the guaranteed service. The success of <b>TikiNOW</b> forced competitors to invest heavily in their own delivery capabilities, illustrating <b>Tiki’s</b> role as a market innovator.</li>
+      </ul><br>
+
+      <p><b>The Strategy: Quality Ecosystem Expansion</b></p><br>
+
+      <p>Having established its logistics backbone, <b>Tiki</b> began expanding its service portfolio, ensuring that all new additions adhered to its core values of <b>quality</b> and <b>speed</b>:</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Tiki Trading:</b> The core retail arm that manages direct inventory for quality assurance.</li>
+        <br>
+        <li><b>TikiPro/Tiki360:</b> Services focused on large-item delivery (appliances) and installation, requiring specialized internal logistics capabilities.</li>
+        <br>        
+        <li><b>Tiki Financial Services:</b> Expansion into digital services, including partnerships for <b>Buy Now, Pay Later (BNPL)</b> and consumer financing, integrated seamlessly into the checkout process.</li>
+      </ul><br>
+
+      <p><b>Tiki’s</b> success proves that in emerging e-commerce markets, while funding is important, building fundamental operational excellence and customer trust through vertical integration can create a highly defensible moat against larger, more generalized platforms. <b>Tiki</b> became the premium choice, prioritizing a high-quality, high-speed customer experience above all else.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="startup1.png" alt="Ad 1">
+      <a href="startup1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">From Gamer to Giant: Lê Hồng Minh and the Making of VNG, Vietnam's First Unicorn</p></a>
+      <img src="startup2.png" alt="Ad 2">
+      <a href="startup2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The QR Code Unicorn: How VNLife Forged an Empire from a Single Scan</p></a>
+      <img src="startup3.png" alt="Ad 3">
+      <a href="startup3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The Global Blockchain Disruption: How Sky Mavis Built a Billion-Dollar Metaverse with Axie Infinity</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

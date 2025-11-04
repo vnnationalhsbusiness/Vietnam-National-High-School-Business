@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam – Thailand: Potential to Strengthen Retail Sector Cooperation</h1>
+      <p class="meta">10:57:15 AM | 3/21/2025</p>
+      <p><b>As part of the Thailand Trade Representative’ visit to Vietnam, Mr. Umesh Pandey met with the management board of MM Mega Market Vietnam (MM), a strategic retail brand belonging to BJC BIGC Group – a leading Thai investor in Vietnam.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy25.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Mr. Umesh Nath Pandey, Thai Trade Representative exploring Vietnamese fruits at MM Mega Market An Phu, Ho Chi Minh City
+        </figcaption>
+      </figure>
+      <br>
+      <p>BJC BIGC Group, one of the largest conglomerates in Thailand, operates across a diverse range of sectors, from upstream glass and aluminum can packaging to midstream consumer staple manufacturing, healthcare trading and downstream retail. Over the past decades, the group has continuously expanded its investments, leveraging its expertise and extensive experience to strengthen its presence in the Vietnamese market. With a total investment of more than $1 billion in Vietnam, BJC BIGC Group currently provides solutions in packaging, consumer goods, healthcare, technical services, and retail.</p><br>
+
+      <p>In the retail sector, MM Mega Market (MM) is among the largest modern wholesale and retail chains in Vietnam. After more than 20 years of operation and growth, MM has expanded to 21 wholesale centers and supermarkets nationwide, along with 6 sourcing and distribution platforms, 8 B2B food service depots, and 2 central warehouses. The company currently employs over 4,000 staff, collaborates with 1,500 suppliers, and partners with hundreds of local farmers across the country.</p><br>
+
+      <p>After the meeting, Mr. Umesh Pandey visited the Vietnamese and Thai product sections at MM Mega Market An Phú, HCMC. "We have established a significant presence in Vietnam’s retail sector. With a population of nearly 100 million, the majority of whom are young, Vietnam is a promising market that we aim to tap into. When combined with Thailand’s population of nearly 70 million, the two countries together have a total of approximately 170 million people, accounting for about 25% of ASEAN’s population. With both nations making up nearly a quarter of the region’s population, we must VNHSBMze this opportunity," Mr. Pandey said.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy25_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Many Thai fruit products, favored by Vietnamese consumers, are also available at MM Mega Market
+        </figcaption>
+      </figure>
+      <br>
+      <p>He also pointed out that Thai companies excel in the retail sector, while Vietnamese enterprises are strong in production across various areas. "Let’s join hands, complement each other and take it further. Thai companies would continue to expand. We will explore further cooperation in every aspect of the retail industry. Going forward, from wholesale to retail, and even to the high-end market.”</p><br>
+
+      <p>In the retail sector, Mr. Pandey stated that MM Mega Market is a good example of a Thai investor in the Vietnamese market. With strong financial backing, advanced technology, and a high-quality workforce from BJC BIGC Group Thailand, MM Mega Market is steadily expanding its investment and operations in Vietnam. In November 2024, MM Mega Market broke ground on its first mega-complex in Vietnam, featuring shops, restaurants, cinemas, cafés, and more, located in Da Nang, with a total investment of nearly $20 million. This initiative aligns with BJC BIGC’s strategic goal of expanding its distribution network to 56 stores by 2028, focusing on hypermarkets and food service operations.</p><br>
+
+      <p>Since the beginning of this year, BJC BIGC Vietnam’s manufacturing and trading operations, combined with the strength of MM Mega Market, have aligned under a shared vision and management partnership. This collaboration aims to drive the next phase of success by providing comprehensive solutions to suppliers and local manufacturers while delivering greater value to customers in the Vietnam market.</p><br>
+
+      <p>Currently, Vietnam’s exports to Thailand remain relatively modest, amounting to only half of Thailand’s exports to Vietnam. To create more opportunities for Vietnamese products, particularly agricultural goods, to access the Thai market more effectively, Mr. Umesh Pandey emphasized that Vietnamese and Thai goods share many similarities. While some products are competitive, there are also numerous opportunities for complementary trade between the two countries.</p><br>
+
+      <p>“In terms of agricultural products, we can explore certain items that both countries produce but are currently in short supply in Thailand. If there is a shortage in Thailand while Vietnam has an excess supply, we could consider importing those products from Vietnam.”</p><br>
+
+      <p>However, Mr. Pandey cautioned that businesses should avoid exporting raw or fresh agricultural products without added value. "When exporting agricultural products, there should always be value addition. By doing so, you not only enhance the product itself but also create value for the farmers selling it, the factories processing it, and the workers they employ. This process generates jobs and improves people’s lives."</p><br>
+
+      <p>“We will explore ways for both sides to complement each other. Our goal is not just to sell Thai products to the world, but also to bring high-quality goods from other countries, including Vietnam, into our own market," Mr. Umesh Pandey emphasized.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

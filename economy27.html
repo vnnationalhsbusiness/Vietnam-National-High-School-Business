@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Credit Evolves More Positively</h1>
+      <p class="meta">8:55:29 AM | 1/13/2025</p>
+      <p><b>2024 continued to pose a lot of challenges to the global economy, marked by fluctuations in interest rates and geopolitical tensions. However, despite global economic volatility, Vietnam was still considered a bright spot in the regional economic landscape, with important contributions from the banking industry.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy27.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Prime Minister Pham Minh Chinh delivers his opening remarks at the ASEAN Future Forum (AFF) 2025, Hanoi, February 25
+        </figcaption>
+      </figure>
+      <br>
+      <p><b>Highlights</b></p><br>
+
+      <p>In 2024, the Vietnamese economy achieved positive results, featured by macroeconomic stability and a forecast GDP growth of 7%. Inflation was well reined at around 3.7-4%.</p><br>
+
+      <p>The banking industry, as the lifeblood of the economy, made important contributions to maintaining liquidity, supporting businesses and promoting digital transformation. As of December 13, credit in the entire economy expanded 12.5% from the end of 2023. Monetary policy was flexibly managed, helping stabilize interest rates in the market. Lending interest rates slid by about 0.5-1% from the previous year, enabling more businesses to access capital to boost business recovery. Exchange rates were kept stable in a year full of fluctuations in the international financial market. The State Bank of Vietnam (SBV) flexibly managed exchange rates and actively conducted necessary intervention to ensure market stability and investor confidence.</p><br>
+
+      <p>Regarding banking system restructuring, the SBV made important progress in handling weak banks. In 2024, two of the four zero-dong banks were subjected to compulsory transfer. The remaining institutions have already submitted their proposals to the relevant authorities for preliminary approval.</p><br>
+
+      <p>Digital transformation continued to make strong progress. To date, banking transactions via digital channels already exceeded 90% in many credit institutions. In addition, Vietnam made great strides in developing green finance and inclusive finance. The number of credit institutions participating in the green credit sector expanded strongly from 15 to 50, with a total outstanding loan balance of nearly VND665 trillion, accounting for 4.5% of total outstanding loan balance of the entire system. The average green credit growth was 22% a year, higher than the general growth of economic credit.</p><br>
+
+      <p>Mr. Nguyen Quoc Hung, Vice Chairman and General Secretary of the Vietnam Banks Association (VNBA), said that the operations of credit institutions are optimistic, demonstrated by better governance, financial capacity, competitiveness, business performance and credit quality, which will continue to be enhanced. Up to now, the registered capital of the whole banking system has increased from the end of 2023, the capital adequacy ratio (CAR) has reached 12.01%, the ratio of short-term capital for medium and long-term loans is below 30%, and the ratio of outstanding loans to total deposits is about 80%. In addition, State-owned banks are allowed to increase their registered capital enough to ensure safety and credit investment for the economy.</p><br>
+
+      <p>Credit institutions also focused resources on strong digital transformation, the average daily noncash payment transactions reached a record of over 26.2 million transactions with a value of over VND166,000 trillion and QR payments expanded over 200% in volume and value from the end of 2023.</p><br>
+
+      <p><b>Lingering risks</b></p><br>
+
+      <p>Despite many positive achievements, credit institutions are facing many risks, including potential bad debts prior to the expiration date of Resolution 42, difficult bad debt collection and many uncooperative customers. Meanwhile, credit institutions cannot use forces to VNHSBMze assets, and in some cases, customers do not intentionally pay debts. These in combination affect the restructuring and handling of nonperforming loan (NPL). The unfavorable capital is causing medium and long-term capital for the economy to be shifted to bank credits.</p><br>
+
+      <p>In addition, credit institutions are confronting increased cyberattacks, data leaks, and frauds in customer accounts, with increasingly daring and sophisticated tricks. Criminals have good knowledge of information technology and the banking system as well and they frequently change tricks. Although the crime rate has decreased for personal accounts, frauds through corporate accounts still occur.</p><br>
+
+      <p>The Government needs to continue to legalize Resolution 42 of the National Assembly to remove difficulties for credit institutions in debt collection as well as debt purchase, selling and handling and promotes the healthy development of the capital market, he said.</p><br>
+
+      <p>According to Ms. Mariam Sherman, World Bank Country Director for Vietnam, Cambodia and Laos, the banking sector has taken various important measures to build a stronger banking system by amending the Law on Credit Institutions in January 2024. This has helped the SBV address remaining challenges regarding bad debts and weak credit institutions. Going forward, Vietnam can make the most of these efforts to further boost economic growth and maintain financial stability. In particular, the banking sector will need to play an important role in ensuring macroeconomic stability, expanding access to finance, especially in the green transition, and promoting financial inclusion. All of these factors will help realize the goal of making Vietnam a high-income country by 2045.</p><br>
+
+      <p>2025 is the final year of the 2021-2025 Socioeconomic Development Plan, which is of particular importance in preparing for the new Government term. This is a challenging time but also opens up many opportunities for Vietnam to assert its position. Vietnam will enter a new era, "the era of rising", as Party General Secretary To Lam emphasized. This is not only an aspiration but also a responsibility of the entire political, economic and social system.</p><br>
+
+      <p>Against this backdrop, according to Governor Nguyen Thi Hong, the SBV's monetary policy management in the coming time will continue to firmly pursue the goal of stabilizing the currency value, helping macroeconomic stability, ensuring major economic balances. The State Bank will continue to closely follow domestic and international developments to actively, flexibly and effectively manage monetary policy, and closely and synchronously coordinate with fiscal policy and other macroeconomic policies to support economic growth.</p><br>
+
+      <p>At the same time, the SBV will continue to restructure the banking system and handle bad debts, promote innovation and digital transformation, improve the legal framework to approach international standards to enhance the performance and position of the banking industry.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

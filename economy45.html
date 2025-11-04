@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Hanoi Tax Dept Warns Against Tax Impersonation Fraud</h1>
+      <p class="meta">3:33:00 PM | 7/8/2024</p>
+      <p><b>The Hanoi Tax Department has been alerted to impostors posing as tax authorities, contacting taxpayers via phone calls, SMS, and email. They request additional actions under false pretenses related to personal income tax refunds, government portal submissions, and tax payment verifications, aiming to fraudulently acquire property.</b></p>
+      <br>
+      <p>Therefore, the department has warned about behaviors and provided some solutions to support taxpayers in preventing fraud in cyberspace as follows:</p><br>
+
+      <p>Some signs of fraud: Forging tax authority seals to send invitations to taxpayers and asking them to bring attached documents to tax offices. Contents include declaring tax, completing VAT and PIT refund procedures in 2023, updating information declaration of businesses and individuals on the Government's electronic tax information portal, and applying tax refund policy by law. Then, they call and ask taxpayers to perform online operations to steal personal information and banking information to appropriate assets and impersonate others. Fraudsters fake websites and emails of tax authorities with similar interfaces, images and contents. As a result, users mistakenly think they are websites or emails from tax authorities and attach contents that require users to access a fake link, declare personal information and bank accounts to steal and appropriate data information.</p><br>
+
+      <p>Distrustful and insecure websites frequently display URLs in the browser address bar that do not terminate with “gdt.gov.vn,” such as “gdtgov.cfd.”</p><br>
+
+      <p>Spreading messages that look like those from tax authorities for personal gains: Fraudsters not only use many mobile numbers but also use messages pretending to be tax authorities to announce tax payments and impose sanctions to threaten and pressurize taxpayers with late tax payment, tax debt and tax evasion to request money transfer or provide personal information such as name, phone number, email, tax code and electronic trading account.</p><br>
+
+      <p><b>Support solutions for taxpayers to avoid cyber frauds</b></p><br>
+
+      <p>The URL displayed in the browser’s address bar should commence with “https://” and conclude with “gdt.gov.vn”. Notably, the official website of the General Department of Taxation is https://www.gdt.gov.vn/wps/portal, its electronic information portal is https://thuedientu.gdt.gov.vn, and the website for the Hanoi Tax Department is https://hanoi.gdt.gov.vn.</p><br>
+
+      <p>Never access strange links to download the eTax mobile application. Only access, download and install the official eTax mobile application via Google Play and Apple Store.</p><br>
+
+      <p>Taxpayers do not provide personal information, tax codes, electronic transaction accounts, money and assets via phone, email, social networks, suspicious websites or other means of communication. In case they receive a threatening call or call with suspecting signs of fraud, taxpayers need to keep evidence such as text messages or call recordings, report the case to mobile carriers and at the same time provide the available evidence to the police and tax authorities for further settlement.</p><br>
+
+      <p>Taxpayers only work directly with tax agencies or contact via the telephone number published on relevant websites of tax authorities.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

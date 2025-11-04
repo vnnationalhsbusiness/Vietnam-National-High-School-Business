@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Lessons - Article</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Insights & Lessons</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html">🏠</a>
+      <a href="vcci.html">VCCI</a>
+      <a href="economy.html">Economy</a>
+      <a href="business.html">Business</a>
+      <a href="investment.html">Investment</a>
+      <a href="enterprises.html">Enterprises</a>
+      <a href="culture&tourism.html">Culture & Tourism</a>
+      <a href="insights&lesson.html">Insights & Lessons</a>
+      <a href="businessopportunity.html">Business Opportunity</a>
+      <a href="founder&president.html">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page">
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Enterprises, Media Partner for Sustainable Water Governance</h1>
+      <p class="meta">By Huong Giang - September 30, 2025</p>
+      <img src="https://placehold.co/600x400" alt="Main Article Image" class="article-img">
+
+      <p><i>VCCI Vice President Nguyen Quang Vinh addresses program on water resource management and climate adaptation for sustainable development</i></p>
+
+      <p>
+        Vietnam’s total surface water (river flow) is estimated at 830-840 billion cubic meters per year, while groundwater is about 47.5-63 billion cubic meters per year...
+      </p>
+
+      <img src="https://placehold.co/600x400" alt="Sub Image" class="article-img">
+      <p class="caption">Overview of the event</p>
+
+      <p>
+        Nguyen Quang Vinh stressed that water resource governance is not only a matter of management but also a vital foundation of the nation...
+      </p>
+
+      <blockquote>
+        On September 16, VBCSD-VCCI held the 8th consecutive program “Sharing on Sustainable Development with Media Agencies”...
+      </blockquote>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <img src="https://placehold.co/600x400" alt="Ad 1">
+      <img src="https://placehold.co/600x400" alt="Ad 2">
+      <img src="https://placehold.co/600x400" alt="Ad 3">
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+    <h2>Other News</h2>
+    <ul>
+      <li><a href="#">Vietnam - Brazil: Boosting Cooperation in Agriculture, Trade, and Investment</a></li>
+      <li><a href="#">Promoting Vietnam-Libya Trade and Investment Ties</a></li>
+      <li><a href="#">Expanding High-Quality Investment Cooperation between Vietnam and China</a></li>
+      <li><a href="#">Boosting Vietnam-Mexico Business Cooperation</a></li>
+      <li><a href="#">Strong Prospects for Vietnam-Uruguay Cooperation</a></li>
+    </ul>
+  </section>
+>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

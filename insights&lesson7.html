@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Lessons</title>
+</head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { font-size: 20px; font-weight: bold; color: #c00; }
+    .menu {
+      position: fixed;
+      top: 0; left: -100%;
+      width: 70%; height: 100%;
+      background: #fff;
+      display: flex; flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 9;
+    }
+    .menu.active { left: 0; }
+    .menu a { text-decoration: none; color: #111; font-weight: bold; }
+    .menu-toggle {
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ARTICLE PAGE (mobile-first) */
+    .article-page {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+    .article-content { flex: 3; }
+    .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+    .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+    .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+    .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+    blockquote {
+      border-left: 4px solid #c00;
+      padding-left: 10px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #333;
+    }
+
+    /* ADS */
+    .article-ads {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; display:block; }
+
+    /* OTHER NEWS */
+    .other-news { padding: 20px; background: #f9f9f9; }
+    .other-news h2 { margin-bottom: 15px; color: #c00; }
+    .other-news ul { list-style: none; }
+    .other-news li { margin: 8px 0; }
+    .other-news a { text-decoration: none; color: #000; }
+    .other-news a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+    /* Desktop/Tablet layout: 2 cột, cột phải cố định bề ngang */
+    @media (min-width: 992px) {
+      .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+      .menu-toggle { display: none; }
+
+      .article-page {
+        display: grid;
+        grid-template-columns: 1fr minmax(280px, 340px);
+        gap: 28px;
+        align-items: start;
+      }
+      .article-content { min-width: 0; }
+      .right-rail { min-width: 0; display:flex; flex-direction:column; gap:16px; }
+    }
+
+    /* ===== TOC style giống ảnh mẫu ===== */
+    /* Ẩn TOC trên mobile; chỉ hiện >=768px */
+    /* .toc{ display:none; } */
+    /* TOC: tránh bị nội dung bên dưới “lọt” qua khi sticky */
+    @media (min-width:768px){
+      .toc{
+        /* background:#fff;           bật nền trắng để che nội dung phía dưới */
+        /* border:1px solid #e5e7eb;  viền nhẹ, giống ảnh mẫu */
+        border-radius:12px;
+        padding:12px 12px 12px 0;  /* chừa chỗ cho vạch dọc + mũi tên */
+        /* box-shadow:0 6px 18px rgba(0,0,0,.06); */
+        z-index: 5;                /* nổi lên trên ảnh/caption Ads */
+      }
+      .toc-title{ margin:0 0 10px 0; font-size:20px; font-weight:700; color:#111; }
+      .toc-list{
+        list-style:none; margin:0; padding:0 0 0 16px;
+        border-left:2px solid #e5e7eb; /* vạch dọc bên trái */
+      }
+      .toc-list li{ margin:6px 0; }
+      .toc a{
+        position:relative; display:block; color:#111; text-decoration:none;
+        font-size:15px; line-height:1.4; padding:6px 0;
+      }
+      .toc a:hover{ text-decoration:underline; }
+      .toc a.active{ font-weight:700; }
+      .toc a.active::before{
+        content:""; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
+        width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent;
+        border-left:7px solid #2563eb; /* mũi tam giác xanh */
+      }
+    }
+
+    /* Nếu dùng dark mode tự động, bạn có thể thêm: */
+    /* @media (prefers-color-scheme: dark){
+      .toc{ background:#0b1020; border-color:#1e293b; box-shadow:0 10px 28px rgba(0,0,0,.45); }
+      .toc-title, .toc a{ color:#e5e7eb; }
+      .toc-list{ border-left-color:#1e293b; }
+    } */
+
+    /* Khi cuộn tới tiêu đề, chừa khoảng cho header sticky */
+    .anchor-target { scroll-margin-top: 88px; }
+    .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Insights & Lessons</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" class="active" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page">
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Monopoly vs. Perfect Competition: Where Should Your Business Strategically Position Itself? A Deep Dive into Market Structures</h1>
+      <p class="meta">8:02:04 PM | 3/10/2024</p>
+      <img src="insights&lesson7.png" alt="Main Article Image" class="article-img">
+
+    <p>
+      For strategic leaders, understanding the structure of the market they compete in is paramount to setting pricing, production, and long-term investment strategies. At opposite ends of the economic spectrum lie two foundational models: <b>Perfect Competition</b> and <b>Monopoly</b>. While few real-world markets perfectly align with either model, these frameworks provide the necessary tools to assess an industry's profitability potential and to determine the optimal strategic positioning for any firm. The fundamental goal of corporate strategy is often to escape the harsh realities of competition and acquire a degree of market power.
+    </p>
+    <br>
+    <p id="1" class="anchor-target"><b><i style="color: black; font-size: 20px;">The Fundamental Difference: The Nature of the Demand Curve</i></b></p>
+    <br>
+    <p>
+      The core distinction between the two models lies in the firm's perception of the market demand curve, which directly determines its <b>pricing power</b>:
+    </p>
+    <br>
+    <li style="margin-left: 35px;">
+      <ul>
+            <li><b>Perfect Competition</b>: The firm is a price taker. Because its output is negligible compared to the total market, the firm faces a <b>perfectly elastic (horizontal) demand curve</b> at the market price (P). If the firm raises its price even slightly, its sales drop to zero.<br></li>
+            <li><b>Monopoly</b>: The single firm is a <b>price setter</b>. It faces the entire market's <b>downward-sloping demand curve</b>. This allows the monopolist to choose a specific quantity and let the market determine the corresponding maximum price, or vice-versa, to maximize profits.</li>
+            <br>
+      </ul>
+    </li>
+    <p id="2" class="anchor-target"><b><i style="color: black;font-size: 20px;">1. Perfect Competition: The Zenith of Economic Efficiency</i></b></p>
+    <br>
+    <p>
+      A perfectly competitive market is characterized by four key assumptions: <b>numerous small firms</b> (none can influence the market), <b>homogeneous (identical) products</b> (no branding or differentiation), <b>perfect information</b> for all participants (buyers know all prices), and <b>free entry and exit</b> (no cost or legal barriers).
+    </p>
+    <br>
+    <p>
+        <b>Economic Outcomes and Strategic Reality:</b>
+    </p>
+    <br>
+    <p>
+      In this idealized structure, competition forces efficiency to its peak. The long-run equilibrium is achieved when price (P) equals <b>Marginal Cost (MC) and Minimum Average Total Cost (min ATC). Because P=min ATC</b>, firms cannot earn <b>economic profit </b>in the long run. Any short-run profit attracts new competitors, increasing supply, and inevitably pushing prices down until they cover only the opportunity cost of resources.
+    </p>
+    <br>
+    <li style="margin-left: 35px;">
+      <ul>
+            <li><b>Social Welfare</b>: Perfect competition is often cited as the benchmark for <b>maximum social welfare</b>, as the equilibrium point maximizes the combined consumer surplus and producer surplus.</p></li>
+            <br>
+            <li><b>For the Strategic Manager</b>: Positioning within a market that approximates perfect competition (like global commodity markets or simple manufacturing) requires a relentless, almost brutal focus on <b>cost leadership</b> and operational excellence. The strategic path to survival involves achieving <b>process innovation</b> to lower the cost curve (ATC) below industry rivals. Differentiation efforts, such as minor branding or advertising, are generally wasteful because buyers are only motivated by the lowest available price.</li>
+            <br>
+      </ul>
+    </li>
+    <br>
+    <p id="3" class="anchor-target"><b><i style="color: black; font-size: 20px;">2. Pure Monopoly: The Cost of Market Power</i></b></p>
+    <br>
+    <p>
+      A <b>Pure Monopoly</b> exists when a single firm is the sole producer of a product with no close substitutes, protected by significant <b>barriers to entry</b>. These barriers are the lifeline of monopoly power.
+    </p>
+    <br>
+    <p><b>Barriers to Entry and Monopoly Power:</b></p>
+    <br>
+    <p>The sustainability of a monopoly relies entirely on the impermeability of its barriers, which can be categorized as:</p>
+    <li style="margin-left: 35px;">
+      <ul>
+        <li>
+          <b>Legal Barriers</b>: Patents, copyrights, and exclusive licenses granted by the government (e.g., utility companies).
+        </li>
+        <br>
+        <li>
+          <b>Resource Control</b>: Exclusive ownership of a vital input (e.g., a diamond mining company owning nearly all the world's supply of a certain gem).
+        </li>
+        <br>
+        <li>
+          <b>Natural Monopoly</b>: A situation where one firm can supply the entire market at a lower average cost than two or more firms combined, typically due to extreme <b>Economies of Scale</b> (e.g., large-scale infrastructure like railways or water lines).
+        </li>
+        <br>
+      </ul>
+    </li>
+    <p><b>Economic Outcomes and Strategic Reality:</b></p>
+    <br>
+    <p>
+      The monopolist maximizes profit by producing a quantity where <b>Marginal Revenue equals Marginal Cost (MR = MC)</b> and then charging the highest price consumers are willing to pay for that quantity. Critically, this price (P) is significantly higher than marginal cost (MC), leading to sustained <b>economic profits</b> for the firm but resulting in <b>deadweight loss</b>—the loss of potential welfare to society because the firm restricts output below the socially optimal level.
+    </p>
+    <br>
+    <li style="margin-left: 35px;">
+      <ul>
+        <li>
+          <b>For the Strategic Manager</b>: The primary goal is to <b>establish and vigorously defend barriers to entry</b>. Strategies focus on continuous innovation to secure new patents, strategic acquisition of complementary assets to block rivals, or lobbying for favorable regulatory policies. Pricing strategy revolves around identifying the elasticity of market demand to set the optimal price and potentially engaging in <b>price discrimination</b> (charging different prices to different customer groups) to capture even more consumer surplus.
+        </li>
+        <br>
+      </ul>
+    </li>
+    <p id="4" class="anchor-target"><b><i style="color: black; font-size: 20px;">3. Strategic Positioning: Seeking Market Imperfection</i></b></p>
+    <br>
+    <p>
+      The vast majority of businesses operate in market structures falling between these two extremes: <b>Monopolistic Competition</b> (many small firms, differentiated products, easy entry) or <b>Oligopoly</b> (a few large firms, high barriers). The optimal strategic goal for virtually every firm is to move its market position away from the price-taking environment of perfect competition and toward the profit-maximizing structure of a monopoly.
+    </p>
+    <br>
+    <p><b>The Path to Competitive Advantage:</b></p>
+    <br>
+    <ul>
+      <li>
+        <b>Differentiation</b>: For firms operating near the competitive end, the immediate strategic focus must be <b>Product Differentiation</b>. This involves investing heavily in branding, perceived quality, unique features, or superior user experience. This differentiation transforms the product from a homogeneous commodity into a unique offering, granting the firm a downward-sloping demand curve and allowing it limited pricing power (moving the firm toward Monopolistic Competition).
+      </li>
+      <br>
+      <li>
+        <b>Creating Barriers</b>: For firms in an Oligopoly, the strategy is about <b>Sustaining Market Power</b> and engaging in sophisticated <b>Game Theory</b>. Firms must anticipate the actions of their few large rivals before making output or pricing decisions. Strategic moves often involve large-scale capital expenditures (like R&D or factory capacity) to credibly signal commitment and deter potential new entrants or aggressive pricing by existing rivals.
+      </li>
+      <br>
+    </ul>
+    <p>
+      In conclusion, while operating in a perfectly competitive environment demands relentless focus on cost, the path to superior long-term profitability lies in strategically investing in and defending the barriers—be they legal, technological, or brand-based—that allow the business to act as a price maker. The successful enterprise analyzes the structural constraints of its industry and deliberately crafts a strategy that maximizes the firm’s distance from the low-profit, high-efficiency outcomes of perfect competition.
+    </p>
+    <br>
+    <hr>
+    <br>
+    <b><p>Resource: Hai Dang - Bachelor in Vin University</p></b>
+    </div>
+
+    <div class="right-rail">
+      <nav class="toc" aria-label="Table of Contents">
+        <h3 class="toc-title">Table of Contents</h3>
+        <ol class="toc-list" style="text-decoration: none;">
+          <li><a href="#1">The Fundamental Difference: The Nature of the Demand Curve</a></li><!-- (Bạn có thể đổi tên hiển thị theo ý) -->
+          <li><a href="#2">Perfect Competition: The Zenith of Economic Efficiency</a></li>
+          <li><a href="#3">Pure Monopoly: The Cost of Market Power</a></li>
+          <li><a href="#4">Strategic Positioning: Seeking Market Imperfection</a></li>
+        </ol>
+      </nav>
+
+      <aside class="article-ads">
+        <img src="insights&lesson15.png" alt="Ad 1">
+        <a href="insights&lesson15.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Why We Buy What We Buy: Introduction to Consumer Rationality and Heuristics – An Expanded Behavioral Analysis</p></a>
+        <img src="insights&lesson14.png" alt="Ad 2">
+        <a href="insights&lesson14.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Absolute vs. Comparative Advantage: Why Nations Specialize and Trade</p></a>
+        <img src="insights&lesson13.png" alt="Ad 3">
+        <a href="insights&lesson13.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Understanding Credit, Debt, and Interest Rates: The Cost of Future Consumption – An Advanced Look</p></a>
+      </aside>
+    </div>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    // Toggle mobile menu
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // TOC: smooth scroll + scrollspy (hỗ trợ ID số: #1 #2 #3 #4)
+    (function() {
+      const header = document.querySelector('header');
+      const offset = (header?.offsetHeight || 0) + 12;
+      const toc = document.querySelector('.toc');
+      if (!toc) return;
+
+      const links = Array.from(toc.querySelectorAll('a'));
+      const sections = links
+        .map(a => document.getElementById((a.hash || '').slice(1)))
+        .filter(Boolean);
+
+      function setActive(id) {
+        links.forEach(a => {
+          const isActive = (a.hash || '').slice(1) === id;
+          a.classList.toggle('active', isActive);
+          if (isActive) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      }
+
+      // Click: cuộn mượt với offset header
+      links.forEach(a => {
+        a.addEventListener('click', e => {
+          const id = (a.hash || '').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          setActive(id);
+          history.replaceState(null, '', '#' + id);
+        });
+      });
+
+      // Scrollspy
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, {
+        root: null,
+        rootMargin: `-${offset + 10}px 0px -55% 0px`,
+        threshold: 0.1
+      });
+      sections.forEach(sec => io.observe(sec));
+
+      // Init active when hash present
+      if (location.hash) {
+        const initId = location.hash.slice(1);
+        if (document.getElementById(initId)) setActive(initId);
+      }
+    })();
+  </script>
+</body>
+</html>

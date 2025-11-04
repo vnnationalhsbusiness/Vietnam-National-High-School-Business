@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam Ready for Major Transformation in Electronics Industry</h1>
+      <p class="meta">8:37:49 AM | 7/31/2025</p>
+      <p><b>With electronics export turnover reaching US$134.5 billion in 2024 and a strong growth trend projected for 2025, coupled with the increasing presence of big R&D centers such as Qualcomm and NVIDIA, and a national semiconductor development strategy to 2030, Vietnam is becoming an increasingly attractive destination for global technology corporations.</b></p>
+      <br>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy13.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          The panel discussion at M-Talks 2025
+        </figcaption>
+      </figure>
+      <br>
+      <p><b>Strong development potential</b></p>
+      <br>
+      <p>Speaking at the recent M-TALKS 2025 themed “Innovating the Future of Electronics Manufacturing in Vietnam,” Mr. Tran Hong Quan, Commercial Director of RX Tradex Vietnam, emphasized that amid global geopolitical and technological shifts, Vietnam is emerging as a strategic hub for electronics and semiconductor manufacturing in Asia.</p><br>
+      <p>Vietnam currently ranks fifth globally in exports of electronics, computers, and components, and second in exports of phones and components. In 2024, the electronics sector achieved over US$134.5 billion in export revenue, contributing over one-third of the country’s total exports. In just the first five months of 2025, the sector continued its robust growth, earning over US$60.8 billion in export value, up more than 39% year on year, thus solidifying its position as a key pillar of Vietnam’s export-driven economy.</p><br>
+
+      <p>He added that major tech giants such as Samsung, Apple (through Foxconn, Luxshare, GoerTek and other companies), LG and Pegatron continue to expand large-scale investments in Vietnam. In addition, Qualcomm has operated its R&D center and NVIDIA has also signed a strategic partnership with the government to build a data center and an AI R&D center. Notably, the government’s issuance of the National Semiconductor Industry Development Strategy to 2030, with a vision to 2050, is a decisive step to bolster internal capabilities - from training the workforce and enhancing localization capacity to mastering core technology research and production.</p><br>
+
+      <p>Sharing the same viewpoint, Ms. Do Thi Thuy Huong, Executive Committee Member of the Vietnam Electronic Industries Association (VEIA) and Vice President of the Vietnam Association for Supporting Industries (VASI), noted that Vietnam’s electronics industry plays a vital role, accounting for 17.8% of the total industrial sector. The United States is a major export market for Vietnamese electronics, making up over 40% of some segments. In 2024 alone, Vietnam’s exports of electronic machinery and recording devices to the U.S. reached US$41.7 billion, accounting for 34.9% of Vietnam’s total export turnover to the U.S.</p><br>
+
+      <p>Despite the potential, Mr. Tran Hong Quan pointed out underlying challenges behind those impressive figures: 100% of phone export value comes from FDI companies but 80% of components are still imported; over 90% of Tier-1 suppliers are foreign companies. Moreover, domestic R&D capacity remains limited, and Vietnam’s role is still largely centered around assembly.</p><br>
+
+      <p><b>Pivotal moment for transformation</b></p><br>
+
+      <p>According to Quan, these challenges mark a pivotal moment for Vietnam to shift from an assembly hub to a nation with deep production capabilities.</p><br>
+
+      <p>To meet development goals, the adoption of new technologies, manufacturing automation, and process optimization are critical for companies to improve productivity and meet the increasingly stringent quality demands of international markets. Domestic companies need to enhance production capacity, comply with international standards and invest in technological innovation.</p><br>
+
+      <p>Regarding tariff challenges, Do Thi Thuy Huong noted that high U.S. tariffs could raise production costs for Vietnamese firms. Rising input prices and production costs would negatively hurt their profitability and competitiveness.</p><br>
+
+      <p>She recommended that Vietnamese businesses diversify their export markets and explore potential destinations such as India, the Middle East or Africa where demand for Vietnamese goods is growing and competition remains moderate.</p><br>
+
+      <p>Additionally, businesses must restructure production and increase added value. This includes investing in green technologies and adopting sustainable, environmentally friendly production. Emphasis should be placed on manufacturing high-value-added products such as semiconductor components, AI-based products or medical devices.</p><br>
+
+      <p>Experts also called for practical government support, such as offering tax incentives for technology investment, promoting R&D and improving industrial infrastructure. Vietnam must go beyond contract manufacturing by gradually mastering technologies, designing and manufacturing its own products, and building a smart electronics ecosystem. This is the path to enhancing product value, generating sustainable jobs and increasing worker incomes.</p><br>
+
+      <p>“With coordination between the government and businesses, alongside consistent solutions such as supply chain diversification, R&D investment, and competitiveness enhancement, Vietnam’s electronics industry can overcome challenges and reinforce its position in the global value chain,” stated Ms. Do Thi Thuy Huong.</p>
+      <br>
+    <div style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.6; color: #111; max-width: 700px; border: 1px solid #ccc; border-radius: 6px; padding: 12px;">
+
+    <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+        <td style="width: 130px; vertical-align: top; padding: 6px;">
+            <img src="economy13_1.png" alt="Nguyen Duc Minh" style="width: 120px; height: auto; border-radius: 4px;">
+        </td>
+        <td style="vertical-align: top; padding: 6px; text-align: justify;">
+            <b>Nguyen Duc Minh, Vice Rector, School of Electrical and Electronic Engineering, Hanoi University of Science and Technology</b><br>
+            AI is increasingly used in the electronics and electrical manufacturing sector like error detection, optical inspection, supply chain management and production line management.<br>
+            However, AI adoption reveals two human resource challenges: oversupply and undersupply. Vietnam has a surplus of lower- and mid-level engineers but faces a shortage of high-level engineers with expertise in AI applications.<br>
+            To further advance AI in the electronics industry, special focus must be placed on workforce training, as well as research and application support policies.
+        </td>
+        </tr>
+
+        <tr><td colspan="2" style="height: 10px;"></td></tr>
+
+        <tr>
+        <td style="width: 130px; vertical-align: top; padding: 6px;">
+            <img src="economy13_2.png" alt="Do Thi Thuy Huong" style="width: 120px; height: auto; border-radius: 4px;">
+        </td>
+        <td style="vertical-align: top; padding: 6px; text-align: justify;">
+            <b>Do Thi Thuy Huong, Executive Committee Member, VEIA; Vice President, VASI</b><br>
+            Although many major corporations in the supply chain offer support, the biggest challenges facing Vietnam’s electronics firms remain investment in human resources and technology.<br>
+            We highly value the “quartet” of Resolution 57, Resolution 59, Resolution 66 and Resolution 68. These are powerful driving forces for the business community, especially in the electronics industry, where innovation, technology investment and AI are prerequisites for maintaining and strengthening competitiveness.<br>
+            Furthermore, businesses themselves must be active in VNHSBMzing opportunities and leveraging government and industry support.
+        </td>
+        </tr>
+
+        <tr><td colspan="2" style="height: 10px;"></td></tr>
+
+        <tr>
+        <td style="width: 130px; vertical-align: top; padding: 6px;">
+            <img src="economy13_3.png" alt="Phuong Dang Ho" style="width: 120px; height: auto; border-radius: 4px;">
+        </td>
+        <td style="vertical-align: top; padding: 6px; text-align: justify;">
+            <b>Phuong Dang Ho, Master Trainer at IPC Vietnam</b><br>
+            AI and robotics are becoming essential tools in electronics production lines. AI not only replaces heavy labor but also helps Vietnamese enterprises climb the global value chain.<br>
+            Vietnam’s AI Strategy 2030 adopts a phased approach - focusing on research, development and broad application to transform the country into a leading AI center in ASEAN. Another significant regulatory step is Decree 13/2023/ND-CP, issued on April 17, 2023, on personal data protection aligned with global standards. Moreover, the Law on Telecommunications (effective from July 2024) allows 100% foreign ownership in data center projects.<br>
+            Rapid digitalization, cost efficiency and openness to foreign investment position Vietnam to become a future regional leader in data centers. However, infrastructure upgrades and a strong legal framework are essential for long-term success.
+        </td>
+        </tr>
+    </table>
+
+    </div>
+
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Viet Nam Becomes Leader in Global Production Shift Trend</h1>
+      <p class="meta">2:40:49 PM | 11/12/2024</p>
+      <p><b>The saying “La chiffon, Buoi satin, Phung linen, Van Phuc silk, and Mo Bon elastic silk” highlights Hanoi's traditional weaving villages, with Van Phuc recognized as Vietnam's most famous silk village and a cultural symbol of Ha Dong district.</b></p>
+      <img src="economy36.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      <br>
+      <p>Van Phuc Silk Village in Ha Dong district has been recognized as the <i>“oldest silk village today”</i> by the Vietnam Records Book Center.</p><br>
+
+      <p>The birth of Van Phuc Silk Village is associated with the founder of the profession, Madam A La De Nuong, a descendant of Hung King XVI. According to legend, about 1,200 years ago, she traveled here and saw hard-working residents in a peaceful landscape, so she founded a hamlet to teach them to grow mulberries to raise silkworms and spinning silk to weave fabric. After her death, Van Phuc people honored her as the founder of the profession, built a temple to worship her and took the 25th day of the 12th lunar month as the annual death anniversary.</p><br>
+
+      <p>Van Phuc has a wide range of silk types, any of which is perfect, smooth, shiny and soft. With iridescent colors and different patterns, silk is elegant and brilliant. When worn, it feels soft, light and luxurious. That's why Van Phuc silk was often used to make costumes for aristocrats and mandarins in the past. In 1931, Van Phuc silk was first promoted to the international market at a MarVNHSBMlle fair and evaluated by the French as one of the most sophisticated and beautiful silk lines of Indochina. Since 1958, it has been exported to many countries around the world and made a popular name for a traditional craft village of Vietnam.</p><br>
+
+      <p>Pham Khac Ha, Chairman of the Van Phuc Silk Association, said that over 1,200 years Van Phuc's silk weaving has evolved, with traditional looms replaced by modern machines. Today, the village boasts over 130 weaving machines and 400 production households, alongside 244 households in an industrial cluster producing 70 types of silk, brocade and linen. The most renowned product is patterned silk, featuring smooth, shiny embossed flowers that are visible only in light. Made from natural silk, it is elegant and versatile, providing warmth in winter and coolness in summer. Crafting this ancient silk requires advanced skills and the use of two types of strings, making it a complex art not everyone can master.</p><br>
+
+      <p>There are many traditional silk villages in the country, but it seems that only Van Phuc village can weave patterned silk. Up to now, all Van Phuc silk is still made in long-standing traditional ways. If there is any change, it only relates to improving the equipment to make more beautiful and trendy products in the context of general social development. This is also the characteristic of the village.</p><br>
+
+      <p>Along with preserving and developing the traditional silk weaving profession, in recent years, Van Phuc Silk Village has gradually become an attractive cultural tourist destination. Maintaining traditional silk production with modern features, aligned with cultural tourism development, is the main direction of Van Phuc Silk Village. Van Phuc Ward built silk streets combined with supporting trades to serve tourists, including food streets, ornamental pet and plant streets, antique cultural exchange center, developing accommodations and shops. In addition to creating an attractive tourist landscape, bringing a green, airy, environmentally friendly space, households with shops on the silk streets must register their shops to meet the standards imposed by the Hanoi Tourism Department in respect of product prices and origins to ensure product quality for consumers.</p><br>
+
+      <p>Recently, the International Jury of the World Crafts Council came to survey and evaluate the recognition of Van Phuc Craft Village (Ha Dong district - Hanoi) as a member of the Global Creative Craft Cities Network. Accordingly, members of the International Jury of the World Crafts Council reviewed reports from the Hanoi Department of Agriculture and Rural Development, the Ha Dong People's Committee, the Van Phuc People's Committee, and the Vietnam Association of Craft Villages on the history of Van Phuc silk weaving. Experts noted that to join the Global Creative Craft Cities Network, Van Phuc Craft Village should establish a craft museum to preserve historical documents and honor outstanding artisans. The council acknowledged that local artisans effectively integrate technology into traditional crafting processes. To enhance its potential, the village should also focus on expanding international exchanges and cooperation to develop a complete craft village ecosystem.</p><br>
+
+      <p>Being able to become a member of the Global Creative Craft Cities Network is a great opportunity for Van Phuc Silk Village to connect its competencies, increase values, sustainably develop traditional and artistic values, create world-class products, and spread the quintessence and identity of the Vietnamese soul.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

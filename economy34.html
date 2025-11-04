@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Yellow-Pollen Sticky Rice Aims for Brand Development and Market Expansion</h1>
+      <p class="meta">1:15:33 PM | 11/25/2024</p>
+      <p><b>Yellow-pollen sticky rice, a delicious glutinous round-grain variety, thrives in specific soil and cultivation conditions. With suitable soil and experienced farmers, Thuy Lam commune has successfully developed a thriving yellow-pollen sticky rice growing area in recent years.</b></p>
+      <br>
+      <p>Currently, farmers in Thuy Lam commune only grow yellow-pollen sticky rice once a year with a total area of over 570 ha, all its arable rice-growing area.</p>
+      <br>
+      <p>Thuy Lam yellow-pollen sticky rice is a renowned OCOP product of Dong Anh district. In 2019, it was awarded a 3-star OCOP certification, paving the way for brand development and market expansion.</p>
+      <img src="economy34.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      <figure style="text-align:center; margin:0;">
+        <img src="economy34_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Thuy Lam yellow-pollen sticky rice is a famous OCOP product from Dong Anh district
+        </figcaption>
+      </figure>
+      <br>
+      <p>Currently, Thuy Lam commune is growing yellow-pollen sticky rice on about 570 ha. Farmers only grow one crop a year, using the SRI improved rice cultivation method in which no pesticides are used but the yield is always high.</p><br>
+
+      <p>Nguyen Thi Cuc, Director of Thuy Lam Agricultural Cooperative, said: Thuy Lam has fertile soil, suitable for crop cultivation, especially rice. In particular, this land has long been planted with yellow-pollen sticky rice, a specialty. Thuy Lam currently has about 545 ha of yellow-pollen sticky rice of which the growing season starts in the sixth lunar month and the harvest time is around the 11th lunar month.</p><br>
+
+      <p>Since the 2010 crop, with training and support from Hanoi agricultural agencies, farmers in Thuy Lam commune have boldly adopted the SRI rice cultivation method. Accordingly, the amount of fertilizer and especially pesticide has been cut by more than half compared to before, but the rice has achieved high productivity. With its outstanding quality, at the end of 2013, the yellow-pollen sticky rice of Thuy Lam commune was granted a collective trademark by the National Office of Intellectual Property of Vietnam (NOIP) under the Ministry of Science and Technology.</p>
+
+      <img src="economy34_2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      <br>
+      <p><i>“In addition to high output, the quality of yellow-pollen sticky rice of Thuy Lam Agricultural Cooperative is also the best among other sticky rice varieties on the market. When cooked, Thuy Lam glutinous rice is pure and dry, soft but unbroken, full round, fragrant and well-flavored. The well-done rice is soft, shiny, and lightly fragrant. The yellow-pollen sticky rice is processed into many dishes such as steamed sticky rice, banh chung, and wine. Banh chung made from yellow-pollen sticky rice can be kept for a long time without being hardened or moldy like some other kinds of sticky rice. Besides banh chung, on the Tet holiday, every family in Thuy Lam brews a few liters of wine from yellow-pollen sticky rice to enjoy, entertain guests and present it to their relatives,” she added.</i></p><br>
+
+      <p>In recent years, Thuy Lam people have produced and sold yellow-pollen sticky rice throughout the country. The product is well-known, trusted and ordered in large quantities by consumers. Nowadays, Thuy Lam yellow-pollen sticky rice has become famous in Hanoi and other markets because it has high nutritional value, 100% pure rice grains, produced by traditional methods, featured with a characteristic aroma, soft and sticky grain, sold at reasonable prices, and packaged in small bags for convenient use.</p><br>
+
+      <p>After achieving the 3-star OCOP certification, the cooperative has received valuable support from Dong Anh district and Hanoi agricultural agencies to develop the brand and promote trade. However, it remains hard to expand its consumer market. Nguyen Tuan Ha, Director of Dong Anh Economic Office, said that to develop OCOP products, Dong Anh has allocated funds for certified products to boost brands, sales channels and promotional activities through trade fairs and trade promotion programs of the district and the city. Nonetheless, to promote consumption, owners need to actively develop their brands and build specific marketing roadmaps.</p><br>
+
+      <p>Nguyen Van Chi, Standing Deputy Chief of the Hanoi Coordination Office for New Rural Development, said: Participating in the OCOP Program, farmers and cooperatives need to change their awareness of building stories for their products; pay attention to all production stages; invest in packaging, designs, labels and brands associated; and promote and develop the market. <i>“OCOP entities need to pay more attention to packaging and naming products. This must be given the proper focus to bring OCOP products into full play,”</i> he emphasized.</p><br>
+
+      <p>To overcome existing shortcomings, Director Cuc said that Thuy Lam Agricultural Cooperative is centering on packaging design, investing in harvesting and drying systems to improve product quality. The cooperative also launched a website to introduce its products on the internet.</p><br>
+
+      <p>Nguyen Xuan Dai, Director of the Hanoi Department of Agriculture and Rural Development, said, the list of Hanoi’s OCOP products has been increasingly diversified, with high quality and traceable origin. Not only traders but also many OCOP producers have focused on applying science and technology to create beautiful, sophisticated and unique product designs and packaging, and utilized local advantageous resources and traditional culture. As a result, many OCOP products have been exported well and accepted by consumers in demanding markets such as Europe, South Korea and Japan. This proves that Hanoi’s OCOP products are constantly being invested in and upgraded. For its part, Dong Anh has continuously developed, actively upgraded, expanded the market and built brands for its OCOP products, including Thuy Lam yellow-pollen sticky rice.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

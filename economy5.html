@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>GBA Business Awards 2025: Honoring Excellence, Spreading Sustainable Values</h1>
+      <p class="meta">2:42:05 PM | 9/22/2025</p>
+      <p><b>September 19, 2025, The German Business Association in Vietnam (GBA) successfully hosted the GBA Business Awards 2025, a prestigious event celebrating pioneering enterprises with outstanding contributions to innovation, sustainability, and community responsibility. This year’s program carried even greater significance as it coincided with GBA’s 30th anniversary, reaffirming the Association’s solid position as a vital bridge between the German and Vietnamese business communities.</b></p>
+      <br>
+      <img src="economy5.png" alt="ADB Press Conference" class="article-img">
+      <br>
+      <p>
+        The ceremony was honored by the presence of Ms. Andrea Maria Sühl, Consul General of Germany in Ho Chi Minh City, along with numerous business leaders, partners, and long-standing members who have accompanied GBA throughout the past three decades. On this special occasion, GBA presented commemorative medals in recognition of enduring contributions that have shaped memorable milestones in its collective journey of growth.
+      </p>
+      <br>
+      <p>
+        In its second edition, the GBA Business Awards 2025 attracted more than thirty nominations from both large corporations and small and medium-sized enterprises (SMEs). Notably, for the first time, SMEs had the opportunity to participate fully in all three award categories, highlighting the growing significance of this business sector in shaping a dynamic, innovative, and sustainable business environment in Vietnam. A fresh and exciting feature of this year’s awards was live voting, allowing attendees to directly select the winning companies. This innovation enhanced transparency, fostered lively interaction, and strengthened community bonds.
+      </p>
+      <img src="economy5_1.png" alt="ADB Press Conference" class="article-img">
+      <br>
+      <p>
+        The businesses honored this year will go on to represent the German business community in Vietnam at the EuroCham Business Awards 2025. This provides a broader platform to showcase the image and values of German enterprises within the European business community, while reaffirming GBA’s stature and influence on the international stage.
+      </p>
+      <br>
+      <p>
+        Speaking at the ceremony, Mr. Alexander Ziehe, Chairman of GBA, emphasized that the awards are not only about celebrating achievements but also a testament to the spirit of innovation, adaptability, and the ambition to create positive impact demonstrated by German businesses in Vietnam, even amidst global economic uncertainty. Ms. Andrea Maria Sühl, Consul General of Germany in Vietnam, also affirmed that the accomplishments recognized today clearly reflect Germany’s long-term commitment as a strategic partner of Vietnam. According to her, German companies are not only making sustained investments, creating high-quality jobs, and providing training to international standards, but are also accompanying Vietnam on its path toward becoming a high-income country, with core values rooted in innovation, sustainability, and responsible business.
+      <img src="economy5_2.png" alt="ADB Press Conference" class="article-img">
+      <br>
+        <p>This year’s awards recognized Cicor Vietnam as SME Green Business of the Year for its comprehensive ESG strategy, smart energy management initiatives, and commitment to reducing over 400 tons of CO₂ emissions annually. Among large enterprises, Digi-Texx Vietnam was honored for its innovative efforts in promoting sustainable transportation and its practical contributions toward Vietnam’s 2050 net-zero target. In the Innovation category, Logivan – FreightPilot AI stood out with its AI-powered logistics solution that enhances cross-border transport efficiency; while Bosch Home Appliances Vietnam was recognized for pioneering the application of AI and automation in the kitchen, setting a new benchmark for smart living experiences. In the Business for Community category, Cicor Vietnam reaffirmed its long-term commitment to education and society through initiatives supporting students, offering scholarships, and fostering employee volunteerism; meanwhile, Bosch Vietnam was honored for its comprehensive CSR programs spanning education, healthcare, environment, and social welfare, with practical initiatives such as “Run for Education,” “Reunion Bus,” and “Floating House.”</p>
+      <img src="economy5_3.png" alt="ADB Press Conference" class="article-img">
+      <br>
+      <p>Mr. Vi Thanh Tuấn, GBA Board Member and Head of the Awards Committee, highlighted that giving SMEs the opportunity to compete on equal terms with large corporations marks an important step forward, reflecting the maturity and growing strength of SMEs within the German business community in Vietnam. According to him, this also demonstrates the harmonious connection between the core values of German enterprises and the dynamic entrepreneurial spirit of Vietnam, opening new opportunities for cooperation and sustainable growth in the future.</p>
+      <img src="economy5_4.png" alt="ADB Press Conference" class="article-img">
+      <br>
+      <p>This year’s ceremony was proudly hosted by Lotte Hotel Saigon and supported by in-kind sponsors Beefeater London Dry Gin, Pernod Ricard, and Vier Fine Wines, all of which contributed to the event’s resounding success.</p>
+      <br>
+      <p>It can be affirmed that the GBA Business Awards have become a significant milestone in the business community, not only honoring excellence but also serving as a platform to spread values and positive impact from the German business community in Vietnam, moving toward a prosperous and sustainable future.</p>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

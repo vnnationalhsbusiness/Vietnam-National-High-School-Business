@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Hanoi to Hold 3rd Agricultural Products and Craft Village Festival in Q4</h1>
+      <p class="meta">1:02:08 PM | 11/12/2024</p>
+      <p><b>The 3rd Hanoi Agricultural Products and Craft Village Festival in 2024 will take place in 5 days, from (November 29 - December 3, 2024) at Mailand HaNoi City Urban Area, An Khanh Commune, Hoai Duc District. It is expected that 260 units will participate in displaying, introducing and promoting agricultural products and craft villages.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy37.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Preparing to open the 3rd Hanoi Agricultural Products and Craft Village Festival
+        </figcaption>
+      </figure>
+      <br>
+      <p>The Organizing Committee said that the <i>3rd Hanoi Agricultural Products and Craft Village Festival in 2024</i> is an important and practical event to celebrate the 70th anniversary of the Liberation of the Capital, the 70th anniversary of the founding of the Party Committee of Hanoi City agencies (October 10, 1954 - October 10, 2024), and the 70th anniversary of the founding of the Department of Agriculture (now the Department of Agriculture and Rural Development, November 30, 1954 - November 30, 2024).</p><br>
+
+      <p>The event also aims to create favorable conditions for all levels, sectors, economic sectors, organizations, businesses and individuals to participate in trade promotion activities for agricultural products and craft village products; at the same time, promote economic growth and development in the agricultural and rural areas of Hanoi. In particular, the organization of the Festival also aims to accelerate the program of building new rural areas, preserving the space of the village community and traditional products and products, creating momentum to restructure the agricultural sector in a sustainable direction, contributing to the comprehensive development of agriculture and rural areas.</p>
+
+    <figure style="text-align:center; margin:0;">
+      <div style="line-height:0;">
+        <img src="economy37_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <img src="economy37_2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <img src="economy37_3.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </div>
+      <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+        Perspective images of the 3rd Hanoi Agricultural Products and Craft Village Festival in 2024
+      </figcaption>
+    </figure>
+    <br>
+    <p>It is expected that the 3rd Hanoi Agricultural Products and Craft Village Festival will have 260 units participating in displaying, introducing and promoting agricultural products and craft villages, including 152 units from 25 districts, towns and cities of Hanoi; 116 units from 25 neighboring provinces and cities and 32 domestic and international units and enterprises.</p><br>
+
+    <p>The opening ceremony of the Festival will take place from 6:00 p.m. to 9:30 p.m. on November 29, 2024 at Mailand HaNoi City Urban Area, An Khanh Commune, Hoai Duc District, Hanoi with a rich and attractive art program to praise the agricultural sector and rural development, praise the capital, praise the love for the homeland and the country; reenact activities with historical and cultural depth, meaningful in educating the traditions of agriculture, farmers, and rural areas; the tradition of building and developing the capital and the country.</p><br>
+
+    <p>Within the framework of the Festival, products in the field of agricultural and rural development will be displayed, promoted, introduced, and promoted, with an exhibition area of about 15,000m², divided into areas: Area for displaying, introducing and promoting typical agricultural products and craft villages of districts and towns; Area for agricultural products and craft villages; Area for demonstrating the skills of artisans in craft villages; display and introduce OCOP products; introduce community tourism spots, agricultural and rural tourism models in Hanoi;</p><br>
+
+    <p>Area for enjoying the quintessence of Vietnamese tea; Ornamental Plants Area; Art performance and Vietnamese cuisine introduction area; Gift and souvenir product display, introduction and manufacturing area; High-tech agricultural area; machinery, equipment, materials for agricultural production and craft villages; Standard booth area displaying agricultural products, craft villages of provinces, cities and enterprises, organizations, and cooperatives.</p>
+
+    <figure style="text-align:center; margin:0;">
+      <div style="line-height:0;">
+        <img src="economy37_4.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <img src="economy37_5.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </div>
+    </figure>
+    <br>
+    <p>In addition, the Festival also has a workshop to evaluate the results of the implementation of the coordination program to ensure food safety, quality of agricultural, forestry and fishery products traded between Hanoi and provinces and cities in 2024; Workshop <i>"Orientation and Solutions for Urban Agricultural Development in Hanoi"</i>; Livestream program connecting product consumption, in collaboration with Tiktok Vietnam.</p><br>
+
+    <p>Coming to this Festival, visitors will be able to admire unique bonsai works, works of art made by the talented hands of artisans from Hanoi craft villages, and enjoy specialties at the culinary area. In particular, at the Festival, visitors and locals will have the opportunity to visit and learn about the cultural characteristics of Hanoi's agriculture through exhibition areas, introducing products of districts, towns and cities and shopping with thousands of agricultural products and craft villages that ensure quality and clear origin.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

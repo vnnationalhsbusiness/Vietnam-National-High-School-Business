@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start-up</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Start-up</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" class="active" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>The QR Code Unicorn: How VNLife Forged an Empire from a Single Scan</h1>
+      <p class="meta">10:30:28 AM | 10/4/2025</p>
+      <p><i>How the parent company of VNPAY became Vietnam's second tech unicorn, not just by pioneering payments but by strategically building a diversified ecosystem spanning travel, retail, and software.</i></p>
+      <br>
+      <p>If <b>VNG</b> laid the original blueprint for Vietnam's tech ambitions, <b>VNLife</b> demonstrated a powerful new path to "unicorn" status. As the nation's second billion-dollar technology startup, the parent company of <b>VNPAY</b> achieved its valuation not by building a singular super-app, but by solving one of the market's most complex problems—digital payments—and using it as the foundation for a sprawling, interconnected ecosystem.</p><br>
+
+      <p><b>The Strategic Vision of the Founders</b></p><br>
+
+      <p>The success of <b>VNLife</b> was driven by the core vision of its key founders: <b>Mr. Tran Tri Manh</b>, the Chairman, and <b>Mr. Mai Thanh Binh</b>, who was instrumental in the company’s strategic development and operations. They recognized that in a transforming market, the key was not to compete for the end-user (B2C), but to become the essential, interoperable infrastructure (B2B) connecting the entire financial and retail system.</p><br>
+
+      <p><b>VNLife</b> solidified its unicorn status following a $250 million Series B funding round in 2021, which saw participation from global investors like <b>General Atlantic</b>, <b>Dragoneer Investment Group</b>, <b>PayPal Ventures</b>, alongside existing investors <b>GIC</b> and <b>SoftBank Vision Fund 1</b>.</p><br>
+
+      <p>At the heart of this success is a product now ubiquitous across Vietnam: the <b>VNPAY-QR</b> code. But the true genius of <b>VNLife</b> lies in how it leveraged that single solution to diversify into travel, retail software, and beyond.</p><br>
+
+      <p><b>Phase 1: The 'Trojan Horse' Strategy (VNPAY-QR)</b></p><br>
+
+      <p>In a market crowded with e-wallets all competing for user downloads (like <b>MoMo</b> or <b>ZaloPay</b>), <b>VNPAY</b>, the payments arm of <b>VNLife</b>, chose a different, revolutionary strategy.</p><br>
+
+      <p>Instead of building another "closed" e-wallet, <b>VNPAY</b> focused on partnership and integration. Its masterstroke was to embed its <b>VNPAY-QR</b> payment solution directly into the existing mobile banking applications of most major banks in Vietnam.</p><br>
+
+      <p><b>Scale and Reach:</b> This move was transformative. It meant that tens of millions of Vietnamese bank customers instantly had <b>VNPAY-QR</b> capabilities without needing to download a new app, register a new account, or fund a new wallet. They could simply use the banking app they already trusted.</p><br>
+
+      <p>This "network effect" led to explosive adoption. <b>VNPAY-QR</b> became the de-facto standard for bank-powered QR payments, appearing at checkout counters from high-end malls to local street-side vendors. To date, <b>VNPAY-QR</b> has integrated with over 40 banks and serves more than 250,000 merchant acceptance points, connecting banks, merchants, and consumers. <b>VNPAY</b> didn't just build a payment app; it built the essential payment infrastructure.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <p><b>Phase 2: Building the Ecosystem (Beyond Payments)</b></p><br>
+
+      <p>With a dominant position in digital payments secured, the parent company, <b>VNLife</b>, began its second act: building a diversified ecosystem where each part reinforces the others. The <b>VNPAY-QR</b> network became the "glue" holding this new conglomerate together.</p><br>
+
+      <p>This expansion focused on high-growth digital sectors:</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Travel (VnTrip):</b> <b>VNLife</b> integrated <b>VnTrip</b>, a leading Online Travel Agent (OTA), into its ecosystem. The synergy was immediate: users booking hotels or flights on <b>VnTrip</b> could pay seamlessly using the trusted <b>VNPAY-QR</b> gateway, creating a frictionless travel and payment experience.</li>
+        <li><b>Retail & SaaS (Sapo):</b> On the B2B front, <b>VNLife</b> invested in <b>Sapo</b>, a leading provider of Point-of-Sale (POS) and omnichannel sales management software for Small and Medium-sized Enterprises (SMEs). This move was strategic: by providing merchants with the software to run their business (<b>Sapo</b>), <b>VNLife</b> could ensure its <b>VNPAY-QR</b> solution was the integrated, default payment method, further solidifying its dominance at the point of sale.</li>
+      </ul><br>
+
+      <p><b>The 'Silent Giant' Strategy</b></p><br>
+
+      <p>Unlike consumer-facing "super apps," <b>VNLife's</b> success is built more on B2B partnerships and B2B2C (Business-to-Business-to-Consumer) infrastructure. Its ecosystem—spanning <b>Payments (VNPAY)</b>, <b>Travel (VnTrip)</b>, and <b>Retail Software (Sapo)</b>—creates a powerful, sticky environment.</p><br>
+
+      <p>Merchants use <b>Sapo</b> to manage sales and inventory, which is integrated with <b>VNPAY</b> for payments. Consumers use their banking apps to pay for those goods, and then use the same payment ecosystem to book their holidays on <b>VnTrip</b>.</p><br>
+
+      <p><b>VNLife's</b> journey to becoming Vietnam's second unicorn is a masterful case study in strategic diversification. Led by the foundational vision of figures like <b>Tran Tri Manh</b> and <b>Mai Thanh Binh</b>, it proved that you don't always need to build the "front door" (like a super app) if you can build all the essential "plumbing" and services that power the entire digital economy.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup2_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="startup1.png" alt="Ad 1">
+      <a href="startup1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">From Gamer to Giant: Lê Hồng Minh and the Making of VNG, Vietnam's First Unicorn</p></a>
+      <img src="startup3.png" alt="Ad 3">
+      <a href="startup3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The Global Blockchain Disruption: How Sky Mavis Built a Billion-Dollar Metaverse with Axie Infinity</p></a>
+      <img src="startup4.png" alt="Ad 1">
+      <a href="startup4.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The Super App Ascent: How MoMo Conquered Vietnam’s Digital Landscape</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

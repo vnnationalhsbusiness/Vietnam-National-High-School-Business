@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Four Key “Variables“ and Investment Opportunities in 2025 Amid Market Recovery</h1>
+      <p class="meta">2:22:04 PM | 12/27/2024</p>
+      <p><b>Exchange rates, foreign trade, geopolitical tensions, and internal issues remain key "variables" to watch in 2025. However, experts believe significant investment opportunities exist as personal consumption rises, public investment increases, real estate recovers, and the stock market is poised for growth.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy30.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Exchange rates are one of the four key variables for Vietnam's economy next year
+        </figcaption>
+      </figure>
+      <br>
+      <p>At the Conference on “Investing 2025: Decoding variables - Embracing opportunities,” Dr. Nguyen Tri Hieu, Director of the Institute for Research and Development of Global Financial and Real Estate Markets, said that 2024 is a challenging year for the Vietnamese economy because of global geopolitics and economic fluctuations.</p><br>
+
+      <p>“These challenges will continue into 2025 with new, more complex and unpredictable developments such as new policies from President-elect Donald Trump, increased geopolitical tensions and impacts on global asset and commodity markets such as gold, bitcoin and oil. Therefore, 2025 continues to be a challenging year for the Vietnamese economy,” he commented.</p><br>
+
+      <p><b>Four “variables” affecting Vietnam’s economy</b></p><br>
+
+      <p>There are four main “variables” for the Vietnamese economy next year, namely exchange rates, foreign trade, geopolitical tensions and the economy’s internal issues.</p><br>
+
+      <p>Regarding exchange rates, as of December 9, the Dollar Index jumped high to 105.69. Accordingly, the USD/VND exchange rate went up to 24,265, up 4.34% from the beginning of the year. Given this momentum, VND is likely to depreciate 5% against USD in 2024. According to the expert, the VND/USD exchange rate will continue to be affected by the economic policies initiated by Mr. Donald Trump.</p><br>
+
+      <p>“In 2025, the United States may change its policy from the current loosening to tightening when inflation is at risk of rebound as the price of imported goods looks up on the back of higher import duty and bond coupons will be anchored high. Therefore, this will create pressure to push up USD against VND,” Hieu noted.</p><br>
+
+      <p>Regarding foreign trade, US President-elect Donald Trump may impose high import duty on countries with trade surplus with the US, including Vietnam - one of 10 countries with the largest trade surplus with the US. This poses a risk to Vietnam's exports to the US in the coming time if the Trump administration adopts a trade protection policy.</p><br>
+
+      <p>In addition, the US plans to deport millions of illegal immigrants out of this country. The move will create a shortage of US labor, push up wages, increase inflation and thereby reverse the Fed’s monetary policy.</p><br>
+
+      <p>In terms of geopolitics, tensions between Russia and Ukraine, in the Middle East and recently in the Korean Peninsula will give rise to unpredictable turmoil, which is likely to hit the world economy and Vietnam.</p><br>
+
+      <p>“Vietnam is a link in this development and therefore Vietnam's policies must revolve around these changes. Vietnam, with its dependence on foreign trade with the US and up to 80-90% of foreign trade transactions settled in USD, will be affected by changes in the USD and the US’s economic and foreign policies,” Hieu said.</p><br>
+
+      <p>Concerning the internal economy, although growth is forecast to be optimistic, many businesses, especially small and medium ones, are still facing numerous hardships and unable to access support from the Government. Without effective support, more companies in Vietnam will withdraw from the market in 2025, he added.</p><br>
+
+      <p><b>What are investment opportunities in 2025?</b></p><br>
+
+      <p>Although the economy confronts many challenges, there are still attractive opportunities for businesses and investors, said Mr. Trinh Ha, Specialist Strategist at Exness Investment Bank. Contrary to the current view on “reversing” policy from loosening to tightening, she believed that loosening is still a general trend even though the pace of interest rate cuts will slow down. As a result, the VND/USD exchange rate will be less pressured, especially when inflationary pressure in the US in the next few months will be relieved by eliminating seasonal factors and Mr. Donald Trump may consider loosening oil and gas production measures for businesses.</p><br>
+
+      <p>According to Mr. Barry Weisblatt David, Director of VNDIRECT Analysis Division, Vietnam's GDP growth may reach 6.9% in 2025. However, if public investment disbursement can amount to 100%, GDP growth may be higher at 8%, even 9%. “However, to achieve the above results, the Government needs to further accelerate measures to remove difficulties for the business sector,” he recommended.</p><br>
+
+      <p>In particular, anticipating the likely upgrading of the stock market to an emerging market, he believed that there will be much more opportunities to welcome foreign investment funds into the Vietnamese market. Even if Vietnam can upgrade its national credit rating, its borrowing costs can decline by up to 2% and this is a positive factor for Vietnam to draw strong foreign capital flows for ambitious development plans.</p><br>
+
+      <p>“Catalyzed by GDP growth prospects, public investment and market upgrading, Vietnam's stock market will be likely to advance. Many bonds in the market are high quality and bullish,” Barry said.</p><br>
+
+      <p>From the perspective of consumer behavior research, Ms. Dang Thuy Ha, Director of Customer Behavior Research, Northern Representative of NielsenIQ Vietnam, said that the business survey showed that 67% of Vietnamese people believed that financial health is getting better, significantly higher than last year’s 50%. Besides, more people started to eat out while they remain cautious with spending. "This shows that the recovery of retail and consumer industries is quite positive in 2025, especially the F&B industry,” she emphasized.</p><br>
+
+      <p>According to Dr. Nguyen Van Dinh, Chairman of the Vietnam Association of Real Estate Brokers (VARS), after a year of stronger transformation than in 2022 and 2023, the real estate market will enter 2025 with breakout development underpinned by preferential credit packages and a series of new laws.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

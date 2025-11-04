@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start-up</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Start-up</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" class="active" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>The High-Speed Ecosystem Player: How Giao Hang Nhanh (GHN) Became the Logistics Engine for Vietnam’s E-Commerce Giants</h1>
+      <p class="meta">10:19:48 AM | 25/6/2025</p>
+      <p><i>As a core pillar of the Scommerce ecosystem, GHN leveraged centralized technology and strategic partnerships to scale its high-volume, reliable delivery service, becoming a primary logistics provider for major marketplace platforms.</i></p>
+      <br>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup7.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <br>
+      <p>In the fiercely competitive arena of Vietnamese e-logistics, <b>Giao Hang Nhanh (GHN)</b>—meaning "Fast Delivery"—established itself not just through speed, but through strategic alignment and superior operational technology. As a central part of the <b>Scommerce</b> ecosystem (which also includes services like AhaMove and GHN Express), GHN's primary mission was to provide reliable, high-volume, high-quality delivery for major e-commerce platforms and corporations, becoming a direct and potent competitor to <b>GHTK</b>.</p><br>
+
+      <p><b>The Ecosystem Advantage and Corporate Focus</b></p><br>
+
+      <p><b>GHN’s</b> foundation and growth were driven by key leaders who understood the necessity of integrating logistics tightly with the digital retail infrastructure. A notable figure in the <b>Scommerce</b> leadership is <b>Mr. Lương Duy Hoài</b>, who envisioned an interconnected logistics ecosystem that could handle the immense scale required by modern e-commerce.</p><br>
+
+      <p>Unlike competitors that initially focused heavily on individual small sellers, <b>GHN’s</b> strategy leaned toward securing contracts with large e-commerce marketplaces (B2B2C model) and major brands. This focus allowed GHN to optimize its operations for predictability, volume efficiency, and stringent Service Level Agreements (SLAs).</p><br>
+
+      <p><b>Phase 1: Building for Scale (Centralized Infrastructure)</b></p><br>
+
+      <p><b>GHN’s</b> initial approach centered on creating a robust, enterprise-grade logistics infrastructure designed to manage enormous daily parcel volumes.</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Centralized Sorting Hubs:</b> <b>GHN</b> invested significantly in large, centralized automated sorting centers, strategically located near key transportation arteries. These sophisticated hubs, often utilizing conveyors and automated scanning technology, allowed GHN to process parcels faster and with greater accuracy than manual systems, enabling guaranteed sorting times critical for platforms relying on next-day delivery promises.</li><br>
+        <li><b>The Power of Scommerce:</b> Being part of the <b>Scommerce</b> ecosystem provided GHN with immediate advantages. It could share technology, leverage expertise across the group (e.g., from urban express service <b>AhaMove</b>), and offer a suite of integrated logistics solutions tailored for various B2B and B2C needs, making it a compelling choice for large corporate clients.</li>
+      </ul><br>
+
+      <p><b>Phase 2: Tech-Driven Reliability and Integration</b></p><br>
+
+      <p><b>GHN’s</b> competitive edge over traditional logistics providers comes from its commitment to technology, which ensures operational reliability at scale.</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>API Integration and Data Transparency:</b> <b>GHN</b> prioritized deep, seamless API integration with its major e-commerce partners. This level of technical collaboration allowed platforms to embed GHN's services directly into their checkout pages and offered merchants real-time tracking, automatic reconciliation, and faster payment cycles. This data transparency built confidence among high-volume partners.</li><br>
+        <li><b>Dynamic Rider Management:</b> Similar to its competitors, <b>GHN</b> uses sophisticated software to manage its extensive fleet. However, its focus on densely populated urban areas for high-volume delivery meant its technology was optimized for speed within complex metropolitan grids, prioritizing delivery speed and consistency above all else for premium marketplace services.</li>
+      </ul><br>
+
+      <p><b>The Outcome: The Go-To for Marketplaces</b></p><br>
+
+      <p><b>GHN’s</b> strategic choice to focus on high-quality, high-volume B2B2C fulfillment paid off, making it one of the most trusted names in Vietnamese logistics. Its ability to consistently meet the demanding schedules of the largest e-commerce platforms positioned it as a critical infrastructure layer.</p><br>
+
+      <p><b>GHN’s</b> growth demonstrates that in a winner-take-all e-commerce market, logistics providers that can guarantee quality and scale through technological investment become indispensable. By prioritizing enterprise clients and integrating deeply within the digital ecosystem, <b>GHN</b> secured its place as the high-speed delivery engine powering the majority of Vietnam's online retail transactions.</p><br>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="startup1.png" alt="Ad 1">
+      <a href="startup1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">From Gamer to Giant: Lê Hồng Minh and the Making of VNG, Vietnam's First Unicorn</p></a>
+      <img src="startup2.png" alt="Ad 2">
+      <a href="startup2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The QR Code Unicorn: How VNLife Forged an Empire from a Single Scan</p></a>
+      <img src="startup3.png" alt="Ad 3">
+      <a href="startup3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The Global Blockchain Disruption: How Sky Mavis Built a Billion-Dollar Metaverse with Axie Infinity</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

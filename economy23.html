@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam Holds Grand Ceremony to Mark April 30 Victory</h1>
+      <p class="meta">1:13:39 PM | 4/30/2025</p>
+      <p><b>A grand ceremony took place in Ho Chi Minh City on Wednesday to mark April 30 victory, which led to the liberation of the South and national reunification.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy23.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          General Secretary of the Central Committee of the Communist Party of Vietnam To Lam delivers the address at the national celebration of the 50th anniversary of the liberation of the South and national reunification in Ho Chi Minh City on April 30
+        </figcaption>
+      </figure>
+      <br>
+      <p>The event is jointly organized by the Party Central Committee, the National Assembly, the President, the Government, the Viet Nam Fatherland Front (VFF) Central Committee, and Ho Chi Minh City.</p><br>
+
+      <p>It will be attended by incumbent and former Party, State, and VFF leaders, veteran revolutionaries, Heroic Vietnamese Mothers, Heroes of the People's Armed Forces, Heroes of Labour, along with thousands of guests representing all walks of life across the country.</p><br>
+
+      <p>Also attending the ceremony will be around 20 international delegations, including three high-ranking delegations and four at the ministerial level or higher, and representatives from over 15 political Parties across continents.</p><br>
+
+      <p>Representatives from more than 20 sister cities of Ho Chi Minh City and many foreign individuals who contributed to movements opposing the war in Vietnam, will also be present.</p><br>
+
+      <p>The event will be broadcast live on VTV1 of the Viet Nam Television, the Ho Chi Minh City Television and local radio and television stations. Ho Chi Minh City has installed 20 large LED screens on downtown streets to serve residents and tourists.</p><br>
+
+      <p>There are more than 700 reporters from 106 domestic press agencies and 169 correspondents from 58 foreign press agencies covering the program.</p><br>
+
+      <p>On this occasion, in order to recognise the outstanding achievements of the Party organisation, administration and people of Ho Chi Minh City, which have contributed to the cause of building socialism and defending the Fatherland, the Party and State have decided to confer the title of "Hero of Labor" on them.</p><br>
+
+      <p>From early morning, tens of thousands of compatriots and tourists have gathered on the streets around the stage area to wait for the grand ceremony and parade.</p><br>
+
+      <p>After the state-level celebration, the parade began with the performance of the Mi-8T, Mi-17, Mi-171 helicopter squadron carrying the Party flag and the national flag and the fighter squadron of the Viet Nam People's Army in the sky of Ho Chi Minh City. Su-30MK2 fighters and Yak-130 combat and training jets performed complex technical manoeuvres, with the focus on the Su-30MK2's heat trap release.</p><br>
+
+      <p>It continued with the floats carrying the model of the National Emblem of the Socialist Republic of Viet Nam, the portrait of President Ho Chi Minh, and the symbol of the 50th anniversary of the liberation of the South and national reunification.</p><br>
+
+      <p>Next were the formations of the military forces, including the command vehicle, the army flag team vehicle, the female military band, the military officer contingent representing the five wings of the Liberation Army entering Saigon in the historic Ho Chi Minh Campaign that contributed to the victory on April 30, 1975, including the Corps No.1 - Quyet Thang Corps, Corps No.2 - Huong Giang Corps, Corps No.3 - Tay Nguyen Corps, Corps No.4 - Cuu Long Corps, and Group 232.</p><br>
+
+      <p>The Liberation Army soldiers in their unique green uniforms, wearing military bucket hats with the red-and-blue flag of the National Liberation Front of South Viet Nam, marched past the grandstand, recreating the image of the steadfast armed forces of the South during the resistance war against U.S. imperialists. Following them were a formation of Infantry Officers who are the core force of the Vietnam People's Army, ready to receive and excellently complete all assigned tasks, contributing to building a revolutionary, regular, elite, and modern army that firmly protects the Fatherland.</p><br>
+
+      <p>The Naval Officers represent the core force responsible for safeguarding the sovereignty of the nation’s seas, islands, and continental shelf. The Air Defence – Air Force Officers represent the force that protects the skies, seas and islands, and the territorial integrity of the country. Meanwhile, the Border Guard Officers stand as the key force in defending national borders, tasked with managing, protecting, and firmly maintaining territorial sovereignty and border security.</p><br>
+
+      <p>The contingent of Coast Guard Officers represents the State’s specialised force tasked with enforcing maritime law, safeguarding national security, and defending Vietnam’s sacred sovereignty over its seas and islands. The Formation of Logistics and Technical Officers followed, representing the force that ensures supplies, technology and logistics for the entire army.</p><br>
+
+      <p>Two female contingents also made their mark. The Female Information Officers represented the communications force of the Vietnam People's Army (VPA), while the Female Military Medical Officers, easily identified by the red cross emblem on their sleeves, reflected discipline and preparedness in providing healthcare for troops and civilians - a critical component in enhancing the army’s overall strength.</p><br>
+
+      <p>Also joining the parade were units representing modern warfare capabilities. The Electronic Warfare Troops showcased the army’s strategic readiness in protecting and controlling the information systems, and disrupting information systems of the adversaries. Their tasks include jamming, disabling enemy communications, and safeguarding vital national infrastructure. Marching in parallel, the Cyber Warfare Force represents Viet Nam’s frontline in the battle for national cyber security. This unit is charged with protecting national sovereignty in cyberspace, ensuring the absolute safety of military and defence information systems, and key national information systems.</p><br>
+
+      <p>Prominently marching in the parade was the contingent of Female Peacekeepers, representing the Vietnamese army in international missions. They demonstrate Viet Nam's commitment to global peace, spread the cultural values of "Uncle Ho's soldiers", and introduce the image of a beautiful, peace-loving Viet Nam and its people to international friends. Following them were the Infantry Troops, representing the backbone of the forces directly fighting on the battlefield, and the Tank-Armored Corps, tasked with performing attacks and capturing strategic targets on land. Also joining the parade was the Commando Force - the VPA’s elite unit for special operations, specialising in carrying out raids, surprise attacks and special operations.</p><br>
+
+      <p>The Female Special Operations Troops, representing the bravery and silent sacrifice, the resounding success of the Saigon Commandos during the resistance war, entered the stage. They were dressed in combat uniforms and equipped with STV-215 submachine guns, bulletproof vests, and night-vision gear. The Airborne Special Force, clad in field uniforms and carrying advanced weaponry, represented an elite, modern force specialising in airborne landings, deep penetration and special operations.</p><br>
+
+      <p>Next was the parade of military contingents from China, Laos, and Cambodia. These are neighbouring countries that have time-honoured friendship and close ties with Vietnam in the struggle for national liberation, and construction and defence. Their presence embodied the defence foreign policy of the Vietnamese Party, State, Central Military Commission, and Ministry of National Defence, demonstrating the spirit of pure international solidarity and Viet Nam's appreciation for the support, solidarity, and assistance of international friends.</p><br>
+
+      <p>Leading the militia contingent was the formation of Male Maritime Militia, representing civilian armed forces from coastal localities tasked with safeguarding national maritime sovereignty and supporting local fishermen at sea. The female Southern Guerrilla contingent in black 'Ao Ba Ba' costumes, floppy hats, and checkered scarves recreated the image of heroic, indomitable, resourceful and patriotic Southern women during wartime. The Northern Female Militia, donning their typical crow-beak scarves, represented the mothers and sisters of North Vietnam, who built a strong rear, actively trained in combat, protected their homeland, and sent their loved husbands, sons and daughters to the frontlines. Their steadfast support significantly contributed to the liberation of the South and national reunification.</p><br>
+
+      <p>The parade of the Viet Nam People's Public Security Force showed their strength, discipline, and core role in protecting national security, and maintaining social safety and order. It started with the Command Vehicle and Public Security team holding the flag of the force. Marching in formation were male officers of the People's Security Force, representing those tasked with safeguarding national security and maintaining public order. They were followed by male officers of the People's Police Force, who serve on the front lines of law enforcement and crime prevention to ensure public safety and social stability. Behind them was the formation of female officers of the Traffic Police.</p><br>
+
+      <p>Further into the procession were officers of the air force of the People's Public Security, a unit responsible for aerial patrol, reconnaissance, and rapid deployment serving national security defence, as well as search and rescue operations in response to natural disasters.</p><br>
+
+      <p>Also present were contingents of male officers from the Ho Chi Minh City Police, the Police Department of Fire Prevention and Fighting and Rescue, and the Viet Nam Police Peacekeeping Unit.</p><br>
+
+      <p>The parade continued with male officers from the Mobile Police Force, a specialised rapid response unit tasked with handling complex security situations and safeguarding major political, economic, and social events. Notably, the procession also featured female officers from the Special Operations Police, trained to execute special missions such as counter-terrorism, hostage rescue, and national security protection. Then there was a contingent of male reserve combat troops from the Mobile Police Force.</p><br>
+
+      <p>Following was a formation of male officers of grassroots-level public order and security forces, with those representing the cavalry mobile police unit succeeding the parade; and the red flag contingent – a powerful embodiment of national pride, dignity, and resilience of the Vietnamese people.</p><br>
+
+      <p>The parade also featured formations of civilian groups representing the broad spectrum of Vietnamese society. These included the Heroes of the People’s Armed Forces, Labour Heroes, and distinguished historical witnesses (riding in vehicles); the Viet Nam Fatherland Front; war veterans; former youth volunteers of the liberation force; workers; farmers; intellectuals; entrepreneurs; overseas Vietnamese; women; children and youth; as well as representatives from the cultural, sports, and media sectors.</p><br>
+
+      <p>Of particular note was the contingent for national heroes and historical figures—the only group permitted to remain seated as they passed the grandstand. The 350 delegates travelled in seven specially designed double-decker buses, painted in the red and blue colours reminiscent of the National Liberation Front’s flag from the day of victory. The names of provinces and cities from across the country were emblazoned along the sides of each vehicle.</p><br>
+
+      <p>Bringing the commemorative ceremony to a moving close was the release of balloons and white doves – universal symbols of peace, faith, and hope for the future.</p><br>
+
+      <div style="text-align:center; margin:0 auto;">
+        <img src="economy23_1.png" alt="Ceremony leaders" style="width:100%; display:block; margin:0;">
+        <img src="economy23_2.png" alt="Cannon salute" style="width:100%; display:block; margin:0;">
+        <img src="economy23_3.png" alt="Military parade" style="width:100%; display:block; margin:0;">
+        <img src="economy23_4.png" alt="Soldiers marching" style="width:100%; display:block; margin:0;">
+      </div>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

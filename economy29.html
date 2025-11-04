@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Customs Sector Works Together to Support Businesses</h1>
+      <p class="meta">2:26:57 PM | 12/29/2024</p>
+      <p><b>The Ministry of Finance has held annual dialogue conferences with businesses to address tax and customs policies and procedures. These events have effectively identified challenges and concerns faced by businesses, enabling timely and efficient resolutions to support the business community.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy29.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Deputy Finance Minister Cao Anh Tuan addresses the dialogue conference on tax and customs policies and administrative procedures 2024 
+        </figcaption>
+      </figure>
+      <br>
+      <p>At the conference, Mr. Luu Manh Tuong, Deputy General Director of the General Department of Vietnam Customs, said: In the field of customs, administrative reforms continued to be promoted to facilitate import and export activities, aiming to build professional, transparent and efficient customs. The effective implementation of the Vietnam Automated System for Seaport Customs Management (VASSCM) contributed to simplifying procedures for moving goods out of warehouses, yards and ports, reducing contact between customs authorities and businesses, minimizing travel time for citizens, and addressing congestion at ports, warehouses, and yards. In 2024 alone, customs authorities at all levels have conducted over 154 dialogues, demonstrating the customs sector's willingness to engage with business activities.</p><br>
+
+      <p>Thanks to the increased application of information technology and the adoption of modern customs management methods, over 99% of customs procedures are now conducted electronically through the Vietnam Automated Cargo and Port Consolidated System/Vietnam Customs Information System (VNACCS/VCIS). Tuong also emphasized the sector's commitment to continuously simplifying procedures and resolving issues for businesses anytime, anywhere, to facilitate their operations.</p><br>
+
+      <p>During the business Q&A session, Intechco Vietnam expressed concerns regarding the import procedures for processed plastic scrap. Luu Manh Tuong emphasized the necessity for businesses to adhere to environmental protection regulations and secure the appropriate environmental permits for importing scrap for production. He also directed businesses to comply with Decision 13/2023/QD-TTg, which outlines the standards and regulations for plastic scrap.</p><br>
+
+      <p>Additionally, a representative from Thai Binh Cotton Co.,Ltd raised issues regarding the import of cotton waste. Tuong explained the two types of cotton waste: carded and combed. He also mentioned that the Ministry of Finance is coordinating with the Ministry of Natural Resources and Environment to address this issue. Recently, Deputy Prime Minister Tran Hong Ha instructed the Ministry of Natural Resources and Environment to urgently amend Decree 08/2022/ND-CP for more specific guidance.</p><br>
+
+      <p>Furthermore, a representative from BH Flex Vina proposed addressing the issue of double VAT declaration for FDI enterprises outsourcing processing. In response, Deputy Director General Tuong provided information on Official Letter 5677, which offers specific guidance on invoices and VAT refunds, and mentioned that similar guidance will be issued for Bac Ninh province.</p><br>
+
+      <p>Deputy Finance Minister Cao Anh Tuan said that from 2021 to 2023, and up to the present time in 2024, the Ministry of Finance has proactively researched, proposed and submitted to competent authorities, as well as issued under its authority, solutions in the financial sector. These solutions particularly focus on tax, fee, charge and land rent exemptions, reductions and extensions to support businesses, citizens and the economy. The total support provided by these solutions amounts to approximately VND191 trillion. This includes around VND95 trillion in extended tax and land rent, and about VND96 trillion in reduced taxes, fees and charges.</p><br>
+
+      <p>In the coming time, the Ministry of Finance will focus on decisively and effectively implementing the tax, fee, charge and land rent solutions that have been or will be issued soon. Additionally, the ministry will implement the amended Value-Added Tax Law dated November 26, 2024, and the Law amending and supplementing several articles of nine laws including the Tax Administration Law and the Personal Income Tax Law which were recently passed by the National Assembly.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

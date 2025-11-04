@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam - Japan: Strengthening Cooperation in Supporting Industry Development</h1>
+      <p class="meta">9:49:32 AM | 6/21/2025</p>
+      <p><b>Vietnam currently has over 6,000 companies in the supporting industry, but they meet only about 10% of domestic demand for components. Their supply to Japanese companies covers just 15.7% of those firms’ total procurement needs. Applying new know-how and optimizing processes are essential for Vietnamese companies to boost productivity and meet increasingly strict quality standards in international markets.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy17.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Mr. Haruhiko Ozasa, Chief Representative of JETRO, addresses the press conference and signing ceremony on the cooperation in organizing VME and SIE 2025
+        </figcaption>
+      </figure>
+      <br>
+      <p><b>Falling short of expectations</b></p><br>
+
+      <p>Speaking at the press conference and signing ceremony on the cooperation in organizing the 17th Vietnam Manufacturing Expo (VME) and the 11th Vietnam-Japan Supporting Industries Exhibition (SIE) in Hanoi, Mr. Vu Ba Phu, Director of the Vietnam Trade Promotion Agency (Vietrade) under the Ministry of Industry and Trade, said: As of the end of 2024, Vietnam had over 6,000 supporting industry companies involved in textiles and garments, automobile manufacturing and assembly, leather and footwear, mechanical engineering, and electronics. This sector has supported the development of several key industries, helping the country increase its trade surplus from US$2 billion in 2017 to over US$28 billion in 2024.</p><br>
+
+      <p>In the first 11 months of 2024, Vietnam’s total merchandise exports valued US$369.93 billion, up 14.4% year on year, a high growth rate relative to other ASEAN and Asian countries. Notably, several export categories performed highly, including computers, electronic products and components (US$65.2 billion, up 26.3%), telephones and components (US$50.2 billion, up 3.2%), and machinery, equipment, tools and parts (US$47.8 billion, up 21.6%).</p><br>
+
+      <p>Despite achievements in the past few years, supporting industries are still meeting only about 10% of the domestic demand for industrial parts, he said. This outcome poses a significant challenge, especially as Vietnam must spend billions of US dollars on parts imports for domestic production every year.</p><br>
+
+      <p>Mr. Haruhiko Ozasa, Chief Representative of the Japan External Trade Organization (JETRO), said: According to JETRO's latest survey, the localization rate of Japanese companies in Vietnam currently stands at 36.6%, comparable to that in Malaysia and the Philippines. In 2024, the depreciation of Japanese yen gave rise to a 2.7 percentage-point increase in the supply rate from Japan, which sequentially reduced the localization rate in Vietnam.</p><br>
+
+      <p>Among Vietnamese companies alone, the supply rate to Japanese firms was 15.7% of their total procurement (down 1.5 percentage points from the previous year). This figure remained stable over the past 10 years. However, it was still low relative to that in Indonesia, Thailand and Malaysia and only on par with the Philippines.</p><br>
+
+      <p>The survey also revealed that 56.1% of Japanese firms operating in Vietnam plan to expand their investment in the next 1–2 years, a figure far exceeding the ASEAN average. Regarding their local supply rate in the same timeframe, 50.9% of businesses in Vietnam plan to expand their investment (up 7.7 percentage points from the previous year), significantly higher than the ASEAN average of 37.7%. By sector, companies involved in electrical/electronic equipment, textile/apparel, and general machinery all express their high demand for domestic supply expansion.</p><br>
+
+      <p>This presents a valuable opportunity to further promote Vietnam-Japan cooperation in supporting industries, raise localization rates and foster the country’s sustainable industrial development.</p><br>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy17_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Toyota Vietnam actively supports several automobile suppliers in improving their production processes
+        </figcaption>
+      </figure>
+      <p><b>Businesses need to enhance competitiveness</b></p><br>
+
+      <p>Vietnam is vigorously promoting its National Digital Transformation Program to 2025, with a vision to 2030. The transition to smart manufacturing powered by emerging technologies such as AI, IoT, big data and especially cognitive automation is essential for enterprises. The Vietnamese government aims for the digital economy to account for at least 30% of GDP by 2030, with the manufacturing sector identified as a key pillar to realize this goal. To survive and grow, businesses must quickly adopt technologies, restructure their production models, enhance productivity, reduce emissions, and move towards new standards in global supply chains.</p><br>
+
+      <p>According to Mr. Vu Ba Phu, to meet development goals, Vietnam’s supporting industries must enhance competitiveness, accelerate digital transformation and develop green industry practices. New know-how application and process optimization are critical for enterprises to improve productivity and meet more stringent quality requirements on international markets.</p><br>
+
+      <p>The Ministry of Industry and Trade has launched many programs to support production capacity building, governance capacity building and digital transformation for companies engaged in supporting industries. In 2025, the National Trade Promotion Program approved by the Ministry includes 118 activities aimed at helping businesses explore markets, connect with partners, utilize free trade agreements (FTAs), promote their products to foreign importers, and seek stable input sources for production. These efforts aim to help them integrate more deeply into global value chains.</p><br>
+
+      <p>Notably, Vietnam-Japan cooperation in developing supporting industries has been recognized as a model of success. Through technical support, business matching, technology transfer and trade promotion, Vietnamese companies have gradually improved their production capacity, quality management and deeper participation in regional and global value chains.</p><br>
+
+      <p>According to Mr. Haruhiko Ozasa, for Japanese firms to further expand operations, Vietnam needs to further improve its investment and business environment. And, one of the key factors to enhance profitability is to increase localization rates.</p><br>
+
+      <p>“We have high expectations for Vietnam’s digital transformation and IT application. Vietnam has strengths in information technology thanks to its abundant human resources. Integrating IT into the manufacturing sector will create new advantages, new strengths and new competitive elements for supporting industrial companies,” he emphasized.</p><br>
+
+      <div style="border: 1px solid #ccc; padding: 15px; line-height: 1.7; color: #111; text-align: justify; background-color: #fff;">
+        <em>
+          The supporting industry plays an important role in economic restructuring toward industrialization and modernization. It helps improve labor productivity and competitiveness, creates added value, and contributes to increasing the share of the processing and manufacturing sector in the economic structure. The supporting industry directly enhances the value and competitiveness of industrial products while accelerating national industrialization. At the macro level, it reduces imports of production inputs, eases trade balance pressures, and lowers foreign currency demand. It also attracts foreign direct investment (FDI), fosters the growth of domestic small and medium-sized enterprises (SMEs), and promotes technology transfer and advanced production techniques.
+          <br><br>
+          In recent years, Vietnam has made positive progress in the supporting industry, with a growing number of enterprises participating in the global supply chain.
+          <br><br>
+          This reality calls for comprehensive and practical solutions to ensure the sustainable development of supporting industries in Vietnam in the current context.
+        </em>
+      </div>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

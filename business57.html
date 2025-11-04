@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Empowering Vietnamese Export Opportunities via E-commerce Enhancement</h1>
+      <p class="meta">8:53:32 AM | 7/22/2024</p>
+      <p><b>In the realm of economic growth, exports play an important role, prompting heightened governmental and corporate emphasis on leveraging digital technology and cross-border e-commerce to fully capitalize on global export opportunities.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business57.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Mr. Tran Thanh Hai, Deputy Director of the Agency of Foreign Trade, delivers a presentation at the Cross-border E-commerce Forum 2024
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>Key to promoting exports</b></p><br>
+
+      <p>Addressing the "Cross-border E-commerce Forum 2024" in Hanoi, Mr. Bui Trung Kien, Vice President of the Vietnam E-commerce Association (VECOM), underlined the Government's focus on advancing cross-border e-commerce as a foundation for unlocking Vietnam's export potential. He highlighted the importance of fostering business collaboration, mastering digital platform operations, and modernizing trade practices to significantly enhance market expansion opportunities for enterprises of all scales.</p><br>
+
+      <p>Assessing Vietnam's import-export landscape in recent years, Mr. Tran Thanh Hai, Deputy Director of the Agency of Foreign Trade at the Ministry of Industry and Trade, affirmed vibrant growth in both quantity and quality over the past 15 years. This growth, he emphasized, played an important role in sustaining stable economic development and has positioned Vietnam as a key global manufacturing hub. Amidst dynamic global shifts, he said Vietnam's Import-Export Development Strategy to 2030 was toward fostering sustainable trade, with e-commerce emerging as a pivotal driver.</p><br>
+
+      <p>According to AccessPartnership's report "Local Sellers, Global Consumers 2022: Capturing the E-commerce Export Opportunity in Vietnam," Vietnam's B2C e-commerce export value is poised to reach VND296.3 trillion by 2027. Additionally, data from Amazon highlights a remarkable 300% increase in Vietnamese businesses' international footprint over the past five years. Mr. Tran Thanh Hai emphasized the importance of adoption of cross-border e-commerce, cautioning that failure to do so raises the risk of lagging behind in global integration.</p>
+
+      
+      <figure style="text-align:center; margin:0;">
+        <img src="business57_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">      
+      </figure>
+      <br>
+      <p><b>Empowering businesses to excel in cross-border exports</b></p><br>
+
+      <p>Addressing the challenges of cross-border online exports, Mr. Tran Van Trong, General Secretary of VECOM, highlighted that the majority of Vietnamese enterprises operate at the small and medium-sized, micro-small, or household business levels, constituting the backbone of the nation's diverse product offerings. However, many manufacturing-focused entities have yet to embrace cross-border e-commerce platforms.</p><br>
+
+      <p>Mr. Tran Quy Hien, CEO of Ecomstone Vietnam, a company specializing in facilitating Vietnamese businesses' access to cross-border electronic markets, noted that for most enterprises in Vietnam, cross-border e-commerce remains a relatively new concept. Despite Vietnam's reputation as an export-oriented economy, traditional export methods such as trade fairs and importer distribution channels prevail. Transitioning to more advanced export models poses significant challenges for these businesses.</p><br>
+
+      <p>In response to these challenges, the Vietnam Export Support Alliance (VESA) was established to catalyze breakthroughs in cross-border exports. Comprising industrial service providers, logistics firms, and technology partners, VESA aims to facilitate the digital transformation of Vietnam's small and medium-sized enterprises (SMEs) and harness online export opportunities.</p><br>
+
+      <p>"The formation of this alliance holds profound significance as it enables businesses to leverage collective strengths and forge multi-platform connections," emphasized Tran Thanh Hai.</p><br>
+
+      <p>Regarding cross-border e-commerce exports, Mr. Hoang Ninh, Head of the Digital Government Department at the Department of E-commerce and Digital Economy (Ministry of Industry and Trade), said that policies aimed at fostering the digital economy and e-commerce have substantially bolstered businesses, catalyzing acceleration across multiple fronts including an enhanced legal framework, financial incentives, investment encouragement, digital infrastructure development, robust data and network security measures, and advancements in research and technology.</p><br>
+
+      <p>However, amid these advantages, significant challenges persist. Issues include the lack of policy implementation synchronization, consumer apprehensions regarding information security, uneven technological infrastructure, a shortage of skilled human resources, and the complexities of managing cross-border e-commerce operations.</p><br>
+
+      <p>The evolution of e-commerce must prioritize sustainable development, optimizing the entire production-to-consumer journey with solutions that strike a balance between economic growth, social equity, and environmental issues. The development of green e-commerce will be linked to national digital transformation initiatives, the imperatives of the National Strategy on Digital Economy and Digital Society Development, and allied projects and programs aimed at charting a sustainable course for e-commerce.</p><br>
+
+      <p>To achieve these objectives, concerted efforts are essential. Focus areas include refining institutional policies, bolstering infrastructure tailored for sustainable e-commerce growth, fostering core platform development, integrating e-commerce ecosystems, prioritizing training and awareness campaigns, and fostering international collaboration.</p><br>
+
+      <p>Mr. Pham Duy Hung, Director of Public Policy at Amazon Global Selling Vietnam, emphasized the importance of education in cross-border e-commerce, highlighting collaborations with institutions like FPT University. He called for increased support from government agencies and industry associations to protect Vietnamese enterprises in online cross-border commerce, fostering their global brand growth. Mr. Hung stressed the need for swift implementation of guidelines after approving the National E-commerce Development Master Plan for 2026-2030, advocating for proactive regulatory frameworks.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

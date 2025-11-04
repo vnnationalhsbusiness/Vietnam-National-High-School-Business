@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vietnam National High School Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3;  width: 100%;}
+  .article-content h1 { margin-bottom: 10px; font-size: 24px;}
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  } */
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+  /* Khung tổng */
+  .cc{position:relative;width:90%;margin:0 auto}
+
+  /* Track: scroll ngang + snap để lướt trên mobile */
+  .cc-track{
+    display:flex;gap:clamp(10px,2.4vw,20px);
+    padding:8px clamp(5vw,8vw,12vw);
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none
+  }
+  .cc-track::-webkit-scrollbar{display:none}
+
+  /* Item: luôn căn giữa khi dừng */
+  .cc-item{
+    flex:0 0 100%;          /* rộng của 1 item (để hai bên lộ ra) */
+    scroll-snap-align:center;
+    transform:scale(1);opacity:.8;
+    transition:transform .3s ease, opacity .3s ease;
+  }
+  @media (min-width: 768px) {
+    .cc-item {
+      flex: 0 0 80%;  /* tablet trở lên: ảnh ~80% */
+    }
+  }
+
+  @media (min-width: 992px) {
+    .cc-item {
+      flex: 0 0 60%;  /* desktop: ảnh ~70% để lộ hai bên */
+    }
+  }
+
+  .cc-item img{
+    width:100%;display:block;
+    height: auto;
+    box-shadow:0 8px 28px rgba(11,18,32,.14)
+  }
+
+  .cc-item.active{ transform:scale(1.10); opacity:1; z-index:2 }
+
+  .cc-item.side{ animation:sidePulse 1.6s ease-in-out infinite alternate }
+  @keyframes sidePulse{ from{transform:scale(.84)} to{transform:scale(.9)} }
+
+  .cc-prev,.cc-next{
+    position:absolute;top:50%;transform:translateY(-50%);
+    width:42px;height:42px;border:none;border-radius:50%;
+    background:rgba(0,0,0,.45);color:#fff;display:grid;place-items:center;
+    cursor:pointer;z-index:5
+  }
+  .cc-prev{left:6px} .cc-next{right:6px}
+  @media (max-width:768px){ .cc-prev,.cc-next{display:none} }
+
+  @media (prefers-reduced-motion:reduce){
+    .cc-item,.cc-track{transition:none}
+    .cc-item.side{animation:none}
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo"><a href="index.html" style="text-decoration: none;color: navy;">Vietnam National High School Business</a>
+      <hr>
+      <p>Magazine</p>
+    </div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" class="active" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content" style="width: 200%;">
+      <h1>The Visionary Behind VNHSBM: Meet Nguyen Thuc Ha Le, Fueling Future Business Leaders</h1>
+      <p class="meta">9:29:20 AM | 2/7/2024</p>
+      <h3><b>Vietnam National High School Business Magazine (VNHSBM): Empowering a New Generation of Young Entrepreneurs</b></h3><br>
+      <figure style="text-align:center; margin:0;">
+        <img src="founder&president1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <p>For many ambitious high school students across Vietnam, the world of business often feels like a distant fortress. The language of economics, the strategies of a startup, the intricacies of finance — these are subjects frequently “locked away,” deemed too advanced or complex for anyone yet to enter university.</p><br>
+
+      <p><b>Nguyen Thuc Ha Le</b> — a high school student — saw this knowledge gap clearly.</p><br>
+
+      <p>As an active competitor in business challenges and a young entrepreneur herself, she observed a sharp contrast: while students were brimming with innovative ideas, they often lacked the structured, accessible knowledge to analyze the economic world around them. Passion was abundant, but practical, foundational business education was scarce.</p><br>
+
+      <p>She recognized that the desire to build, innovate, and lead doesn’t wait for a university degree. A simple, powerful question emerged: <i>“Why must we wait?”</i></p><br>
+
+      <p>That question became a mission. On <b>July 2nd, 2024</b>, this mission took form as the <b>Vietnam National High School Business Magazine (VNHSBM)</b>. It wasn’t just the launch of a website; it was the creation of a bridge — a platform designed <i>by a student, for students</i> — dedicated to bringing the vital world of business and economics directly to Vietnam’s high schools, one insightful article at a time.</p><br>
+
+      <h3><b>A Passion Ignited: From E-commerce to Educational Empowerment</b></h3><br>
+
+      <p><b>Nguyen Thuc Ha Le</b> is not just the founder of VNHSBM; she is its heart, its researcher, its content curator, and the very embodiment of the entrepreneurial spirit it champions. Her vision for the magazine stems directly from that mission: to demystify intricate economic concepts, translate strategic business theories into actionable lessons, and inspire a new generation to think critically and innovatively long before they step onto a college campus.</p><br>
+
+      <p>Her track record demonstrates a rare blend of business acumen, social responsibility, and strategic execution:</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Owner & Manager, GiftSo (Online E-shop, Vietnam) | June 2022 - Present:</b> As the driving force behind GiftSo — an e-shop specializing in customized gift solutions and souvenirs — Ha Le has gained invaluable hands-on experience in e-commerce, marketing, and operational management. Her keen understanding of customer experience led her to devise innovative marketing campaigns, including compelling product storytelling and engaging video promotions, successfully reaching diverse targets from educational institutions to retail customers. Employing five part-timers, she meticulously crafted personalized packaging and delivery, achieving a remarkable monthly revenue of approximately $1,200 with a healthy 36% gross profit margin. This venture showcases her ability to identify market needs, execute effective strategies, and manage a profitable enterprise from the ground up.</li><br>
+
+        <li><b>Founder & President, Chồi Non Trong Nắng (Nonprofit Food-Selling Business, Nghe An, Vietnam) | June 2024 - Present:</b> Demonstrating a profound commitment to social impact, Ha Le founded “Chồi Non Trong Nắng” (Young Shoots in the Sun). This non-profit initiative transforms food sales into a powerful fundraising engine, channeling profits to support underprivileged communities across Vietnam. Within its first generation, the business successfully raised 70 million VND (approximately $2,690) in charitable donations. This achievement underscores her exceptional organizational skills — developing sales strategies, coordinating volunteer teams, ensuring stringent food quality and hygiene standards, and effectively engaging local communities and student networks to maximize outreach and sales.</li>
+      </ul><br>
+
+      <h3><b>A Recognised Talent: Accolades in Business and Startup Competitions</b></h3><br>
+
+      <p>Ha Le’s natural talent and dedication to the business world have not gone unnoticed. She has consistently excelled in competitive environments, earning significant accolades that affirm her strategic capabilities and innovative thinking:</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Bronze Award | Aseeder Business Simulation Competition, ASDAN UK (2025):</b> This prestigious award highlights her strategic prowess in a demanding business simulation, demonstrating her ability to make sound decisions under pressure and achieve superior results against top-tier competitors.</li><br>
+
+        <li><b>Top 3 Operation Round | Aseeder Business Simulation (2025):</b> Further cementing her operational acumen, this recognition within a critical round of the Aseeder competition showcases her strong understanding of efficiency and resource management.</li><br>
+
+        <li><b>1st Runner-up | Vietnam Youth Start-up Challenge – Business Idea: Black Soldier Fly Farm (2024):</b> This impressive placement in a national startup challenge reflects her capacity for innovative problem-solving and developing sustainable business models, tackling complex challenges like agricultural waste management with a forward-thinking approach.</li>
+      </ul><br>
+      <!-- Center Carousel -->
+      <div id="topNews" class="cc">
+        <div class="cc-track">
+          <div class="cc-item"><img src="founder&president2.png" alt=""></div>
+          <div class="cc-item"><img src="founder&president3.png" alt=""></div>
+          <div class="cc-item"><img src="founder&president4.png" alt=""></div>
+          <div class="cc-item"><img src="founder&president5.png" alt=""></div>
+        </div>
+
+        <!-- Nút bấm chỉ hiện trên PC -->
+        <button class="cc-prev" aria-label="Previous">&#10094;</button>
+        <button class="cc-next" aria-label="Next">&#10095;</button>
+      </div>
+      <br>
+      <h3><b>A Leader Defined by Action and Vision</b></h3><br>
+
+      <p>What defines <b>Nguyen Thuc Ha Le’s</b> leadership style is a powerful combination of proactive vision and relentless execution. She embodies the spirit of an entrepreneur who does not wait for opportunities to appear but actively creates them.</p><br>
+
+      <p>Her leadership is not theoretical; it is hands-on. At <b>GiftSo</b>, she demonstrates strong managerial acumen, overseeing a team, optimizing operations for a 36% gross margin, and mastering the art of customer-centric marketing. This is the leadership of execution and profitability.</p><br>
+
+      <p>At <b>Chồi Non Trong Nắng</b>, she reveals a different facet of her leadership: the ability to inspire and mobilize. She successfully coordinated volunteer teams and engaged entire communities, channeling pure entrepreneurial drive toward a clear social mission — raising over 50 million VND for charity. This is the leadership of impact and purpose.</p><br>
+
+      <p>This blend of sharp, analytical skill (proven by her Aseeder awards) and compassionate, mission-driven action defines her approach. She is a leader who balances the <i>“how”</i> (operational efficiency) with the <i>“why”</i> (bridging knowledge gaps, creating social value). It is this forward-thinking, action-oriented mindset that serves as the foundational ethos for the <b>Vietnam National High School Business Magazine</b> — a platform built not just on ideas, but on the tangible results of dedicated leadership.</p><br>
+
+      <h3><b>The Future Vision: Empowering Vietnam’s Next Generation</b></h3><br>
+
+      <p>Through <b>VNHSBM</b>, <b>Nguyen Thuc Ha Le</b> is channeling her extensive practical experience and award-winning strategic mindset into an accessible, engaging platform for her peers. She firmly believes that by providing daily economic insights, practical business lessons, and a space for discussion, VNHSBM can empower high school students across Vietnam to not only understand the world of business but also to envision themselves as its future leaders and innovators.</p><br>
+
+      <p>Her journey exemplifies that age is no barrier to impact, and that true entrepreneurship combines passion with purpose.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    (() => {
+      'use strict';
+      /* =============== CENTER CAROUSEL (#topNews) =============== */
+      (function initTopNewsCarousel(){
+        const host = document.querySelector('#topNews');
+        if (!host || host.dataset.ccInited === '1') return;
+        host.dataset.ccInited = '1';
+
+        // 1) Tiêm CSS: chỉ item ở giữa nhấp nháy + KHÔNG bo góc
+        const STYLE_ID = 'cc-style-topnews';
+        if (!document.getElementById(STYLE_ID)) {
+          const css = `
+    #topNews .cc-track{ scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch }
+    #topNews .cc-item{ scroll-snap-align:center; transform:scale(.88); opacity:.8; transition:transform .3s ease, opacity .3s ease }
+    #topNews .cc-item.active{ transform:scale(1.15); opacity:1; z-index:2 }
+    /* Ảnh mặc định có bo nhẹ... */
+    #topNews .cc-item img{ width:100%; display:block; border-radius:14px; box-shadow:0 8px 28px rgba(11,18,32,.14) }
+    /* ...nhưng ảnh ĐƯỢC CHỌN (ở giữa) KHÔNG bo góc */
+    #topNews .cc-item.active img{ border-radius:0 }
+    #topNews .cc-item.side{ animation:none } /* tắt nhấp nháy hai bên nếu CSS cũ còn */
+    @keyframes centerBlink{
+      from{ filter:brightness(1); box-shadow:0 8px 28px rgba(11,18,32,.14) }
+      to  { filter:brightness(1.06); box-shadow:0 8px 28px rgba(11,18,32,.18), 0 0 18px rgba(255,255,255,.6) }
+    }
+    #topNews .cc-item.active img{ animation:centerBlink 1.4s ease-in-out infinite alternate }
+    @media (prefers-reduced-motion:reduce){
+      #topNews .cc-item, #topNews .cc-track{ transition:none }
+      #topNews .cc-item.active img{ animation:none }
+    }
+          `.trim();
+          const styleTag = document.createElement('style');
+          styleTag.id = STYLE_ID;
+          styleTag.textContent = css;
+          document.head.appendChild(styleTag);
+        }
+
+        // 2) Chuẩn hóa DOM (#topNews có thể đã có .cc-track/.cc-item)
+        let track = host.querySelector('.cc-track');
+
+        const buildFromImages = () => {
+          const rawImgs = [...host.querySelectorAll(':scope > img, :scope > .carousel-item img, :scope > img.d-block')];
+          if (!rawImgs.length) return false;
+          host.innerHTML = `
+            <div class="cc-track" style="display:flex;gap:clamp(10px,2.4vw,20px);padding:8px clamp(5vw,8vw,12vw);overflow-x:auto;scrollbar-width:none"></div>
+            <button class="cc-prev" aria-label="Previous">&#10094;</button>
+            <button class="cc-next" aria-label="Next">&#10095;</button>
+          `;
+          track = host.querySelector('.cc-track');
+          track.style.msOverflowStyle = 'none';
+          track.style.scrollbarWidth = 'none';
+          track.addEventListener('wheel', () => {}, { passive:true }); // nudge for iOS
+
+          rawImgs.forEach(img => {
+            const src = img.getAttribute('src');
+            const alt = img.getAttribute('alt') || '';
+            const item = document.createElement('div');
+            item.className = 'cc-item';
+            item.style.flex = '0 0 clamp(60%,64vw,70%)';
+            item.innerHTML = `<img src="${src}" alt="${alt}">`;
+            track.appendChild(item);
+          });
+          return true;
+        };
+
+        if (!track) {
+          buildFromImages();
+          track = host.querySelector('.cc-track');
+        }
+        if (!host.querySelector('.cc-prev')) {
+          const prevBtn = document.createElement('button');
+          prevBtn.className = 'cc-prev';
+          prevBtn.setAttribute('aria-label','Previous');
+          prevBtn.innerHTML = '&#10094;';
+          host.appendChild(prevBtn);
+        }
+        if (!host.querySelector('.cc-next')) {
+          const nextBtn = document.createElement('button');
+          nextBtn.className = 'cc-next';
+          nextBtn.setAttribute('aria-label','Next');
+          nextBtn.innerHTML = '&#10095;';
+          host.appendChild(nextBtn);
+        }
+
+        if (!track) return;
+        const items = [...track.querySelectorAll('.cc-item')];
+        if (!items.length) return;
+
+        // 3) Tính index gần giữa nhất của viewport track
+        const centerIndex = () => {
+          const centerX = track.scrollLeft + track.clientWidth / 2;
+          let best = 0, bestDist = Infinity;
+          items.forEach((el, idx) => {
+            const rect = el.getBoundingClientRect();
+            const trackRect = track.getBoundingClientRect();
+            const elCenter = (rect.left - trackRect.left) + rect.width/2 + track.scrollLeft;
+            const dist = Math.abs(elCenter - centerX);
+            if (dist < bestDist) { bestDist = dist; best = idx; }
+          });
+          return best;
+        };
+
+        // 4) Active state
+        let activeIdx = -1;
+        const setActive = (i) => {
+          if (i === activeIdx) return;
+          items.forEach(el => el.classList.remove('active'));
+          items[i]?.classList.add('active');
+          activeIdx = i;
+        };
+
+        const scrollToIndex = (i, smooth = true) => {
+          if (!items[i]) return;
+          items[i].scrollIntoView({
+            behavior: smooth ? 'smooth' : 'auto',
+            inline: 'center',
+            block: 'nearest'
+          });
+        };
+
+        // 6) Auto-snap: sau khi dừng vuốt một nhịp -> chốt đúng giữa
+        let ticking = false;
+        let stopTimer;
+        const onScroll = () => {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(() => {
+              setActive(centerIndex());
+              ticking = false;
+            });
+          }
+          clearTimeout(stopTimer);
+          stopTimer = setTimeout(() => {
+            const i = centerIndex();
+            setActive(i);
+            scrollToIndex(i, true); // CHỐT giữa luôn
+          }, 120);
+        };
+        track.addEventListener('scroll', onScroll, { passive: true });
+
+        // 'scrollend' (nếu trình duyệt hỗ trợ) -> snap lần nữa cho chắc
+        if ('onscrollend' in window) {
+          track.addEventListener('scrollend', () => {
+            const i = centerIndex();
+            setActive(i);
+            scrollToIndex(i, true);
+          });
+        }
+
+        // 7) Click ảnh => vào giữa ngay
+        items.forEach((el, idx) => {
+          el.addEventListener('click', () => {
+            setActive(idx);
+            scrollToIndex(idx, true);
+          });
+        });
+
+        // 8) Nút prev/next (PC)
+        const btnPrev = host.querySelector('.cc-prev');
+        const btnNext = host.querySelector('.cc-next');
+        const current = () => (activeIdx >= 0 ? activeIdx : centerIndex());
+
+        btnNext?.addEventListener('click', () => {
+          const i = (current() + 1) % items.length;
+          setActive(i);
+          scrollToIndex(i, true);
+        });
+        btnPrev?.addEventListener('click', () => {
+          const i = (current() - 1 + items.length) % items.length;
+          setActive(i);
+          scrollToIndex(i, true);
+        });
+
+        // 9) Khởi tạo + khi resize
+        const initActive = () => {
+          const i = centerIndex();
+          setActive(i);
+          //scrollToIndex(i, false);
+        };
+        window.addEventListener('resize', () => setTimeout(initActive, 50));
+        initActive();
+      })();
+
+    })();
+  </script>
+</body>
+</html>

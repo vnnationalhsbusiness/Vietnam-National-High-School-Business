@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Greening Supply Chains</h1>
+      <p class="meta">9:49:34 AM | 8/21/2024</p>
+      <p><b>Leading apparel retailers such as H&M, Zara and Uniqlo have started mandating their suppliers in Vietnam to use organic cotton, reduce water/energy use and implement waste recycling. This has prompted Vietnamese textile manufacturers to invest more heavily in eco-friendly production processes. As consumer demand for sustainable products grows, manufacturers and suppliers are compelled to meet new environmental standards and adjust their operational practices accordingly.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business53.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Leading apparel retailers now require their Vietnamese suppliers to use organic cotton, reduce water and energy use, and adopt waste recycling practices
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>More stringent standards</b></p><br>
+
+      <p>Dr. Le Duy Binh, CEO of Economica Vietnam, noted that one of the challenges facing enterprises today is the stringent push toward greening and sustainable development. Foreign buyers and importers are navigating a landscape characterized by evolving global trends, shifting legal regulations, and increasing pressure from domestic consumers. These factors are driving higher standards for green production, compelling companies involved in the global supply chain to accelerate their efforts to enhance their sustainability practices.</p><br>
+
+      <p>According to Dr. Nguyen Manh Hung, RMIT Senior Program Manager for Logistics and Supply Chain Management, customers, especially in developed nations, are becoming more aware of the environmental impact of their purchasing decisions. In Vietnam, up to 84% of consumers would pay more for sustainable products, according to a survey by Rakuten Insight in 2023.</p><br>
+
+      <p>To effectively engage in the global supply chain, domestic enterprises must now adopt ESG (Environmental, Social, and Governance) standards, CSR (Corporate Social Responsibility) initiatives, circular economy models, and green economy practices. Compliance with these standards is no longer optional but essential. For instance, businesses must not only adhere to the regulations of their host countries but also align with international practices such as the EU’s Cross-Border Carbon Adjustment Mechanism and the EU Anti-Deforestation Regulation.</p><br>
+
+      <p>As consumer demand for sustainability grows, it fosters a mutually beneficial relationship that drives process innovation and can lead to financial and cost improvements. Consequently, the increasing pressure from consumers for green practices compels businesses to enhance their operations continuously. To effectively address environmental challenges, companies must forge strategic partnerships and collaborate closely with customers, leveraging these relationships to navigate and mitigate environmental pressures.</p><br>
+
+      <p><b>Building capacity to comply with green standards regulations</b></p><br>
+
+      <p>Dr. Le Duy Binh emphasized that Vietnamese enterprises wishing to join the global value chain must prioritize training and support to build capacity for adhering to codes of conduct, regulations and standards. Equally important is the development of digital tools to improve traceability and data collection throughout the global supply chain.</p><br>
+
+      <p>Regulations concerning green standards should be established to guide production and business processes effectively. Additionally, targeted support programs are essential to help businesses enhance their capacity, improve digitalization, and upgrade their information technology capabilities. These measures are necessary to meet the stringent ESG standards imposed by importers from demanding markets such as the EU, Japan, the US, Canada and other economies.</p><br>
+
+      <p>In response to the evolving needs of businesses, Mr. Binh emphasized the urgency of taking decisive actions to secure a place in global supply chains. As the economy begins to recover, it is important to realign with market principles and gradually phase out long-standing subsidies, support and exemption measures. This transition will enable the market to function according to its principles.</p><br>
+
+      <p>“Gradually phasing out broad-based support measures does not imply that the State will cease to foster business development. Rather than continuing extensive exemptions, reductions, extensions, and postponements, state budget resources can be reallocated to provide targeted support. This focused investment will be directed toward businesses, organizations, and institutions pivotal to advancing the digital economy, green economy, circular economy and creative economy. It will also support emerging sectors such as semiconductors, chips, electric vehicles, clean energy, digital technologies and artificial intelligence,” said Mr. Binh.</p><br>
+
+      <p>According to Dr. Nguyen Manh Hung, green financing for supply chains in particular deserves more attention, as it can create a financial incentive for suppliers to commit to sustainability. Supply chain leaders are typically large corporations with abundant resources or access to a better investment scheme. Hence, they can assist smaller companies (local manufacturers) to deal with the cost of green transformation. Besides, the corporate reputation associated with the supply chain leaders can facilitate access to green investment, such as green bonds or sustainable development loans.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

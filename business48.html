@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Mastercard and NAPAS Jointly Announce a Collaboration to Introduce the First Co-badged Card with Banks in Vietnam</h1>
+      <p class="meta">3:47:01 PM | 10/15/2024</p>
+      <p><b>On October 15, Mastercard, a global technology company in the payments industry, the National Payment Corporation of Vietnam (NAPAS), and nine first banks have announced a Memorandum of Understanding (MoU) to introduce the first NAPAS – Mastercard co-badged card in Vietnam.</b></p><br>
+      <p>The co-badged card, equipped with contactless payment features, is widely accepted globally, including in Vietnam. This single card offers cardholders a seamless, secure, and convenient payment experience.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business48.png" alt="ADB Press Conference" class="article-img" style="margin: auto">   
+      </figure>
+      <br>
+      <p>This collaboration, aimed at delivering innovative new services to domestic cardholders, aligns with Vietnam's growing global integration and development trends. According to the Mastercard 2024 Digital Payment Index, 47% of Vietnamese consumers prefer online payment tools for their convenience and speed, while 21% value the enhanced security they provide. In May 2024, Vietnam ranked third in Southeast Asia for outbound travel sentiment, reflecting a strong enthusiasm for overseas travel. This increasing international travel trend underscores the escalating demand for diverse, secure and seamless payment solutions.</p><br>
+
+      <p>In response to this demand, the co-badged card between NAPAS and Mastercard, issued by Vietnamese banks, represents an optimal payment solution. With just one card, cardholders can utilize the payment features of the domestic card (NAPAS) as well as the international payment features of Mastercard such as contactless payments. The NAPAS-Mastercard co-badged card will be accepted at over 600,000 payment acceptance points and 20,000 ATMs in Vietnam, and provide access to over 130 million merchant locations and over 1 million ATMs globally. Additionally, consumers can use their co-badged cards for online payments on e-commerce platforms.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business48_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">   
+      </figure>
+      <br>
+      <p>In addition to the benefits of the payment acceptance network, cardholders will also enjoy various promotions offered by NAPAS in Vietnam, as well as attractive promotion programs within Mastercard's global payment acceptance network.</p><br>
+
+      <p>Regarding technology solutions, the co-badged card between NAPAS and Mastercard employs contactless payment technology by integrating both Vietnam Domestic Chip-based Payment Card Specifications (VCCS) standard for NAPAS card and M/Chip standard for Mastercard into a single physical chip. This integration helps reduce costs, enhance security and mitigate the risk of card fraud and counterfeiting.</p><br>
+
+      <p>In the initial phase of the project, NAPAS and Mastercard, collaborating with nine first banks, will issue the NAPAS and Mastercard co-badged cards. These banks are Agribank, BIDV, Vietinbank, MB, TPBank, Sacombank, HD Bank, PvcomBank, and Nam A Bank. In the next phase starting in 2025, NAPAS and Mastercard will extend the initiative to additional member banks, aiming to reach every bank in need. The objective of this effort is to present Vietnamese consumers with an extensive range of global payment options.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business48_2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">   
+      </figure>      
+      <br>
+      <p><b>Mr. Nguyen Quang Hung</b>, Chairman of the Board of Directors at NAPAS, shared: “The collaboration to introduce co-badged cards between NAPAS and Mastercard demonstrates the commitment and continuous efforts of all parties in seeking innovative solutions and applying new payment technologies. This aims to provide users with simple and safe payment products and services, offering a seamless and consistent transaction experience both domestically and internationally.”</p><br>
+
+      <p>“As the world of work, commerce, and technology swiftly evolves, Mastercard stands at the forefront, ready to drive digital transformation in Vietnam. The alliance with NAPAS and its banking partners reflects Mastercard’s commitment to delivering secure, efficient, and transparent payment solutions to Vietnamese cardholders. As an enabler of change, Mastercard is driving digital transformation in Vietnam, reinforcing the global pledge to integrate one billion people into the digital economy by 2025,” said <b>Winnie Wong</b>, Country Manager, Vietnam, Cambodia and Laos, Mastercard.</p><br>
+
+      <p>This co-badged card introduces a new era of payment convenience, offering cardholders seamless experiences both in Vietnam and beyond, supported by the comprehensive payment acceptance of the NAPAS network and the international transaction capabilities of Mastercard. Moreover, cardholders can enjoy numerous benefits and rewards.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnamese Fruit & Vegetable Exports Poised to Hit Record $7Bln</h1>
+      <p class="meta">8:48:46 AM | 7/19/2024</p>
+      <p><b>Vietnam's fruit and vegetable industry has achieved a turnover of nearly US$3.5 billion in the first half of the year, underpinned by an abundant supply ready to meet significant market demand. This trajectory positions the industry on course to reach a historic milestone of US$7 billion by year's end.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy48.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Durian has surged as a key player in Vietnam's fruit and vegetable export sector, with an estimated turnover surpassing US$1 billion in the first half of 2024
+        </figcaption>
+      </figure>
+      <br>
+      <p>As reported by the Ministry of Agriculture and Rural Development, fruit and vegetable exports for June 2024 are projected to approach US$780 million. Throughout the initial six months of 2024, fruits and vegetables have solidified their position as the leading export category among agricultural products, tallying a turnover of nearly US$3.5 billion – an impressive surge of over 28% compared to the corresponding period last year.</p><br>
+
+      <p><b>Strong growth in fruit and vegetable exports</b></p><br>
+
+      <p>In the first half of 2024, exports of durian, dragon fruit, bananas and other key products have driven substantial export growth. Moreover, processed products and pivotal markets have also experienced notable increases ranging from 10% to 50% compared to the previous year.</p><br>
+
+      <p>The export landscape for fruits and vegetables remains highly favorable, propelled by heightened demand in traditional markets like China and emerging markets such as Korea, the United States, Japan and Thailand. Notably, Vietnam's fruit and vegetable exports to China in the first six months of 2024 surged to approximately US$2.2 billion, marking a remarkable 33% increase from the same period in 2023. China stands as the foremost export destination for these commodities.</p><br>
+
+      <p>Mr. Phung Duc Tien, Deputy Minister of Agriculture and Rural Development, announced that Vietnam has successfully expanded its export portfolio to include over a dozen varieties of fruits destined for the Chinese market. These include watermelon, mangosteen, durian, banana, sweet potato, dragon fruit, rambutan, mango, lychee, longan and jackfruit. Vietnam expects to sign a new protocol with China in 2024, facilitating the export of frozen durian, passion fruit and chili. Additionally, both nations have reached an agreement to finalize the Fresh Coconut Protocol, presenting promising opportunities for Vietnamese coconut exports.</p><br>
+
+      <p>"The Chinese market is very promising, but the quality of Vietnamese fruits and vegetables is not stable. There are still some shipments that get warnings about pesticide residues. Recently, the project to improve the effectiveness of the implementation of the Agreement on the application of sanitary and phytosanitary measures (SPS) has been approved by the Government, opening up a new tool to promote the quality of exported fruits and vegetables," Mr. Phung Duc Tien said.</p><br>
+
+      <p>The second largest export market for Vietnamese fruits and vegetables in the past six months is South Korea, with the turnover estimated at US$180 million, up 57.9% over the same period in 2023.</p><br>
+
+      <p>In the first half of 2024, Vietnam's export value to the United States soared to nearly US$150 million, up 32.4% compared to the corresponding period in the previous year. The United States stands as a potential market for fruit and vegetable exporters, including Vietnam. However, to effectively penetrate this market, it is imperative to enhance the value of seasonal fruits through the production of processed goods like dried fruits, fruit powders and canned products, ensuring year-round availability. Moreover, adopting advanced technologies to extend the shelf life of fruits will further bolster Vietnam's competitiveness in this strategic market.</p><br>
+
+      <p>Mr. Nguyen Thanh Binh, Chairman of the Vietnam Fruit and Vegetable Association (Vnfruit), said: "The output of harvested fruits and vegetables increases by about 6% per year. The supply is very large and stable. Moreover, the demand of the world market is increasing, from now until the end of 2024, the Vietnamese fruit and vegetable industry still has favorable conditions for development."</p><br>
+
+      <p>“In the near future, the official export of fresh coconuts to China promises to be a potential billion-dollar fruit trade. The large demand for coconut imports in China shows a consistent upward trajectory, with domestic production satisfying merely 10% of the country's consumption needs. As such, Vietnam's fruit and vegetable exports to China are poised for sustained and substantial growth in the coming years,” Mr. Binh commented.</p><br>
+
+      <p><b>Elevating durian to a distinctive industry</b></p><br>
+
+      <p>Durian has emerged as a powerhouse in Vietnam's fruit and vegetable export sector, boasting an estimated turnover of approximately US$1 billion in the first half of 2024 alone. This makes durian the foremost contributor to the country's export landscape in this category. Notably, China continues to dominate, accounting for an impressive 92% share of Vietnam's total durian export turnover.</p><br>
+
+      <p>In 2023 alone, durian exports soared to US$2.3 billion, underscoring its important role in driving Vietnam's agricultural export prowess on the global stage.</p><br>
+
+      <p>The South China Morning Post reported that in recent years, global demand for durian has increased by 400% mainly due to increased purchasing power from China. It is forecast that demand for durian from China could increase 15 times in the future.</p><br>
+
+      <p>However, the "explosion" of durian exports has also caused this industry to face many problems that threaten its sustainable development. Recently, the General Administration of Customs of China announced that it would ban the import of durian from 18 growing areas and 15 packing facilities in Vietnam due to the discovery of “heavy metal” residues exceeding the permitted level. Meanwhile, Vietnamese durian will also be under pressure to compete with Malaysian durian, as this country has just been licensed to export fresh durian to China for the first time.</p><br>
+
+      <p>In a significant development in Vietnam's durian industry, a durian production and export enterprise has taken legal action against a gardener from Binh Thuan province for breach of contract in their durian purchasing agreement. This unprecedented legal dispute marks the first instance of a durian grower being embroiled in litigation over contractual obligations related to product consumption.</p><br>
+
+      <p>According to the Department of Crop Production under the Ministry of Agriculture and Rural Development, the durian cultivation in Vietnam has seen remarkable growth. In 2020, the national durian cultivation area spanned just over 71,000 hectares. However, by the end of 2023, this figure surged to nearly 151,000 hectares, yielding approximately 1.2 million tons of durian. Presently, the cultivated area of durian exceeds the Ministry of Agriculture and Rural Development's initial planning twofold.</p><br>
+
+      <p>Mr. Huynh Tan Dat, Director of the Plant Protection Department under the Ministry of Agriculture and Rural Development, said that although the country has 708 growing area codes and 168 fresh durian packing facility codes granted, in reality, localities have not proactively inspected and monitored export codes after they have been granted in accordance with the regulations of the importing country, especially the durian protocol signed with China.</p><br>
+
+      <p>"These are also the main reasons why many durian shipments have been warned of violating plant quarantine and food safety in recent times and the problems are showing signs of increasing," Mr. Dat stated.</p><br>
+
+      <p>Ms. Ngo Tuong Vy, General Director of Chanh Thu Fruit Import-Export Joint Stock Company, characterized the durian industry as intense competition. She emphasized that numerous enterprises and traders are actively vying for a share of the durian market, engaging in fierce competition across the entire supply chain.</p><br>
+
+      <p>During a recent conference focused on sustainable durian development, Ms. Ngo Tuong Vy advocated for establishing a distinct industry framework for durian, complete with its own specialized management mechanisms. Drawing on examples from Thailand, she highlighted that in cases where farmers engage in unauthorized practices like premature durian cutting, immediate police inspections lead to public disclosure of the growing area's code on a dedicated fanpage. This proactive approach also involves collaboration with the Chinese consulate to swiftly address such issues, ensuring stringent oversight and protection of durian quality and integrity.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

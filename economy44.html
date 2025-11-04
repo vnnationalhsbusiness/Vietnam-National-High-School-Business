@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Using AI in Social Media to Boost Sales and Customer Satisfaction</h1>
+      <p class="meta">10:02:55 AM | 8/9/2024</p>
+      <p><b>Artificial intelligence (AI) is rapidly transforming businesses and industries globally, driving innovation and economic growth. How can AI be used in social media marketing to boost sales and customer satisfaction?</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy44.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          AI can enhance social media marketing to increase sales and improve customer satisfaction. (image: Unsplash)
+        </figcaption>
+      </figure>
+      <br>
+        <p><b>Advantages of AI integration in social media</b></p><br>
+
+        <p>In Vietnam, the annual growth of the AI market is projected at 28.6%, with an expected market volume of US$3.4 billion by 2030. The government has implemented a national AI strategy to position Vietnam as a leader in AI across the Southeast Asian region.</p><br>
+
+        <p>According to RMIT Senior Lecturer Dr. Alrence Halibas, AI can improve the consumer journey and decision-making, increasing their tendency to use digital platforms for product search and purchase.</p><br>
+
+        <p>“One of the advantages of AI is its ability to provide personalized recommendations. It uses content-based filtering, such as recommending products similar to those a user has liked in the past, and collaborative filtering, which recommends products based on the preferences of similar users,” said Dr. Halibas.</p><br>
+
+        <p>These strategies increase the likelihood of purchase by ensuring the content and products shown to the user are relevant to their interests and needs.</p><br>
+
+        <p>Another example is chatbots and virtual assistants, which use natural language processing (NLP) to engage with customers in real time on social media platforms.</p><br>
+
+        <p>“Chatbots answer queries, provide product information, and guide customers through the purchase process,” she elaborated.</p><br>
+
+        <p>Other AI-enhanced marketing techniques include: Predictive analytics which analyze historical data from social media to anticipate customer needs and offer timely and relevant products; Sentiment analysis which examines social media posts and customer reviews to evaluate customer sentiment towards products and brands, allowing marketers to tailor marketing strategies; Dynamic pricing which monitors prices in real time based on demand, competition, and other market factors to ensure optimal pricing that maximizes sales and profits.</p><br>
+
+        <p>RMIT Senior Lecturer Umair Akram shared some successful AI implementations in Vietnam.</p><br>
+
+        <p>VietJet's campaign developed by PMAX in 2023 used a Customer Data Platform (CDP) to analyze more than 150 million consumer records. This created more than 300 customer segments and deployed personalized ads across 25 plus channels. VietJet achieved six times higher sales compared to the same period in 2022, 1.7 million flight bookings, and a 75% year-over-year increase in active monthly users on their app.</p><br>
+
+        <p>The strategic use of AI for personalized ad targeting and real-time customer insights demonstrates the potential of AI in transforming social media marketing.</p><br>
+
+        <p>Samsung's campaign for the Galaxy Z Flip4 and Fold4, managed by Cheil Vietnam, used an AI-driven CDP to analyze customer data and generate more than 300 segments. This enabled personalized ads across multiple channels, including Instagram and TikTok, targeting Gen Z consumers.</p><br>
+
+        <p>The campaign, which included the innovative “Galaxy ME” platform and collaborations with fashion designers, achieved a 96.4% share of buzz, 97% brand awareness, and significant increases in purchase intent and sales. This AI implementation not only boosted engagement but solidified Samsung's leadership in the foldable smartphone market.</p><br>
+
+        <p><b>The future of AI in social media marketing</b></p><br>
+
+        <p>Dr. Akram highlighted the potential of AI-powered systems to identify products that drive customer engagement on social media. By analyzing customer interactions, businesses can determine which product attributes resonate most. They can then target marketing messages that reach and engage customers.</p><br>
+
+        <p>“Businesses must consider the behavioral and social impacts of AI technology on customer behavior and experience.</p><br>
+
+        <p>“This enables them to develop customer engagement strategies and innovative user experiences that foster sustained growth and give them a competitive advantage,” said Dr. Akram.</p><br>
+
+        <p>Dr. Halibas said customers who develop an emotional attachment to a brand are more likely to experience increased satisfaction and exhibit higher purchase intention.</p><br>
+
+        <p>To cultivate this, she recommended businesses provide pre- and post-purchase customer support, engage in proactive communication, and offer personalized interactions.</p><br>
+
+        <p>RMIT experts believe AI technologies will continue to offer granular levels of personalization, hyper-targeted content and ads based on user profiles and real-time behavior.</p><br>
+
+        <p>Dr. Halibas said advancements in NLP and machine learning will lead to more sophisticated chatbots and virtual assistants, providing seamless and human-like customer interactions.</p><br>
+
+        <p>“Ongoing developments in augmented reality (AR) and AI will create immersive shopping experiences on social media and AI, allowing users to virtually try products before purchasing,” said Dr. Halibas.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

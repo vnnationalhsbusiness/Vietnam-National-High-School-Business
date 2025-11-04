@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start-up</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Start-up</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" class="active" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>The E-Commerce Backbone: How Giao Hang Tiet Kiem (GHTK) Mastered Vietnam’s Last-Mile Logistics</h1>
+      <p class="meta">10:09:08 AM | 2/6/2025</p>
+      <p><i>GHTK emerged as an industry titan by building a proprietary, technology-driven delivery network that offers nationwide coverage, optimized cost structures, and speed essential for Vietnam's booming e-commerce sector.</i></p>
+      <br>
+      <p>As Vietnam’s e-commerce giants like Shopee and Lazada exploded in scale, they required a robust, reliable logistics partner capable of navigating the country’s dense urban centers and complex rural topography. <b>Giao Hang Tiet Kiem (GHTK)</b>—whose name translates literally to “Economical Delivery”—answered this call, transforming the often-chaotic process of last-mile logistics into a streamlined, high-tech operation. <b>GHTK’s</b> success is a study in vertical integration, focusing relentlessly on speed, cost-efficiency, and nationwide coverage.</p><br>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup6.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <br>
+      <p><b>The Technology-First Founders</b></p><br>
+
+      <p><b>GHTK</b> was founded by <b>Mr. Pham Hong Quan</b>, a visionary who recognized that traditional logistics models were too slow and expensive for the high-volume, low-margin demands of e-commerce. He pioneered a company where technology and data were the primary drivers of operational decisions, rather than just supplementary tools. This emphasis on tech allowed <b>GHTK</b> to move away from legacy systems and create an agile, centralized platform capable of instantaneous route optimization and inventory management.</p><br>
+
+      <p><b>GHTK’s</b> unique, asset-light approach to last-mile fulfillment—leveraging localized hubs and a decentralized network of riders—allowed it to scale rapidly across the entire country, a critical factor for securing partnerships with the biggest e-commerce marketplaces.</p><br>
+
+      <p><b>Phase 1: The Optimized Delivery Network (Coverage and Density)</b></p><br>
+
+      <p><b>GHTK’s</b> initial strategy focused on achieving massive scale and unparalleled geographical reach, particularly in connecting the two major hubs of Hanoi and Ho Chi Minh City to remote provinces.</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>The Hub-and-Spoke Model:</b> <b>GHTK</b> invested heavily in a localized “hub-and-spoke” network. This structure utilizes small, numerous local distribution centers instead of massive, centralized warehouses. This dense network minimizes the distance delivery drivers need to travel from the hub to the customer, dramatically improving speed and reducing fuel costs.</li><br>
+        <li><b>Rapid Nationwide Expansion:</b> By designing their network for density, <b>GHTK</b> quickly achieved nationwide coverage, a non-negotiable requirement for e-commerce platforms. This ability to deliver reliably to both urban high-rises and remote villages cemented their position as the default logistics choice for sellers across Vietnam.</li>
+      </ul><br>
+
+      <p><b>Phase 2: The Efficiency Engine (Technology and Automation)</b></p><br>
+
+      <p>The true differentiator for <b>GHTK</b> lies in its reliance on proprietary software and automation to drive down costs—hence the “<b>tiết kiệm</b>” (economical) in its name.</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Data-Driven Route Optimization:</b> Every stage of the delivery process—from package pickup to sorting and last-mile drop-off—is managed by <b>GHTK’s</b> internal software. This system uses real-time data to dynamically optimize delivery routes for thousands of drivers simultaneously, minimizing travel time and maximizing the number of successful deliveries per shift. This focus on optimization allows <b>GHTK</b> to offer highly competitive pricing.</li><br>
+        <li><b>Automated Sorting and Reconciliation:</b> <b>GHTK</b> introduced high levels of automation at its central sorting facilities, speeding up the package handling process and drastically reducing human error. This technological edge is particularly vital in Vietnam, where the volume of cash-on-delivery (COD) transactions remains high. <b>GHTK’s</b> system ensures fast, accurate COD reconciliation with merchants, a crucial service for seller trust.</li>
+      </ul><br>
+
+      <p><b>The Competitive Edge: Supporting the Ecosystem</b></p><br>
+
+      <p><b>GHTK’s</b> strategy is a perfect example of a <b>B2B</b> service becoming essential to the <b>B2C</b> ecosystem.</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>COD Management:</b> By mastering the complex system of collecting cash and quickly remitting funds to sellers, <b>GHTK</b> removed a massive headache for e-commerce merchants, differentiating itself from less reliable competitors.</li><br>
+        <li><b>Flexible Services:</b> The company is known for its flexible pickup and drop-off times, catering specifically to the needs of individual online sellers and small businesses (SMEs) who constitute a major portion of the Vietnamese e-commerce market.</li>
+      </ul><br>
+
+      <p><b>GHTK’s</b> journey demonstrates that, in the world of e-commerce, logistics is the battlefield where winners are chosen. By prioritizing a technology-first, asset-optimized approach, <b>GHTK</b> not only survived but thrived, becoming the vital, high-speed backbone that powers Vietnam’s entire digital retail economy.</p><br>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="startup1.png" alt="Ad 1">
+      <a href="startup1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">From Gamer to Giant: Lê Hồng Minh and the Making of VNG, Vietnam's First Unicorn</p></a>
+      <img src="startup2.png" alt="Ad 2">
+      <a href="startup2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The QR Code Unicorn: How VNLife Forged an Empire from a Single Scan</p></a>
+      <img src="startup3.png" alt="Ad 3">
+      <a href="startup3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The Global Blockchain Disruption: How Sky Mavis Built a Billion-Dollar Metaverse with Axie Infinity</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

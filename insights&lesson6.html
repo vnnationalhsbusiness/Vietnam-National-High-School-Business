@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Lessons</title>
+</head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { font-size: 20px; font-weight: bold; color: #c00; }
+    .menu {
+      position: fixed;
+      top: 0; left: -100%;
+      width: 70%; height: 100%;
+      background: #fff;
+      display: flex; flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 9;
+    }
+    .menu.active { left: 0; }
+    .menu a { text-decoration: none; color: #111; font-weight: bold; }
+    .menu-toggle {
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ARTICLE PAGE (mobile-first) */
+    .article-page {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+    .article-content { flex: 3; }
+    .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+    .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+    .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+    .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+    blockquote {
+      border-left: 4px solid #c00;
+      padding-left: 10px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #333;
+    }
+
+    /* ADS */
+    .article-ads {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; display:block; }
+
+    /* OTHER NEWS */
+    .other-news { padding: 20px; background: #f9f9f9; }
+    .other-news h2 { margin-bottom: 15px; color: #c00; }
+    .other-news ul { list-style: none; }
+    .other-news li { margin: 8px 0; }
+    .other-news a { text-decoration: none; color: #000; }
+    .other-news a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+    /* Desktop/Tablet layout: 2 cột, cột phải cố định bề ngang */
+    @media (min-width: 992px) {
+      .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+      .menu-toggle { display: none; }
+
+      .article-page {
+        display: grid;
+        grid-template-columns: 1fr minmax(280px, 340px);
+        gap: 28px;
+        align-items: start;
+      }
+      .article-content { min-width: 0; }
+      .right-rail { min-width: 0; display:flex; flex-direction:column; gap:16px; }
+    }
+
+    /* ===== TOC style giống ảnh mẫu ===== */
+    /* Ẩn TOC trên mobile; chỉ hiện >=768px */
+    /* .toc{ display:none; } */
+    /* TOC: tránh bị nội dung bên dưới “lọt” qua khi sticky */
+    @media (min-width:768px){
+      .toc{
+        /* background:#fff;           bật nền trắng để che nội dung phía dưới */
+        /* border:1px solid #e5e7eb;  viền nhẹ, giống ảnh mẫu */
+        border-radius:12px;
+        padding:12px 12px 12px 0;  /* chừa chỗ cho vạch dọc + mũi tên */
+        /* box-shadow:0 6px 18px rgba(0,0,0,.06); */
+        z-index: 5;                /* nổi lên trên ảnh/caption Ads */
+      }
+      .toc-title{ margin:0 0 10px 0; font-size:20px; font-weight:700; color:#111; }
+      .toc-list{
+        list-style:none; margin:0; padding:0 0 0 16px;
+        border-left:2px solid #e5e7eb; /* vạch dọc bên trái */
+      }
+      .toc-list li{ margin:6px 0; }
+      .toc a{
+        position:relative; display:block; color:#111; text-decoration:none;
+        font-size:15px; line-height:1.4; padding:6px 0;
+      }
+      .toc a:hover{ text-decoration:underline; }
+      .toc a.active{ font-weight:700; }
+      .toc a.active::before{
+        content:""; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
+        width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent;
+        border-left:7px solid #2563eb; /* mũi tam giác xanh */
+      }
+    }
+
+    /* Nếu dùng dark mode tự động, bạn có thể thêm: */
+    /* @media (prefers-color-scheme: dark){
+      .toc{ background:#0b1020; border-color:#1e293b; box-shadow:0 10px 28px rgba(0,0,0,.45); }
+      .toc-title, .toc a{ color:#e5e7eb; }
+      .toc-list{ border-left-color:#1e293b; }
+    } */
+
+    /* Khi cuộn tới tiêu đề, chừa khoảng cho header sticky */
+    .anchor-target { scroll-margin-top: 88px; }
+    .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Insights & Lessons</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" class="active" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page">
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Understanding IRR and NPV: Precise Tools for Project Investment Decisions</h1>
+      <p class="meta">8:10:43 PM | 23/9/2024</p>
+      <img src="insights&lesson6.png" alt="Main Article Image" class="article-img">
+
+    <p>
+      For corporate finance managers and strategic investors, the decision to commit substantial capital to a project—be it launching a new product line, acquiring machinery, or entering a new market—is fraught with risk. Success hinges not just on forecasting revenues, but on accurately determining if the project will generate sufficient value to justify its cost. Two fundamental metrics, <b>Net Present Value (NPV)</b> and <b>Internal Rate of Return (IRR)</b>, stand as the indispensable bedrock for making these critical capital budgeting decisions.
+    </p>
+    <br>
+    <p id="1" class="anchor-target"><b><i style="color: black; font-size: 20px;">The Foundation: The Time Value of Money</i></b></p>
+    <br>
+    <p>
+      Before calculating either NPV or IRR, one must grasp the principle of the <b>Time Value of Money (TVM)</b>. A dollar received today is worth more than a dollar received tomorrow because the dollar today can be invested to earn a return. Both NPV and IRR rely on <b>discounting</b> future cash flows back to their present value, making them superior to simple methods like the Payback Period, which ignore the cost of capital and the timing of returns. The discount rate used in this calculation is typically the firm's <b>Cost of Capital</b> (often approximated by the Weighted Average Cost of Capital, or WACC), which represents the minimum required rate of return for any project.
+    </p>
+    <br>
+    <p id="2" class="anchor-target"><b><i style="color: black;font-size: 20px;">1. Net Present Value (NPV): The Gold Standard of Value Creation </i></b></p>
+    <br>
+    <p>
+      <b>Net Present Value (NPV)</b> is the difference between the present value of the cash inflows (expected revenues) and the present value of the cash outflows (initial investment and operating costs) over the project's life.
+    </p>
+    <br>
+    <p>
+        <b>The Calculation and Decision Rule:</b>
+    </p>
+    <br>
+    <p>
+      The NPV calculation uses the formula:
+    </p>
+    <br>
+    <p>NPV=t=1∑n​(1+r)tCash Flowt​​−Initial Investment</p>
+    <br>
+    <p>where r is the discount rate (Cost of Capital).</p>
+    <br>
+    <p>The decision rule is absolute:</p>
+    <br>
+    <li style="margin-left: 35px;">
+      <ul>
+            <li><b>If NPV > 0</b>: The project is expected to generate returns <b>greater</b> than the Cost of Capital, thus increasing shareholder wealth. <b>Accept the project.</b><br></li>
+            <br>
+            <li><b>If NPV < 0</b>: The project destroys value. <b>Reject the project.</b><br></li>
+            <br>
+            <li><b>If NPV = 0</b>: The project only covers the cost of capital. Indifferent, but typically accepted if strategic fit is high.</li>
+            <br>
+      </ul>
+    </li>
+    <p><b>Strategic Advantage of NPV:</b></p>
+    <br>
+    <p>
+      NPV is considered the gold standard because its result is expressed in <b>dollars of value creation</b>. This means it explicitly tells management how much wealthier the company will become if the project is accepted. Crucially, NPV follows the <b>Value Additivity Principle</b>: the NPV of two independent projects is simply the sum of their individual NPVs. This makes it the only reliable method for selecting the best combination of projects when capital is abundant.
+    </p>
+    <p id="3" class="anchor-target">
+        <b><i style="color: black; font-size: 20px;">2. Internal Rate of Return (IRR): The Breakeven Yield</i></b>
+    </p>
+    <br>
+    <p>
+      The <b>Internal Rate of Return (IRR)</b> is the discount rate (r) that makes the Net Present Value of a project exactly equal to zero. In essence, it is the <b>expected compound annual rate of return</b> that a project is projected to yield.
+    </p>
+    <br>
+    <p>
+        <b>The Calculation and Decision Rule:</b>
+    </p>
+    <br>
+    <p>The IRR is found by solving for r in the equation:</p>
+    <img src="insights&lesson61.png" alt="">
+      <!-- <p id="2" class="anchor-target"><b><i style="font-size:20px; color: black;">3. Bargaining Power of Buyers (The Price Pressure)</i></b></p> -->
+      <br>
+    <p>The decision rule uses the firm's required hurdle rate (Cost of Capital, k):</p>
+    <li style="margin-left: 35px;">
+        <ul>
+            <li><b>If IRR > k</b>: The project's expected return exceeds the cost of financing. <b>Accept the project.</b></li>
+            <br>
+            <li><b>If IRR < k</b>: The project's expected return is insufficient. <b>Reject the project.</b></li>
+            <br>
+        </ul>
+    </li>
+    <p><b>Strategic Advantage of IRR:</b></p>
+    <br>
+    <p>
+      The primary appeal of IRR is its intuitive nature: the result is presented as a percentage, which is easily comparable to lending rates, savings rates, or benchmark returns. Management often finds it easier to communicate and understand, as it represents the <b>maximum error in the cost of capital estimate</b> that the firm can tolerate before the project becomes unprofitable.
+    </p>
+    <br>
+    <p id="4" class="anchor-target"><b><i style="color: black; font-size: 20px;">3. The Critical Conflict: When NPV and IRR Disagree</i></b></p>
+    <br>
+    <p>
+      While NPV and IRR usually lead to the same accept/reject conclusion for independent projects, they can produce conflicting rankings when choosing between <b>mutually exclusive projects</b> (where choosing one automatically rejects the others). These conflicts typically arise under two conditions:
+    </p>
+    <br>
+    <li style="margin-left: 35px;list-style-type: none;">
+        <ul style="list-style-type: decimal;">
+            <li><b>Differences in Scale (Size Disparity)</b>: A project with a much smaller initial investment may have a very high IRR but a small NPV. Conversely, a large project may have a lower IRR but a much larger, and ultimately more valuable, NPV.</li>
+            <br>
+            <ul style="margin-left: 40px;">
+              <li><b>The Strategic Lesson</b>: Always favor the project with the <b>higher NPV</b>. A smaller percentage return on a much larger investment often creates more dollar value for the shareholders.</li>
+              <br>
+            </ul>
+            <li><b>Differences in Cash Flow Timing</b>: When projects have significantly different patterns of cash flow (e.g., one project returns cash slowly and steadily, the other returns cash quickly), the IRR can be distorted.</li>
+            <br>
+        </ul>
+    </li>
+    <p>
+      <b>The definitive strategic guidance is to rely on NPV.</b> Since NPV measures the actual dollar value added to the firm's wealth, it provides the most accurate reflection of the shareholder wealth maximization goal. IRR is best used as a secondary, supplemental metric to gauge the project's margin of safety above the hurdle rate.
+    </p>
+    <br>
+    <p>By mastering both NPV and IRR, and understanding the strategic implications of their results, investors can ensure that every major capital commitment is a deliberate step toward long-term value creation.</p>
+    <br>
+    <hr>
+    <br>
+    <b><p>Resource: Hai Dang - Bachelor in Vin University</p></b>  
+  </div>
+
+    <div class="right-rail">
+      <nav class="toc" aria-label="Table of Contents">
+        <h3 class="toc-title">Table of Contents</h3>
+        <ol class="toc-list" style="text-decoration: none;">
+          <li><a href="#1">The Foundation: The Time Value of Money </a></li><!-- (Bạn có thể đổi tên hiển thị theo ý) -->
+          <li><a href="#2">Net Present Value (NPV): The Gold Standard of Value Creation</a></li>
+          <li><a href="#3">Internal Rate of Return (IRR): The Breakeven Yield</a></li>
+          <li><a href="#4">The Critical Conflict: When NPV and IRR Disagree</a></li>
+        </ol>
+      </nav>
+
+      <aside class="article-ads">
+        <img src="insights&lesson15.png" alt="Ad 1">
+        <a href="insights&lesson15.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Why We Buy What We Buy: Introduction to Consumer Rationality and Heuristics – An Expanded Behavioral Analysis</p></a>
+        <img src="insights&lesson14.png" alt="Ad 2">
+        <a href="insights&lesson14.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Absolute vs. Comparative Advantage: Why Nations Specialize and Trade</p></a>
+        <img src="insights&lesson13.png" alt="Ad 3">
+        <a href="insights&lesson13.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Understanding Credit, Debt, and Interest Rates: The Cost of Future Consumption – An Advanced Look</p></a>
+      </aside>
+    </div>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    // Toggle mobile menu
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // TOC: smooth scroll + scrollspy (hỗ trợ ID số: #1 #2 #3 #4)
+    (function() {
+      const header = document.querySelector('header');
+      const offset = (header?.offsetHeight || 0) + 12;
+      const toc = document.querySelector('.toc');
+      if (!toc) return;
+
+      const links = Array.from(toc.querySelectorAll('a'));
+      const sections = links
+        .map(a => document.getElementById((a.hash || '').slice(1)))
+        .filter(Boolean);
+
+      function setActive(id) {
+        links.forEach(a => {
+          const isActive = (a.hash || '').slice(1) === id;
+          a.classList.toggle('active', isActive);
+          if (isActive) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      }
+
+      // Click: cuộn mượt với offset header
+      links.forEach(a => {
+        a.addEventListener('click', e => {
+          const id = (a.hash || '').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          setActive(id);
+          history.replaceState(null, '', '#' + id);
+        });
+      });
+
+      // Scrollspy
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, {
+        root: null,
+        rootMargin: `-${offset + 10}px 0px -55% 0px`,
+        threshold: 0.1
+      });
+      sections.forEach(sec => io.observe(sec));
+
+      // Init active when hash present
+      if (location.hash) {
+        const initId = location.hash.slice(1);
+        if (document.getElementById(initId)) setActive(initId);
+      }
+    })();
+  </script>
+</body>
+</html>

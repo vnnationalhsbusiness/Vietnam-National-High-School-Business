@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Lessons</title>
+</head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { font-size: 20px; font-weight: bold; color: #c00; }
+    .menu {
+      position: fixed;
+      top: 0; left: -100%;
+      width: 70%; height: 100%;
+      background: #fff;
+      display: flex; flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 9;
+    }
+    .menu.active { left: 0; }
+    .menu a { text-decoration: none; color: #111; font-weight: bold; }
+    .menu-toggle {
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ARTICLE PAGE (mobile-first) */
+    .article-page {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+    .article-content { flex: 3; }
+    .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+    .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+    .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+    .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+    blockquote {
+      border-left: 4px solid #c00;
+      padding-left: 10px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #333;
+    }
+
+    /* ADS */
+    .article-ads {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; display:block; }
+
+    /* OTHER NEWS */
+    .other-news { padding: 20px; background: #f9f9f9; }
+    .other-news h2 { margin-bottom: 15px; color: #c00; }
+    .other-news ul { list-style: none; }
+    .other-news li { margin: 8px 0; }
+    .other-news a { text-decoration: none; color: #000; }
+    .other-news a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+    /* Desktop/Tablet layout: 2 cột, cột phải cố định bề ngang */
+    @media (min-width: 992px) {
+      .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+      .menu-toggle { display: none; }
+
+      .article-page {
+        display: grid;
+        grid-template-columns: 1fr minmax(280px, 340px);
+        gap: 28px;
+        align-items: start;
+      }
+      .article-content { min-width: 0; }
+      .right-rail { min-width: 0; display:flex; flex-direction:column; gap:16px; }
+    }
+
+    /* ===== TOC style giống ảnh mẫu ===== */
+    /* Ẩn TOC trên mobile; chỉ hiện >=768px */
+    /* .toc{ display:none; } */
+    /* TOC: tránh bị nội dung bên dưới “lọt” qua khi sticky */
+    @media (min-width:768px){
+      .toc{
+        /* background:#fff;           bật nền trắng để che nội dung phía dưới */
+        /* border:1px solid #e5e7eb;  viền nhẹ, giống ảnh mẫu */
+        border-radius:12px;
+        padding:12px 12px 12px 0;  /* chừa chỗ cho vạch dọc + mũi tên */
+        /* box-shadow:0 6px 18px rgba(0,0,0,.06); */
+        z-index: 5;                /* nổi lên trên ảnh/caption Ads */
+      }
+      .toc-title{ margin:0 0 10px 0; font-size:20px; font-weight:700; color:#111; }
+      .toc-list{
+        list-style:none; margin:0; padding:0 0 0 16px;
+        border-left:2px solid #e5e7eb; /* vạch dọc bên trái */
+      }
+      .toc-list li{ margin:6px 0; }
+      .toc a{
+        position:relative; display:block; color:#111; text-decoration:none;
+        font-size:15px; line-height:1.4; padding:6px 0;
+      }
+      .toc a:hover{ text-decoration:underline; }
+      .toc a.active{ font-weight:700; }
+      .toc a.active::before{
+        content:""; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
+        width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent;
+        border-left:7px solid #2563eb; /* mũi tam giác xanh */
+      }
+    }
+
+    /* Nếu dùng dark mode tự động, bạn có thể thêm: */
+    /* @media (prefers-color-scheme: dark){
+      .toc{ background:#0b1020; border-color:#1e293b; box-shadow:0 10px 28px rgba(0,0,0,.45); }
+      .toc-title, .toc a{ color:#e5e7eb; }
+      .toc-list{ border-left-color:#1e293b; }
+    } */
+
+    /* Khi cuộn tới tiêu đề, chừa khoảng cho header sticky */
+    .anchor-target { scroll-margin-top: 88px; }
+    .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Insights & Lessons</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" class="active" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page">
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Understanding Credit, Debt, and Interest Rates: The Cost of Future Consumption – An Advanced Look</h1>
+      <p class="meta">8:01:14 PM | 23/12/2024</p>
+      <img src="insights&lesson13.png" alt="Main Article Image" class="article-img">
+
+    <p>
+      For individuals, businesses, and even entire governments, the ability to spend money they don't yet possess is a powerful economic tool. This concept is formalized through <b>credit</b> and <b>debt</b>, the fundamental mechanisms that fuel consumption and investment today using resources earned tomorrow. However, this power comes with a price tag—the <b>interest rate</b>—which represents the true, compounding cost of pulling future consumption into the present. A clear, detailed understanding of these three concepts is essential for sound personal finance and fundamental economic literacy.
+    </p>
+    <br>
+    <p id="1" class="anchor-target"><b><i style="color: black; font-size: 20px;">1. The Anatomy of Credit and Debt Obligations</i></b></p>
+    <br>
+    <p>
+      <b>Credit</b> is the contractual agreement based on trust that a borrower will repay a lender. <b>Debt</b> is the resulting financial obligation. Analyzing debt requires looking beyond the principal amount to understand its structure.
+    </p>
+    <br>
+    <p><b>Secured vs. Unsecured Debt:</b></p>
+    <br>
+    <ul style="margin-left: 35px;">
+      <li>
+        <b>Secured Debt</b>: This debt is backed by a specific asset (collateral), such as a house (mortgage) or a car (auto loan). If the borrower defaults, the lender can VNHSBMze and sell the collateral to recover the loan amount. Because the risk to the lender is lower, secured debt typically has <b>lower interest rates</b>.
+      </li>
+      <br>
+      <li>
+        <b>Unsecured Debt</b>: This debt is not backed by collateral (e.g., credit cards, student loans, personal loans). The lender’s only recourse in case of default is legal action, which is costly and often unsuccessful. Consequently, unsecured debt carries a <b>significantly higher risk premium</b>, resulting in much higher interest rates.
+      </li>
+      <br>
+    </ul>
+    <p><b>The Strategic Use of Debt:</b></p>
+    <br>
+    <p>
+      A sophisticated view recognizes that debt is a tool of <b>leverage</b>. For a business, borrowing at 5% to fund an expansion that yields 15% return is productive and creates value. Conversely, taking on debt to maintain existing operations during a downturn can signal distress. For investors, the ability to access capital markets is directly tied to their <b>creditworthiness</b>, as assessed by their ability to manage existing debt obligations responsibly.
+    </p>
+    <br>
+    <p id="2" class="anchor-target"><b><i style="color: black; font-size: 20px;">2. Deconstructing Interest Rates: More Than Just a Number</i></b></p>
+    <br>
+    <p>
+      The <b>Interest Rate</b> is the compensation paid to the lender for the use of money. 
+      Its calculation and true impact depend on several structural variables.
+    </p>
+    <br>
+    <p><b>Types of Rates and Compounding:</b></p>
+    <br>
+    <ul style="margin-left: 35px;">
+      <li>
+        <b>Annual Percentage Rate (APR):</b> This is the simple interest rate expressed annually. 
+        It is used to easily compare different loans.
+      </li>
+      <br>
+      <li>
+        <b>Annual Percentage Yield (APY):</b> This is the effective annual rate that reflects the impact 
+        of compounding. If interest is compounded monthly, the APY will be higher than the APR. 
+        For borrowers, the APY reveals the true, higher cost of the debt.
+      </li>
+      <br>
+      <li>
+        <b>Fixed vs. Variable Rates:</b> A fixed rate remains constant for the life of the loan, providing certainty. 
+        A variable rate (or adjustable rate) changes periodically based on a market benchmark (like the prime rate or 
+        a central bank’s policy rate). Variable rates introduce <b>interest rate risk</b>, requiring borrowers to hedge 
+        against potential payment shocks.
+      </li>
+      <br>
+    </ul>
+    <p><b>The Economic Function of the Real Interest Rate:</b></p>
+    <br>
+    <p>
+      The <b>Real Interest Rate</b> (Nominal Rate – Inflation) serves as the primary determinant for economic decisions. 
+      A high real rate discourages long-term business investment, as the cost of capital is high. 
+      A low or negative real rate encourages spending and borrowing, fueling economic expansion. 
+      Central banks primarily manipulate the nominal rate to manage the real rate and influence aggregate demand.
+    </p>
+    <p id="3" class="anchor-target"><b><i style="color: black; font-size: 20px;">3. The Compounding Trap: How Interest Accumulates</i></b></p>
+    <p>
+      The mechanism of <b>compound interest</b> is the most critical element of debt management, acting as an exponential accelerator against the borrower.
+    </p>
+    <br>
+    <ul style="margin-left: 35px;">
+      <li>
+        <b>The Payment Hierarchy:</b> In most consumer loans (like credit cards), payments are first applied to fees, then to the accumulated <b>interest</b>, and finally to the <b>principal</b>. If the monthly payment is just above the minimum, a large portion of the payment goes only to covering interest, leaving the principal balance—and thus the total debt—barely reduced.
+      </li>
+      <br>
+      <li>
+        <b>The Amortization Schedule:</b> For long-term installment loans (like mortgages), an <b>amortization schedule</b> details how each payment is split between interest and principal over the loan’s life. In the early years of a 30-year mortgage, for example, over 80% of the monthly payment may be allocated to interest, reflecting the high time value of money over a long duration. This structure ensures the lender recovers their risk and time cost quickly.
+      </li>
+      <br>
+    </ul>
+    <p id="4" class="anchor-target"><b><i style="color: black; font-size: 20px;">Conclusion: Strategic Debt Management</i></b></p>
+    <br>
+    <p>
+      <b>Credit</b>, <b>debt</b>, and <b>interest rates</b> are the inseparable trio that facilitates modern economic activity. Strategic financial literacy requires evaluating not just the nominal rate, but the <b>true APY</b> and understanding how the compounding structure affects long-term cost. Prudent management necessitates prioritizing productive debt, managing the exposure of variable rates, and aggressively paying down high-interest, unsecured debt to stop the powerful, accelerating force of compounding interest from eroding future financial freedom.
+    </p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <div class="right-rail">
+      <nav class="toc" aria-label="Table of Contents">
+        <h3 class="toc-title">Table of Contents</h3>
+        <ol class="toc-list" style="text-decoration: none;">
+          <li><a href="#1">The Anatomy of Credit and Debt Obligations</a></li>
+          <li><a href="#2">Deconstructing Interest Rates: More Than Just a Number</a></li>
+          <li><a href="#3">The Compounding Trap: How Interest Accumulates</a></li>
+          <li><a href="#4">Conclusion: Strategic Debt Management</a></li>
+        </ol>
+      </nav>
+
+    <aside class="article-ads">
+      <img src="insights&lesson15.png" alt="Ad 1">
+      <a href="insights&lesson15.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Why We Buy What We Buy: Introduction to Consumer Rationality and Heuristics – An Expanded Behavioral Analysis</p></a>
+      <img src="insights&lesson14.png" alt="Ad 2">
+      <a href="insights&lesson14.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Absolute vs. Comparative Advantage: Why Nations Specialize and Trade</p></a>
+      <img src="insights&lesson12.png" alt="Ad 3">
+      <a href="insights&lesson12.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Assessing Systemic Risk and Managing Uncertainty in Long-Term Investment Portfolios</p></a>
+    </aside>
+    </div>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    // Toggle mobile menu
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // TOC: smooth scroll + scrollspy (hỗ trợ ID số: #1 #2 #3 #4)
+    (function() {
+      const header = document.querySelector('header');
+      const offset = (header?.offsetHeight || 0) + 12;
+      const toc = document.querySelector('.toc');
+      if (!toc) return;
+
+      const links = Array.from(toc.querySelectorAll('a'));
+      const sections = links
+        .map(a => document.getElementById((a.hash || '').slice(1)))
+        .filter(Boolean);
+
+      function setActive(id) {
+        links.forEach(a => {
+          const isActive = (a.hash || '').slice(1) === id;
+          a.classList.toggle('active', isActive);
+          if (isActive) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      }
+
+      // Click: cuộn mượt với offset header
+      links.forEach(a => {
+        a.addEventListener('click', e => {
+          const id = (a.hash || '').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          setActive(id);
+          history.replaceState(null, '', '#' + id);
+        });
+      });
+
+      // Scrollspy
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, {
+        root: null,
+        rootMargin: `-${offset + 10}px 0px -55% 0px`,
+        threshold: 0.1
+      });
+      sections.forEach(sec => io.observe(sec));
+
+      // Init active when hash present
+      if (location.hash) {
+        const initId = location.hash.slice(1);
+        if (document.getElementById(initId)) setActive(initId);
+      }
+    })();
+  </script>
+</body>
+</html>

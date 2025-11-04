@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam among World's Top 50 Innovative Economies</h1>
+      <p class="meta">9:13:11 AM | 9/19/2025</p>
+      <p><b>Vietnam is the 44th most innovative economy in the world, according to the Global Innovation Index (GII) 2025 released by the World Intellectual Property Organization (WIPO).</b></p>
+      <br>
+      <table style="
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+      ">
+        <thead style="background-color: #f7f7f7; font-weight: bold;">
+          <tr>
+            <th style="padding: 12px;">Year</th>
+            <th style="padding: 12px;">Vietnam's GII position</th>
+            <th style="padding: 12px;">Innovation inputs</th>
+            <th style="padding: 12px;">Innovation outputs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 10px;">2020</td>
+            <td style="padding: 10px;">42nd</td>
+            <td style="padding: 10px;">66th</td>
+            <td style="padding: 10px;">38th</td>
+          </tr>
+          <tr style="background-color: #fafafa;">
+            <td style="padding: 10px;">2021</td>
+            <td style="padding: 10px;">44th</td>
+            <td style="padding: 10px;">60th</td>
+            <td style="padding: 10px;">38th</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px;">2022</td>
+            <td style="padding: 10px;">48th</td>
+            <td style="padding: 10px;">59th</td>
+            <td style="padding: 10px;">41st</td>
+          </tr>
+          <tr style="background-color: #fafafa;">
+            <td style="padding: 10px;">2023</td>
+            <td style="padding: 10px;">46th</td>
+            <td style="padding: 10px;">57th</td>
+            <td style="padding: 10px;">40th</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px;">2024</td>
+            <td style="padding: 10px;">44th</td>
+            <td style="padding: 10px;">53rd</td>
+            <td style="padding: 10px;">36th</td>
+          </tr>
+          <tr style="background-color: #eef4ff; font-weight: bold;">
+            <td style="padding: 10px;">2025</td>
+            <td style="padding: 10px; color: #0056d6;">44th</td>
+            <td style="padding: 10px; color: #0056d6;">50th</td>
+            <td style="padding: 10px; color: #0056d6;">37th</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <p>
+        Noticeably, Viet Nam ranks second among the 37 lower middle-income group economies, and 9th among the 17 economies in South East Asia, East Asia, and Oceania.
+      </p>
+      <br>
+      <p>
+        The Global Innovation Tracker 2025 of the World Intellectual Property Organization (WIPO) shows what is the current state of innovation in Viet Nam, how rapidly is technology being embraced and what are the resulting societal impacts.
+      </p>
+      <br>
+      <p>In ASEAN, Viet Nam surpassed Thailand to position itself in the third place after Singapore and Malaysia.</p>
+      <br>
+      <p>
+        The 2025 GII report also highlights that Viet Nam is one of the nine middle-income countries that has recorded the fastest improvement since 2013. It is also one of the two countries that holds the record for outstanding performance relative to their level of development over 15 years in a row, together with India.
+      </p>
+      <br>
+      <p>
+        Since its inception in 2007, the GII has shaped the innovation measurement agenda and become a cornerstone of economic policymaking, with an increasing number of governments systematically analyzing their GII results and designing policy responses to improve performance. The GII Advisory Committee, the Industry Association Network (GIIIAN) and the Academic Network provide guidance.
+      </p>
+      <br>
+      <p>Published annually, the core of the GII provides performance metrics and ranks around 140 economies on their innovation ecosystems. The Index is built on a rich dataset – the collection of 78 indicators – going beyond the traditional measures of innovation since the definition of innovation has broadened.</p>
+      <br>
+      <p>The GII 2025 is calculated as the average of two sub-indices. The Innovation Input Sub-Index gauges elements of the economy that enable and facilitate innovative activities and is grouped into five pillars: (1) Institutions, (2) Human capital and research, (3) Infrastructure, (4) Market sophistication, and (5) Business sophistication. The Innovation Output Sub-Index captures the results of innovative activities via two pillars: (6) Knowledge and technology outputs and (7) Creative outputs.</p>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

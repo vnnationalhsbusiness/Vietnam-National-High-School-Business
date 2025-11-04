@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Enhancing E-service Delivery with Digital Governance Mindset</h1>
+      <p class="meta">10:12:25 AM | 9/13/2024</p>
+      <p><b>In the era of digital government, e-service portals are important for connecting the State with citizens and businesses. Despite progress since 2021, online record submissions and service quality still fall short. Provinces and cities must invest in improving e-service portals for better convenience, user-friendliness, and accessibility.</b></p>
+      <br>
+      
+      <p>According to the 2024 assessment of 63 provincial/municipal e-service portals conducted by the Institute for Policy Studies and Media Development (IPS) in collaboration with the United Nations Development Program (UNDP) in Vietnam, localities have shown improvements in delivering online public services compared to the 2023 review. Some portals have received high praise for their performance in the "Providing supporting information" and "Ease of use of lookup tools" criteria.</p><br>
+
+      <p><i>Mr. Nguyen Minh Hong</i>, Chairman of the Vietnam Digital Communications Association, said that evaluating e-service portals from the user's perspective is important to ensure that digital transformation aligns with the needs and expectations of the public. However, the assessment reveals that all 63 e-service portals have shortcomings that affect users, including civil servants and citizens, particularly those in remote areas, islands, and individuals with disabilities. To address these issues, it is important for all provinces and cities to invest in enhancing e-service portals. This investment should focus on improving convenience, user-friendliness, and accessibility to better serve all users.</p><br>
+
+      <p>According to the assessment results, e-service portals generally fall short of meeting user needs and have not fully achieved the goal of streamlining administrative procedures. Many users still struggle to complete procedures independently and often need direct assistance or rely on civil servants to handle tasks on their behalf.</p><br>
+
+      <p>The shortcomings of e-service portals can be partly attributed to the lack of synchronization between provincial and national portals, which creates challenges for users who must navigate multiple interfaces. Additionally, the process for handling administrative procedures is often not fully transparent or presented in a clear, user-friendly manner. The absence of tracking features on e-service portals further complicates users' ability to understand the steps involved and monitor the progress of their records.</p><br>
+
+      <p>The research findings indicate that 60 e-service portals fall short of meeting personal data protection and privacy criteria, while 39 portals fail to meet accessibility standards for people with disabilities. Most new e-service portals demonstrate only average compatibility with both computers and smartphones. None of the portals achieved more than 50% of the criteria at the 'good' level, and there is minimal variation in assessment scores across different provinces and cities.</p><br>
+
+      <p>However, these issues represent only the surface of the challenges in providing online public services. A key root cause of the shortcomings and obstacles is the continued complexity and incomplete digitization of administrative processes and procedures. Many public services are still presented on portals using traditional paper-based and direct methods rather than digital and indirect approaches. Additionally, technical infrastructure in many localities remains inadequate, the skill levels of officials and civil servants vary, and ineffective support measures for citizens pose significant challenges to the widespread adoption of online public services.</p><br>
+
+      <p>To enhance the effectiveness of e-service portals and improve public service delivery, the research report offers recommendations that include both specific improvements and a shift in mindset toward a user-focused digital environment. Initially, provinces and cities should address and rectify technical errors on the e-service portals. Ensuring the effectiveness, accuracy, and transparency of information is important to enhance convenience, accessibility, and user-friendliness, particularly for ethnic minorities, the elderly, and individuals with disabilities.</p><br>
+
+      <p>Additionally, enhancing the capacity of cadres, civil servants, and public employees in deploying and providing public services is essential. Effective communication efforts are also needed to raise public awareness about the convenience and benefits of using the public service portal and the services it offers.</p><br>
+
+      <p>According to the research report, the most critical need is to shift the mindset toward embracing the digital environment by focusing on <i>"digital governance."</i> This approach emphasizes fostering natural interactions between public service providers and users in the digital realm. To achieve this, digital technology and data connectivity should be applied flexibly to eliminate administrative barriers while ensuring effective data sharing and integration. Additionally, legal documents related to administrative processes need to be updated to align with the digital environment. Efforts should also be made to implement administrative procedures without boundaries. Looking ahead to 2030, establishing a national focal point for providing public services through a unified common public service portal is essential.</p><br>
+
+      <p><i>Ms. Ramla Khalidi</i>, Resident Representative of the United Nations Development Program, said that it is necessary to further enhance online public services to ensure they are convenient, easy to use, and accessible to everyone. By improving access for individuals and communities facing challenges, including those in remote, isolated, and island areas, Vietnam will become a more inclusive society.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

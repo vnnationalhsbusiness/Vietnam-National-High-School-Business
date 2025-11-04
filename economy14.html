@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Digital Transformation: Imperative for Global Trade</h1>
+      <p class="meta">9:45:33 AM | 7/18/2025</p>
+      <p><b>As global trade rapidly shifts toward digital platforms, many APEC member economies have accelerated their digitalization agendas to enhance competitiveness and strengthen supply chain resilience. New Zealand stands out as one of the frontrunners in this global trend.</b></p>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+          <tr>
+            <td style="vertical-align: top; padding-right: 15px; text-align: justify;">
+              On the sidelines of the ABAC 3 Meeting, held in Hai Phong from July 15–18, 2025, Vietnam Business Forum conducted an interview with Ms. Anna Curzon, a member of the APEC Business Advisory Council (ABAC) for New Zealand and former Chief Product Officer at Xero, a tech firm named by Forbes as the world's most innovative growth company, to discuss digital trade cooperation between New Zealand and Vietnam.
+            </td>
+            <td style="width: 260px; vertical-align: top; text-align: center;">
+              <img src="economy14.png" alt="Anna Curzon" style="width: 100%; max-width: 250px; border-radius: 6px;">
+            </td>
+          </tr>
+        </table>
+      <p><b>New Zealand is recognized as a global leader in digital trade. What geographic, economic, and policy-related factors have compelled your country to embrace paperless trade?</b></p><br>
+      <p>Geography and scale matter. New Zealand is a small, open economy. Trade is our lifeblood – but all our markets are far away. We produce fantastic, high-quality products, but getting them into the hands of customers is costly and difficult. A move to digital is a no-brainer: paperless trade significantly reduces trade costs, accelerates transactions, improves transparency and resilience across our supply chains, and builds trust with customers.</p><br>
+      <p>The second driver is business necessity. COVID-19 proved that digital wasn’t optional. Getting a wet signature on a document simply wasn’t feasible. Companies needed seamless cross-border connectivity and to cut trade costs. Shippers, logistics companies, freight forwarders, supply chain platforms and others all joined in.</p><br>
+      <p>That said, it hasn’t been easy. Like Vietnam, we have many small businesses. Digital transformation can be challenging for them. It requires upfront investment and the right skills but above all, a shift in mindset. Government plays a key role as a champion of digitalization, ensuring the right infrastructure is in place and supportive regulation is established. It is a journey, sometimes a long one.</p><br>
+      <p>Trade agreements have helped accelerate adoption. At the moment, the world is a collection of “digital islands” — countries are often doing their own thing. For New Zealand, there’s a compelling case for a coherent, interoperable system of paperless trade across markets. Our Digital Economy Partnership Agreement (DEPA) with Singapore, Chile, and Korea was the world’s first standalone digital trade agreement, and it still sets the gold standard for paperless trade provisions. We’ve also worked closely with our neighbor Australia over many years on practical trade facilitation. And of course, we have the ASEAN-Australia-New Zealand Free Trade Agreement, which also encourages paperless trade.</p><br>
+      <p>Looking ahead, we strongly support the inclusion of all WTO members, including Vietnam, in the new WTO E-Commerce Agreement. This would create a critical baseline for global interoperability in paperless trade.</p>
+      <img src="economy14_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      <br>
+      <p><b>How do you assess the specific impact of digital trade on operational efficiency, logistics costs, and market access for SMEs, particularly in the post-COVID-19 era?</b></p><br>
+
+      <p>Efficiency gains and cost reductions are immediate and substantial. Paperless trade can eliminate hours, days, or even weeks of processing time. Real-time tracking reduces supply chain uncertainties and gives businesses visibility, including the ability to respond quickly to any unexpected disruptions. Companies can save significant annual costs just on documentation — they no longer need to pay to courier hard-copy documents across the globe. One of our larger companies routinely spent millions of dollars annually on courier costs alone.</p><br>
+
+      <p>A study conducted a few years ago by the New Zealand Institute of Economic Research estimated that paperless trade could reduce logistics costs by 15% to 45%.</p><br>
+
+      <p>As the world increasingly focuses on ESG, carbon accounting standards, and environmental credentials, having a seamless, interoperable digital trade system will help businesses serve customers and partners more efficiently, rapidly, and responsibly. New Zealand has made significant progress but there’s still more to do. We recently scored 96.77% in the UN Global Survey on Digital and Sustainable Trade Facilitation and 94.44% in cross-border paperless trade. These are great results, but we’re aiming higher. For example, we want to see 100% of Bills of Lading in electronic form.</p><br>
+
+      <p><b>Vietnam is early in digitalizing trade. What barriers must it overcome?</b></p><br>
+
+      <p>It is a long journey. Vietnam has made a good start, but addressing digital skills, infrastructure, and regulation remains critical. In particular, laws that enable data to flow freely by default, protect privacy, and recognize the legal status of digital documents are essential. Support from border agencies is also vital for practical implementation — trade, customs, biosecurity, and other authorities must work closely together.</p><br>
+
+      <p><b>Given frameworks like CPTPP, RCEP, and AANZFTA, where can Vietnam and New Zealand jointly innovate and lead the regional digital trade agenda beyond simply adapting to it?</b></p><br>
+
+      <p>New Zealand and Vietnam can collaborate for mutual benefit in digital trade. We are already working together under the Comprehensive and Progressive Agreement for Trans-Pacific Partnership (CPTPP), the Regional Comprehensive Economic Partnership (RCEP), and the ASEAN-Australia-New Zealand Free Trade Area (AANZFTA). There are also likely to be lots of synergies if we can make sure that DEPA and the new ASEAN Digital Economy Framework Agreement are consistent and interoperable.</p><br>
+
+      <p>Co-innovation can unlock many opportunities. Our two-way trade is growing strongly, benefiting both sides. I’m excited to see how digitalization can further accelerate bilateral trade. The opportunity is huge and the time is now.</p><br>
+
+      <p><b>Thank you very much!</b></p><br>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

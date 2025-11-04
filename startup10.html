@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start-up</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Start-up</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" class="active" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>How a Free CV Tool Built a Recruitment Empire: The TopCV Story</h1>
+      <p class="meta">10:29:44 AM | 11/8/2025</p>
+      <p><b>By solving the single biggest pain point for young job seekers—creating a professional CV—founder Trần Trung Hiếu built a "product-led" powerhouse that captured Vietnam's next generation of talent, transforming it into a leading HR Tech ecosystem.</b></p>
+      <br>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup10.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <br>
+      <p>In Vietnam's competitive recruitment market, long dominated by established players focusing on experienced, high-level corporate roles, <b>TopCV</b> emerged with a disruptive strategy. Instead of focusing on the companies first, TopCV targeted the candidates—specifically, the millions of students and young professionals struggling to enter the job market.</p><br>
+
+      <p>Its weapon wasn’t a massive job board, but a simple, elegant, and free online CV (Curriculum Vitae) builder. This “product-led growth” strategy proved to be a masterstroke, allowing <b>TopCV</b> to build one of the largest and most active candidate databases in Vietnam, and in doing so, become a dominant force in the nation’s HR Tech landscape.</p><br>
+
+      <p><b>Phase 1: The Founder’s Insight & The "Product-Led" Hook</b></p><br>
+
+      <p>The story of <b>TopCV</b> begins with its co-founder and CEO, <b>Trần Trung Hiếu</b>. While still a student, he observed a critical, unmet need. His peers and other young job seekers were talented and ambitious, but they consistently failed to present themselves professionally on paper. They didn’t know how to create a modern, effective CV.</p><br>
+
+      <p>Traditional job platforms saw this as the candidate’s problem. Hiếu saw it as a business opportunity.</p><br>
+
+      <p>In 2014, <b>TopCV</b> was launched not as a job site, but as a free online CV creation tool. It offered a variety of beautiful, professional templates that were easy to use. The tool went viral. Students, fresh graduates, and young professionals flocked to the platform.</p><br>
+
+      <p>This strategy was brilliant for two reasons:</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Massive, Organic Acquisition:</b> It solved an immediate, painful problem, attracting millions of users with almost no marketing cost.</li><br>
+        <li><b>A Rich, Active Database:</b> Unlike static databases, <b>TopCV’s</b> users were actively creating and updating their profiles. The platform knew exactly who was ready to find a new job, what their skills were, and what their salary expectations were.</li>
+      </ul><br>
+
+      <p><b>Phase 2: Building the Bridge to Employers</b></p><br>
+
+      <p>Having successfully captured the “supply” side (the candidates), <b>TopCV</b> built the “demand” side (the employers). It evolved into a full-fledged recruitment platform, but with a unique and powerful sales pitch to businesses:</p><br>
+
+      <p><i>“Why post a job and wait, when you can instantly access our database of millions of active, verified, young-professional candidates?”</i></p><br>
+
+      <p>Companies, especially those struggling to hire for entry-level and junior positions, found <b>TopCV’s</b> candidate pool to be a goldmine. The platform used AI and data analytics to precisely match its candidates with job postings, delivering higher-quality leads than traditional job boards. This reversed the typical recruitment model: <b>TopCV</b> didn’t just post jobs; it delivered candidates.</p><br>
+
+      <p><b>Phase 3: The HR Tech Ecosystem</b></p><br>
+
+      <p><b>TopCV</b> did not stop at being a successful job board. It leveraged its strong position in the market to build a comprehensive <b>HR Tech ecosystem</b>. It understood that a company’s recruitment needs were complex, moving beyond just finding candidates.</p><br>
+
+      <p>Today, <b>TopCV</b> offers a full suite of SaaS (Software as a Service) solutions for businesses, including:</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>TopCV Apply:</b> An advanced Applicant Tracking System (ATS) for businesses to manage their entire hiring funnel.</li><br>
+        <li><b>Employer Branding:</b> Services to help companies build their brand and attract top talent.</li><br>
+        <li><b>HR Insights:</b> Data reports and market analysis to help companies make smarter hiring decisions.</li>
+      </ul><br>
+
+      <p>From a simple free tool, <b>TopCV</b> has evolved into an end-to-end HR partner. Its success is a classic example of product-led growth: by giving immense value to the end-user (the candidate) for free, it built an invaluable asset (the database) that became the foundation of a highly profitable and defensible business.</p><br>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="startup1.png" alt="Ad 1">
+      <a href="startup1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">From Gamer to Giant: Lê Hồng Minh and the Making of VNG, Vietnam's First Unicorn</p></a>
+      <img src="startup2.png" alt="Ad 2">
+      <a href="startup2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The QR Code Unicorn: How VNLife Forged an Empire from a Single Scan</p></a>
+      <img src="startup3.png" alt="Ad 3">
+      <a href="startup3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The Global Blockchain Disruption: How Sky Mavis Built a Billion-Dollar Metaverse with Axie Infinity</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

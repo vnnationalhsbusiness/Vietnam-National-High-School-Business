@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VNHSBM - Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page">
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Developing Craft Village Economy: Breakthrough from Digital Transformation</h1>
+      <p class="meta">10:53:55 AM | 10/3/2025</p>
+      <p><b>Identifying digital transformation as the “leverage” for breakthroughs, Phượng Dực has boldly expanded the application of technology into various fields of social life, starting from its success in digital transformation for craft village economic development.</b></p>
+      <img src="economy1.png" alt="Main Article Image" class="article-img">
+      <p >In August 2025, Phượng Dực commune launched its local digital transformation program, with the highlight being the “Khát vọng Phượng Dực” (Phượng Dực Aspiration) project. From the initial success of the project as well as the commune’s earlier digital foundation, e-commerce has increasingly become a “lifeline” connecting craft village products to broader and more distant markets. Livestream sessions are not only about selling products, but also turn traditional artisans into confident “storytellers,” bringing their hometown’s products onto e-commerce platforms. Digital transformation has become no longer unfamiliar, but part of daily life and a self-driven need, as every craft village resident and enterprise now knows how to leverage technology to boost production and business.</p>
+      <br>
+      <p>Visitors to Phượng Dực’s craft villages are often surprised to see small alleys and busy workshops transformed into mini studios. “Our incense-making village has been around for more than 100 years! Today, I’ll introduce to you how our century-old traditional incense-making process works. Here’s a fresh batch just finished!” With a cheerful voice echoing under the golden autumn noon sunlight, Đinh Thị Tuyền, head of Thượng hamlet, began her livestream sales session, proudly introducing her craft village. The streaming lights shone on her sweat-dotted face, her voice becoming more expressive and enthusiastic as orders poured in.</p>
+      <img src="economy1_1.png" alt="Main Article Image" class="article-img">
+      <p>That confidence did not come by chance but from regular digital transformation training sessions organized in Phượng Dực. Each week, villagers have the opportunity to learn how to sell on Facebook, TikTok, YouTube, Zalo; how to film and edit videos; and even practice writing promotional scripts with the help of artificial intelligence.</p>
+      <br>
+      <p>Recently, Phượng Dực has proactively connected with many influencers and experts in e-commerce and branding. For instance, in just a short span from late August to early September 2025, thanks to their guidance, households that once had only a few dozen interactions now achieve millions of views, with far greater effectiveness in promotion and sales.</p>
+      <img src="economy1_2.png" alt="Main Article Image" class="article-img">
+      <p>Đặng Kim Thêu, Director of An Phú Bamboo and Rattan Co., Ltd., told us that through the commune’s digital transformation training, villagers have mastered the skills of building images, scripts, and introducing products directly to consumers. Customer interest in her company’s products has increased by around 40%. Notably, after joining the “Khát vọng Phượng Dực” project, she suddenly became a “social media phenomenon” in online sales: each livestream session attracted hundreds of thousands, even nearly a million viewers, opening up unprecedented market access opportunities.</p>
+      <br>
+      <p>In Phượng Dực, hamlet heads are unafraid to sell online, economic officers readily go live with villagers, and the commune Party secretary even participates as an admin of online sales groups to support and connect. This closeness has made digital transformation no longer distant, but part of daily community life.</p>
+      <br>
+      <p>Đinh Thị Tuyền, head of Thượng hamlet, shared: “When I joined the ‘Khát vọng Phượng Dực’ project, I worked during the day and studied theory at night. What was special was that the commune Party secretary directly supervised and encouraged us. That motivation and close attention pushed everyone forward. In just a short time, every project participant achieved tangible results. Personally, after only 10 days in the project, my personal account had gained over 600,000 followers — a number I had never dared imagine before.”</p>
+      <br>
+      <p>Just over two years ago, Phượng Dực’s craft villages were almost a “blank spot” in terms of digital transformation. There were no livestreams, “online sales” was still an alien concept, and nearly 100% of craft village revenue came from traditional trade. Villagers considered livestreaming sales something both daunting and unbelievable.</p>
+      <img src="economy1_3.png" alt="Main Article Image" class="article-img">
+      <p>
+        Nguyễn Văn Viễn, head of Lưu Thượng hamlet, shared: “Our hamlet has over 700 households working in handicrafts, continuing nearly 300 years of tradition, but everyone was only familiar with direct trade. Honestly, at first I thought digital transformation was far-fetched. But after some time ‘immersing in it,’ we realized technology had breathed new life into the craft village, surprising even us insiders.”
+      </p>
+      <br>
+      <p>
+        In the past, Phú Túc commune (now part of Phượng Dực), with 8 hamlets, nearly 1,700 households and 20 enterprises, had only a few large establishments setting up websites to introduce products. Today, the rate of digital transformation adoption has reached over 90%. According to Nguyễn Văn May, Director of Phú Tuấn Export Co., Ltd.: “In the past, the vitality of the craft village relied heavily on export orders. When the international market fluctuated, villagers struggled. Now it’s different: thanks to e-commerce and livestream sessions, our products also reach the domestic market, from North to South. The craft village now walks on ‘two legs,’ strong in exports and steady in the domestic market.”
+      </p>
+      <br>
+      <p>
+        Especially with products like cỏ tế (a type of grass used in weaving), which previously attracted little attention from Vietnamese consumers, new momentum has emerged. Through digital platforms, handmade products not only “set sail” internationally but also become more familiar to domestic consumers. “Vietnamese people now realize that right nearby they can find beautiful, practical, affordable products without having to look for distant imports,” said Nguyễn Văn May.
+      </p>
+      <img src="economy1_4.png" alt="Main Article Image" class="article-img">
+      <p>
+        From once being a craft village “outside the digital game,” Phượng Dực has stepped confidently onto the “global playing field,” affirming its brand with both skillful hands and modern technology. Deputy Chairman of Phượng Dực Commune People’s Committee, Nguyễn Hữu Khoa, said training for villagers is being implemented step by step, in a more specialized direction tailored to practical needs. “We alternate between foundational and advanced training courses. Once villagers practice proficiently, achieve stable sales, and prove effectiveness, the commune organizes more in-depth training — from building images and scripts to using data analytics tools to optimize sales efficiency,” he explained.
+      </p>
+      <br>
+      <p>
+        According to Nguyễn Trọng Vĩnh, Chairman of Phượng Dực Commune People’s Committee, along with training villagers in online sales skills, the commune has reviewed idle land, offices, and facilities after restructuring to repurpose them for new functions. On this basis, the commune boldly launched the construction of a Startup and Innovation Design Center at the former Phú Túc Commune People’s Committee headquarters. Notably, at this center, Phượng Dực has invested in building a community livestream studio, providing villagers, businesses, and cooperatives with a professional space to promote products, improve image quality, and enhance customer outreach.
+      </p>
+      <br>
+      <p>
+        Lê Văn Bính, Party Secretary of Phượng Dực Commune, shared that once the organizational structure was stabilized, the commune organized dialogue sessions to listen to the concerns and aspirations of villagers, businesses, and production groups. Many admitted that digital and digital economy were a fresh breeze for the craft village, but still expressed concerns over issues like taxation, quality management, product standards, and the environment. As local leader, Party Secretary Lê Văn Bính believes that first and foremost, support must be accurate and lawful. For sustainable development, the entire political system must shift from a mindset of “management and supervision” to “service and companionship.” This is precisely how Phượng Dực is creating a new rural model tied to digital transformation — combining government responsibility with the creativity of the people.
+      </p>
+
+
+    
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+      <img src="economy4.png" alt="Ad 1">
+      <a href="economy4.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam’s Exports to U.S.: Short-term Breakthroughs but Risks Ahead</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

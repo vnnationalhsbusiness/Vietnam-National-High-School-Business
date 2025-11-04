@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Unlocking New Opportunities for Vietnamese Enterprises in U.S.</h1>
+      <p class="meta">9:24:00 AM | 5/27/2025</p>
+      <p><b>The upgrading of relations between Vietnam and the United States to a Comprehensive Strategic Partnership has strengthened economic and trade ties, opened up new opportunities for investment cooperation, and created favorable conditions for Vietnamese enterprises to confidently access the U.S. market.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy19.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          The Vietnamese delegation at the SelectUSA Investment Summit 2025
+        </figcaption>
+      </figure>
+      <br>
+      <p>From May 11 to 14, the Vietnamese delegation led by Deputy Minister of Finance Cao Anh Tuan and comprising over 130 members representing more than 100 enterprises attended the SelectUSA Investment Summit 2025.</p><br>
+      <p>Vietnam was the delegation with the third largest number of registered enterprises, spanning industries like IT, telecommunications, energy, manufacturing, agriculture, environment, interior design and tourism, including major companies focused on enhancing economic cooperation and investment with the United States.</p><br>
+      <p>Sharing on the sidelines of the event, Deputy Minister Cao Anh Tuan affirmed: “The Ministry of Finance’s working trip to attend the SelectUSA Summit 2025 and a series of bilateral meetings with partners in the U.S. demonstrates Vietnam’s strong commitment to promoting bilateral investment and trade cooperation with the U.S. — a comprehensive strategic partner and the world’s leading economy. Through the summit, Vietnamese enterprises also had opportunities to seek investment cooperation, especially in science and technology, digital transformation, energy, port infrastructure development, aviation and processing industries — fields in which the U.S. holds significant advantages in cooperation with Vietnam.”</p><br>
+      <p>Within the framework of the summit, the event <em>‘Connect with Vietnam: Cooperation – Understanding – Prosperity’</em> was held. Vietnamese Ambassador to the U.S. Nguyen Quoc Dung said: The largest-ever scale of the Vietnamese business delegation shows that Vietnamese businesses are not only interested in attracting investment but also actively seeking investment cooperation opportunities in the world’s most developed economy, the U.S. This clearly demonstrates the development of the comprehensive strategic partnership between the two countries and the dynamism and adaptability of their businesses.</p><br>
+      <p>Through the event, Vietnamese businesses gained valuable information to support their research, explore opportunities, and implement investment and business activities in the U.S., contributing to promoting the Vietnam–U.S. relationship in a more balanced and sustainable direction.</p><br>
+      <p>Deputy Under Secretary for International Trade Diane Farrell said the U.S. remains an attractive destination for foreign investors. She noted that both sides are selecting industries with the greatest potential and complementary strengths to create jobs. She also affirmed that relevant U.S. agencies are ready to support Vietnamese businesses in seeking investment opportunities in the U.S.</p><br>
+      <p>During the working session with Mr. Robert Kaproth, Assistant Secretary for International Finance at the U.S. Department of the Treasury, Deputy Minister Cao Anh Tuan highlighted Vietnam's efforts and strong measures toward sustainable, balanced and mutually beneficial development. He said that Vietnam and the U.S. have complementary economic structures. Vietnam has demand for U.S. strengths in energy, high technology, aviation, machinery and agricultural products, while Vietnam’s consumer goods offer diverse, affordable options for U.S. consumers without directly competing with domestic products. Deputy Minister Cao Anh Tuan added that the two countries share many strategic and economic interests, and that expanding economic and financial cooperation will create new opportunities and serve as a symbol of trust and a comprehensive strategic partnership for mutual prosperity.</p><br>
+      <p>Mr. Robert Kaproth highly valued the efforts of the Vietnamese Government in the current context. He also affirmed that the U.S. Department of the Treasury prioritizes strengthening relations and is ready to address existing issues in economic and financial ties with Vietnam. Both sides agreed that this is the right time to promote activities such as seminars, policy dialogues and technical assistance to deepen and enhance bilateral financial cooperation, reflecting the Comprehensive Strategic Partnership and marking 30 years of diplomatic relations between the two countries.</p><br>
+      <p>“In this new context, I hope that U.S. businesses, with their strengths in capital, reputation, management expertise, specialists and high-quality human resources, will cooperate with Vietnamese businesses in trending sectors such as high technology, startups, innovation, electric vehicles, energy, finance and banking, education and training, tourism and high-efficiency agriculture,” said Deputy Minister Cao Anh Tuan.</p><br>
+      <p>According to data from the Foreign Investment Agency, as of April 30, 2025, Vietnam had 252 investment projects in the U.S. with a total registered capital of US$1.36 billion. These projects are mainly in professional, scientific and technological services, real estate business, and the processing and manufacturing industry. Notable Vietnamese investors in the U.S. include PetroVietnam Exploration and Production Corporation (PVEP), T&T Group, Tam Anh Hospital, An Phat Bioplastics, FPT Corporation and Joint Stock Commercial Bank for Foreign Trade of Vietnam (Vietcombank).</p><br>
+      <p>The SelectUSA Investment Summit 2025 is an opportunity for Vietnam to demonstrate its goodwill and strong commitment to deepening bilateral investment cooperation with the U.S, not only by attracting U.S. investment but also by creating favorable conditions for Vietnamese enterprises to expand their investment and business operations in the U.S. — a key, stable market with a strategic role in the global integration of Vietnamese businesses.</p><br>
+      <p>Activities at the event were expected to strengthen economic ties, support supply chain connectivity, and promote cooperation across various sectors between the two business communities, thereby contributing to the shared development and prosperity of both countries.</p><br>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

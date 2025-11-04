@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Lessons</title>
+</head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { font-size: 20px; font-weight: bold; color: #c00; }
+    .menu {
+      position: fixed;
+      top: 0; left: -100%;
+      width: 70%; height: 100%;
+      background: #fff;
+      display: flex; flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 9;
+    }
+    .menu.active { left: 0; }
+    .menu a { text-decoration: none; color: #111; font-weight: bold; }
+    .menu-toggle {
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ARTICLE PAGE (mobile-first) */
+    .article-page {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+    .article-content { flex: 3; }
+    .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+    .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+    .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+    .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+    blockquote {
+      border-left: 4px solid #c00;
+      padding-left: 10px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #333;
+    }
+
+    /* ADS */
+    .article-ads {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; display:block; }
+
+    /* OTHER NEWS */
+    .other-news { padding: 20px; background: #f9f9f9; }
+    .other-news h2 { margin-bottom: 15px; color: #c00; }
+    .other-news ul { list-style: none; }
+    .other-news li { margin: 8px 0; }
+    .other-news a { text-decoration: none; color: #000; }
+    .other-news a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+    /* Desktop/Tablet layout: 2 cột, cột phải cố định bề ngang */
+    @media (min-width: 992px) {
+      .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+      .menu-toggle { display: none; }
+
+      .article-page {
+        display: grid;
+        grid-template-columns: 1fr minmax(280px, 340px);
+        gap: 28px;
+        align-items: start;
+      }
+      .article-content { min-width: 0; }
+      .right-rail { min-width: 0; display:flex; flex-direction:column; gap:16px; }
+    }
+
+    /* ===== TOC style giống ảnh mẫu ===== */
+    /* Ẩn TOC trên mobile; chỉ hiện >=768px */
+    /* .toc{ display:none; } */
+    /* TOC: tránh bị nội dung bên dưới “lọt” qua khi sticky */
+    @media (min-width:768px){
+      .toc{
+        /* background:#fff;           bật nền trắng để che nội dung phía dưới */
+        /* border:1px solid #e5e7eb;  viền nhẹ, giống ảnh mẫu */
+        border-radius:12px;
+        padding:12px 12px 12px 0;  /* chừa chỗ cho vạch dọc + mũi tên */
+        /* box-shadow:0 6px 18px rgba(0,0,0,.06); */
+        z-index: 5;                /* nổi lên trên ảnh/caption Ads */
+      }
+      .toc-title{ margin:0 0 10px 0; font-size:20px; font-weight:700; color:#111; }
+      .toc-list{
+        list-style:none; margin:0; padding:0 0 0 16px;
+        border-left:2px solid #e5e7eb; /* vạch dọc bên trái */
+      }
+      .toc-list li{ margin:6px 0; }
+      .toc a{
+        position:relative; display:block; color:#111; text-decoration:none;
+        font-size:15px; line-height:1.4; padding:6px 0;
+      }
+      .toc a:hover{ text-decoration:underline; }
+      .toc a.active{ font-weight:700; }
+      .toc a.active::before{
+        content:""; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
+        width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent;
+        border-left:7px solid #2563eb; /* mũi tam giác xanh */
+      }
+    }
+
+    /* Nếu dùng dark mode tự động, bạn có thể thêm: */
+    /* @media (prefers-color-scheme: dark){
+      .toc{ background:#0b1020; border-color:#1e293b; box-shadow:0 10px 28px rgba(0,0,0,.45); }
+      .toc-title, .toc a{ color:#e5e7eb; }
+      .toc-list{ border-left-color:#1e293b; }
+    } */
+
+    /* Khi cuộn tới tiêu đề, chừa khoảng cho header sticky */
+    .anchor-target { scroll-margin-top: 88px; }
+    .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Insights & Lessons</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" class="active" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page">
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Absolute vs. Comparative Advantage: Why Nations Specialize and Trade</h1>
+      <p class="meta">8:02:44 PM | 25/2/2025</p>
+      <img src="insights&lesson14.png" alt="Main Article Image" class="article-img">
+
+    <p>
+      The foundation of international trade lies not in competition where one nation wins and another loses, but in mutual gains derived from specialization. Two core concepts, <b>Absolute Advantage and Comparative Advantage</b>, explain precisely why countries—and even individuals or businesses—benefit from focusing on what they do best and trading for the rest. Understanding these concepts is essential to grasp the economic benefits of globalization, efficiency, and the long-term allocation of resources.
+    </p>
+    <br>
+    <p id="1" class="anchor-target"><b><i style="color: black; font-size: 20px;">1. Absolute Advantage: The Measure of Simple Productivity</i></b></p>
+    <br>
+    <p>
+      <b>Absolute Advantage</b> exists when a nation can produce a greater quantity of a good or service than its competitor, using the exact same amount of resources, be it labor, capital, or time. It is a direct measure of <b>superior productivity</b>. For example, if Country A can harvest 10 tons of rice per hectare due to better technology and soil, while Country B can only harvest 5 tons, Country A holds the absolute advantage in rice production.
+    </p>
+    <br>
+    <p>
+      While straightforward, absolute advantage is often misleading in determining trade patterns. A highly developed nation might have the absolute advantage in <b>nearly every sector</b>—from software to textiles—due to superior capital and infrastructure. However, if this nation chooses to produce everything, it sacrifices greater opportunities elsewhere. This highlights the limited analytical power of absolute advantage when making strategic trade decisions.
+    </p>
+    <br>
+    <p id="2" class="anchor-target"><b><i style="color: black; font-size: 20px;">2. Comparative Advantage: The True Basis for Strategic Trade</i></b></p>
+    <br>
+    <p>
+      <b>Comparative Advantage</b> is the deeper, more powerful principle, asserting that a nation should specialize in the good for which it has the <b>lowest opportunity cost</b>. This requires understanding the internal trade-offs inherent in resource allocation.
+    </p>
+    <br>
+    <p>
+      The <b>Opportunity Cost</b> of producing one unit of a good is the value of the next best alternative that must be foregone. It answers the fundamental question: 
+      <i>By dedicating resources to producing this product, what high-value product are we sacrificing?</i>
+    </p>
+    <br>
+    <p><b>The Strategic Decision:</b></p>
+    <br>
+    <p>
+      Even if Country A has the absolute advantage in producing both wheat and cars, it is unlikely to be <i>equally</i> superior in both.
+    </p>
+    <br>
+    <ol style="margin-left: 35px;">
+      <li>
+        If Country A sacrifices only <b>2 tons of wheat</b> to produce one car, while Country B must sacrifice <b>3 tons of wheat</b> to produce one car, Country A has the lower opportunity cost in car production—it sacrifices less. Therefore, Country A has the <b>comparative advantage in cars</b> and should specialize there.
+      </li>
+      <br>
+      <li>
+        Conversely, if Country B’s process for making wheat is slightly less inefficient than its car process, it will have a lower opportunity cost in wheat. Even though Country A is better at making wheat <i>absolutely</i>, it must sacrifice a high-value car to do so. Country B’s strategic choice is to specialize in wheat because that is where its <b>disadvantage is least severe</b>.
+      </li>
+      <br>
+    </ol>
+    <p>When nations specialize based on this principle, their total global output increases. This increased global efficiency is the source of the mutual gain from trade, allowing both nations to consume beyond their own individual Production Possibilities Frontier (PPF).</p>
+    <br>
+    <p id="3" class="anchor-target"><b><i style="color: black; font-size: 20px;">3. Conditions and Caveats: When Comparative Advantage Works</i></b></p>
+    <br>
+    <p>While theoretically elegant, the successful application of comparative advantage in the real world depends on several crucial conditions:</p>
+    <br>
+    <p><b>A. The Role of Constant Costs and Elasticity:</b></p>
+    <br>
+    <p>
+    The model initially assumes <b>constant opportunity costs</b> (that the cost of producing an extra unit remains the same). 
+    In reality, costs are often increasing—as a country specializes, it must eventually use less suitable resources (e.g., using less fertile land for wheat), causing the opportunity cost to rise. 
+    This increasing cost limits the degree to which a nation can fully specialize. 
+    Furthermore, the final success of trade relies on foreign markets having sufficient price elasticity of demand for the specialized good. 
+    If demand is inelastic, increased output simply depresses prices without generating significant revenue gains.
+    </p>
+    <br>
+    <p><b>B. Dynamic Comparative Advantage:</b></p>
+    <br>
+    <p>
+    Comparative advantage is not fixed. A nation can strategically influence its future advantage through investment in human capital 
+    (<b>education</b>) and research and development (<b>R&D</b>). 
+    Many nations initially relied on low-cost labor (static advantage) but successfully shifted their focus to high-technology, capital-intensive manufacturing (dynamic advantage) by making targeted policy choices. 
+    This process of intentional shift is often termed <b>Industrial Policy</b>.
+    </p>
+    <br>
+    <p><b>C. Market Frictions and Trade Barriers:</b></p>
+    <br>
+    <p>
+    The mutual benefits of comparative advantage are often hindered by real-world frictions:
+    </p>
+    <br>
+    <ul style="margin-left: 35px;">
+      <li><b>Transportation Costs:</b> If the cost of shipping a specialized good (like cement or sand) is higher than the benefit derived from its lower opportunity cost, trade will not occur.</li>
+      <br>
+      <li><b>Trade Barriers:</b> Tariffs (taxes on imports) and quotas artificially raise the price of imported goods, effectively negating the cost advantage gained from specialization and leading to an overall reduction in global economic welfare.</li>
+      <br>
+      <li><b>Mobility of Factors:</b> The model assumes that labor and capital can easily move from the non-specialized industry into the specialized industry. 
+      In reality, moving textile workers to software factories is difficult, leading to structural unemployment and social costs in the short term.</li>
+      <br>
+    </ul>
+    <p id="4" class="anchor-target"><b><i style="color: black; font-size: 20px;">Conclusion: The Strategic Imperative</i></b></p>
+    <br>
+    <p>The principle of comparative advantage proves that global trade is fundamentally beneficial, providing a mechanism for mutual enrichment even when productivity levels are vastly unequal. For policymakers, the strategic goal is not to eliminate all imports, but to identify and foster the sectors where the nation's opportunity cost is lowest—or can be made lowest through strategic investment—thereby ensuring the nation is contributing the most value possible to the global economic system while maximizing consumption possibilities for its citizens.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <div class="right-rail">
+      <nav class="toc" aria-label="Table of Contents">
+        <h3 class="toc-title">Table of Contents</h3>
+        <ol class="toc-list" style="text-decoration: none;">
+          <li><a href="#1">Absolute Advantage: The Measure of Simple Productivity</a></li><!-- (Bạn có thể đổi tên hiển thị theo ý) -->
+          <li><a href="#2">Comparative Advantage: The True Basis for Strategic Trade</a></li>
+          <li><a href="#3">Conditions and Caveats: When Comparative Advantage Works</a></li>
+          <li><a href="#4">Conclusion: The Strategic Imperative</a></li>
+        </ol>
+      </nav>
+
+    <aside class="article-ads">
+      <img src="insights&lesson15.png" alt="Ad 1">
+      <a href="insights&lesson15.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Why We Buy What We Buy: Introduction to Consumer Rationality and Heuristics – An Expanded Behavioral Analysis</p></a>
+      <img src="insights&lesson13.png" alt="Ad 2">
+      <a href="insights&lesson13.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Understanding Credit, Debt, and Interest Rates: The Cost of Future Consumption – An Advanced Look</p></a>
+      <img src="insights&lesson12.png" alt="Ad 3">
+      <a href="insights&lesson12.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Assessing Systemic Risk and Managing Uncertainty in Long-Term Investment Portfolios</p></a>
+    </aside>
+    </div>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    // Toggle mobile menu
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // TOC: smooth scroll + scrollspy (hỗ trợ ID số: #1 #2 #3 #4)
+    (function() {
+      const header = document.querySelector('header');
+      const offset = (header?.offsetHeight || 0) + 12;
+      const toc = document.querySelector('.toc');
+      if (!toc) return;
+
+      const links = Array.from(toc.querySelectorAll('a'));
+      const sections = links
+        .map(a => document.getElementById((a.hash || '').slice(1)))
+        .filter(Boolean);
+
+      function setActive(id) {
+        links.forEach(a => {
+          const isActive = (a.hash || '').slice(1) === id;
+          a.classList.toggle('active', isActive);
+          if (isActive) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      }
+
+      // Click: cuộn mượt với offset header
+      links.forEach(a => {
+        a.addEventListener('click', e => {
+          const id = (a.hash || '').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          setActive(id);
+          history.replaceState(null, '', '#' + id);
+        });
+      });
+
+      // Scrollspy
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, {
+        root: null,
+        rootMargin: `-${offset + 10}px 0px -55% 0px`,
+        threshold: 0.1
+      });
+      sections.forEach(sec => io.observe(sec));
+
+      // Init active when hash present
+      if (location.hash) {
+        const initId = location.hash.slice(1);
+        if (document.getElementById(initId)) setActive(initId);
+      }
+    })();
+  </script>
+</body>
+</html>

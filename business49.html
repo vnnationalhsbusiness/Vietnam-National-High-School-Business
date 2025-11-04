@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Exports and FDI Vietnam’s Growth Drivers in Q4</h1>
+      <p class="meta">9:24:39 AM | 9/20/2024</p>
+      <p><b>Vietnam’s economy in the first eight months of 2024 showed positive results, with a strong growth rate highly regarded by international organizations.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business49.png" alt="ADB Press Conference" class="article-img" style="margin: auto">      
+      </figure>
+      <br>
+      <p>Many international institutions are optimistic about Vietnam's economic growth. The World Bank predicts a 6.1% increase in 2024, and 6.5% in 2025 and 2026; UOB forecasts growth above 6%, and HSBC 6.5%.</p><br>
+
+      <p>McKinsey forecasts that Vietnam and the Philippines will be the two fastest-growing economies in Southeast Asia, with growth rates of 6.9% and 6.3%, respectively, while Malaysia is expected to reach 5.9%.</p><br>
+
+      <p>In the first eight months, the macroeconomic environment remained stable, with controlled inflation and maintained economic balances. Industrial production rose by 8.6%, while the consumer price index increased by 4.04%, within the control limits set by the National Assembly. Public investment capital disbursement is estimated at 47.8% of the annual plan, down 0.8 percentage points from last year. Foreign direct investment (FDI) reached US$14.15 billion, an 8% year-on-year increase and the highest in the past five years. Goods exports played a key role in economic growth, reaching US$265.09 billion, up 15.8% from last year. If the current export momentum continues, the total export turnover for the year could reach a record US$400 billion, surpassing the US$371.82 billion from 2022. The trade balance posted a surplus of US$19.07 billion.</p><br>
+
+      <p>These results reflected the authorities’ efforts in speeding up public investment disbursement. For instance, the 500kV Quang Trach-Pho Noi transmission line's construction was cut from 3-4 years to 7 months thanks to decisive leadership and concentrated resources. The Government has also been actively enhancing legal frameworks, improving the business and investment environment, and boosting investment in critical infrastructure projects with over 2,021 kilometers of highways now open to traffic.</p><br>
+
+      <p>Additionally, the Government prioritized institutional reforms. To date, the Land Law, Housing Law, and Real Estate Business Law have been approved by the National Assembly, effective from August 1, 2024. Over the past eight months, tax and fee reductions have saved businesses nearly VND90 trillion, with the annual savings expected to reach approximately VND187 trillion. Social housing loan packages worth VND140 trillion and loans for the forestry and fisheries sectors totaling VND30 trillion are also being accelerated for disbursement.</p><br>
+
+      <p>Despite positive results, the domestic market faces challenges as consumer demand remains weak, with total retail sales up by only 8.5% compared to 10.3% last year. Vietnamese businesses continue to face increasing competition both domestically and internationally, and risk from trade defense lawsuits and anti-dumping taxes.</p><br>
+
+      <p>The Ministry of Planning and Investment proposed solutions such as stimulating consumption through tax and social welfare measures, while also speeding up the public investment disbursement. Deputy Prime Minister <b>Tran Hong Ha</b> emphasized clearly classifying public investment projects to prioritize funding for those with the potential for rapid and efficient implementation.</p><br>
+
+      <p>Ministries and localities are focusing on restoring and promoting investment from the private sector through specific mechanisms and policies aimed at reactivating and unlocking private investment resources, making this sector a key driver of long-term growth.</p><br>
+
+      <p>The Ministry of Industry and Trade needs to continue promoting trade, diversifying export and import markets, while also supporting businesses in VNHSBMzing opportunities and fully implementing commitments in free trade agreements to boost exports.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

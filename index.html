@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vietnam National High School Business</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .ads {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .ads a {
+      flex: 1;                  /* 2 ảnh chia đều nhau */
+      display: block;
+      overflow: hidden;         /* cắt phần thừa khi dùng object-fit */
+      border-radius: 8px;
+    }
+
+    .ads img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;         /* ảnh tự co giãn để đầy khung, không méo */
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Trên mobile: hiển thị dọc */
+    @media (max-width: 991px) {
+      .ads {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo"><a href="index.html" style="text-decoration: none;color: navy;">Vietnam National High School Business</a>
+      <hr>
+      <p>Magazine</p>
+    </div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" class="active" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- MAIN NEWS -->
+  <section class="main-news">
+    <img src="economy1.png" alt="Tin chính">
+    <div class="news-text">
+      <a href="#" style="text-decoration: none; color: black; "><h2>Developing Craft Village Economy: Breakthrough from Digital Transformation</h2></a>
+      <p>Identifying digital transformation as the “leverage” for breakthroughs, Phượng Dực has boldly expanded the application of technology into various fields of social life, starting from its success in digital transformation for craft village economic development.</p>
+      <ul class="related">
+        <li><a href="economy2.html">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</a></li>
+        <li><a href="economy3.html">Hanoi Targets Greener and More Beautiful Rural Areas</a></li>
+        <li><a href="economy4.html">Vietnam’s Exports to U.S.: Short-term Breakthroughs but Risks Ahead</a></li>
+        <li><a href="economy5.html">GBA Business Awards 2025: Honoring Excellence, Spreading Sustainable Values</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SUB NEWS -->
+  <section class="sub-news">
+    <img src="economy8.png" alt="">
+    <div class="sub-text">
+      <a href="economy8.html" style="text-decoration: none;color: black;"><h3>“Vietnam is a Strategic Destination in the Global Supply Chain”</h3></a>
+      <p>This was the assessment of Mr. Haruhiko Ozasa, Chief Representative of the Japan External Trade Organization (JETRO) in Hanoi, during an interview with Vietnam Business Forum.</p>
+      <ul>
+        <li><a href="economy9.html">Grand Ceremony Marks 80th Anniversary of August Revolution, National Day</a></li>
+        <li><a href="economy10.html">Vietnam, Brazil promote Launch of Vietnam - MERCOSUR FTA Negotiations</a></li>
+        <li><a href="economy11.html">Circular Agriculture: From Policy to Action</a></li>
+        <li><a href="economy12.html">Shopping Apps Take Center Stage in APAC, Seen To Evolve with AI-Powered Strategies And Smarter User Targeting — Adjust</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BUSINESS OPPORTUNITY -->
+  <!-- <section class="business-opportunity">
+    <h2>Business Opportunity</h2>
+    <div class="opportunity-grid">
+      <div class="column">
+        <h3>Buying</h3>
+        <ul>
+          <li><a href="#">We are in the market for Milk Cream Separator...</a></li>
+          <li><a href="#">We provide agricultural NPK fertilizer...</a></li>
+          <li><a href="#">Looking for finished bedding sets...</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Selling</h3>
+        <ul>
+          <li><a href="#">Viscose Staple Fiber for textiles...</a></li>
+          <li><a href="#">Toluene chemical supply...</a></li>
+          <li><a href="#">Tobacco Leaf from Indonesia...</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Seek Partners</h3>
+        <ul>
+          <li><a href="#">Synthetic Food Colors Supply Inquiry...</a></li>
+          <li><a href="#">OEM sourcing partner (US-based)...</a></li>
+          <li><a href="#">Women sandals production partner...</a></li>
+        </ul>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ENTERPRISE NEWS -->
+  <section class="enterprise-news">
+    <h2>Business</h2>
+    <div class="news-grid">
+      <div class="card">
+        <img src="business1.png" alt="">
+        <a href="business1.html" style="text-decoration: none;color: black;"><p>Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      </div>
+      <div class="card">
+        <img src="business2.png" alt="">
+        <a href="business2.html" style="text-decoration: none;color: black;"><p>Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      </div>
+      <div class="card">
+        <img src="business3.png" alt="">
+        <a href="business3.html" style="text-decoration: none;color: black;"><p>Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+      </div>
+      <div class="card">
+        <img src="business4.png" alt="">
+        <a href="business4.html" style="text-decoration: none;color: black;"><p>Vietnam’s Tilapia Exports in the First 8 Months of 2025 Hit a 5-year High</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUB NEWS -->
+  <section class="sub-news">
+    <img src="business7.png" alt="">
+    <div class="sub-text">
+      <a href="business7.html" style="text-decoration: none;color: black;"><h3>German Market: Gateway to EU to Boost Vietnamese Exports</h3></a>
+      <p>Over the past two decades, trade between Vietnam and Germany has grown significantly, establishing itself as one of the strongest pillars of bilateral cooperation. Serving as a key gateway to the European market, Germany also helps enhance Vietnam’s role in the global supply chain.</p>
+      <ul>
+        <li><a href="business8.html">“Value of Vietnam’s Top 100 Brands in 2025 Hits Over US$38bln”</a></li>
+        <li><a href="business9.html">Vietnam’s Exports of Fish Cakes and surimi surge, expanding markets in 2025</a></li>
+        <li><a href="business10.html">Vietnam’s Gen Z Drives Secure and Inclusive Digital Payments</a></li>
+        <li><a href="business11.html">Vietnam Int’l Sourcing Expo 2025: Strengthening Vietnam-Philippines Business Ties</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="enterprise-news">
+    <h2>Insights & Lessons</h2>
+    <div class="news-grid">
+      <div class="card">
+        <img src="insights&lesson15.png" alt="">
+        <a href="insights&lesson15.html" style="text-decoration: none;color: black;"><p>Why We Buy What We Buy: Introduction to Consumer Rationality and Heuristics – An Expanded Behavioral Analysis</p></a>
+      </div>
+      <div class="card">
+        <img src="insights&lesson14.png" alt="">
+        <a href="insights&lesson14.html" style="text-decoration: none;color: black;"><p>Absolute vs. Comparative Advantage: Why Nations Specialize and Trade</p></a>
+      </div>
+      <div class="card">
+        <img src="insights&lesson13.png" alt="">
+        <a href="insights&lesson13.html" style="text-decoration: none;color: black;"><p>Understanding Credit, Debt, and Interest Rates: The Cost of Future Consumption – An Advanced Look</p></a>
+      </div>
+      <div class="card">
+        <img src="insights&lesson12.png" alt="">
+        <a href="insights&lesson12.html" style="text-decoration: none;color: black;"><p>Assessing Systemic Risk and Managing Uncertainty in Long-Term Investment Portfolios</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUB NEWS -->
+  <section class="sub-news">
+    <img src="insights&lesson9.png" alt="">
+    <div class="sub-text">
+      <a href="insights&lesson9.html" style="text-decoration: none;color: black;"><h3>Monetary vs. Fiscal Policy: A Deep Dive into Central Bank and Government Actions and Their Impact on the Stock Market</h3></a>
+      <p>For strategic investors, the performance of the stock market is not solely driven by corporate earnings but is profoundly influenced by two powerful macro-levers: Monetary Policy, controlled by the Central Bank, and Fiscal Policy, controlled by the Government. These two policy tools act as the primary mechanisms for stabilizing the business cycle, but their differing goals and methods create distinct, often complex, impacts on asset valuation and sector performance. Understanding the interplay between these two forces is critical for long-term portfolio positioning.</p>
+      <ul>
+        <li><a href="insights&lesson8.html">Market Segmentation and Targeting: Keys to Effective Audience Reach</a></li>
+        <li><a href="insights&lesson7.html">Monopoly vs. Perfect Competition: Where Should Your Business Strategically Position Itself? A Deep Dive into Market Structures</a></li>
+        <li><a href="insights&lesson6.html">Understanding IRR and NPV: Precise Tools for Project Investment Decisions</a></li>
+        <li><a href="insights&lesson5.html">Porter's Five Forces Model: A Framework for Identifying Competitive Advantage</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="enterprise-news">
+    <h2>Start-up</h2>
+   <div class="news-grid">
+      <div class="card">
+        <img src="startup1.png" alt="">
+        <a href="startup1.html" style="text-decoration: none;color: black;"><p>From Gamer to Giant: Lê Hồng Minh and the Making of VNG, Vietnam's First Unicorn</p></a>
+      </div>
+      <div class="card">
+        <img src="startup2.png" alt="">
+        <a href="startup2.html" style="text-decoration: none;color: black;"><p>The QR Code Unicorn: How VNLife Forged an Empire from a Single Scan</p></a>
+      </div>
+      <div class="card">
+        <img src="startup3.png" alt="">
+        <a href="startup3.html" style="text-decoration: none;color: black;"><p>The Global Blockchain Disruption: How Sky Mavis Built a Billion-Dollar Metaverse with Axie Infinity</p></a>
+      </div>
+      <div class="card">
+        <img src="startup4.png" alt="">
+        <a href="startup4.html" style="text-decoration: none;color: black;"><p>The Super App Ascent: How MoMo Conquered Vietnam’s Digital Landscape</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUB NEWS -->
+  <section class="sub-news">
+    <img src="startup7.png" alt="">
+    <div class="sub-text">
+      <a href="startup7.html" style="text-decoration: none;color: black;"><h3>The High-Speed Ecosystem Player: How Giao Hang Nhanh (GHN) Became the Logistics Engine for Vietnam’s E-Commerce Giants</h3></a>
+      <p>As a core pillar of the Scommerce ecosystem, GHN leveraged centralized technology and strategic partnerships to scale its high-volume, reliable delivery service, becoming a primary logistics provider for major marketplace platforms.</p>
+      <ul>
+        <li><a href="startup8.html">“The Unseen Engine: How KiotViet Digitized Vietnam's SMEs, One Shop at a Time”</a></li>
+        <li><a href="startup9.html">From Chaotic Bus Stations to One-Click Booking: How Vexere Digitized Vietnam's Transport Industr</a></li>
+        <li><a href="startup10.html">How a Free CV Tool Built a Recruitment Empire: The TopCV Story</a></li>
+        <li><a href="startup11.html">From Reviews to Riches: The Foody Story and Vietnam's Landmark Startup Exit</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

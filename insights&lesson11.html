@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Lessons</title>
+</head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { font-size: 20px; font-weight: bold; color: #c00; }
+    .menu {
+      position: fixed;
+      top: 0; left: -100%;
+      width: 70%; height: 100%;
+      background: #fff;
+      display: flex; flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 9;
+    }
+    .menu.active { left: 0; }
+    .menu a { text-decoration: none; color: #111; font-weight: bold; }
+    .menu-toggle {
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ARTICLE PAGE (mobile-first) */
+    .article-page {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+    .article-content { flex: 3; }
+    .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+    .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+    .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+    .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+    blockquote {
+      border-left: 4px solid #c00;
+      padding-left: 10px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #333;
+    }
+
+    /* ADS */
+    .article-ads {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; display:block; }
+
+    /* OTHER NEWS */
+    .other-news { padding: 20px; background: #f9f9f9; }
+    .other-news h2 { margin-bottom: 15px; color: #c00; }
+    .other-news ul { list-style: none; }
+    .other-news li { margin: 8px 0; }
+    .other-news a { text-decoration: none; color: #000; }
+    .other-news a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+    /* Desktop/Tablet layout: 2 cột, cột phải cố định bề ngang */
+    @media (min-width: 992px) {
+      .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+      .menu-toggle { display: none; }
+
+      .article-page {
+        display: grid;
+        grid-template-columns: 1fr minmax(280px, 340px);
+        gap: 28px;
+        align-items: start;
+      }
+      .article-content { min-width: 0; }
+      .right-rail { min-width: 0; display:flex; flex-direction:column; gap:16px; }
+    }
+
+    /* ===== TOC style giống ảnh mẫu ===== */
+    /* Ẩn TOC trên mobile; chỉ hiện >=768px */
+    /* .toc{ display:none; } */
+    /* TOC: tránh bị nội dung bên dưới “lọt” qua khi sticky */
+    @media (min-width:768px){
+      .toc{
+        /* background:#fff;           bật nền trắng để che nội dung phía dưới */
+        /* border:1px solid #e5e7eb;  viền nhẹ, giống ảnh mẫu */
+        border-radius:12px;
+        padding:12px 12px 12px 0;  /* chừa chỗ cho vạch dọc + mũi tên */
+        /* box-shadow:0 6px 18px rgba(0,0,0,.06); */
+        z-index: 5;                /* nổi lên trên ảnh/caption Ads */
+      }
+      .toc-title{ margin:0 0 10px 0; font-size:20px; font-weight:700; color:#111; }
+      .toc-list{
+        list-style:none; margin:0; padding:0 0 0 16px;
+        border-left:2px solid #e5e7eb; /* vạch dọc bên trái */
+      }
+      .toc-list li{ margin:6px 0; }
+      .toc a{
+        position:relative; display:block; color:#111; text-decoration:none;
+        font-size:15px; line-height:1.4; padding:6px 0;
+      }
+      .toc a:hover{ text-decoration:underline; }
+      .toc a.active{ font-weight:700; }
+      .toc a.active::before{
+        content:""; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
+        width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent;
+        border-left:7px solid #2563eb; /* mũi tam giác xanh */
+      }
+    }
+
+    /* Nếu dùng dark mode tự động, bạn có thể thêm: */
+    /* @media (prefers-color-scheme: dark){
+      .toc{ background:#0b1020; border-color:#1e293b; box-shadow:0 10px 28px rgba(0,0,0,.45); }
+      .toc-title, .toc a{ color:#e5e7eb; }
+      .toc-list{ border-left-color:#1e293b; }
+    } */
+
+    /* Khi cuộn tới tiêu đề, chừa khoảng cho header sticky */
+    .anchor-target { scroll-margin-top: 88px; }
+    .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Insights & Lessons</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" class="active" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page">
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Schumpeter's Theory of Creative Destruction: The Role of Innovation in Economic Cycles</h1>
+      <p class="meta">8:00:04 PM | 12/11/2024</p>
+      <img src="insights&lesson11.png" alt="Main Article Image" class="article-img">
+
+    <p>
+      For classical economists, economic growth is viewed as a smooth, incremental process. However, the Austrian economist <b>Joseph Schumpeter</b> offered a radically different and far more dynamic view: economic progress is not merely additive, but is driven by discontinuous, revolutionary change. His central concept, <b>Creative Destruction</b>, explains the essential process of capitalism—an evolutionary gale that simultaneously destroys old industries and creates new ones, underpinning the long-term capitalist boom-and-bust cycle. Understanding this theory is paramount for strategic investors seeking to identify the sources of fundamental disruption and long-term value creation.
+    </p>
+    <br>
+    <p id="1" class="anchor-target"><b><i style="color: black; font-size: 20px;">1. Defining Creative Destruction: The Gale of Innovation</i></b></p>
+    <br>
+    <p>
+      Schumpeter first popularized the term <b>"Creative Destruction"</b> in his 1942 work, <i>Capitalism, Socialism and Democracy</i>. He defined it as the "process of industrial mutation that incessantly revolutionizes the economic structure <i>from within</i>, incessantly destroying the old one, incessantly creating a new one."
+    </p>
+    <br>
+    <p>
+      The theory posits that the primary engine of long-run economic growth is <b>innovation</b>, which is carried out by the <b>entrepreneur</b>. This innovation is not about marginal improvements; it involves entirely new methods of production, new markets, new organizational forms, or, most powerfully, entirely new products.
+    </p>
+    <br>
+    <p><b>The Twin Forces of Destruction and Creation:</b></p>
+    <br>
+    <ul style="margin-left: 35px;">
+      <li>
+        <b>The Destruction Phase</b>: Existing firms and technologies that cannot adapt to the new innovation are rendered obsolete and inefficient. Examples include the collapse of the carriage industry due to the automobile, or the demise of video rental stores (Blockbuster) due to streaming services (Netflix). This destruction is painful, often causing unemployment and stock market upheaval.
+      </li>
+      <br>
+      <li>
+        <b>The Creation Phase</b>: The new innovation, introduced by the entrepreneur, creates entirely new industries, new revenue streams, and new pools of investment capital. This phase drives higher productivity, wealth creation, and is the source of the sustained economic booms that characterize capitalist cycles.
+      </li>
+      <br>
+    </ul>
+
+    <p id="2" class="anchor-target"><b><i style="color: black; font-size: 20px;">2. The Role of the Entrepreneur and Monopoly Profits</i></b></p>
+    <br>
+    <p>
+      Central to Schumpeter's model is the Entrepreneur. Unlike mere managers, the entrepreneur is the revolutionary agent who identifies and executes the innovation, disrupting the existing equilibrium.
+    </p>
+    <br>
+    <ul style="margin-left: 35px;">
+      <li>
+        <b>Temporary Monopoly</b>: Schumpeter argued that entrepreneurs are motivated by the promise of <b>temporary monopoly profits</b>. Because the innovation is unique, the entrepreneur initially faces no competition, allowing them to charge a premium price and reap extraordinary returns.
+      </li>
+      <br>
+      <li>
+        <b>The Incentive Mechanism</b>: These high, short-lived monopoly profits are the <b>reward</b> for risk-taking and the primary <b>incentive</b> for others to engage in competition. As rival firms enter the market and imitate the innovation (or create their own counter-innovations), competition intensifies, eventually eroding the super-normal profits and driving prices down toward cost, benefiting consumers. This erosion completes the cycle, setting the stage for the next disruptive innovation.
+      </li>
+      <br>
+    </ul>
+    <p>
+      Schumpeter thus viewed monopoly profits not as a sign of capitalist failure (as classical economics might), but as a necessary, temporary engine of progress.
+    </p>
+    <br>
+    <p id="3" class="anchor-target"><b><i style="color: black; font-size: 20px;">3. Creative Destruction and the Business Cycle</i></b></p>
+    <br>
+    <p>
+      Schumpeter’s theory offers a unique explanation for the cyclical nature of capitalist economies, moving beyond simple supply-and-demand explanations.
+    </p>
+    <br>
+    <ul style="margin-left: 35px;">
+      <li>
+        <b>The Boom Phase</b>: A major, radical innovation (like the railroad, electricity, or the internet) triggers a massive wave of investment. Capital flows into the new technology, driving productivity and economic expansion. This concentrated, large-scale investment generates the <b>economic boom</b>.
+      </li>
+      <br>
+      <li>
+        <b>The Recession Phase</b>: As the initial innovation is saturated and competition erodes profits, the massive wave of initial investment slows down. Furthermore, the destruction of obsolete industries (factories close, workers are laid off) creates economic friction and market uncertainty. This natural slowdown and re-alignment <b>generate the economic recession</b> (or “bust”)—a necessary cleansing process that reallocates capital and labor to the emerging, high-growth sectors.
+      </li>
+      <br>
+    </ul>
+    <p>
+      For Schumpeter, recessions are not always pathologies to be cured by government intervention, but rather the essential, sometimes painful, mechanism by which the economy sheds its old, inefficient structure and prepares for the next technological leap.
+    </p>
+    <br>
+    <p id="4" class="anchor-target"><b><i style="color: black; font-size: 20px;">4. Strategic Implications for the Investor and the Corporation</i></b></p>
+    <br>
+    <p>
+      The theory of Creative Destruction provides a vital lens for strategic investment and corporate management in the modern era.
+    </p>
+    <br>
+    <ul style="margin-left: 35px;">
+      <li>
+        <b>Identifying the Next Wave</b>: Strategic investors must focus on identifying the <b>early stages</b> of a disruptive innovation before the market has fully priced its potential. Investment should be directed toward firms that are creating the destruction (the innovators), not those being destroyed (the incumbents).
+      </li>
+      <br>
+      <li>
+        <b>Risk of Incumbency</b>: Large, successful incumbent firms face a significant challenge: <b>organizational inertia</b>. Their existing infrastructure, profit structures, and management hierarchies are optimized for the old technology. They often fail because they are slow to adopt innovations that initially appear less profitable than their core business, making them highly vulnerable to smaller, agile competitors.
+      </li>
+      <br>
+      <li>
+        <b>Strategic R&D</b>: For corporations, R&amp;D spending must be viewed not just as an expense but as a necessary <b>defensive and offensive weapon</b>. Defense requires investing in incremental R&amp;D to stay competitive in the current market, while offense requires allocating capital to radical, potentially self-cannibalizing innovations to ensure the company controls the next wave of destruction.
+      </li>
+      <br>
+    </ul>
+    <p id="5" class="anchor-target"><b><i style="color: black; font-size: 20px;">5. What Is Joseph Schumpeter’s 'History of Economic Analysis'?</i></b></p>
+    <br>
+    <p>At the time of his death, in 1950, Schumpeter was working on a new book, "History of Economic Analysis." In the book, Schumpeter attempts a complete history of the field of economics, from ancient Greece to the present day (the end of World War II). Not just limited to economics, the book also traced the history of political and philosophical ideas and served as a record of significant events.</p>
+    <br>
+    <p>Though unfinished, "History of Economic Analysis" is recognized for its wide scope and unique examination of key historical events. Some notable topics it addresses include the techniques of economic analysis, contemporaneous developments in other sciences, and the sociology of economics.</p>
+    <br>
+    <p id="6" class="anchor-target"><b><i style="color: black; font-size: 20px;">6. What Did Joseph Schumpeter Believe Would Destroy Capitalism?</i></b></p>
+    <br>
+    <p>Schumpeter believed that capitalism would ultimately be destroyed by its success. He hypothesized that the economic system would eventually create a large intellectual class that survived by attacking the system of private property and freedom that was necessary for sustaining its own existence. Although Schumpeter predicted the demise of capitalism, he was an ardent supporter of it.</p>
+    <br>
+    <p id="7" class="anchor-target"><b><i style="color: black; font-size: 20px;">7. What Is Joseph Schumpeter’s Innovation Theory of Profit?</i></b></p>
+    <br>
+    <p>Schumpeter believed that the was to introduce successful, well, innovations. The innovation theory of profit claims that the main function of an entrepreneur is to introduce, well, innovations—which Schumpeter defined as any new policy that reduces the overall cost of production or increases the demand for products. Any profit an entrepreneur receives from these efforts is a form of reward for their performance. Creating innovations was the first step on the path to success and economic profits for entrepreneurs.</p>
+    <br>
+    <p id="8" class="anchor-target"><b><i style="color: black; font-size: 20px;">8. What Is Schumpeterian Growth?</i></b></p>
+    <br>
+    <p>Schumpeterian growth is economic growth that is driven by innovation and governed by the process of creative destruction. Formal economic models have been created that operationalize Schumpeter’s notion of creative destruction. These models of growth help economists understand the role of competition, firm dynamics, and cross-firm and cross-sector reallocation.</p>
+    <br>
+    <p id="9" class="anchor-target"><b><i style="color: black; font-size: 20px;">9. The Bottom Line</i></b></p>
+    <br>
+    <p>Joseph Schumpeter's key contributions to modern economics include his introduction of the concept of entrepreneurship and its significance to the growth of capitalist economies.</p>
+    <br>
+    <p>His theory of creative destruction is important because it reshaped economic thinking regarding innovation and economic cycles. It has become the centerpiece for modern thinking on how economies evolve—especially capitalist ones.</p>
+    <br>
+    <p>Schumpeter had a rivalry with fellow economist John Maynard Keynes, and his ideas gained prominence over time, offering a different perspective on economic progress.</p>
+    <br>
+    <p>Schumpeter's theories on business cycles, capitalist development, and entrepreneurship have practical implications for understanding modern economic evolution. He introduced the concept of the entrepreneur and the influence of entrepreneurship on economic systems.</p>
+    <br>
+    <p>Schumpeterian growth—economic growth driven by innovation and governed by creative destruction—is relevant in today's economic context because entrepreneurs lead innovation and industry transformation. Economic models exist that run on his notion of creative destruction and help economists understand competition, firm dynamics, and reallocation.</p>
+    <br>
+    <hr>
+    <br>
+    <b><p>Resource: Hai Dang - Bachelor in Vin University</p></b>  
+  </div>
+
+    <div class="right-rail">
+      <nav class="toc" aria-label="Table of Contents">
+        <h3 class="toc-title">Table of Contents</h3>
+        <ol class="toc-list" style="text-decoration: none;">
+          <li><a href="#1">Defining Creative Destruction: The Gale of Innovation</a></li>
+          <li><a href="#2">The Role of the Entrepreneur and Monopoly Profits</a></li>
+          <li><a href="#3">Creative Destruction and the Business Cycle</a></li>
+          <li><a href="#4">Strategic Implications for the Investor and the Corporation</a></li>
+          <li><a href="#5">What Is Joseph Schumpeter’s <i>History of Economic Analysis</i>?</a></li>
+          <li><a href="#6">What Did Joseph Schumpeter Believe Would Destroy Capitalism?</a></li>
+          <li><a href="#7">What Is Joseph Schumpeter’s Innovation Theory of Profit?</a></li>
+          <li><a href="#8">What Is Schumpeterian Growth?</a></li>
+          <li><a href="#9">The Bottom Line</a></li>
+        </ol>
+      </nav>
+
+      <aside class="article-ads">
+        <img src="insights&lesson15.png" alt="Ad 1">
+        <a href="insights&lesson15.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Why We Buy What We Buy: Introduction to Consumer Rationality and Heuristics – An Expanded Behavioral Analysis</p></a>
+        <img src="insights&lesson14.png" alt="Ad 2">
+        <a href="insights&lesson14.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Absolute vs. Comparative Advantage: Why Nations Specialize and Trade</p></a>
+        <img src="insights&lesson13.png" alt="Ad 3">
+        <a href="insights&lesson13.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Understanding Credit, Debt, and Interest Rates: The Cost of Future Consumption – An Advanced Look</p></a>
+      </aside>
+    </div>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    // Toggle mobile menu
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // TOC: smooth scroll + scrollspy (hỗ trợ ID số: #1 #2 #3 #4)
+    (function() {
+      const header = document.querySelector('header');
+      const offset = (header?.offsetHeight || 0) + 12;
+      const toc = document.querySelector('.toc');
+      if (!toc) return;
+
+      const links = Array.from(toc.querySelectorAll('a'));
+      const sections = links
+        .map(a => document.getElementById((a.hash || '').slice(1)))
+        .filter(Boolean);
+
+      function setActive(id) {
+        links.forEach(a => {
+          const isActive = (a.hash || '').slice(1) === id;
+          a.classList.toggle('active', isActive);
+          if (isActive) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      }
+
+      // Click: cuộn mượt với offset header
+      links.forEach(a => {
+        a.addEventListener('click', e => {
+          const id = (a.hash || '').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          setActive(id);
+          history.replaceState(null, '', '#' + id);
+        });
+      });
+
+      // Scrollspy
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, {
+        root: null,
+        rootMargin: `-${offset + 10}px 0px -55% 0px`,
+        threshold: 0.1
+      });
+      sections.forEach(sec => io.observe(sec));
+
+      // Init active when hash present
+      if (location.hash) {
+        const initId = location.hash.slice(1);
+        if (document.getElementById(initId)) setActive(initId);
+      }
+    })();
+  </script>
+</body>
+</html>

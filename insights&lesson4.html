@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Lessons</title>
+</head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { font-size: 20px; font-weight: bold; color: #c00; }
+    .menu {
+      position: fixed;
+      top: 0; left: -100%;
+      width: 70%; height: 100%;
+      background: #fff;
+      display: flex; flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 9;
+    }
+    .menu.active { left: 0; }
+    .menu a { text-decoration: none; color: #111; font-weight: bold; }
+    .menu-toggle {
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ARTICLE PAGE (mobile-first) */
+    .article-page {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+    .article-content { flex: 3; }
+    .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+    .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+    .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+    .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+    blockquote {
+      border-left: 4px solid #c00;
+      padding-left: 10px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #333;
+    }
+
+    /* ADS */
+    .article-ads {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; display:block; }
+
+    /* OTHER NEWS */
+    .other-news { padding: 20px; background: #f9f9f9; }
+    .other-news h2 { margin-bottom: 15px; color: #c00; }
+    .other-news ul { list-style: none; }
+    .other-news li { margin: 8px 0; }
+    .other-news a { text-decoration: none; color: #000; }
+    .other-news a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+    /* Desktop/Tablet layout: 2 cột, cột phải cố định bề ngang */
+    @media (min-width: 992px) {
+      .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+      .menu-toggle { display: none; }
+
+      .article-page {
+        display: grid;
+        grid-template-columns: 1fr minmax(280px, 340px);
+        gap: 28px;
+        align-items: start;
+      }
+      .article-content { min-width: 0; }
+      .right-rail { min-width: 0; display:flex; flex-direction:column; gap:16px; }
+    }
+
+    /* ===== TOC style giống ảnh mẫu ===== */
+    /* Ẩn TOC trên mobile; chỉ hiện >=768px */
+    /* .toc{ display:none; } */
+    /* TOC: tránh bị nội dung bên dưới “lọt” qua khi sticky */
+    @media (min-width:768px){
+      .toc{
+        /* background:#fff;           bật nền trắng để che nội dung phía dưới */
+        /* border:1px solid #e5e7eb;  viền nhẹ, giống ảnh mẫu */
+        border-radius:12px;
+        padding:12px 12px 12px 0;  /* chừa chỗ cho vạch dọc + mũi tên */
+        /* box-shadow:0 6px 18px rgba(0,0,0,.06); */
+        z-index: 5;                /* nổi lên trên ảnh/caption Ads */
+      }
+      .toc-title{ margin:0 0 10px 0; font-size:20px; font-weight:700; color:#111; }
+      .toc-list{
+        list-style:none; margin:0; padding:0 0 0 16px;
+        border-left:2px solid #e5e7eb; /* vạch dọc bên trái */
+      }
+      .toc-list li{ margin:6px 0; }
+      .toc a{
+        position:relative; display:block; color:#111; text-decoration:none;
+        font-size:15px; line-height:1.4; padding:6px 0;
+      }
+      .toc a:hover{ text-decoration:underline; }
+      .toc a.active{ font-weight:700; }
+      .toc a.active::before{
+        content:""; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
+        width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent;
+        border-left:7px solid #2563eb; /* mũi tam giác xanh */
+      }
+    }
+
+    /* Nếu dùng dark mode tự động, bạn có thể thêm: */
+    /* @media (prefers-color-scheme: dark){
+      .toc{ background:#0b1020; border-color:#1e293b; box-shadow:0 10px 28px rgba(0,0,0,.45); }
+      .toc-title, .toc a{ color:#e5e7eb; }
+      .toc-list{ border-left-color:#1e293b; }
+    } */
+
+    /* Khi cuộn tới tiêu đề, chừa khoảng cho header sticky */
+    .anchor-target { scroll-margin-top: 88px; }
+    .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Insights & Lessons</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" class="active" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page">
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Choosing the Right Entity: Advantages and Disadvantages of Common Business Structures</h1>
+      <p class="meta">8:00:23 PM | 3/9/2024</p>
+      <img src="insights&lesson4.png" alt="Main Article Image" class="article-img">
+
+      <p>
+        Choosing the right business structure is one of the very first-and most important-decisions you’ll make when starting a small business or startup in Australia. Your structure shapes everything from your taxes and admin to how you protect your personal assets and even how easily you can grow or sell your business down the line. But with several options available-like sole trader, partnership, company, and trust-it can be hard to figure out which path is best for your unique situation.
+    </p>
+    <br>
+    <p>
+        Each structure comes with its own set of advantageous and disadvantageous points. How can you be sure you’re picking the right one? Understanding these pros and cons will empower you to make an informed decision and set your new venture up for long-term success.
+    </p>
+    <br>
+    <p>
+        In this guide, we’ll break down each main business structure available in Australia, explore their advantageous and disadvantageous aspects, and flag the key legal considerations to keep your startup or small business compliant from day one. If you’re feeling unsure, don’t worry-we’re here to help you navigate every step of the journey.
+    </p>
+    <br>
+    <p id="1" class="anchor-target"><i style="font-size:20px; color: black;"><b>1. What Is a Business Structure and Why Does It Matter?</b></i></p>
+    <br>
+    <p>
+        A business structure is the legal and operational framework that determines how your business is set up, run, and regulated. It affects almost everything about your business life, such as:
+    </p>
+    <br>
+    <li style="margin-left: 35px;">
+        <ul>
+            <li>How much tax you pay (and how you pay it)</li>
+            <br>
+            <li>Your level of personal liability for business debts</li>
+            <br>
+            <li>The regulatory and reporting requirements you must meet</li>
+            <br>
+            <li>Your access to funding and ability to bring on investors or partners</li>
+            <br>
+            <li>The way profits and losses are distributed</li>
+            <br>
+            <li>What happens if you want to sell, transfer, or close your business</li>
+            <br>
+        </ul>
+    </li>
+
+    <p>
+        Choosing the right structure ensures your business is legally protected and makes day-to-day operations much smoother. Getting it wrong, on the other hand, can expose you to higher tax, legal risk, and unnecessary admin headaches.
+    </p>
+    <br>
+      <p id="2" class="anchor-target"><b><i style="font-size:20px; color: black;">2. What Are the Main Types of Business Structures in Australia?</i></b></p>
+      <br>
+      <p>
+        In Australia, there are four common business structures you can choose from. Let’s quickly define each before delving into their advantageous and disadvantageous characteristics:
+      </p>
+      <br>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li><b>Sole Trader</b>: You run the business as an individual (in your own name), even if you use a separate business name.</li>
+                <br>
+                <li><b>Partnership</b>: Two or more people (or entities) share ownership and management of the business.</li>
+                <br>
+                <li><b>Company</b>: A registered legal entity (with an Australian Company Number) that’s separate from its owners (shareholders) and managed by directors.</li>
+                <br>
+                <li><b>Trust</b>: A structure where a trustee holds and manages business assets on behalf of beneficiaries.</li>
+                <br>
+            </ul>
+        </li>
+      <p>
+        Now, let’s look at the advantageous and disadvantageous features of each structure-so you can see which one suits your goals.
+      </p>
+      <br>
+      <p id="3" class="anchor-target"><b><i style="font-size: 20px; color: black;">3. What Are the Advantages and Disadvantages of a Sole Trader?</i></b></p>
+      <br>
+      <p>
+        <b>Advantages of Being a Sole Trader</b>
+      </p>
+      <br>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li><b>Simple and Low-Cost Setup</b>: Becoming a sole trader is quick, straightforward, and cheap. All you need is an Australian Business Number (ABN) and, if trading under a name, you’ll register a business name.</li>
+                <br>
+                <li><b>Full Control</b>: You make all the decisions and keep all the profits-no need to consult with partners or directors.</li>
+                <br>
+                <li><b>Minimal Reporting</b>: There are fewer compliance and reporting requirements compared to companies or trusts. Accounting and admin are less burdensome.</li>
+                <br>
+                <li><b>Easy to Change Structure</b>: If you want to grow or change, it’s usually easy to transition your sole trader setup to a company or trust.</li>
+                <br>
+            </ul>
+        </li>
+      <p><b>Disadvantages of Being a Sole Trader</b></p>
+      <br>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li><b>Unlimited Personal Liability</b>: There is no legal separation between you and the business. If the business is sued, goes into debt, or breaches a contract, your personal assets (house, car, savings) are at risk. Learn more about unlimited liability.</li>
+                <br>
+                <li><b>Tax at Personal Rates</b>: Profits are taxed at your individual income tax rates, which can be higher than the company tax rate if your business does well.</li>
+                <br>
+                <li><b>Limited Funding Options</b>: It can be harder to bring in investors or get business loans, as you can’t issue shares and you are the sole owner.</li>
+                <br>
+                <li><b>May Lack Credibility for Larger Clients</b>: Some clients or suppliers prefer dealing with companies due to added trust and accountability.</li>
+                <br>
+            </ul>
+        </li>
+      <p id="4" class="anchor-target"><b><i style="font-size:20px; color: black;">4. What Are the Advantages and Disadvantages of a Partnership?</i></b></p>
+      <br>
+      <p>
+        <b>Advantages of a Partnership</b>
+      </p>
+      <br>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li><b>Shared Responsibility and Skills</b>: You can pool resources, expertise, and capital with others, which can drive growth and give your business a wider skill set.</li>
+                <br>
+                <li><b>Simple Setup and Low Cost</b>: Like sole traders, partnerships are easy and inexpensive to establish. You’ll need an ABN and a partnership agreement (which is highly recommended).</li>
+                <br>
+                <li><b>Flexibility</b>: Profits can be split as agreed with your partners, not just by ownership percentages.</li>
+                <br>
+            </ul>
+        </li>   
+        <p><b>Disadvantages of a Partnership</b></p>
+        <br>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li><b>Joint and Several Liability</b>: Each partner is personally liable for business debts-including those incurred by the other partners. This is a significant risk if things go wrong. Read more about partnership liability.</li>
+                <br>
+                <li><b>Potential for Disputes</b>: Without a strong partnership agreement, disagreements over money, roles, or direction can quickly derail the business.</li>
+                <br>
+                <li><b>No Separation of Assets</b>: Personal assets remain exposed, just as in a sole trader setup.</li>
+                <br>
+                <li><b>Tax at Personal Rates</b>: Business profits are split and taxed at each partner’s personal income tax rate.</li>
+            </ul>
+        </li> 
+        <br>
+        <p id="5" class="anchor-target"><b><i style="color: black; font-size: 20px;">5. What Are the Advantages and Disadvantages of a Company?</i></b></p>
+      <br>
+      <p>
+        <b>Advantages of a Company Structure</b>
+      </p>
+      <br>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li><b>Limited Liability Protection</b>: A major advantage is that, as a company, the business is a separate legal entity. Your personal assets are typically protected if the company faces legal trouble or debts, unless you’ve personally guaranteed obligations or broken director’s duties.</li>
+                <br>
+                <li><b>Tax Benefits</b>: Companies benefit from a flat company tax rate (which may be lower than personal rates). Profits can sometimes be retained in the company to defer personal tax.</li>
+                <br>
+                <li><b>Professional Image and Credibility</b>: Having “Pty Ltd” after your name can boost trust among clients, suppliers, and investors.</li>
+                <br>
+                <li><b>Flexible Ownership (Shares)</b>: You can easily add or replace shareholders and directors as your business evolves, and raising capital is more straightforward.</li>
+                <br>
+                <li><b>Attracting Investors</b>Many investors or venture capital funds prefer (or require) a company structure, as shares are easily issued.</li>
+                <br>
+            </ul>
+        </li>   
+        <p><b>Disadvantages of a Company Structure</b></p>
+        <br>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li><b>Setup and Ongoing Costs</b>: Registering a company costs more and involves extra paperwork with ASIC (the government regulator), plus ongoing annual fees. See a breakdown of company setup costs.</li>
+                <br>
+                <li><b>Stricter Compliance</b>: Companies must comply with the Corporations Act 2001, including director duties, regular financial reporting, and record-keeping. Penalties apply for breaches.</li>
+                <br>
+                <li><b>More Paperwork and Admin</b>: You’ll need to maintain registers, lodge annual returns, and follow formal decision-making processes.</li>
+                <br>
+                <li><b>Potential Director Liability</b>: Directors can still be personally liable in some cases (such as trading while insolvent, fraud, or failing to meet certain legal duties).</li>
+                <br>
+                <li><b>Distributions Are Taxed</b>: Profits distributed to shareholders as dividends can be taxed again in their hands, though franking credits can offset some of this.</li>
+            </ul>
+        </li> 
+        <br>
+        <p id="6" class="anchor-target"><b><i style="color: black; font-size: 20px;">6. What About Trusts and Other Structures?</i></b></p>
+        <p>While less common for brand new startups, trusts are sometimes used for family businesses, investment structures, or holding business assets. They can provide flexibility, tax advantages, and asset protection-but are complex and require expert legal and accounting advice.</p>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li><b>Advantages</b>: Asset protection, flexible income distribution, and can be tax-effective in certain family structures.</li>
+                <br>
+                <li><b>Disadvantages</b>: Expensive and complicated to set up and run. Extensive paperwork and strict trustee obligations. Generally requires an accountant and lawyer.</li>
+                <br>
+            </ul>
+        </li> 
+        <p>There are also other special-purpose structures such as incorporated associations (often for non-profits) or unit trusts. These aren’t as common for commercial startups but could be right in specific situations-speak to a legal expert if you think your business falls into these categories.</p>
+        <br>
+        <p id="7" class="anchor-target"><b><i style="color: black; font-size: 20px;">7. How Do I Decide Which Structure Is Best for My Startup?</i></b></p>
+        <br>
+        <p>The best structure for your business depends on a range of factors, including your growth plans, risk tolerance, financial situation, and the industry you’re operating in. Ask yourself:</p>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li>Are you starting solo, or with co-founders or family?</li>
+                <br>
+                <li>Do you want to attract outside investors?</li>
+                <br>
+                <li>How much risk do you face (e.g., personal safety, large debts, product liability)?</li>
+                <br>
+                <li>How much do you expect to earn in the early years - will taxes be a big factor?</li>
+                <br>
+                <li>Are you planning to scale up, or keep things lean and manageable?</li>
+                <br>
+                <li>Is it important to be seen as a “proper” company in your field?</li>
+                <br>
+                <li>Do you need to separate business assets from your own?</li>
+                <br>
+            </ul>
+        </li>
+        <p>There’s no “one size fits all,” and you can always restructure as your business evolves. Many Australian entrepreneurs start as sole traders and move to a company structure when they grow. If you need more detailed guidance, you can read more about the pros and cons of having an ABN (Australian Business Number).</p>
+        <br>
+        <p id="8" class="anchor-target"><b><i style="color: black; font-size: 20px;">8. Legal Steps to Set Up and Register Your Chosen Structure</i></b></p>
+        <br>
+        <p><b>A. Register Your Business Name or Company</b></p>
+        <br>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li><b>Sole Trader:</b> Register for an ABN and optionally a business name (if not trading under your own name). Understand the difference between business name vs. company name here.</li>
+                <br>
+                <li><b>Partnership:</b> Apply for a partnership ABN and register your business name with ASIC (the Australian Securities and Investments Commission) if desired.</li>
+                <br>
+                <li><b>Company:</b> Register the company via ASIC to obtain an Australian Company Number (ACN). You’ll likely need a company constitution and maybe a shareholders’ agreement for multiple owners.</li>
+                <br>
+                <li><b>Trust:</b> Work closely with your accountant and lawyer on your trust deed and choose a suitable trustee (person or company).</li>
+            </ul>
+        </li>
+        <br>
+        <p><b>B. Set Up Key Legal Documents</b></p>
+        <br>
+        <p>Each business type comes with its own set of essential documents. Usually, you’ll need:</p>
+        <br>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li><b>Partnership Agreement:</b> If you’re in a partnership, this agreement sets out roles, responsibilities, and profit sharing. Avoid handshake deals!</li>
+                <br>
+                <li><b>Shareholders Agreement:</b> For companies with multiple owners, this spells out how big decisions are made, how new shareholders can join, and what happens if someone leaves.</li>
+                <br>
+                <li><b>Trust Deed:</b> A must for trusts, setting out how the trust is run and how profits are distributed.</li>
+            </ul>
+        </li>
+        <br>
+        <p>You might also need documents like a Privacy Policy, customer agreements, supply contracts, and employment contracts (if you hire staff). These provide a legal safety net and keep your business compliant from day one.</p>
+        <br>
+        <p id="9" class="anchor-target"><b><i style="color: black; font-size: 20px;">9. What Legal Documents Does My New Business Need?</i></b></p>
+        <br>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li><b>Business Terms and Conditions:</b> Clearly explains what customers can expect from you and your products or services.</li>
+                <br>
+                <li><b>Partnership or Shareholders Agreement:</b> Prevents disputes by setting out ownership, responsibilities, and how profits/losses are shared. See our guide to partnership agreements and shareholders agreements.</li>
+                <br>
+                <li><b>Employment Agreements & Workplace Policies:</b> Covers employee rights, duties, and conditions. Highly recommended when hiring staff.</li>
+                <br>
+                <li><b>Privacy Policy:</b> A legal requirement if you collect personal data from customers or users.</li>
+                <br>
+                <li><b>Non-Disclosure Agreement (NDA):</b> Protects confidential business information when dealing with outsiders or potential partners.</li>
+                <br>
+                <li><b>Supplier / Franchise / Distributor Agreements:</b> Controls the relationship and protects your interests if you rely on external partners.</li>
+                <br>
+                <li><b>Trust Deed:</b> If using a trust structure.</li>
+            </ul>
+        </li>
+        <br>
+        <p>You may not need every document right away, but most businesses benefit from having several of these. Having them tailored to your needs means fewer surprises and fewer disputes down the line.</p>
+        <br>
+        <p id="10" class="anchor-target"><b><i style="color: black; font-size: 20px;">10. Can I Change Structures Later?</i></b></p>
+        <br>
+        <p>Absolutely. Many founders begin as sole traders or a partnership, and move to a company once they want to limit liability, grow, or bring on new owners. You can even convert a partnership into a company, or set up a trust later on.</p>
+        <br>
+        <p>Be aware that changes can have tax or legal implications-so it’s a good idea to seek tailored advice before making changes. You can learn more about changing company ownership and the steps involved.</p>
+        <br>
+        <p id="11" class="anchor-target"><b><i style="color: black; font-size: 20px;">11. Key Takeaways</i></b></p>
+        <br>
+        <li style="margin-left: 35px;">
+            <ul>
+                <li><b>Choosing a business structure:</b> One of the most important decisions for your startup or small business in Australia.</li>
+                <br>
+                <li><b>Key aspects:</b> Each structure — sole trader, partnership, company, and trust — has advantageous and disadvantageous aspects, particularly around liability, taxation, cost, and complexity.</li>
+                <br>
+                <li><b>Sole traders and partnerships:</b> Easy to set up but carry higher personal risk.</li>
+                <br>
+                <li><b>Companies:</b> Offer limited liability and growth potential but require more admin and compliance.</li>
+                <br>
+                <li><b>Impact of choice:</b> Your choice will affect everything from how you pay tax to how you protect your assets and bring on investors.</li>
+                <br>
+                <li><b>Compliance:</b> Stay compliant by registering correctly, following industry laws, and having the right legal documents in place from day one.</li>
+                <br>
+                <li><b>Flexibility:</b> You can change structures as your business grows — but always consider the legal and tax consequences before making a move.</li>
+                <br>
+                <li><b>Legal advice:</b> Getting legal advice early can help avoid costly mistakes and set your business up for success.</li>
+            </ul>
+        </li>
+
+    </div>
+
+    <div class="right-rail">
+      <nav class="toc" aria-label="Table of Contents">
+        <h3 class="toc-title">Table of Contents</h3>
+        <ol class="toc-list" style="text-decoration: none;">
+          <li><a href="#1">What Is a Business Structure and Why Does It Matter?</a></li>
+          <li><a href="#2">What Are the Main Types of Business Structures in Australia?</a></li>
+          <li><a href="#3">What Are the Advantages and Disadvantages of a Sole Trader?</a></li>
+          <li><a href="#4">What Are the Advantages and Disadvantages of a Partnership?</a></li>
+          <li><a href="#5">What Are the Advantages and Disadvantages of a Company?</a></li>
+          <li><a href="#6">What About Trusts and Other Structures?</a></li>
+          <li><a href="#7">How Do I Decide Which Structure Is Best for My Startup?</a></li>
+          <li><a href="#8">Legal Steps to Set Up and Register Your Chosen Structure</a></li>
+          <li><a href="#9">What Legal Documents Does My New Business Need?</a></li>
+          <li><a href="#10">Can I Change Structures Later?</a></li>
+          <li><a href="#11">Key Takeaways</a></li>
+        </ol>
+      </nav>
+
+      <aside class="article-ads">
+        <img src="insights&lesson15.png" alt="Ad 1">
+        <a href="insights&lesson15.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Why We Buy What We Buy: Introduction to Consumer Rationality and Heuristics – An Expanded Behavioral Analysis</p></a>
+        <img src="insights&lesson14.png" alt="Ad 2">
+        <a href="insights&lesson14.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Absolute vs. Comparative Advantage: Why Nations Specialize and Trade</p></a>
+        <img src="insights&lesson13.png" alt="Ad 3">
+        <a href="insights&lesson13.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Understanding Credit, Debt, and Interest Rates: The Cost of Future Consumption – An Advanced Look</p></a>
+      </aside>
+    </div>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+  </section>
+
+  <script>
+    // Toggle mobile menu
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // TOC: smooth scroll + scrollspy (hỗ trợ ID số: #1 #2 #3 #4)
+    (function() {
+      const header = document.querySelector('header');
+      const offset = (header?.offsetHeight || 0) + 12;
+      const toc = document.querySelector('.toc');
+      if (!toc) return;
+
+      const links = Array.from(toc.querySelectorAll('a'));
+      const sections = links
+        .map(a => document.getElementById((a.hash || '').slice(1)))
+        .filter(Boolean);
+
+      function setActive(id) {
+        links.forEach(a => {
+          const isActive = (a.hash || '').slice(1) === id;
+          a.classList.toggle('active', isActive);
+          if (isActive) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      }
+
+      // Click: cuộn mượt với offset header
+      links.forEach(a => {
+        a.addEventListener('click', e => {
+          const id = (a.hash || '').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          setActive(id);
+          history.replaceState(null, '', '#' + id);
+        });
+      });
+
+      // Scrollspy
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, {
+        root: null,
+        rootMargin: `-${offset + 10}px 0px -55% 0px`,
+        threshold: 0.1
+      });
+      sections.forEach(sec => io.observe(sec));
+
+      // Init active when hash present
+      if (location.hash) {
+        const initId = location.hash.slice(1);
+        if (document.getElementById(initId)) setActive(initId);
+      }
+    })();
+  </script>
+</body>
+</html>

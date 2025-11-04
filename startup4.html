@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start-up</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Start-up</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" class="active" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>The Super App Ascent: How MoMo Conquered Vietnam’s Digital Landscape</h1>
+      <p class="meta">10:19:38 AM | 14/4/2025</p>
+      <p><i>From pioneering mobile top-ups to building a comprehensive 'Super App,' MoMo leveraged its early dominance in Fintech to integrate banking, retail, entertainment, and credit, becoming Vietnam's third tech unicorn.</i></p>
+      <br>
+      <p>In Vietnam’s highly competitive digital finance sector, <b>MoMo</b> didn't just compete—it redefined the playing field. Beginning as a simple mobile money transfer service, <b>MoMo</b> strategically expanded to become the nation’s preeminent "Super App," successfully integrating a vast array of services and achieving the coveted status of Vietnam’s third technology unicorn.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup4.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <br>
+      <p><b>The Visionaries Who Scaled Fintech</b></p><br>
+
+      <p>The success of <b>MoMo</b> is a testament to the collective vision of its founding team and key management. The company was founded by a core group that includes <b>Mr. Nguyen Ba Diep</b> (Co-Founder & Vice Chairman) and <b>Mr. Nguyen Manh Tuong</b> (Co-Founder & former Vice Chairman), who were crucial in laying the technological and operational groundwork from 2007. This foundation was later scaled and strategically directed under the leadership of <b>Mr. Pham Thanh Duc</b>, the current CEO, who focused on aggressive market expansion and the Super App model.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="startup4_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+
+      <p>Their combined efforts led to multiple successful funding rounds, notably a <b>Series D funding round</b> in late 2021 that pushed its valuation past <b>$2 billion</b>, securing its unicorn status. Key investors have included global powerhouses like <b>Warburg Pincus</b>, <b>Goodwater Capital</b>, <b>Mizuho</b>, and <b>Ward Ferry</b>, underscoring international confidence in its deep market penetration.</p><br>
+
+      <p><b>Phase 1: Mastering the Money Flow – The Mobile-First Foundation</b></p><br>
+
+      <p><b>MoMo’s</b> initial strategy was rooted in addressing Vietnam’s unique market challenges: a low banking penetration rate but very high mobile usage.</p><br>
+
+      <p><b>Bridging the Banking Gap:</b> Initially founded under <b>M-Service</b> in 2007, <b>MoMo</b> first focused on providing mobile money services primarily in rural and unbanked areas. This required establishing a robust network of over <b>30,000 physical transaction points</b> nationwide—a massive undertaking that brought digital finance to the masses before the widespread adoption of smartphones. This early groundwork built crucial trust and familiarity.</p><br>
+
+      <p><b>The E-Wallet Pivot:</b> As 3G/4G connectivity and smartphone adoption surged, <b>MoMo</b> pivoted aggressively into the modern e-wallet space. Unlike B2B-focused competitors, <b>MoMo</b> pursued a direct <b>B2C (Business-to-Consumer)</b> strategy, emphasizing direct app downloads and user engagement through aggressive cashback promotions and loyalty schemes. This strategy rapidly secured its position as the default digital wallet for millions of urban consumers for everyday transactions.</p><br>
+
+      <p><b>Phase 2: The Super App Strategy – Stickiness Through Diversification</b></p><br>
+
+      <p>Having secured a dominant position in payments, <b>MoMo</b> executed its ambitious <b>Super App</b> strategy, transforming the wallet from a mere payment tool into an all-in-one digital marketplace. The payment function served as the "Trojan Horse," bringing users in, while the sheer volume of integrated services kept them locked into the ecosystem.</p><br>
+
+      <p>This expansion targeted three high-value pillars:</p><br>
+
+      <ul style="margin-left: 35px;">
+        <li><b>Financial Services (Fintech Plus):</b> <b>MoMo</b> leveraged its user data to partner with financial institutions, venturing into sophisticated, low-barrier financial products, including <b>micro-lending</b> and <b>Buy Now, Pay Later (BNPL)</b> services, insurance, and micro-investment products (digital gold and small-scale fund investments), catering to the growing aspirations of Vietnam’s middle class.</li>
+        <li><b>Commerce and Lifestyle Ecosystem:</b> <b>MoMo</b> strategically integrated essential third-party services directly into its platform, removing the need for users to download separate apps. Key partnerships include seamless payments for public utilities, direct booking for transportation, and deep integration with hundreds of thousands of merchants via <b>QR codes</b>, covering everything from high-street chains to local street food vendors.</li>
+        <li><b>The COVID-19 Accelerator:</b> The pandemic proved to be a major catalyst. As lockdowns and social distancing mandates accelerated the push toward a cashless society, <b>MoMo’s</b> established network and ease of use made it the go-to platform for government service payments and essential commerce, solidifying its market leadership.</li>
+      </ul><br>
+
+      <p><b>The Global Significance: Localizing the Ecosystem</b></p><br>
+
+      <p><b>MoMo’s</b> success provides a powerful template for <b>Super App</b> development in emerging markets. The company demonstrated that success requires not only replicating popular services but also deeply localizing its offerings and building trust from the ground up, starting with the unbanked population.</p><br>
+
+      <p>Today, <b>MoMo</b> boasts tens of millions of active users and a vast merchant network. The company’s trajectory, guided by the foundational work of its co-founders and the scaling strategy of its CEO, cemented its role as a core pillar of Vietnam's digital economy—proving that in the race for digital dominance, the one app that does everything often wins.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="startup1.png" alt="Ad 1">
+      <a href="startup1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">From Gamer to Giant: Lê Hồng Minh and the Making of VNG, Vietnam's First Unicorn</p></a>
+      <img src="startup2.png" alt="Ad 2">
+      <a href="startup2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The QR Code Unicorn: How VNLife Forged an Empire from a Single Scan</p></a>
+      <img src="startup3.png" alt="Ad 3">
+      <a href="startup3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">The Global Blockchain Disruption: How Sky Mavis Built a Billion-Dollar Metaverse with Axie Infinity</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

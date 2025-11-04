@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam Logistics Foreign Firms Dominate 75% of Supply Chain</h1>
+      <p class="meta">12:44:02 PM | 6/27/2024</p>
+      <p><b>The supply scale of Vietnam's modern logistics industry was nearly 3.9 million square meters of floor space in late 2023. Of the sum, foreign investors accounted for 75% of the modern warehouse rental market share.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business58.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Strong growth in global e-commerce is increasingly fueling demand for storage systems that seamlessly integrate core functionalities with key logistics components
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>Despite the global economic downturn, Vietnam's warehousing sector has kept expanding.</b> This growth is driven by increasing demand for cold storage, especially from seafood and fresh food processors, which account for 70-80% of cold storage demand in Vietnam.</p><br>
+
+      <p>According to the report "Vietnam Logistics: Strong expansion of foreign investors" released recently by market research and consulting unit FiinGroup Vietnam, warehousing is still an attractive logistics segment in Vietnam thanks to strong commercial, manufacturing and retail activities (such as modern trade and food services).</p><br>
+
+      <p>By the end of 2023, the supply scale of Vietnam's modern logistics industry reached nearly 3.9 million square meters of floor space. The annual growth in the 2020-2023 period was 23% and it will remain high in the coming time. This is one of the reasons why warehousing is still the most important field in the promising logistics segment in Vietnam and attracting investment from both domestic and foreign investors.</p><br>
+
+      <p>In recent years, the modern warehousing market in Vietnam has seen the active participation of both domestic and foreign investors, with the development of large-scale logistics and warehousing facilities. The most active players include Mapletree, SLP, JD Property, Gemadept and Transimex.</p><br>
+
+      <p>However, foreign investors are dominant "players" in the modern warehouse market in Vietnam, accounting for over 75% of warehouse and factory floor spaces for rent by 2023.</p><br>
+
+      <p>The top three foreign-invested firms (Mapletree, BW Industrial and SLP) account for 46% of the share.</p><br>
+
+      <p>The top three Vietnamese firms (ICD ST, NPL Logistics and Gemadept) account for 10.6% of the share, taking advantage of the large ecosystem of logistics, ports and transportation to provide comprehensive services to customers.</p><br>
+
+      <p>According to FiinGroup, 25 warehouse projects are planned to be implemented in the 2024-2027 period, with a total additional area of 1.87 million square meters. The annual growth of modern logistics areas is forecast at 7% during this period.</p><br>
+
+      <p>For example, BW Industrial will launch a large project in Dong Nai province in 2026, with an estimated effective floor area of 243,000 square meters. Mapletree will deploy a project in Bac Ninh in 2025, with an estimated effective area of 198,000 square meters.</p><br>
+
+      <p>Modern logistics facilities are concentrated in production/logistics centers in major provinces: Binh Duong, Long An, Bac Ninh, Hung Yen and Dong Nai.</p><br>
+
+      <p>Currently, both domestic and foreign investors are strongly developing logistics.</p><br>
+
+      <p>While Mapletree is actively expanding its warehouse portfolio in Vietnam with major logistics centers in Bac Ninh, Hung Yen and Binh Duong. Each center has 12-24 warehouses. Two "rising stars" in Vietnam's modern warehouse market, BW Industrial and NPL Logistics, hold 22 new warehouses in Vietnam.</p><br>
+
+      <p>Infrastructure development, plus the increase of modern warehouses in Vietnam, is stimulating the growing demand of giant manufacturers and modern retail chains in the world. This demand is supported by the positive development of e-commerce trends and global supply chain restructuring.</p><br>
+
+      <p>Localities like Long An, Dong Nai and Bac Giang are planning to expand industrial parks to attract investment.</p><br>
+
+      <p><b>Strong growth in global e-commerce is further driving increased demand for storage systems that seamlessly integrate existing functions with key logistics components.</b> Key areas will include expanding cold storage capacity, enhancing technological infrastructure and ensuring compliance with international standards.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

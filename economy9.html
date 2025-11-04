@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Grand Ceremony Marks 80th Anniversary of August Revolution, National Day</h1>
+      <p class="meta">9:06:46 AM | 9/2/2025</p>
+      <p><b>A grand ceremony marking the 80th anniversary of the August Revolution (August 19, 1945 – 2025) and the National Day of the Socialist Republic of Vietnam (September 2, 1945 – 2025) is being held at Hanoi’s historic Ba Dinh Square on the morning of September 2.</b></p>
+      <br>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy9.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          The ceremony begins with a torch relay and the lighting of the flame monument – a symbol of the aspirations of the Vietnamese people. (Photo: VNA)
+        </figcaption>
+      </figure>
+      <br>
+      <p>The event was co-organised by the Communist Party of Vietnam (CPV) Central Committee, the National Assembly (NA), the State President, the Government, the Vietnam Fatherland Front (VFF) Central Committee, and the Hanoi municipal authorities.</p><br>
+
+      <p>Present at the ceremony were Party General Secretary To Lam; former Party General Secretary Nong Duc Manh; Politburo member and State President Luong Cuong; former Politburo members and former State Presidents Nguyen Minh Triet and Truong Tan Sang; Politburo member and Prime Minister Pham Minh Chinh; former Politburo member and former Prime Minister Nguyen Tan Dung; Politburo member and NA Chairman Tran Thanh Man; former Politburo members and former NA Chairpersons Nguyen Sinh Hung and Nguyen Thi Kim Ngan; Politburo member and Permanent member of the Party Central Committee’s Secretariat Tran Cam Tu, who also serves as head of the central steering committee for the celebrations of major national holidays and important historic events for 2023–2025; Politburo member, Secretary of the Party Central Committee and President of the VFF Central Committee Do Van Chien; Politburo member and Secretary of the Hanoi Party Committee Bui Thi Minh Hoai; Politburo member and Minister of National Defence General Phan Van Giang; and Politburo member and Minister of Public Security General Luong Tam Quang; along with many other incumbent and former senior officials.</p><br>
+
+      <p>Also attending were incumbent leaders and former leaders of Party and State bodies; representatives of ministries, sectors, organisations, and localities nationwide; revolutionary veterans, heroic Vietnamese mothers, heroes of the People’s Armed Forces and labour heroes, generals of the armed forces, war veterans, former public security officers, former youth volunteers, martyrs' relatives, national contributors, outstanding representatives of ethnic minority groups and religions, as well as representatives of Hanoi’s leadership across different periods, people from all walks of life, and overseas Vietnamese communities.</p><br>
+
+      <p>International guests included Thongloun Sisoulith, General Secretary of the Lao People’s Revolutionary Party and President of Laos; Samdech Techo Hun Sen, President of the Cambodian People’s Party and President of the Senate of Cambodia; Miguel Díaz-Canel Bermúdez, First Secretary of the Communist Party of Cuba and President of Cuba; Zhao Leji, member of the Standing Committee of the Political Bureau of the Communist Party of China Central Committee and Chairman of the Standing Committee of the National People’s Congress; Igor Sergeenko, Speaker of the House of Representatives of Belarus; and Vladimir Vladimirovich Yakushev, Secretary of the General Council of the United Russia Party and First Vice Chairman of the Federation Council of the Russian Federal Assembly.</p><br>
+
+      <p>Also present were leaders of political parties including the General Secretary of the United Left Movement Party of the Dominican Republic and the General Secretary of the Communist Party of Britain, along with representatives of foreign and defence ministries, ambassadors, consuls-general, heads of international organisations, defence attachés, international friends who have long supported the Vietnamese people in the struggle for national liberation and development, as well as representatives of the overseas Vietnamese community and domestic and foreign media agencies.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy9_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          A drum performance opens the grand celebration marking the 80th anniversary of the August Revolution and National Day. (Photo: VNA)
+        </figcaption>
+      </figure>
+      <br>
+      <p>The ceremony opened with a spectacular drum performance accompanied by flags, folk dances and lion-dragon displays, creating an atmosphere of national pride and unity.</p><br>
+
+      <p>The traditional torch was carried from the Ho Chi Minh Museum to Ba Dinh Square to light the revolutionary flame – a symbol of the Vietnamese people’s indomitable will, eternal strength and aspiration.</p><br>
+
+      <p>The honour of lighting the flame was entrusted to Lieutenant General Nguyen Duc Soat, Hero of the People’s Armed Forces and former Deputy Chief of the General Staff of the Vietnam People’s Army, a heroic combat pilot credited with shooting down six enemy aircraft.</p><br>
+
+      <p>As the flame blazed atop the tower, it became a rallying call for the entire Party, army and people to uphold patriotism and foster great national solidarity and determination to firmly safeguard and develop the Socialist Republic of Vietnam.</p><br>
+
+      <p>The solemn flag-raising ceremony took place with the resounding national anthem, sung in unison by millions across Ba Dinh Square, the streets of Hanoi and throughout the country, from the north to the south and to remote islands, connected live to the celebration. At the same time, 21 cannon salutes were fired from My Dinh National Stadium in the capital.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy9_2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Kicking off the parade, a formation of helicopters of the Vietnam People’s Air Force carries the Party flag and the national flag over Ba Dinh Square. (Photo: VNA)
+        </figcaption>
+      </figure>
+      <br>
+      <p>Following the ceremony, Party General Secretary Lam delivered an address marking the 80th anniversary of the August Revolution (August 19, 1945 – 2025) and the National Day of the Socialist Republic of Vietnam (September 2, 1945 – 2025).</p><br>
+
+      <p>He stressed that the spirit of the August Revolution and National Day endures as a lasting source of pride and a driving force inspiring the entire nation to carry forward the indomitable will and the aspiration for independence, freedom and happiness of previous generations. This spirit continues to foster resilience, intellect, bold reforms and ceaseless creativity, with the determination to build a comprehensively developed and sustainable Vietnam in the new era — that of the nation's rise.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

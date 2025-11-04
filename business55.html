@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>M-Commerce Boom Catalyst for Vietnamese Businesses</h1>
+      <p class="meta">9:03:01 AM | 8/12/2024</p>
+      <p><b>Mobile commerce (M-Commerce) is revolutionizing online shopping in Vietnam. The surge in smartphones and shopping apps has made it effortless for consumers to make purchases with a few taps, transforming shopping behavior and creating significant business opportunities.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business55.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <br>
+      <p><b>Potential of M-commerce in Vietnam</b></p><br>
+
+      <p>The Department of E-Commerce and Digital Economy (Ministry of Industry and Trade) reported that mobile commerce not only benefits businesses but also advances Vietnam's digital economy. It generates numerous job opportunities, fosters the growth of supporting industries, and drives economic modernization.</p><br>
+
+      <p>Mobile commerce (M-Commerce) enables transactions via mobile devices like phones and tablets, encompassing activities such as product purchases, service bookings, money transfers, bill payments, and online banking. Its popularity is soaring in Vietnam, driven by the rapid increase in smartphone and internet users, with the country set to reach over 70 million smartphone users by 2023, according to “We Are Social and Hootsuite”. This growth, supported by expanding mobile internet options like 3G, 4G, and forthcoming 5G, is reshaping consumer shopping habits and creating significant business opportunities. Major e-commerce platforms such as Shopee, Lazada, Tiki and TikTok are heavily investing in user-friendly mobile apps, enhancing the shopping experience and fueling M-commerce development.</p><br>
+
+      <p>In Vietnam, M-commerce opens up opportunities to reach a large number of potential customers from social media channels, especially young people - a group with a high rate of smartphone and mobile internet usage. This helps businesses gain customer files effectively and save costs.</p><br>
+
+      <p>New technologies and features of mobile devices are increasingly upgraded to enhance the mobile shopping experience, creating new opportunities for businesses. Features such as image search, live streaming shopping and mobile payment bring a lot of convenience. In addition, artificial intelligence (AI) and big data are also used to personalize the shopping experience, providing product suggestions that match consumers' preferences and behaviors. These are all important factors in attracting and retaining customers, while increasing brand loyalty.</p><br>
+
+      <p><b>M-Commerce trends</b></p><br>
+
+      <p>Current key trends in mobile commerce include social commerce, live streaming sales, and mobile payments. Social shopping platforms like Facebook, Instagram and TikTok now offer integrated live shopping features, allowing users to make purchases directly within the app. In Vietnam, live streaming sales through platforms such as Shopee Live and Lazada Live are particularly popular, attracting millions of viewers and shoppers daily. Additionally, mobile payments are integral to mobile commerce, with e-wallets like Momo, ZaloPay and ViettelPay seamlessly integrated into shopping apps. Banks have also enhanced their mobile banking apps to support online transactions, further advancing mobile commerce.</p><br>
+
+      <p><b>Challenges for businesses</b></p><br>
+
+      <p>The mobile e-commerce market is increasingly vibrant in Vietnam. With the participation of many businesses, from big companies to startups, the race for market share is becoming fierce. To survive and develop in this competitive environment, businesses need to overcome many challenges.</p><br>
+
+      <p>One of the biggest challenges is information security and privacy. Personal information leaks and cyber-attacks can cause serious damage to both consumers and businesses. Therefore, businesses and e-commerce platforms will need to invest in security measures and comply with security regulations for data protection when deploying mobile commerce applications. Therefore, businesses must invest heavily in security systems to ensure that customer information is always safe.</p><br>
+
+      <p>To address the diverse needs of users, businesses must develop applications that function seamlessly across a range of devices, from budget to high-end phones. Meeting this complex technical requirement demands a team of highly skilled programmers.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

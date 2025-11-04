@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>COP29: Addressing Global Climate Finance Challenges</h1>
+      <p class="meta">3:43:05 PM | 11/26/2024</p>
+      <p><b>Economies worldwide will require US$1 trillion annually from now until 2035 to mitigate greenhouse gas (GHG) emissions and adapt to climate change. This climate finance target is set for negotiation at the 29th Conference of the Parties to the United Nations Framework Convention on Climate Change (COP29) in Baku, Azerbaijan.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy33.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Deputy Minister of Natural Resources and Environment Le Cong Thanh addresses the COP29 Conference
+        </figcaption>
+      </figure>
+      <br>
+        <p>COP29 was also considered a COP for climate finance because its initial goal was to find and attract financial resources for carrying out commitments and ambitions to reduce GHG emissions, the cause of rising global temperatures and the source of superstorms and extreme weather events around the world.</p><br>
+
+        <p>The outcome of the negotiations showed that reality is far from what is targeted and expected. If so, developing countries like Vietnam will confront numerous challenges on the path towards slashing greenhouse gas emissions.</p><br>
+
+        <p>The most significant climate financing move of COP29 is the consensus on carbon credit standards, allowing an increase in the number of tradeable carbon credits. Vietnam's aviation industry will participate in the voluntary phase of the carbon reduction and offset plan for international flights from January 1, 2026, so it is looking forward to this step.</p><br>
+
+        <p>Mr. Nguyen Phuoc Thang, member of the Vietnamese Negotiation Delegation at COP29, said: “The approved agreement facilitates transparent trading, allowing Vietnamese airlines to fully purchase carbon credits from projects implemented in Vietnam.”</p><br>
+
+        <p>At the end of the financial day, Sweden announced a contribution of US$730 million to the United Nations Green Climate Fund (GFC). The Asian Development Bank (ADB) announced US$3.5 billion in funding for a new program to combat ice melting. Azerbaijan's banking sector will allocate US$1.2 billion for green projects by 2030. Grants or loans are only really useful if they reach developing countries.</p><br>
+
+        <p>Mr. Pham Van Tan, deputy leader of the Vietnamese negotiation delegation at COP29 said: “International resources are ready to support Vietnam, but the conditions are too high and the country's public debt ceiling is uplifted, so Vietnam may not receive these resources.”</p><br>
+
+        <p>The Baku Initiative for Climate Finance, Investment, and Trade (BICFIT) Dialogue is being promoted to attract and accelerate the deployment of private capital into climate markets.</p><br>
+
+        <p>“About 82% of the money flowing into nature-based solutions comes from public finance. This is important, but we really want to scale up and invest, we will need to attract more financial resources from the private sector," said Damian Mark Fleming from the World Wide Fund for Nature.</p><br>
+
+        <p>In response to climate change, Vietnam and other countries in the world must do two tasks at the same time. One is to reduce GHG emissions and the other is to have a way to live with and adapt to climate change. Right at COP29, Vietnam issued an updated National Climate Adaptation Plan.</p><br>
+
+        <p>The plan defines 162 priority tasks and solutions according to three main objectives: 76 tasks to enhance the resilience and adaptive capacity of natural, economic and social systems to ensure sustainable livelihoods; 33 tasks to reduce natural disaster risks and minimize damage caused by natural disasters and increased extreme climate to help ease losses and damage caused by climate change; and 53 tasks to improve institutions and promote potential and resources to effectively adapt to climate change.</p><br>
+
+        <p>Specific tasks are prioritized for sectors heavily affected by climate change such as natural resources and environment, agriculture, natural calamity prevention, construction, transportation, industry and trade, culture, sports and tourism, information and communication, labor and society.</p><br>
+
+        <p>This plan is updated from the version created in 2020 to carry out the Monitoring and Evaluation System for Climate Change Adaptation at the national level. Previously, Vietnam defined only seven areas vulnerable to climate change, less than this update.</p><br>
+
+        <p>US$1 trillion a year is the amount that developed countries need to pay developing countries like Vietnam to implement climate adaptation solutions. This figure has been pledged but it remains unknown whether it can be realized or not.</p>
+
+
+      <div style="border: 1px solid #ccc; padding: 20px; max-width: 700px; align-items: center;margin: 0 auto;">
+        <p><i>At the high-level meeting within the framework of the COP29 Conference, Vietnam made the following key proposals:</i></p><br>
+
+        <p><i>First, developed countries must lead by fulfilling their responsibilities, reducing net emissions to zero before 2040, well ahead of developing countries. Climate finance contributions must reach US$1 trillion a year from now until 2030 for developing countries to respond to climate change and implement a just economic, social and environmental transition. Financial resources for adaptation must be commensurate with mitigation, transparently, verifiably and accessibly.</i><br>
+
+        <p><i>Second, countries need to implement Nationally Determined Contributions (NDC) for the current period and urgently develop NDC3.0 for the upcoming period. Implementing commitments well will build trust among countries and remove obstacles in current climate change response negotiations.</i><br>
+
+        <p><i>Third, international cooperation is needed to strengthen the United Nations' central role in addressing climate change, including implementing the Early Warning for All Initiative to support developing countries in enhancing their Early Warning Systems and responding to natural disasters.</i><br>
+
+        <p><i>Excerpt from the speech by Deputy Minister of Natural Resources and Environment Le Cong Thanh, head of the Vietnamese delegation at COP29</i></p>
+
+      </div>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

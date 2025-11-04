@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Lessons</title>
+</head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { font-size: 20px; font-weight: bold; color: #c00; }
+    .menu {
+      position: fixed;
+      top: 0; left: -100%;
+      width: 70%; height: 100%;
+      background: #fff;
+      display: flex; flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 9;
+    }
+    .menu.active { left: 0; }
+    .menu a { text-decoration: none; color: #111; font-weight: bold; }
+    .menu-toggle {
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ARTICLE PAGE (mobile-first) */
+    .article-page {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+    .article-content { flex: 3; }
+    .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+    .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+    .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+    .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+    blockquote {
+      border-left: 4px solid #c00;
+      padding-left: 10px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #333;
+    }
+
+    /* ADS */
+    .article-ads {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; display:block; }
+
+    /* OTHER NEWS */
+    .other-news { padding: 20px; background: #f9f9f9; }
+    .other-news h2 { margin-bottom: 15px; color: #c00; }
+    .other-news ul { list-style: none; }
+    .other-news li { margin: 8px 0; }
+    .other-news a { text-decoration: none; color: #000; }
+    .other-news a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+    /* Desktop/Tablet layout: 2 cột, cột phải cố định bề ngang */
+    @media (min-width: 992px) {
+      .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+      .menu-toggle { display: none; }
+
+      .article-page {
+        display: grid;
+        grid-template-columns: 1fr minmax(280px, 340px);
+        gap: 28px;
+        align-items: start;
+      }
+      .article-content { min-width: 0; }
+      .right-rail { min-width: 0; display:flex; flex-direction:column; gap:16px; }
+    }
+
+    /* ===== TOC style giống ảnh mẫu ===== */
+    /* Ẩn TOC trên mobile; chỉ hiện >=768px */
+    /* .toc{ display:none; } */
+    /* TOC: tránh bị nội dung bên dưới “lọt” qua khi sticky */
+    @media (min-width:768px){
+      .toc{
+        /* background:#fff;           bật nền trắng để che nội dung phía dưới */
+        /* border:1px solid #e5e7eb;  viền nhẹ, giống ảnh mẫu */
+        border-radius:12px;
+        padding:12px 12px 12px 0;  /* chừa chỗ cho vạch dọc + mũi tên */
+        /* box-shadow:0 6px 18px rgba(0,0,0,.06); */
+        z-index: 5;                /* nổi lên trên ảnh/caption Ads */
+      }
+      .toc-title{ margin:0 0 10px 0; font-size:20px; font-weight:700; color:#111; }
+      .toc-list{
+        list-style:none; margin:0; padding:0 0 0 16px;
+        border-left:2px solid #e5e7eb; /* vạch dọc bên trái */
+      }
+      .toc-list li{ margin:6px 0; }
+      .toc a{
+        position:relative; display:block; color:#111; text-decoration:none;
+        font-size:15px; line-height:1.4; padding:6px 0;
+      }
+      .toc a:hover{ text-decoration:underline; }
+      .toc a.active{ font-weight:700; }
+      .toc a.active::before{
+        content:""; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
+        width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent;
+        border-left:7px solid #2563eb; /* mũi tam giác xanh */
+      }
+    }
+
+    /* Nếu dùng dark mode tự động, bạn có thể thêm: */
+    /* @media (prefers-color-scheme: dark){
+      .toc{ background:#0b1020; border-color:#1e293b; box-shadow:0 10px 28px rgba(0,0,0,.45); }
+      .toc-title, .toc a{ color:#e5e7eb; }
+      .toc-list{ border-left-color:#1e293b; }
+    } */
+
+    /* Khi cuộn tới tiêu đề, chừa khoảng cho header sticky */
+    .anchor-target { scroll-margin-top: 88px; }
+    .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Insights & Lessons</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" class="active" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page">
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Why We Buy What We Buy: Introduction to Consumer Rationality and Heuristics – An Expanded Behavioral Analysis</h1>
+      <p class="meta">8:03:14 PM | 2/3/2025</p>
+      <img src="insights&lesson15.png" alt="Main Article Image" class="article-img">
+
+    <p>
+      Traditional economics built its models on the cornerstone assumption of 
+      <b>Consumer Rationality</b>—the concept of <i>Homo Economicus</i> who is perfectly informed, 
+      possesses stable preferences, and always makes choices that maximize personal utility. 
+      However, the groundbreaking work of behavioral economists, particularly Daniel Kahneman 
+      and Amos Tversky, has demonstrated that human decision-making operates under significant 
+      cognitive constraints. <b>Behavioral Economics</b> bridges the gap, revealing that our 
+      purchasing decisions are frequently driven by predictable mental shortcuts 
+      (<b>heuristics</b>) and systematic errors (<b>biases</b>). Understanding this profound 
+      psychological layer is now essential for strategic analysis, market forecasting, 
+      and effective policy design.
+    </p>
+    <br>
+    <p id="1" class="anchor-target"><b><i style="color: black; font-size: 20px;">1. Beyond Homo Economicus: The Foundations of Bounded Decision</i></b></p>
+    <br>
+    <p>The rational model fails because it ignores the costs and limitations of thinking. Behavioral economics grounds its analysis in two core realities:</p>
+    <br>
+    <ul style="margin-left: 35px;">
+      <li><b>Bounded Rationality:</b> Humans have limited cognitive resources, finite memory, and limited time to process the overwhelming amount of information required for perfect decision-making. We aim for <i>satisficing</i> (finding an acceptable, "good enough" solution) rather than <i>optimizing</i> (finding the absolute best solution).</li>
+      <br>
+      <li><b>Prospect Theory (Loss and Gain):</b> Developed by Kahneman and Tversky, this theory is the most significant departure from classical utility theory. It asserts that individuals evaluate potential outcomes relative to a <b>reference point</b> (usually the current status quo) and that the utility function is <b>S-shaped and steeper for losses</b> than for gains. This is the source of <b>Loss Aversion</b>—the psychological reality that a dollar lost hurts twice as much as a dollar gained.</li>
+      <br>
+    </ul>
+    <p id="2" class="anchor-target"><b><i style="color: black; font-size: 20px;">2. Key Heuristics and Their Strategic Exploitation</i></b></p>
+    <br>
+    <p>Heuristics are System 1 mental shortcuts that, while efficient, create vulnerabilities in market decision-making.</p>
+    <br>
+    <ol style="margin-left: 35px;">
+      <li>
+        <b>Anchoring Heuristic:</b> Individuals over-rely on the first piece of information received (the "anchor") when making subsequent quantitative judgments.  
+        <ul style="margin-left: 40px;">
+          <li>
+            <b>Strategic Exploitation:</b> Pricing strategies exploit anchoring by setting a high, often arbitrary, initial price or MSRP (Manufacturer’s Suggested Retail Price). This anchors the consumer to the high value, making any subsequent discount (e.g., "70% Off") or a small price reduction seem disproportionately appealing, maximizing the <b>perceived value</b> transfer.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <b>Availability Heuristic:</b> We overestimate the probability of events or the frequency of products that are easily recalled or vivid in memory.  
+        <ul style="margin-left: 40px;">
+          <li>
+            <b>Strategic Exploitation:</b> Beyond advertising, this is leveraged through scarcity and urgency marketing. Recent, vivid, and easily recalled scarcity messages (e.g., "Limited time offer," "Only 3 left in stock") make the need to purchase feel more immediate and compelling than it statistically should be.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <b>Representativeness Heuristic:</b> We judge probability by how much an event or object resembles a known prototype, often ignoring actual base rates or statistical evidence.  
+        <ul style="margin-left: 40px;">
+          <li>
+            <b>Strategic Exploitation:</b> Investment bubbles often rely on this. Investors see a few high-performing tech stocks and generalize this success (the "prototype") to the entire sector, ignoring the high statistical base rate of failure for most startups, leading to irrational sector overvaluation.
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <p id="3" class="anchor-target"><b><i style="color: black; font-size: 20px;">3. Core Biases Affecting Consumer and Investor Behavior</i></b></p>
+    <br>
+    <p>Systematic biases create persistent errors in market actions, moving decisions away from the rational utility maximum.</p>
+    <br>
+    <ul style="margin-left: 35px;">
+      <li><b>Status Quo Bias:</b> A strong preference for maintaining the current state of affairs, resisting any change even when objectively superior alternatives are available.
+        <ul style="margin-left: 40px;">
+          <li>
+            <b>Strategic Application:</b> This explains the stickiness of subscription models and defaulted retirement plan enrollments. Companies ensure that the cost of <i>opting out</i> (cognitive effort, paperwork, psychological friction) is greater than the perceived benefit of opting in to a new system.
+          </li>
+        </ul>
+      </li>
+      <br>
+      <li><b>Mental Accounting:</b> The tendency to treat money differently depending on its source or intended use, even though money is fungible. For example, people are more willing to spend money received as a bonus or tax refund than money saved from their salary.
+        <ul style="margin-left: 40px;">
+          <li>
+            <b>Strategic Application:</b> Framing specific discounts as "credits" or "rewards points" encourages spending because that pool of money is mentally separated from the main budget and assigned to less critical purposes, bypassing the consumer's strict budget discipline.
+          </li>
+        </ul>
+      </li>
+
+      <li><b>Confirmation Bias:</b> The tendency to search for, interpret, favor, and recall information in a way that confirms or supports one’s prior beliefs or values.
+        <ul style="margin-left: 40px;">
+          <li>
+            <b>Strategic Application:</b> In investing, this causes people to seek out news articles and analyst reports that validate their current stock holdings, ignoring contradictory evidence. For marketers, targeting customers based on existing preferences (echo chambers) reinforces brand loyalty and insulates the customer from competing product claims.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <br>
+    <p id="4" class="anchor-target"><b><i style="color: black; font-size: 20px;">4. The Relationship Between Behavior and Price</i></b></p>
+    <br>
+    <p><b>Behavioral biases have a direct and measurable impact on pricing and market efficiency:</b></p>
+    <br>
+    <ul style="margin-left: 35px;">
+      <li>
+        <b>Price Stickiness:</b> Due to the <b>Status Quo Bias</b> and <b>Loss Aversion</b>, consumers and producers are often slow to adjust prices downward, even when underlying economic costs have fallen. Consumers perceive a price drop as a temporary opportunity rather than a new normal, and producers fear anchoring consumers to a lower, less profitable reference price.
+      </li>
+      <br>
+      <li>
+        <b>End-of-Budget Effect:</b> Mental accounting often leads to year-end "use-it-or-lose-it" spending in corporate budgets. Managers rush to spend discretionary funds on items they might not need (less-than-rational purchasing) simply to prevent the funds from being cut in the next budget cycle.
+      </li>
+      <br>
+      <li>
+        <b>Reference Dependence and Price Elasticity:</b> Because utility is judged relative to a reference point, the elasticity of demand is not constant. Demand becomes highly inelastic (consumers keep buying) for goods priced <i>below</i> the expected reference point (perceived as a gain) and highly elastic (consumers stop buying) for goods priced <i>above</i> the reference point (perceived as a loss).
+      </li>
+      <br>
+    </ul>
+    <p>
+    In conclusion, behavioral economics offers a sophisticated view of consumer choice, recognizing that the human brain relies on an imperfect, adaptive system. For strategic leaders, mastering these heuristics and biases is not about manipulation, but about designing communication, pricing, and product strategies that align with the actual, predictable psychology of the marketplace, maximizing utility for the consumer while securing a competitive advantage for the firm.
+    </p>
+
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <div class="right-rail">
+      <nav class="toc" aria-label="Table of Contents">
+        <h3 class="toc-title">Table of Contents</h3>
+        <ol class="toc-list" style="text-decoration: none;">
+          <li><a href="#1">Beyond Homo Economicus: The Foundations of Bounded Decision</a></li><!-- (Bạn có thể đổi tên hiển thị theo ý) -->
+          <li><a href="#2">Key Heuristics and Their Strategic Exploitation</a></li>
+          <li><a href="#3">Core Biases Affecting Consumer and Investor Behavior</a></li>
+          <li><a href="#4">The Relationship Between Behavior and Price</a></li>
+        </ol>
+      </nav>
+
+     <aside class="article-ads">
+      <img src="insights&lesson14.png" alt="Ad 1">
+      <a href="insights&lesson14.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Absolute vs. Comparative Advantage: Why Nations Specialize and Trade</p></a>
+      <img src="insights&lesson13.png" alt="Ad 2">
+      <a href="insights&lesson13.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Understanding Credit, Debt, and Interest Rates: The Cost of Future Consumption – An Advanced Look</p></a>
+      <img src="insights&lesson12.png" alt="Ad 3">
+      <a href="insights&lesson12.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Assessing Systemic Risk and Managing Uncertainty in Long-Term Investment Portfolios</p></a>
+    </aside>
+    </div>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    // Toggle mobile menu
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // TOC: smooth scroll + scrollspy (hỗ trợ ID số: #1 #2 #3 #4)
+    (function() {
+      const header = document.querySelector('header');
+      const offset = (header?.offsetHeight || 0) + 12;
+      const toc = document.querySelector('.toc');
+      if (!toc) return;
+
+      const links = Array.from(toc.querySelectorAll('a'));
+      const sections = links
+        .map(a => document.getElementById((a.hash || '').slice(1)))
+        .filter(Boolean);
+
+      function setActive(id) {
+        links.forEach(a => {
+          const isActive = (a.hash || '').slice(1) === id;
+          a.classList.toggle('active', isActive);
+          if (isActive) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      }
+
+      // Click: cuộn mượt với offset header
+      links.forEach(a => {
+        a.addEventListener('click', e => {
+          const id = (a.hash || '').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          setActive(id);
+          history.replaceState(null, '', '#' + id);
+        });
+      });
+
+      // Scrollspy
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, {
+        root: null,
+        rootMargin: `-${offset + 10}px 0px -55% 0px`,
+        threshold: 0.1
+      });
+      sections.forEach(sec => io.observe(sec));
+
+      // Init active when hash present
+      if (location.hash) {
+        const initId = location.hash.slice(1);
+        if (document.getElementById(initId)) setActive(initId);
+      }
+    })();
+  </script>
+</body>
+</html>

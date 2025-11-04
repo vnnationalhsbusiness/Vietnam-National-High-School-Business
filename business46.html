@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam's Digital Economy Maintains Double-Digit Growth</h1>
+      <p class="meta">9:24:57 AM | 11/5/2024</p>
+      <p><b>Vietnam's digital economy is projected to grow at a compound annual growth rate of 16%, reaching US$36 billion by 2024.</b></p><br>
+
+      <p>According to the e-Conomy SEA 2024 report by Google, Temasek and Bain & Company, Vietnam's digital economy is set to sustain double-digit growth, with a projected compound annual growth rate (CAGR) of 16%. E-commerce and online travel are the key drivers fueling this growth.</p><br>
+
+      <p>In 2024, Vietnam's e-commerce industry is expected to grow by 18% compared to 2023, with Gross Merchandise Value (GMV) reaching US$22 billion, making it the primary growth driver of the country’s digital economy. Across Southeast Asia, video commerce has emerged as a key growth factor. Beyond contributing to GMV and attracting new customers, video commerce has experienced rapid expansion over the past year.</p><br>
+
+      <p>In 2023, Vietnamese consumers increasingly broadened their discovery efforts, with non-branded searches accounting for 68% of total searches, while branded searches made up the remaining 32%. Brands sought to reach consumers by collaborating with content creators from diverse fields beyond their core categories, with some even stepping into the role of content creators themselves.</p><br>
+
+      <p>In addition to e-commerce, Vietnam's online travel sector is projected to grow 16% year-on-year, reaching US$5 billion by 2024, making a significant contribution to GMV. The growth is driven by increased commission rates per flight, while direct retail channels remain the largest source of revenue. This expansion is further fueled by a recovery in tourism, particularly from visitors in the Asia Pacific region (excluding Southeast Asia), who account for 52% of total tourism spending in Vietnam. Meanwhile, Vietnamese travelers spend the most on tourism within the Asia Pacific region (excluding Southeast Asia), representing 36% of total overseas tourism expenditure by Vietnamese. Notably, spending by Vietnamese tourists abroad has surged by 290% since the first half of 2020, with 58% of that spending directed towards shopping.</p><br>
+
+      <p>In addition to e-commerce and online travel, online media in Vietnam recorded the fastest growth rate in Southeast Asia. In 2024, the GMV of Vietnam's online media industry is expected to reach US$6 billion, with a compound annual growth rate of 14%, and is projected to hit US$11 billion by 2030. Furthermore, the GMV for Vietnam's transportation and food sectors is expected to reach US$4 billion in 2024, reflecting a 12% year-on-year growth.</p><br>
+
+      <p>According to the report, Ho Chi Minh City and Da Nang are leading the country in terms of interest and demand for AI. The education, marketing and healthcare sectors are generating the highest volume of AI-related searches in Vietnam. Additionally, AI is playing a transformative role in the growth of the Creative Economy, with over 22% of mobile app downloads incorporating AI features such as photo effects, content creation and video editing.</p><br>
+
+      <p>Mr. Andrea Campagnoli, Partner at Bain & Company, said, "Vietnam's digital economy continues to be driven by macroeconomic factors, particularly its vibrant and growing startup ecosystem, which positions the country as a promising hub for AI technology and innovation. To fully unlock the transformational potential of generative AI, businesses must move beyond the experimental phase and invest in the foundational elements, aligning AI initiatives with core business objectives to solve real problems, create tangible value, increase AI talent, and build scalable, adaptive infrastructure for sustainable development."</p><br>
+      <div style="display: flex; justify-content: space-between;">
+        <div style="width: 68%;">
+          <p>
+            According to Mr. Marc Woo, Managing Director of Vietnam, Google Asia Pacific,
+            "The past five years have seen robust and continuous growth in Vietnam's digital economy,
+            and 2024 continues to showcase this potential. Vietnamese users are also showing a growing
+            interest in AI, and it is encouraging to see that the Vietnamese Government is prioritizing
+            this field."
+          </p>
+
+          <p>
+            In the coming time, Google will continue to support the growth of Vietnam's digital economy
+            by helping the workforce and local businesses acquire the skills and knowledge needed
+            to thrive in the AI era.
+          </p>
+        </div>
+
+        <div style="width: 30%; border: 1px solid; padding: 10px 14px; font-style: italic;">
+          Vietnam's digital economy has significant long-term growth potential,
+          driven by strong internal factors such as a young, tech-savvy population
+          and a dynamic startup ecosystem.
+        </div>
+      </div>
+      <br>
+      <p>In the coming time, Google will continue to support the growth of Vietnam's digital economy by helping the workforce and local businesses acquire the skills and knowledge needed to thrive in the AI era.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

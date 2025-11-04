@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Lessons</title>
+</head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { font-size: 20px; font-weight: bold; color: #c00; }
+    .menu {
+      position: fixed;
+      top: 0; left: -100%;
+      width: 70%; height: 100%;
+      background: #fff;
+      display: flex; flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 9;
+    }
+    .menu.active { left: 0; }
+    .menu a { text-decoration: none; color: #111; font-weight: bold; }
+    .menu-toggle {
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ARTICLE PAGE (mobile-first) */
+    .article-page {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+    .article-content { flex: 3; }
+    .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+    .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+    .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+    .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+    blockquote {
+      border-left: 4px solid #c00;
+      padding-left: 10px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #333;
+    }
+
+    /* ADS */
+    .article-ads {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; display:block; }
+
+    /* OTHER NEWS */
+    .other-news { padding: 20px; background: #f9f9f9; }
+    .other-news h2 { margin-bottom: 15px; color: #c00; }
+    .other-news ul { list-style: none; }
+    .other-news li { margin: 8px 0; }
+    .other-news a { text-decoration: none; color: #000; }
+    .other-news a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+    /* Desktop/Tablet layout: 2 cột, cột phải cố định bề ngang */
+    @media (min-width: 992px) {
+      .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+      .menu-toggle { display: none; }
+
+      .article-page {
+        display: grid;
+        grid-template-columns: 1fr minmax(280px, 340px);
+        gap: 28px;
+        align-items: start;
+      }
+      .article-content { min-width: 0; }
+      .right-rail { min-width: 0; display:flex; flex-direction:column; gap:16px; }
+    }
+
+    /* ===== TOC style giống ảnh mẫu ===== */
+    /* Ẩn TOC trên mobile; chỉ hiện >=768px */
+    /* .toc{ display:none; } */
+    /* TOC: tránh bị nội dung bên dưới “lọt” qua khi sticky */
+    @media (min-width:768px){
+      .toc{
+        /* background:#fff;           bật nền trắng để che nội dung phía dưới */
+        /* border:1px solid #e5e7eb;  viền nhẹ, giống ảnh mẫu */
+        border-radius:12px;
+        padding:12px 12px 12px 0;  /* chừa chỗ cho vạch dọc + mũi tên */
+        /* box-shadow:0 6px 18px rgba(0,0,0,.06); */
+        z-index: 5;                /* nổi lên trên ảnh/caption Ads */
+      }
+      .toc-title{ margin:0 0 10px 0; font-size:20px; font-weight:700; color:#111; }
+      .toc-list{
+        list-style:none; margin:0; padding:0 0 0 16px;
+        border-left:2px solid #e5e7eb; /* vạch dọc bên trái */
+      }
+      .toc-list li{ margin:6px 0; }
+      .toc a{
+        position:relative; display:block; color:#111; text-decoration:none;
+        font-size:15px; line-height:1.4; padding:6px 0;
+      }
+      .toc a:hover{ text-decoration:underline; }
+      .toc a.active{ font-weight:700; }
+      .toc a.active::before{
+        content:""; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
+        width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent;
+        border-left:7px solid #2563eb; /* mũi tam giác xanh */
+      }
+    }
+
+    /* Nếu dùng dark mode tự động, bạn có thể thêm: */
+    /* @media (prefers-color-scheme: dark){
+      .toc{ background:#0b1020; border-color:#1e293b; box-shadow:0 10px 28px rgba(0,0,0,.45); }
+      .toc-title, .toc a{ color:#e5e7eb; }
+      .toc-list{ border-left-color:#1e293b; }
+    } */
+
+    /* Khi cuộn tới tiêu đề, chừa khoảng cho header sticky */
+    .anchor-target { scroll-margin-top: 88px; }
+    .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Insights & Lessons</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" class="active" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page">
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Porter's Five Forces Model: A Framework for Identifying Competitive Advantage</h1>
+      <p class="meta">8:01:02 PM | 13/9/2024</p>
+      <img src="insights&lesson5.png" alt="Main Article Image" class="article-img">
+
+    <p>
+    For any strategic investor or business leader, the question of profitability is not solely dependent on a company's internal capabilities but, critically, on the <b>attractiveness of the industry</b> in which it operates. The seminal work of Michael Porter, the <b>Five Forces Model</b>, provides a robust framework for systematically analyzing the structural forces that determine the intensity of competition and the long-run profit potential within any market. Understanding these forces allows firms to identify a sustainable <b>Competitive Advantage</b> and position themselves optimally.
+    </p>
+    <br>
+    <p id="1" class="anchor-target"><b><i style="color: black; font-size: 20px;">The Goal: Determining Industry Attractiveness</i></b></p>
+    <br>
+    <p>
+        Porter's model is predicated on the idea that industry profitability is not a matter of luck; it is a direct function of five distinct, yet interconnected, competitive forces. A strong industry is one where these forces are <b>weak</b>, allowing firms to charge higher prices and retain higher profit margins. Conversely, when these forces are <b>strong</b>, competition intensifies, driving prices down toward the cost of production and diminishing the value captured by the firms.
+    </p>
+    <br>
+    <p id="2" class="anchor-target"><b><i style="color: black;font-size: 20px;">1. Threat of New Entrants (The Barrier to Entry)</i></b></p>
+    <br>
+    <p>This force measures how easy or difficult it is for new companies to enter the industry. A high threat of new entrants signals that current firms must constantly compete to keep prices low and maintain high investment levels to differentiate their products.</p>
+    <br>
+    <p>
+        <b>Strategic Considerations for Investors</b>: The strength of this threat is inversely proportional to the height of <b>Entry Barriers</b>. These barriers can include <b>Economies of Scale</b> (requiring large startup capital to compete on cost), strong <b>Brand Identity</b> (making it difficult for newcomers to gain trust), necessary <b>Capital Requirements</b> (high initial investment), and <b>Government Policy</b> (licensing or regulatory hurdles). Industries with low barriers, such as local restaurants or simple e-commerce, face a constant challenge to profitability.
+    </p>
+
+    <br>
+    <p>
+        <b id="3" class="anchor-target"><i style="color: black; font-size: 20px;">2. Bargaining Power of Suppliers (The Input Cost Lever) </i></b>
+    </p>
+    <br>
+    <p>
+        Suppliers hold power when they can demand higher prices for their inputs (raw materials, labor, components) or reduce the quality of goods and services they provide. This power directly squeezes the profit margins of firms within the industry.
+    </p>
+    <br>
+    <p>
+        <b>Strategic Considerations for Investors</b>: Supplier power is typically high when: the supplier industry is more <b>concentrated</b> than the buying industry (few suppliers, many buyers); the buyer faces high <b>Switching Costs</b> when changing suppliers; or the input is highly <b>differentiated</b> (a unique or patented component). Assessing this force helps identify companies that are highly vulnerable to input cost shocks versus those with leverage to negotiate favorable terms, such as large retailers dealing with numerous small manufacturers.
+    </p>
+
+      <p id="4" class="anchor-target"><b><i style="font-size:20px; color: black;">3. Bargaining Power of Buyers (The Price Pressure)</i></b></p>
+      <br>
+      <p>Buyers have power when they can force prices down, demand higher quality, or require more comprehensive service at the same price. This is the flip side of supplier power.</p>
+      <br>
+        <p>
+        <b>Strategic Considerations for Investors</b>: Buyer power is generally high when: the buyers are <b>concentrated</b> or purchase in <b>large volumes</b> (giving them volume discounts); the product purchased is <b>undifferentiated</b> or a commodity (allowing buyers to easily switch to the cheapest option); or the buyers possess a credible threat of <b>Backward Integration</b> (meaning they could start producing the input themselves). Businesses selling highly standardized products to a few large customers (e.g., auto part suppliers to major car manufacturers) face intense buyer power, restricting their pricing strategy.
+        </p>
+
+      <br>
+      <p id="5" class="anchor-target">
+        <b><i style="font-size: 20px; color: black;">4. Threat of Substitute Products or Services (The Alternative Solution) </i></b>
+      </p>
+      <br>
+      <p>
+        A substitute is a different product or service that fulfills the same core need of the customer. This force places a ceiling on the price that firms can profitably charge.
+      </p>
+      <br>
+      <p>
+        <b>Strategic Considerations for Investors</b>: The threat is high if the substitute offers a comparable price-performance trade-off and if the buyer's <b>Switching Costs</b> to the substitute are low. <i>For example, the threat of substitution for traditional cable TV is immense due to streaming services (Netflix, etc.).</i> Even if competitors within the industry are weak, a cheap and effective substitute can decimate the entire industry's profitability. Investors must look for firms whose products offer unique value propositions that substitutes cannot easily replicate.
+      </p>
+      <br>
+      <p  id="6" class="anchor-target">
+        <b><i style="font-size: 20px; color: black;">5. Intensity of Rivalry Among Existing Competitors (The Fight for Market Share) </i></b>
+      </p>
+      <br>
+      <p>
+        This force describes the degree of competition among the firms currently operating in the industry. High rivalry generally results in destructive price wars, high-cost advertising battles, and excessive investment in product development, all of which erode profit margins.
+      </p>
+      <br>
+      <p>
+        <b>Strategic Considerations for Investors</b>: Rivalry is intense when: the industry has <b>numerous competitors</b> of roughly equal size; <b>industry growth is slow</b> (forcing firms to steal market share from one another); products lack differentiation (pushing competition purely to price); and <b>Exit Barriers</b> are high (meaning companies must stay and fight even if they are unprofitable, perhaps due to specialized assets or labor agreements). Highly concentrated, slow-growing, capital-intensive industries often suffer from debilitating rivalry.
+      </p>
+      <br>
+      <p  id="7" class="anchor-target">
+        <b><i style="font-size: 20px; color: black;">Conclusion: Identifying Sustainable Competitive Advantage</i></b>
+      </p>
+      <br>
+      <p>
+        The true strategic utility of the Five Forces Model is that it allows a firm to select one of two primary paths to establish a sustainable <b>Competitive Advantage</b> <i>relative to the industry structure</i>:
+      </p>
+      <br>
+      <li style="margin-left: 35px;">
+          <ul>
+              <li><b>Cost Leadership</b>: Positioning the firm to be the low-cost producer in the industry, allowing it to remain profitable even when competitors erode prices through intense rivalry or buyer power.</li>
+              <br>
+              <li><b>Differentiation</b>: Offering a unique product or service that buyers perceive as distinct and valuable, thereby reducing the buyer's sensitivity to price and insulating the firm from competitive pressure and substitutes.</li>
+              <br>
+          </ul>
+      </li>
+      <p>
+        By thoroughly evaluating the strength of each of the five forces, strategic investors gain the profound insight necessary to determine not just who the winners are, but why they win, and whether the spoils of victory are even worth the battle in the first place.
+      </p>
+      <br>
+      <hr>
+      <br>
+      <b><p>Resource: Hai Dang - Bachelor in Vin University</p></b>
+    </div>
+
+    <div class="right-rail">
+      <nav class="toc" aria-label="Table of Contents">
+        <h3 class="toc-title">Table of Contents</h3>
+        <ol class="toc-list" style="text-decoration: none;">
+          <li><a href="#1">The Goal: Determining Industry Attractiveness</a></li>
+          <li><a href="#2">Threat of New Entrants (The Barrier to Entry)</a></li>
+          <li><a href="#3">Bargaining Power of Suppliers (The Input Cost Lever)</a></li>
+          <li><a href="#4">Bargaining Power of Buyers (The Price Pressure)</a></li>
+          <li><a href="#5">Threat of Substitute Products or Services (The Alternative Solution)</a></li>
+          <li><a href="#6">Intensity of Rivalry Among Existing Competitors (The Fight for Market Share)</a></li>
+          <li><a href="#7">Conclusion: Identifying Sustainable Competitive Advantage</a></li>
+        </ol>
+      </nav>
+
+      <aside class="article-ads">
+        <img src="insights&lesson15.png" alt="Ad 1">
+        <a href="insights&lesson15.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Why We Buy What We Buy: Introduction to Consumer Rationality and Heuristics – An Expanded Behavioral Analysis</p></a>
+        <img src="insights&lesson14.png" alt="Ad 2">
+        <a href="insights&lesson14.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Absolute vs. Comparative Advantage: Why Nations Specialize and Trade</p></a>
+        <img src="insights&lesson13.png" alt="Ad 3">
+        <a href="insights&lesson13.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Understanding Credit, Debt, and Interest Rates: The Cost of Future Consumption – An Advanced Look</p></a>
+      </aside>
+    </div>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    // Toggle mobile menu
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // TOC: smooth scroll + scrollspy (hỗ trợ ID số: #1 #2 #3 #4)
+    (function() {
+      const header = document.querySelector('header');
+      const offset = (header?.offsetHeight || 0) + 12;
+      const toc = document.querySelector('.toc');
+      if (!toc) return;
+
+      const links = Array.from(toc.querySelectorAll('a'));
+      const sections = links
+        .map(a => document.getElementById((a.hash || '').slice(1)))
+        .filter(Boolean);
+
+      function setActive(id) {
+        links.forEach(a => {
+          const isActive = (a.hash || '').slice(1) === id;
+          a.classList.toggle('active', isActive);
+          if (isActive) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      }
+
+      // Click: cuộn mượt với offset header
+      links.forEach(a => {
+        a.addEventListener('click', e => {
+          const id = (a.hash || '').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          setActive(id);
+          history.replaceState(null, '', '#' + id);
+        });
+      });
+
+      // Scrollspy
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, {
+        root: null,
+        rootMargin: `-${offset + 10}px 0px -55% 0px`,
+        threshold: 0.1
+      });
+      sections.forEach(sec => io.observe(sec));
+
+      // Init active when hash present
+      if (location.hash) {
+        const initId = location.hash.slice(1);
+        if (document.getElementById(initId)) setActive(initId);
+      }
+    })();
+  </script>
+</body>
+</html>

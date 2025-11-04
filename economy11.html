@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Circular Agriculture: From Policy to Action</h1>
+      <p class="meta">8:54:20 AM | 8/21/2025</p>
+      <p><b>Circular economy is a closed-loop economic development model that uses resources efficiently, minimizes waste and maximizes recycling and reuse. Applying the circular economy to agriculture not only helps improve the productivity and quality of agricultural products, but also reduces input costs, protects the environment and increases added value.</b></p>
+      <br>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy11.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          TH pioneers a green circular economy with a fully integrated dairy farm from crops to milk production
+        </figcaption>
+      </figure>
+      <br>
+      <p>On June 19, 2024, the Prime Minister issued Decision 540/QD-TTg approving the project on scientific development and technology transfer to promote the circular economy in agriculture by 2030. Accordingly, the specific goal by 2030 is for at least 20% of scientific tasks in the agricultural sector to be researched, applied and transferred to support the development of the circular economy in agriculture.</p><br>
+
+      <p><b>Great benefits but many difficulties remain</b></p><br>
+
+      <p>According to Mr. Ha Van Thang, Chairman of the Vietnam Agricultural Business Council (VCAC), in recent times, several businesses and farmers have applied the circular economy in agriculture to optimize production processes, such as using microbial products to produce organic fertilizers from straw and livestock waste, and growing organic vegetables and rice. These practices have helped reduce fertilizer costs, create clean and safe organic rice product lines, and increase economic efficiency compared to mass production. A notable example is the use of mechanical services to collect straw as raw material for producing mushrooms, animal feed and organic fertilizers in some midland areas, the Northern Delta and parts of the Southwest. These applications have helped raise income from rice production by about 15% compared to the linear production model.</p><br>
+
+      <p>In addition, there are models of circular buffalo and beef cattle farming linked with product consumption chains implemented in localities such as Phu Tho, Hung Yen, Lao Cai, Tuyen Quang and Hanoi. These models use biological methods to treat manure and utilize agricultural by-products like corn stalks, cassava, beans, peanuts and straw, which are processed and preserved using the silage method. This helps reduce feed costs and increase economic efficiency by 10%-15%. Livestock waste is composted with biological preparations to produce organic microbial fertilizers for crops, creating a circular cycle for agricultural production.</p><br>
+
+      <p>Despite its great potential, the implementation of the circular economy in agriculture still faces many challenges. Circular economy requires systemic thinking and innovation in both management and production, and it is an inevitable path, not just a choice, for modern and sustainable agriculture. However, circular agricultural production continues to face obstacles due to the incomplete policy framework for circular economic development and the lack of specific policies for the circular economy model in agriculture. Value chain-based production linkages remain limited, and many cooperative models are not operating effectively, making it difficult to invest in and apply technologies and processes to production, especially circular models. The dissemination of circular agricultural practices in many areas is still limited, with no tailored solutions for each region, product group, farm size or enterprise.</p><br>
+
+      <p>A large portion of agricultural producers continue to follow linear thinking, concentrating all resources and relying heavily on measures such as herbicides, chemical fertilizers, pesticides and growth stimulants to maximize profit and productivity at all costs - an approach that may yield short-term benefits but results in long-term environmental damage.</p><br>
+
+      <p>Additionally, the number of applied researchers and experts in waste and by-product treatment technologies in agriculture is still limited and insufficient due to the lack of appropriate policies for this group. The application of science, technology and digital innovations continues to face many barriers due to existing regulations, which unintentionally hinder innovation and discourage the adoption of new methods and solutions in circular agricultural production.</p>
+      <br>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy11_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Applying the circular economy in agriculture boosts productivity and product quality
+        </figcaption>
+      </figure>
+      <br>
+      <p><b>Focus on policy reform and implementation</b></p><br>
+
+      <p>To promote the circular economy in agriculture and enhance competitiveness, Mr. Ha Van Thang emphasized the need to focus on six groups of policy solutions. These include financial support policies and green credit, such as preferential credit for businesses investing in circular agricultural models like by-product treatment, waste recycling and bioenergy. Another solution is the establishment of a fund to support innovation and the transfer of circular technologies. Additionally, tax and land incentives should be offered, including reductions in corporate income tax for clean and circular production activities, and priority in land allocation and leasing for businesses implementing integrated circular models combining livestock, cultivation and energy.</p><br>
+
+      <p>“It is necessary to complete the legal framework and standards, and issue a national set of criteria for the circular economy in agriculture; standardize processes, eco-labels and traceability of circular origins to enhance export capacity, while supporting training, communication and market development to promote the supply-demand connection for recycled and circular agricultural products,” Mr. Ha Van Thang shared.</p><br>
+
+      <p>According to him, the government should support programs for market development of products applying circular economy in agriculture, and organize promotion and trade activities for products that adopt scientific advances and circular production solutions. It is also essential to build institutional policies that support certification of circular agricultural products according to both international and domestic export standards. Policies should encourage pilot models and innovation within the household economy sector, with a strong focus on grassroots agricultural extension programs and the transfer of circular development technologies such as recycling technologies and the effective use of by-products from rice production like straw and husks to create value-added products including organic microbial fertilizers, animal feed, mushroom substrates and biological bedding.</p><br>
+
+      <p>The circular economy is an inevitable direction to enhance competitiveness and create sustainable added value for Vietnamese agriculture. To realize this goal, Mr. Thang emphasized the need for a comprehensive policy ecosystem and close coordination among the State, enterprises, farmers, scientists and investors.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy3.png" alt="Ad 3">
+      <a href="economy3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Hanoi Targets Greener and More Beautiful Rural Areas</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

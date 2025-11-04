@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Lessons</title>
+</head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { font-size: 20px; font-weight: bold; color: #c00; }
+    .menu {
+      position: fixed;
+      top: 0; left: -100%;
+      width: 70%; height: 100%;
+      background: #fff;
+      display: flex; flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 9;
+    }
+    .menu.active { left: 0; }
+    .menu a { text-decoration: none; color: #111; font-weight: bold; }
+    .menu-toggle {
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ARTICLE PAGE (mobile-first) */
+    .article-page {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+    .article-content { flex: 3; }
+    .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+    .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+    .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+    .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+    blockquote {
+      border-left: 4px solid #c00;
+      padding-left: 10px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #333;
+    }
+
+    /* ADS */
+    .article-ads {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; display:block; }
+
+    /* OTHER NEWS */
+    .other-news { padding: 20px; background: #f9f9f9; }
+    .other-news h2 { margin-bottom: 15px; color: #c00; }
+    .other-news ul { list-style: none; }
+    .other-news li { margin: 8px 0; }
+    .other-news a { text-decoration: none; color: #000; }
+    .other-news a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+    /* Desktop/Tablet layout: 2 cột, cột phải cố định bề ngang */
+    @media (min-width: 992px) {
+      .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+      .menu-toggle { display: none; }
+
+      .article-page {
+        display: grid;
+        grid-template-columns: 1fr minmax(280px, 340px);
+        gap: 28px;
+        align-items: start;
+      }
+      .article-content { min-width: 0; }
+      .right-rail { min-width: 0; display:flex; flex-direction:column; gap:16px; }
+    }
+
+    /* ===== TOC style giống ảnh mẫu ===== */
+    /* Ẩn TOC trên mobile; chỉ hiện >=768px */
+    /* .toc{ display:none; } */
+    /* TOC: tránh bị nội dung bên dưới “lọt” qua khi sticky */
+    @media (min-width:768px){
+      .toc{
+        /* background:#fff;           bật nền trắng để che nội dung phía dưới */
+        /* border:1px solid #e5e7eb;  viền nhẹ, giống ảnh mẫu */
+        border-radius:12px;
+        padding:12px 12px 12px 0;  /* chừa chỗ cho vạch dọc + mũi tên */
+        /* box-shadow:0 6px 18px rgba(0,0,0,.06); */
+        z-index: 5;                /* nổi lên trên ảnh/caption Ads */
+      }
+      .toc-title{ margin:0 0 10px 0; font-size:20px; font-weight:700; color:#111; }
+      .toc-list{
+        list-style:none; margin:0; padding:0 0 0 16px;
+        border-left:2px solid #e5e7eb; /* vạch dọc bên trái */
+      }
+      .toc-list li{ margin:6px 0; }
+      .toc a{
+        position:relative; display:block; color:#111; text-decoration:none;
+        font-size:15px; line-height:1.4; padding:6px 0;
+      }
+      .toc a:hover{ text-decoration:underline; }
+      .toc a.active{ font-weight:700; }
+      .toc a.active::before{
+        content:""; position:absolute; left:-12px; top:50%; transform:translateY(-50%);
+        width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent;
+        border-left:7px solid #2563eb; /* mũi tam giác xanh */
+      }
+    }
+
+    /* Nếu dùng dark mode tự động, bạn có thể thêm: */
+    /* @media (prefers-color-scheme: dark){
+      .toc{ background:#0b1020; border-color:#1e293b; box-shadow:0 10px 28px rgba(0,0,0,.45); }
+      .toc-title, .toc a{ color:#e5e7eb; }
+      .toc-list{ border-left-color:#1e293b; }
+    } */
+
+    /* Khi cuộn tới tiêu đề, chừa khoảng cho header sticky */
+    .anchor-target { scroll-margin-top: 88px; }
+    .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Insights & Lessons</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" class="active" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page">
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>The J-Curve Effect: A Comprehensive Analysis of Currency Devaluation and Trade Balance Dynamics</h1>
+      <p class="meta">8:02:44 PM | 2/11/2024</p>
+      <img src="insights&lesson10.png" alt="Main Article Image" class="article-img">
+
+    <p>
+        For governments wrestling with chronic trade deficits, the strategic decision to devalue the domestic currency is often seen as a powerful tool to restore balance. The theoretical expectation is straightforward: cheaper exports and costlier imports should immediately improve the trade balance. Yet, the empirical evidence consistently shows an initial counterintuitive deterioration before the expected improvement materializes—a phenomenon known as the <b>J-Curve Effect</b>. A sophisticated understanding of this dynamic is crucial for international investors and policymakers to manage expectations and ensure policy success.
+    </p>
+    <br>
+    <p id="1" class="anchor-target"><b><i style="color: black; font-size: 20px;">1. The Mechanism of Price and Volume Lags</i></b></p>
+    <br>
+    <p>
+    Currency devaluation changes the <b>Terms of Trade</b>, but its ultimate impact on the trade balance (the difference between export revenue and import expenditure) is delayed due to market rigidities.
+    </p>
+    <br>
+    <li style="margin-left: 35px;">
+        <ul>
+            <li>
+                <b>The Price Effect (Immediate Valuation Shock)</b>: Immediately upon devaluation, the domestic currency value of existing import contracts (often invoiced in hard currencies like USD) instantly rises. Since trade volumes are fixed in the short term by prior contracts, the country must pay a higher domestic currency equivalent for the same quantity of goods. Simultaneously, export revenues, also fixed by contract, remain unchanged in foreign currency terms. The deficit, measured in the domestic currency, immediately <b>widens</b>. This negative valuation shock is the initial "downward hook" of the J-Curve.
+            </li>
+            <br>
+            <li>
+                <b>The Volume Effect (The Response Lag)</b>: This represents the time required for buyers and sellers to adjust their behavior to the new price signals. Consumers need time to find and switch to domestic substitutes; foreign buyers need time to recognize the sustained price change, update their supply contracts, and ramp up new orders. This adjustment lag is the reason for the delay in trade balance improvement.
+            </li>
+            <br>
+        </ul>
+    </li>
+    <p id="2" class="anchor-target"><b><i style="color: black; font-size: 20px;">2. The Detailed Phases of the J-Curve Effect</i></b></p>
+    <br>
+    <p>
+    The J-Curve delineates the precise path of the trade balance over several quarters following a significant currency change.
+    </p>
+    <br>
+    <p><b>Phase 1: Initial Contraction and Deficit Widening (0–6 Months)</b></p>
+    <br>
+    <p>
+      In this phase, all trade volumes are assumed to be inelastic (not responsive to price changes) due to existing contracts and search costs. The negative Price Effect is the sole driver:
+    </p>
+    <br>
+    <li style="margin-left: 35px;">
+        <ul>
+            <li>
+                The trade balance deteriorates simply because the same volume of expensive imports now costs more in terms of the devalued domestic currency.
+            </li>
+            <br>
+            <li>
+                This phase requires <b>policy patience</b>. Short-term trade data will appear to indicate policy failure, often leading to market skepticism and further pressure on the currency if the Central Bank fails to manage public expectations.
+            </li>
+            <br>
+        </ul>        
+    </li>
+    <p><b>Phase 2: The Turning Point and Stabilization (6–12 Months)</b></p>
+    <br>
+    <p>
+      This critical inflection point occurs when trade volumes begin their first adjustments, slowly offsetting the negative price effect.
+    </p>
+    <br>
+    <li style="margin-left: 35px;">
+        <ul>
+            <li>
+                <b>Marginal Substitution</b>: Price-sensitive domestic consumers start the initial substitution away from expensive imports. Foreign buyers begin pilot orders for the now-cheaper exports.
+            <br>
+            <li>
+                <b>The Marshall-Lerner Condition</b>: The turning point signals that the combined absolute value of the price elasticities of demand for imports and exports is rapidly approaching one. Once the sum of these elasticities exceeds one (∣ϵM​∣+∣ϵX​∣>1), the volume effect begins to outweigh the price effect, and the trade balance starts to improve.
+            </li>
+            <br>
+        </ul>        
+    </li>
+    <p><b>Phase 3: Sustained Expansion (12–24+ Months)</b></p>
+    <br>
+    <p>
+      In the long run, the volume adjustments achieve full elasticity and become the dominant force, leading to the expected, sustained improvement in the trade balance.
+    </p>
+    <br>
+    <li style="margin-left: 35px;">
+        <ul>
+            <li>
+                <b>Export-Led Growth</b>: Export volumes surge as manufacturers secure long-term foreign contracts. Export-oriented industries experience rapid revenue growth.
+            <br>
+            <li>
+                <b>Import Suppression</b>: Domestic industries capture market share from former importers, further reducing the overall import bill.
+            </li>
+            <br>
+            <li><b>Structural Investment</b>: Capital investment is directed toward expanding export capacity, solidifying the long-term trade advantage created by the devaluation.</li>
+            <br>
+        </ul>        
+    </li>
+    <p id="3" class="anchor-target"><b><i style="color: black; font-size: 20px;">3. Strategic Failure Conditions: When the J-Curve Fails to Rise</i></b></p>
+    <br>
+    <p>The J-Curve is not guaranteed. Several factors can prevent the trade balance from ever completing the "upward sweep," leading to sustained currency weakness and trade deficits.</p>
+    <br>
+    <ol style="margin-left: 35px;">
+      <li>
+        <b>High Import Content in Exports</b>: If a country’s exports rely heavily on imported components (e.g., assembly manufacturing), the devaluation simultaneously makes the final product more competitive abroad <i>and</i> increases the domestic-currency cost of its imported inputs. This neutralizes the export price advantage.
+      </li>
+      <br>
+      <li>
+        <b>Lack of Product Differentiation</b>: If a country’s exports are generic commodities (low elasticity), foreign buyers may not significantly increase volume even with lower prices. Conversely, if a country relies on unique technology imports (inelastic demand), domestic consumers have few alternatives and must continue purchasing the now-costlier imports.
+      </li>
+      <br>
+      <li>
+        <b>Inflationary Spiral</b>: The most severe failure occurs when the devaluation immediately feeds into high domestic inflation (e.g., through increased import prices being passed on to consumers). If domestic wages and prices rise quickly, the competitive edge gained by the devaluation is rapidly eroded, effectively returning the terms of trade to their original, pre-devaluation state, but with higher domestic prices—a phenomenon known as <b>pass-through inflation</b>.
+      </li>
+      <br>
+    </ol>
+    <p id="4" class="anchor-target"><b><i style="color: black; font-size: 20px;">4. Investment Foresight: Sectoral Impact Analysis</i></b></p>
+    <br>
+    <p>For strategic investors, the J-Curve dictates distinct sector rotations and risk management requirements:</p>
+    <br>
+    <li style="margin-left: 35px;">
+      <ul>
+        <li>
+          <b>Initial Phase (0-6M):</b> Focus on defensive sectors and avoid those reliant on foreign supply chains. Companies holding large foreign debt will report massive domestic-currency losses on their balance sheets.
+        </li>
+        <br>
+        <li>
+          <b>Recovery Phase (6-12M):</b> Target industries with high price elasticity of demand—typically <b>tourism, large-volume manufacturing, and basic materials</b>—as these will lead the export volume recovery.
+        </li>
+        <br>
+        <li>
+          <b>Long-Term Phase (12M+):</b> Assess companies' <b>structural capacity</b>. Invest in firms that successfully expanded capacity during the adjustment phase, signaling a sustainable competitive advantage in the new, favorable exchange rate environment.
+        </li>
+      </ul>
+    </li>
+    <br>
+    <hr>
+    <br>
+    <b><p>Resource: Hai Dang - Bachelor in Vin University</p></b>
+    </div>
+
+    <div class="right-rail">
+      <nav class="toc" aria-label="Table of Contents">
+        <h3 class="toc-title">Table of Contents</h3>
+        <ol class="toc-list" style="text-decoration: none;">
+          <li><a href="#1">The Mechanism of Price and Volume Lags</a></li><!-- (Bạn có thể đổi tên hiển thị theo ý) -->
+          <li><a href="#2">The Detailed Phases of the J-Curve Effect</a></li>
+          <li><a href="#3">Strategic Failure Conditions: When the J-Curve Fails to Rise</a></li>
+          <li><a href="#4">Investment Foresight: Sectoral Impact Analysis</a></li>
+        </ol>
+      </nav>
+
+      <aside class="article-ads">
+        <img src="insights&lesson15.png" alt="Ad 1">
+        <a href="insights&lesson15.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Why We Buy What We Buy: Introduction to Consumer Rationality and Heuristics – An Expanded Behavioral Analysis</p></a>
+        <img src="insights&lesson14.png" alt="Ad 2">
+        <a href="insights&lesson14.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Absolute vs. Comparative Advantage: Why Nations Specialize and Trade</p></a>
+        <img src="insights&lesson13.png" alt="Ad 3">
+        <a href="insights&lesson13.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Understanding Credit, Debt, and Interest Rates: The Cost of Future Consumption – An Advanced Look</p></a>
+      </aside>
+    </div>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    // Toggle mobile menu
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // TOC: smooth scroll + scrollspy (hỗ trợ ID số: #1 #2 #3 #4)
+    (function() {
+      const header = document.querySelector('header');
+      const offset = (header?.offsetHeight || 0) + 12;
+      const toc = document.querySelector('.toc');
+      if (!toc) return;
+
+      const links = Array.from(toc.querySelectorAll('a'));
+      const sections = links
+        .map(a => document.getElementById((a.hash || '').slice(1)))
+        .filter(Boolean);
+
+      function setActive(id) {
+        links.forEach(a => {
+          const isActive = (a.hash || '').slice(1) === id;
+          a.classList.toggle('active', isActive);
+          if (isActive) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      }
+
+      // Click: cuộn mượt với offset header
+      links.forEach(a => {
+        a.addEventListener('click', e => {
+          const id = (a.hash || '').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          setActive(id);
+          history.replaceState(null, '', '#' + id);
+        });
+      });
+
+      // Scrollspy
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, {
+        root: null,
+        rootMargin: `-${offset + 10}px 0px -55% 0px`,
+        threshold: 0.1
+      });
+      sections.forEach(sec => io.observe(sec));
+
+      // Init active when hash present
+      if (location.hash) {
+        const initId = location.hash.slice(1);
+        if (document.getElementById(initId)) setActive(initId);
+      }
+    })();
+  </script>
+</body>
+</html>

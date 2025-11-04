@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economy</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Economy</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" class="active" style="color: navy;">Economy</a>
+      <a href="business.html" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Hanoi Targets Greener and More Beautiful Rural Areas</h1>
+      <p class="meta">11:19:56 AM | 10/1/2025</p>
+      <p><b>In its effort to build new rural areas, alongside focusing on economic development and improving people’s livelihoods, Hanoi also emphasizes implementing Criterion No. 17 on the environment, which aims to create a rural landscape that is bright, green, clean, and beautiful. Across all communes and wards of Hanoi, thousands of residents have participated in cleaning efforts from alleyways to fields. These seemingly small actions are playing an important role in developing advanced and model new rural areas.</b></p>
+      <br>
+      <figure style="text-align:center; margin:0;">
+        <img src="economy3.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Young union members step up efforts in environmental sanitation and urban beautification
+        </figcaption>
+      </figure>
+      <br>
+      <p>
+        <b>Preserving rural landscapes through community strength</b>
+      </p>
+      <br>
+      <p>
+        In early August 2025, Duong Hoa commune launched a general environmental sanitation campaign with the goal of spreading the message of building the commune and the capital city as “bright, green, clean, and beautiful.” According to Nguyen Trong Tan, Vice Chairman of the People’s Committee of Duong Hoa Commune, environmental sanitation, urban beautification, and building a civilized urban lifestyle have been given special attention by the commune’s Party Committee and authorities, with many practical solutions implemented. As a result, residential roads and public works have become cleaner, greener, and more pleasant; public awareness of environmental protection has gradually improved. However, there are still cases of waste being dumped improperly, and a segment of officials and residents remain insufficiently conscious of environmental protection.
+      </p>
+      <br>
+      <p>
+        Not only Duong Hoa, but Son Tay Ward has also carried out a comprehensive environmental sanitation campaign to maintain urban and public order while implementing the Farmers’ Tree Rows project. The program involved officials, members of the Veterans’ Association, Women’s Union, Youth Union, and residents from villages and residential groups throughout Son Tay Ward. Participants cleaned pedestrian streets, the areas inside and outside Son Tay Ancient Citadel, pruned and planted trees, tended flower gardens, cultural houses, public areas, and self-managed streets, maintained order on main streets, removed waste, and cleared waterways, rivers, canals, and ditches in the locality.
+      </p>
+      <br>
+      <img src="economy3_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      <p>
+        Phan Thi Thu Hien, Vice Chairwoman of the Fatherland Front Committee of Son Tay Ward and Chairwoman of the Son Tay Farmers’ Association, stated that the “Farmers’ Tree Rows” project is an exemplary model for building modern, environmentally friendly new rural areas and highlights the determination of Son Tay’s farmers to actively participate in rural development.
+      </p>
+      <br>
+      <p>
+        Meanwhile, in Xuan Mai commune, more than 300 officials, youth union members, association members, and thousands of residents from 36 residential areas simultaneously participated in weekend sanitation drives. Groups cleared weeds, collected garbage, dredged ditches, and removed illegal advertisements. Nguyen Thi Hop, 73, from Tri Thuy Village, Xuan Mai Commune, happily shared: “I’m old now, but I still try to clean the alley in front of my house. When it rains, there’s no garbage buildup or bad smell, and that makes me feel secure.” Beyond cleaning villages and alleyways, Xuan Mai has also promoted collecting pesticide packaging in fields and guided farmers to use biological products for treating agricultural waste, providing essential measures to protect the environment and public health.
+      </p>
+      <br>
+      <img src="economy3_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      <p>
+        <b>Toward greener, cleaner, more beautiful countryside</b>
+      </p>
+      <br>
+      <p>The highlight of recent environmental sanitation activities has been the proactive, voluntary, and responsible spirit of residents. Le Van Thu, Chairman of the People’s Committee of Phuc Loc Commune, affirmed: “The sanitation campaign is not only to celebrate the 80th anniversary of the August Revolution and National Day (September 2), and the Party congresses at all levels, but also a way for each resident to demonstrate responsibility and love for their homeland.” With methodical and synchronized implementation, the commune’s Party Committee and authorities will continue to maintain the sanitation movement every Saturday morning, turning voluntary action into a sustainable cultural habit.</p>
+      <br>
+      <p>In Phu Nghia Commune, self-managed environmental teams have been tasked with maintaining the “Green Sundays” activity, associated with the “Bright, Green, Clean, Beautiful, and Safe Alley” movement. The Women’s Union, Farmers’ Association, and Youth Union have taken charge of self-managed roads, installed vivid propaganda panels, and promoted awareness. Nguyen Dinh Sy, Chairman of the People’s Committee of Phu Nghia Commune, emphasized that this movement has a starting point but no ending point. It is a shared responsibility that must become a daily habit of every resident.</p>
+      <br>
+      <p>In Xuan Mai, local authorities have established monitoring and evaluation mechanisms at each residential group. Community Zalo groups and loudspeaker systems have been maximized to deliver reminders and spread messages. Many households, without waiting for government directives, have divided tasks, bought tools, and cleaned village roads and alleys together. These actions vividly reflect the spirit of “protecting the common environment is protecting our own families.”</p>
+      <br>
+      <p>Alongside landscape cleaning, localities have also paid attention to raising public awareness through environmental communication programs, Party cell activities, and community organizations. Commune police, militias, and grassroots security teams have strengthened patrols and strictly handled violations such as sidewalk encroachment and littering, ensuring urban order and environmental sanitation.</p>
+      <br>
+      <p>According to Nguyen Xuan Dai, Director of the Hanoi Department of Agriculture and Environment, thanks to the active participation of the community, Hanoi is gradually building new rural areas that not only meet infrastructure standards but also achieve the goal of being bright, green, clean, and beautiful in landscape, and civilized in lifestyle. This strength does not come from administrative orders but from the unity and shared determination of every resident in the villages.</p>
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="economy1.png" alt="Ad 1">
+      <a href="economy1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Developing Craft Village Economy: Breakthrough from Digital Transformation</p></a>
+      <img src="economy2.png" alt="Ad 2">
+      <a href="economy2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">ADB Raises Vietnam’s GDP Growth Forecast to 6.7%</p></a>
+      <img src="economy4.png" alt="Ad 3">
+      <a href="economy4.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam’s Exports to U.S.: Short-term Breakthroughs but Risks Ahead</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
