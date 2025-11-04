@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam's Exports Bright Spot of 2024</h1>
+      <p class="meta">8:28:06 AM | 1/7/2025</p>
+      <p><b>In 2024, despite global uncertainties, Vietnam's exports remain a bright spot thanks to measures addressing challenges, supporting production, promoting trade and expanding markets.  Recognized as one of the fastest-growing exporters from 2019-2023, Vietnam ranks 23rd among the world's top 30 exporting economies, according to the WTO. The Sputnik has also hailed Vietnam as the "economic star" of the Asia-Pacific region.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business37.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Vietnam's textile and garment export turnover is expected to reach nearly US$44 billion, securing the second position globally, just behind India
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>Export milestone</b></p><br>
+
+      <p>As of December 14, Vietnam's total trade turnover reached US$745.38 billion, up 15.3% from 2023. Exports were US$384.4 billion (up 14.46%), imports totaled US$360.98 billion (up 16.32%), resulting in a trade surplus of US$23.42 billion.</p><br>
+
+      <p>According to the General Department of Vietnam Customs, the robust recovery and growth in goods trade are expected to push total trade turnover for 2024 beyond US$782 billion, with a projected trade surplus of US$23.53 billion.</p><br>
+
+      <p>By the end of November 2024, export turnover from the agriculture, forestry and fishery sectors was estimated at US$35.5 billion, up 20.6% year-on-year. This remarkable growth was largely driven by high global prices, with several commodities recording significant increases. Pepper exports surged by 46.2%, coffee by 35.4%, and fruits and vegetables by 27.4%, solidifying Vietnam’s strong position in the global agricultural market.</p><br>
+
+      <p>The manufacturing sector continues to be the pillar of Vietnam’s exports, accounting for nearly 85% of total export turnover with a growth rate of 14.3%. Key products such as computers, electronic components, and machinery not only achieved high growth but also reinforced Vietnam’s role in the global supply chain, showcasing its competitiveness and critical position in the manufacturing industry. Meanwhile, the mineral fuel group experienced a 4.9% decline, a rare downside in the export outlook.</p><br>
+
+      <p>Domestic enterprises recorded an impressive growth rate of 20%, surpassing the 12.4% growth of foreign direct investment (FDI) enterprises. The share of export turnover by domestic firms also increased from 26.8% to 28%, signaling improved production capacity and market access for local businesses.</p><br>
+
+      <p>Vietnam’s export turnover in 2024 showed strong recovery across most major markets. As of November 30, the United States remained the largest export market, with turnover reaching US$98.4 billion, representing nearly 30% of total exports and a 24.2% increase from the previous year. The European Union recorded US$47.3 billion, up 18.1%, while South Korea and Japan saw growth of 8.7% and 4.8%, respectively. In contrast, exports to China declined slightly by 0.9%, reflecting stagnation in domestic demand.</p><br>
+
+      <p>Vietnam has signed and implemented 17 Free Trade Agreements (FTAs) with major global partners. Next-generation FTAs like the EVFTA and CPTPP have boosted export growth, sustained a trade surplus, and reinforced Vietnam’s key role in the global supply chain.</p><br>
+
+      <p><b>New momentum</b></p><br>
+
+      <p>While Vietnam’s export sector has achieved remarkable milestones, the disparity between the domestic economy and FDI enterprises remains significant. FDI enterprises currently account for 71.9% of total export turnover, maintaining a dominant role, while the domestic sector contributes only 28.1%.</p><br>
+
+      <p>Vietnam's exports mainly consist of low-value raw materials with weak branding, limiting competitiveness and sustainable growth. To thrive, businesses must invest in technology, build strong brands, and focus on high-value products. Digital transformation, process optimization and workforce development are essential for enhancing competitiveness in a more integrated market.</p><br>
+
+      <p>To boost exports, businesses should explore untapped markets like the Middle East, South America and Africa, which offer significant growth potential. The halal market is also emerging as a promising opportunity due to rising global demand. Additionally, leveraging major distribution channels such as Saigon Coop, AEON, and Central Retail can help Vietnamese products reach international consumers more effectively.</p><br>
+
+      <p>To support exporters, authorities should focus on building a national brand, diversifying products, improving the investment environment, enhancing infrastructure and promoting a green economy. Maximizing FTAs, expanding markets, strengthening official trade channels and fostering sustainable branding are essential for driving export growth. The Ministry of Industry and Trade aims to leverage existing FTAs, pursue new ones, diversify import-export products, strengthen supply chains, and tap into untapped markets while building strong national brands to ensure sustainable export growth.</p><br>
+
+      <p>In parallel, the ministry plans to innovate trade promotion activities and refine trade defense regulations to protect domestic businesses from international barriers. These measures aim to provide effective support for export industries in tackling global challenges. Together, these initiatives promise to lay a solid foundation for the continued growth of Vietnam's export sector.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Building High-Quality Human Resources for Automotive Industry</h1>
+      <p class="meta">9:46:24 AM | 3/14/2025</p>
+      <p><b>The global automotive industry is undergoing a major transformation, driven by new technologies, shifting consumer preferences and growing environmental concerns. The rise of electric and self-driving vehicles is creating a demand for new skills and expertise in the automotive workforce. Meanwhile, software and electronics companies have already achieved success with many projects in the automotive sector.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business28.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Developing Vietnam's automotive supporting industry requires support from leading companies and strong government policies
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>Expanding and upgrading training for high-quality human resources</b></p>
+      <br>
+      <p>FPT Corporation recently signed an agreement with Cranes Varsity, one of India’s leading technology training organizations, to implement the Automotive Software Development Program aimed at developing high-quality human resources. Under this agreement, FPT will establish the Cranes FPT training system, providing Vietnamese students with access to international-standard training in automotive software development. The program covers knowledge and skills, with a focus on embedded systems, artificial intelligence (AI), and advanced automotive technologies. This marks Vietnam’s first international-standard short-term training program in automotive software development, designed to meet the growing global demand in the automotive industry.</p>
+      <br>
+      <p>The program spans four semesters (two years) and covers a comprehensive curriculum, from basic to advanced programming, simulation, software testing, and the application of industry standards. Nearly 30% of the coursework is dedicated to artificial intelligence (AI), ensuring students gain expertise in the latest automotive technologies. Upon completing the program, students will receive the Advanced Diploma in Automotive Software Development (ADAS) from Cranes Varsity. This internationally recognized certification equips graduates with the skills needed to meet the recruitment standards of automotive technology companies both in Vietnam and globally.</p>
+      <br>
+      <p><i>Mr. Truong Gia Binh, Chairman of FPT Corporation, emphasized that the automotive industry is experiencing a major transformation, creating a strong demand for skilled professionals across many specializations. International cooperation is key to positioning Vietnam as a major player in the global industry. This program is designed to rapidly develop high-quality human resources, not only for Vietnam but also for the global market.</i></p>
+      <br>
+      <p>Recognizing the urgent need for high-quality human resources in the rapidly evolving automotive technology industry, the Faculty of Automotive Technology under the School of Mechanical and Automotive Engineering (Hanoi University of Industry) launched an English-language training program in automotive technology in 2022. This program is built on a nationally accredited curriculum and aligned with ABET standards from the United States. It equips students with both technical expertise and soft skills, preparing them for the demands of international integration. Graduates will be well-qualified to work in leading automotive companies, R&D centers specializing in smart transportation, electric vehicle development and autonomous vehicle technology.</p>
+      <br>
+      <p>One key training institution for high-quality human resources in the automotive industry is the School of Mechanical Engineering at Hanoi University of Science and Technology. The school offers six majors, including automotive engineering. In addition to classroom instruction, students engage in research projects alongside their instructors, gaining hands-on experience. The school's laboratories remain open for students to practice and apply their knowledge in real-world scenarios. Furthermore, the school collaborates with businesses, sending students for internships each year to help them familiarize themselves with professional working environments.</p>
+      <br>
+      <p><b>Still struggling to meet industry demand</b></p>
+      <br>
+      <p>Amid economic fluctuations and rapid advancements in science and technology, automation and modern machinery are increasingly replacing human labor, making high-quality human resources essential for the evolving automotive industry. Many automobile manufacturers are actively seeking skilled professionals who can adapt to market trends and contribute long-term to their companies. Leading firms in the manufacturing sector, such as FPT Software, VinFast, Hyundai Kefico Vietnam and Honda Vietnam, offer highly competitive salaries to graduates specializing in automotive technology, reflecting the growing demand for well-trained professionals in the field.</p>
+      <br>  
+      <p>Truong Hai Group Corporation (THACO) currently employs around 60,000 people, with 32% holding university or postgraduate degrees, 18% having technical college qualifications and 50% being skilled technical workers. From 2022 to 2025, THACO's workforce demand is expected to grow by 15% annually, driven by its digital transformation strategy for sustainable development. To address this need, THACO established a vocational college in 2010 with a training capacity of 2,000 students per year, though this still falls short of demand. As a result, THACO collaborates with universities, research institutes and educational institutions, while also recruiting experts from Japan and South Korea to train its workforce in technology, engineering and electronics.</p>
+      <br>  
+      <p>Many small and medium-sized enterprises (SMEs) in the automotive industry believe that only a few leading companies have the resources to actively manage and develop their workforce, while most still depend on training institutions. As an immediate solution, these businesses are strengthening partnerships with universities and colleges, investing time and resources in training programs in the hope of securing a skilled workforce. <i>In reality, even if only 1–2 out of every 10 trained employees stay and work long-term, it is considered a success.</i></p>
+      <br>
+      <p>Vietnam's automotive supporting industry enterprises are mostly small and medium-sized, often operating with outdated technology and a workforce that lacks proper training and industry experience. The labor market faces shortages in both quality and quantity. Additionally, vocational training programs are not closely aligned with actual production demands, leading to a disconnect between labor supply and demand, training content and real-world application, and educational institutions and supporting industry businesses that require highly skilled technical workers.</p>
+      <br>
+      <p>To develop a sustainable and globally integrated labor market, experts suggest Vietnam implement a comprehensive policy framework for human resource development aligned with regional economic planning. This includes restructuring the education and training system from primary levels to universities and vocational schools, ensuring alignment with advanced regional and global education standards. <i>A key priority is to cultivate highly skilled professionals, reducing the gap between graduation and employment while minimizing the need for retraining.</i> Additionally, strengthening cooperation mechanisms between the government, educational institutions and businesses is essential to modernizing education, integrating international standards and keeping pace with industry trends.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

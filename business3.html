@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</h1>
+      <p class="meta">9:53:23 AM | 10/6/2025</p>
+      <p><b>Through awareness campaigns, professional guidance, and thorough safety inspections, the Fire Prevention, Fighting, and Rescue Police have consistently supported the business community in all stages of production and operations. Upholding the motto "prevention is key," the force not only builds a solid shield against fire and explosion risks but also creates confidence for businesses to invest and expand their activities sustainably.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business3.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </figure>
+      <br>
+      <p><b>Could you please summarize the outstanding results in fire safety and rescue over the past period? What will be the key focus for the force in the coming time?</b></p><br>
+
+      <p>In the first eight months of 2025, the fire and rescue police force advised the Party, the Government, and the Ministry of Public Security to issue numerous documents to strengthen fire prevention and rescue work. Specifically, the force advised the Government to issue two Decrees (No. 105 and 106) and the Ministry of Public Security to issue three Circulars guiding the implementation of the Law on Fire Prevention, Fighting, and Rescue No. 55/2024/QH15. Conferences were also held to disseminate the law and its guiding documents to ministries and agencies.</p><br>
+
+      <p>Additionally, the force advised the Prime Minister to issue one Directive and four Official Dispatches on fire prevention and firefighting. It also proposed that the Ministry of Public Security issue Project No. 08/DA-BCA-C07 on "Reducing fires causing serious damage to people and property based on the functions and duties of the People's Police Force," and Plan No. 288/KH-BCA dated May 19, 2025, on the implementation of this project.</p><br>
+
+      <p>At the same time, the force strengthened state management of fire prevention and rescue, expanded public awareness campaigns through mass media, and reinforced inspections and guidance while strictly handling violations of fire prevention and rescue regulations.</p>
+      <p>From the end of May to the beginning of September every year, many traditional tea makers are busy with each step of making lotus tea. The work of scenting lotus tea requires meticulousness, the craftsman must put all his heart and soul into each lotus grain and tea bud. Each flower is picked and brought back to separate the rice — which is likened to the lotus's scent bag — before being scented. Collecting lotus rice requires high care and meticulousness from the craftsman; keeping the lotus rice flavorful and uncrushed is not something that everyone can do. Under the skillful hands of the craftsmen, the petals, pistils, and lotus rice are separated.</p>
+
+      <figure style="text-align:center; margin:0;">
+        <img src="business3_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Prime Minister Pham Minh Chinh and delegates visit booths at the International Fire Safety, Rescue, Security Exhibition 2025
+        </figcaption>      
+      </figure>
+      <br>
+      <p>In addition, we organized a dialogue with businesses on fire prevention, rescue, security, safety, and digital transformation. We also advanced several projects on fire prevention and rescue, including the project on fire prevention infrastructure planning for the period 2021-2023 with a vision to 2050, the fire incident communication project, and the project on a professional database and software for fire prevention and rescue.</p><br>
+
+      <p>In the coming period, to ensure effective implementation of fire prevention and rescue tasks, we will continue advising and proposing that the Government issue projects aimed at preventing and reducing fires that cause serious harm to people and property, while enhancing the effectiveness of rescue operations. We will also promote the dissemination of the Law on Fire Prevention, Fighting, and Rescue and provide strategic recommendations on foreign affairs and international cooperation in this field.</p><br>
+
+      <p>At the same time, we will push forward digital transformation, digitize databases in the fire prevention and rescue sector, and implement coordinated measures to minimize serious damage to people and property. We will also continue raising public awareness and improving people’s knowledge and skills in responding to fire, explosion, and accident situations.</p><br>
+
+      <p><b>What is the role of the Fire Prevention, Fighting, and Rescue Police Force in supervising, supporting businesses in implementing fire prevention and rescue legal regulations? What recommendations do you have to help businesses effectively comply with these regulations?</b></p><br>
+
+      <p>Fire prevention, fighting, and rescue are closely tied to the safety, stability, and development of every business and society as a whole. Therefore, with its assigned functions and duties, the Fire Prevention, Fighting, and Rescue Police Force consistently defines its "two-in-one" role: serving both as the agency that manages and supervises legal compliance, and as a partner that accompanies and supports businesses throughout the process of implementing fire prevention and rescue regulations.</p><br>
+
+      <p>Accordingly, law enforcement supervision is carried out from the very beginning of a project or construction to ensure all fire safety requirements are met by law. During production and business operations, the Fire Prevention, Fighting, and Rescue Police Force promptly detects issues and applies measures for correction and remediation, thereby creating a safe and sustainable production and business environment, contributing to socio-economic development.</p><br>
+
+      <p>In working alongside businesses, our units continuously innovate the content and format of public awareness campaigns to promote a strong shift in the perception and actions of all levels, sectors, and communities regarding fire prevention and rescue. In addition, the Fire Prevention, Fighting, and Rescue Police Force provides direct guidance on developing and practicing firefighting and rescue plans tailored to the specific characteristics of each type of facility and enterprise. We also strengthen training and professional development in fire prevention and rescue, enabling businesses to be more proactive in responding to incidents and minimizing damage to people and property when a fire or explosion occurs.</p><br>
+
+      <p>However, for effective implementation and compliance with legal regulations, businesses must also take initiative in researching and regularly updating guiding documents and information from competent authorities. They should strictly follow the instructions, requirements, and recommendations of state management agencies on fire prevention and rescue, and focus on allocating funds, equipping vehicles, and organizing fire prevention and rescue forces in accordance with legal requirements.</p><br>
+
+      <p><b>Administrative procedure reform in the fire safety and rescue sector is always a major concern for businesses. Could you share some new measures and solutions you are implementing to enhance the efficiency of file processing and make it more convenient for businesses?</b></p><br>
+
+      <p>Under the new regulations, the Law on Fire Prevention, Fighting, and Rescue has reduced the number of administrative procedures from 37 to 9 (a reduction of 75.6%). Of these, the police agency is responsible for 7, while the communal People’s Committee handles 3. In addition, the time for receiving and processing administrative procedures has also been shortened by over 30% (for instance, for design appraisal and fire safety acceptance inspection, the time for the police agency has been reduced from 10-15 days to 6-10 days).</p><br>
+
+      <p>Moreover, many unnecessary documents have been removed or can now be verified online through the databases of other ministries and sectors.</p><br>
+
+      <p>With a proactive, cooperative, and supportive spirit toward the public and businesses, we have issued clear guidelines on the implementation process of administrative procedures on the Department’s website. We have also directed local police to speed up online processing of administrative procedures to ensure transparency and timeliness, while strengthening supervision to prevent misuse of procedures that could cause difficulties or inconvenience for the public and businesses.</p><br>
+
+      <p><b>Project No. 10/DA-BCA-C07 is crucial for improving the quality and effectiveness of the force. Could you share the specific solutions and actions you are implementing, as well as the notable results of the project so far?</b></p><br>
+
+      <p>Implementing Resolution No. 12-NQ/TW dated March 16, 2022, of the Politburo on promoting the building of a truly clean, strong, regular, elite, and modern People’s Police Force to meet the requirements and tasks of the new situation, the Fire Prevention, Fighting, and Rescue Department proactively advised the leadership of the Ministry of Public Security to issue Project No. 10/DA-BCA-C07 on building a truly clean, strong, regular, elite, and modern Fire Prevention, Fighting, and Rescue Police Force.</p><br>
+
+      <p>We have also issued two plans to implement Project No. 10/DA-BCA-C07. We advised the leadership of the Ministry of Public Security to issue two guiding documents for local police on the assignment and decentralization of fire prevention and rescue tasks, combined with the consolidation of the organizational structure of the police force and two-level local governments.</p><br>
+
+      <p>This has achieved several notable results, such as clarifying the purpose, requirements, and goals of building the force under Project No. 10/DA-BCA-C07, unifying will and action, and ensuring determination to complete the assigned tasks. We have also improved the legal system for fire prevention and rescue, creating a solid legal framework for ensuring fire safety and rescue. In particular, the Law on Fire Prevention, Fighting, and Rescue of 2024, which has been issued, contains many innovations, focusing on thoroughly implementing decentralization, delegating management authority, and reducing many administrative procedures related to fire prevention and rescue.</p><br>
+
+      <p>The organizational structure of the Fire Prevention, Fighting, and Rescue Police Force, from the central to the grassroots level, has been consolidated in its functions and duties, following the model of “a lean Ministry, comprehensive provinces, strong communes, and close ties to the grassroots.” The organizational structure of the Fire Prevention, Fighting, and Rescue Police Force in provincial and city police departments has been strengthened according to the two-level local government model, and we continue to focus on developing a network of regional firefighting and rescue teams to ensure comprehensive management of all areas and facilities.</p><br>
+
+      <p>Furthermore, officers and soldiers of the Fire Prevention, Fighting, and Rescue Police Force are constantly trained to improve their professional capacity. Operational practices have been adjusted to suit practical requirements. We have also accelerated the application of science and technology, digital transformation, and the provision of level 4 online public services on the Ministry of Public Security’s Public Service Portal for administrative procedures in the fire prevention and rescue sector, in accordance with regulations.</p><br>
+
+      <p>Notably, units have stepped up investment and procurement of equipment and vehicles for fire prevention and rescue. Currently, the Fire Prevention, Fighting, and Rescue Police Force manages and operates thousands of vehicles and pieces of equipment for professional activities, such as firefighting robots, fire trucks using CAF technology, and rescue vehicles with many high-quality tools and devices.</p><br>
+
+      <p>With determination to innovate and a spirit of partnership, the Fire Prevention, Fighting, and Rescue Police Force will continue to grow, improve, and remain a reliable support for businesses, contributing to building a safe, efficient, and sustainable production and business environment.</p><br>
+
+      <p><b>Thank you very much!</b></p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business4.png" alt="Ad 3">
+      <a href="business4.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam’s Tilapia Exports in the First 8 Months of 2025 Hit a 5-year High</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

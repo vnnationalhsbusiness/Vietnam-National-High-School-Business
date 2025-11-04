@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam's E-commerce Market Surges to US$25 Bln</h1>
+      <p class="meta">10:19:48 AM | 2/3/2025</p>
+      <p><b>The Ministry of Industry and Trade projected Vietnam's retail e-commerce market to exceed US$25 billion in 2024, a 20% increase from 2023, surpassing the US$22 billion forecast by Google, Temasek, and Bain & Company.</b></p>
+      <br>
+      <p>Vietnam ranks behind Indonesia and Thailand in Southeast Asia's e-commerce scale but holds significant growth potential with its nearly 100 million population and rising internet usage. On average, Vietnamese consumers shop online four times a month, reflecting the growing popularity of e-commerce. Vietnam's strategic location in ASEAN offers strong trade and commercial links with major markets like China, India, and other ASEAN countries.</p><br>
+
+      <p>Deputy Director of the E-commerce and Digital Economy Department, Ministry of Industry and Trade, Lai Viet Anh, emphasized: "E-commerce is a pioneering field with strong diffusion. The digital environment has lower entry barriers than traditional markets, making it easier for businesses to expand nationally or internationally through cross-border e-commerce." Participation in international markets through digital platforms has enabled many Vietnamese businesses to rapidly and efficiently expand globally.</p><br>
+
+      <p>Meanwhile, changes in consumer trends, especially among the youth, are driving the growth of e-commerce. Younger generations, particularly Gen Z, known for their love of convenience and connection through online platforms, are becoming the primary customers of e-commerce. Social media marketing strategies, live-stream sales, and promotional programs are also continuously increasing their appeal to consumers, helping businesses attract a larger customer base.</p><br>
+
+      <p>Mr. Tran Tuan Anh, CEO of Shopee Vietnam, shared: "The Vietnamese market is vast, with a large population, quick access to new products, and rising incomes. Even people in remote areas or islands can easily access e-commerce services, with almost no barriers." This highlights the strong development of technology infrastructure and logistics, which has helped expand e-commerce access to all social classes.</p><br>
+
+      <p>However, despite strong market growth, the e-commerce industry faces major challenges. Logistics infrastructure remains insufficient to meet rising shipping demands, and consumer information security needs strengthening to ensure safe transactions and prevent fraud. Intense competition among e-commerce platforms pressures businesses to continuously innovate and improve to retain market share.</p><br>
+
+      <p>Mr. Nguyen Ngoc Dung, Chairman of the Vietnam E-commerce Association, pointed out that in the past, many companies ventured into e-commerce merely as a trend, without focusing on building sustainable brands. However, today, e-commerce training programs have grown significantly, helping businesses gain a better understanding of how to build a long-lasting online image and create lasting value. Looking ahead, e-commerce must focus on deeper, more sustainable development rather than surface-level growth.</p><br>
+
+      <p>According to Dr. Vo Tri Thanh, an economist, e-commerce has significantly boosted consumer spending, especially in the context of a young population and the online shopping preferences of Gen Z. This not only creates opportunities for more balanced development but also helps narrow income disparities, benefiting both rural and urban areas. However, the promotion of e-commerce and the digital economy must take into account several key issues, particularly around policies, regulations, and consumer protection. Traditional retail sectors could also be affected, and this is an issue that requires careful consideration.</p><br>
+
+      <p>In addition to creating revenue growth opportunities for Vietnamese businesses, e-commerce serves as a platform for these companies to become more deeply integrated into global supply chains, thereby enhancing the presence of Vietnamese goods in the global market. With the rapid development of technology and logistics infrastructure, coupled with a steadily increasing demand for consumption, Vietnam's e-commerce market is expected to continue its significant leaps forward in the future. According to the Ministry of Information and Communications, it is projected that by 2025, total revenue in the e-commerce sector will reach US$39 billion, accounting for nearly 70% of the value of Vietnam’s digital economy. Vietnam's e-commerce growth rate places it among the top 10 countries with the fastest-growing e-commerce markets globally.</p><br>
+
+      <p>To ensure sustainable development in this sector, experts recommend that businesses focus on quickly adapting to changes in consumer behavior, particularly the strong shift toward online shopping. Investing in new technologies, such as artificial intelligence (AI) and blockchain, will help optimize operational processes while improving the consumer experience.</p><br>
+
+      <p>Additionally, upgrading logistics infrastructure not only improves delivery speed but also enhances the ability to process orders efficiently and accurately. Businesses must also prioritize consumer information security to build trust and create a safe shopping environment. E-commerce plays a vital role as a strong bridge between businesses and customers, enabling direct interaction through social media platforms and personalized marketing campaigns. The use of Big Data to understand customer needs and optimize engagement strategies will help businesses build long-term relationships with customers, thereby increasing brand value and boosting revenue.</p><br>
+
+      <p>In 2025, the Ministry of Industry and Trade will research and propose the development of the E-Commerce Law to institutionalize the Party's and State's guidelines and policies, while ensuring consistency within the legal framework for e-commerce. The Ministry will also complete and submit to the Prime Minister the National E-Commerce Development Plan for 2026-2030, addressing difficulties and obstacles in the implementation of existing legal documents, and adjusting to align with technological changes and the digital economy.</p><br>
+          
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

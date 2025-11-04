@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>VLOG 2025 Promoting Digital Transformation and Partnership For Green Logistics</h1>
+      <p class="meta">8:29:52 AM | 5/17/2025</p>
+      <p><b>The 3<sup>rd&nbsp;</sup> Viet Nam International Logistics Exhibition (VILOG 2025) is set to take place from July 31st to August 2nd at Saigon Exhibition and Convention Center (SECC) – 799 Nguyen Van Linh, District 7, Ho Chi Minh City.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business24.png" alt="ADB Press Conference" class="article-img" style="margin: auto">       
+      </figure>
+      <br>
+      <p>On the afternoon of May 16, 2025, Vinexad and the Vietnam Logistics Business Association (VLA), with support from the Agency of Foreign Trade (Ministry of Industry and Trade), held a talk to introduce the 3rd VILOG 2025.</p>
+      <br>
+
+      <p>According to the organizing board, under the theme “Digital Transformation and Partnership for Green Logistics”, VILOG 2025 will highlight the transformative power of digital solutions and strategic partnerships in fostering a greener, more efficient logistics sector.</p>
+      <br>
+
+      <p>At the talk, experts said that Viet Nam is cementing its position as a logistics hub in the Southeast Asia region, and the logistics sector is being shaped by increasingly strict policies, regulations, and international integration requirements.</p>
+      <br>
+
+      <p>Mr. Tran Thanh Hai, Deputy General Director of the Agency of Foreign Trade, said: “<i>The Viet Nam International Logistics Exhibition 2024 marks an important milestone, serving as a gathering place for logistics enterprises to come together and shape a path toward a more sustainable future. By emphasizing the importance of green logistics as the foundation for sustainable development, we aim to inspire meaningful discussions, foster valuable connections, and accelerate the implementation of environmentally responsible changes.</i>”</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business24_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">       
+      </figure>
+      <br>
+      <p>With its role as a significant hub for industry professionals seeking to explore cutting-edge solutions and forge valuable business connections, VILOG 2025 will showcase groundbreaking advancements in automation, artificial intelligence, IoT-driven supply chains, and eco-friendly transport solutions. The event will also facilitate dialogue on policy frameworks and best practices to accelerate the green transition.</p>
+      <br>
+
+      <p>Building on the success of VILOG 2024, VILOG 2025 is set to expand significantly in both scale and scope with an even greater international presence and strengthened networking opportunities, aiming to be a catalyst for innovation and collaboration in the logistics sector. Up to now, VILOG 2025 has welcomed the participation and cooperation of many global logistics promotion organizations and associations such as: World Cargo Alliance (WCA), World International Freight Forwarder Alliance (WIFFA), China International Freight Forwarders Association (CIFA), Cambodia Logistics Association (CLA),...</p>
+      <br>
+
+      <p>Significantly, VILOG 2025 is honored to receive the support of three prestigious sponsors in the fields of logistics and infrastructure development: Long An International Port (Gold Sponsor), ITL Corporation (Silver Sponsor), and Mitsubishi Estate Asia (Bronze Sponsor). Their participation reflects strong confidence in the growth potential of Viet Nam’s logistics industry and significantly contributes to elevating the scale and quality of the event. With the invaluable support of these industry leaders, VILOG 2025 is poised to become one of the most anticipated logistics exhibitions of the year.</p>
+      <br>
+
+      <p>Within the framework of the exhibition, a range of thematic seminars will take place, including: the seminar “Financial Mechanisms to Promote Green Logistics Development” organized by <i>Vietnam Economic & Financial Review (VEFR)</i>; the seminar “Viet Nam’s Export and Logistics Today: Context, Challenges, and Solutions” organized by the <i>Multimodal Transport Committee (VLA Association)</i>; and the seminar “AI and Its Impact on the Logistics Industry” organized by the <i>VALOMA Association</i>. These seminars promise to provide a comprehensive overview of the current landscape and market trends, financial solutions for sustainable development, and the transformative influence of the digital era on the logistics sector.</p>
+      <br>
+
+      <p>The new highlight of this exhibition is the <i>VILOG TALK</i> zone – a forum exclusively for exhibitors to introduce their services and technologies, including the thematic presentation on the <i>Air Cargo Agency Program</i>, organized by the International Air Transport Association (IATA). This session aims to provide the latest updates on how IATA supports the air cargo industry through advanced and efficient payment solutions, helping freight forwarding companies and airlines expand business opportunities and enhance operational efficiency. In addition, it is combined with the 1:1 <i>Business Matching Program</i> hosted by WR1 – Proud Partner of VILOG 2025 and the <i>Buyer Program</i>, which are maintained throughout the entire exhibition to attract industry enterprises, cargo owners, and visitors, facilitating business expansion and enabling them to choose the most optimal logistics solutions. This, in turn, creates practical networking value for exhibitors and attendees.</p>
+      <br>
+
+      <p>Notably, VILOG 2025 will be held concurrently with the esteemed <i>23rd International Medical, Hospital and Pharmaceutical Exhibition (Viet Nam Medipharm Expo)</i> in Ho Chi Minh City. This combination offers a unique opportunity for businesses participating in both events to explore each other, seek potential partners, and optimize supply chain processes in the pharmaceutical and medical equipment sectors. The <i>Viet Nam International Cold Chain Exhibition (Viet Cold Chain)</i> and the <i>Viet Nam International Smart Warehouse Exhibition (Viet Warehouse)</i> will continue to be two prominent specialized exhibitions accompanying VILOG this year.</p>
+      <br>
+
+      <p>VILOG 2025 is strongly supported by a wide range of reputable media outlets and specialized industry platforms, including: <i>Vietnam Logistics Review</i>, <i>Business Forum Magazine</i>, <i>Vietnam Investment Review</i>, <i>Industry and Trade Magazine</i>, <i>Vietnam News</i>, <i>VietnamExport</i> – the international market information portal under the Ministry of Industry and Trade, <i>PHATAA</i> – the international logistics trading platform, <i>Invest Vietnam</i> – the national investment promotion portal, and <i>ONEX Logistics</i> – a media and networking platform dedicated to the logistics sector.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Embracing Noble Mission in New Era</h1>
+      <p class="meta">9:39:29 AM | 6/23/2025</p>
+      <p><b>Over the past 100 years of development, Vietnam’s revolutionary press has made significant strides in both quantity and quality, expanding its publications, formats and content while gradually mastering advanced communication technologies. Many press agencies have evolved into multimedia agencies of regional and global class.</b></p>
+      <br>
+      <p>This was stated by Mr. Tran Cam Tu, Member of the Politburo and Permanent Member of the Secretariat of the Party Central Committee, at the national scientific conference titled “100 Years of Vietnam’s Revolutionary Press with the Glorious Revolutionary Cause of the Party and the Nation (June 21, 1925 - June 21, 2025)”, held in Hanoi.</p>
+      <br>
+
+      <p><b>A century of historic progress</b></p>
+      <br>
+
+      <p>On June 21, 1925, in Guangzhou (China), President Ho Chi Minh founded <i>Thanh Nien Newspaper</i>, the official publication of the Vietnam Revolutionary Youth League and the first press outlet of the Vietnamese revolutionary movement. It marked not only the birth of revolutionary journalism in Vietnam, but also the beginning of a century-long glorious journey. From the outset, <i>Thanh Nien Newspaper</i> clearly defined its missions: Revolutionary propagation, education and action. Its articles not only raised political awareness but also ignited patriotism and inspired readers towards the proletarian revolution.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business21.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Journalists have made steadfast contributions to national construction and defence over the past century
+        </figcaption>        
+      </figure>
+      <br>
+      <p>Following in <i>Thanh Nien Newspaper</i>’s footsteps, other influential publications such as <i>Tap Chi Do</i>, <i>Tranh Dau</i>, <i>Dan Chung</i>, <i>Viet Nam Doc Lap</i> and <i>Co Giai Phong</i> emerged across different historical contexts, aligning with the revolutionary demands of each era.</p>
+      <br>
+
+      <p>Revolutionary journalism played a vital role in political enlightenment, ideological mobilization and organizational training, contributing significantly to the success of the August Revolution in 1945 and the founding of the Democratic Republic of Vietnam. During the wars against French colonialism and American imperialism, the revolutionary press became a special front in the Party’s overall comprehensive strategy.</p>
+      <br>
+
+      <p>In the Doi Moi (renovation) era, amid rapid socioeconomic growth and international integration, revolutionary journalism has remained a powerful force that not only disseminates Party and State policies but also reflects social realities, engages in policy criticism and guides public opinion. It has become a communication channel through which the voice and aspirations of the people are heard, thus strengthening democracy and promoting social dialogue within an open and healthy political and cultural environment.</p>
+      <br>
+
+      <p>Permanent Member of the Secretariat Tran Cam Tu emphasized that, alongside its achievements, the press also faces challenges arising from the market economy and international cooperation. Globalization together with the boom of digital technologies, artificial intelligence and social media brings both opportunities and obstacles to revolutionary journalism.</p>
+      <br>
+
+      <p>To keep fulfilling its mission and going with the nation in a prosperous, civilized and thriving era, Mr. Tu called on the press to deepen research, embrace digital transformation and integrate technological advances into a streamlined, effective and globally connected media system. He underlined the importance of developing a professional press workforce with strong political integrity, journalistic excellence and ethical clarity, leading on all fronts.</p>
+      <br>
+
+      <p>In that process, the Party and State place high expectations on the press and will provide it with increased support and resources to meet its duties in the new era, he added. At the same time, Party committees at all press agencies and journalist associations at all levels must fully grasp the fundamental principle: the absolute and total leadership of the Party over press activities to afford the cause of Doi Moi (renovation) and national construction and development. This core matter has proven fundamental to Vietnam’s revolutionary journalism.</p>
+      <br>
+
+      <p><b>The press must evolve to meet new demands</b></p>
+      <br>
+
+      <p>Nguyen Trong Nghia, Member of the Politburo and Chairman of the Party Central Committee’s Commission for Information and Education, and Mass Mobilization, noted that after nearly four decades of Doi Moi, the press has played an increasingly visible role in rallying the public and armed forces to realize all Doi Moi policies initiated by the Party.</p>
+      <br>
+
+      <p>The press has participated in supervision, critique and formation of State and Party policies, hence enhancing the people’s democratic participation. The press has importantly contributed to building a clean, strong Party and State, and reinforcing public trust.</p>
+      <br>
+
+      <p>“The current position and reputation of Vietnam owe much to the significant contributions of Vietnamese revolutionary journalism. We must be aware of the insightful directions of General Secretary To Lam, who emphasized that the new era sets higher demands for revolutionary journalism. The press must rise to meet new requirements, grow with the nation and catch up with the standards of a professional, humanistic and modern press system,” said Mr. Nghia.</p>
+      <br>
+
+      <p>Nonetheless, he also acknowledged existing issues that must be addressed, including instances of information bias in some press agencies, commercialized content, ethical breaches and outdated newsroom management practices in the digital environment.</p>
+      <br>
+
+      <p>To carry forward the 100-year legacy of the revolutionary press, according to Mr. Nghia, the press will continue to build, foster and elevate a new generation of journalists with sharp minds, pure hearts and a strong sense of duty, working in true service to the nation and the people. Journalists must be professionally excellent, politically alert, socially aware and technologically adept.</p>
+      <br>
+
+      <p>Mr. Nguyen Xuan Thang, Director of the Ho Chi Minh National Academy of Politics and Chairman of the Central Theoretical Council, emphasized the need to improve the legal framework for journalism in the digital context to further promote the positive role of the press in the country’s innovation, integration and development. This includes timely legal updates to ensure clarity and transparency, and facilitate innovation while maintaining political direction.</p>
+      <br>
+
+      <p>He also stressed the importance of enhancing political courage, professional ethics and expertise of journalists through training in political theory and job skills. At the same time, the application of digital technologies, especially artificial intelligence, big data and cloud computing, must be accelerated to meet comprehensive digital transformation, hence modernizing newsroom operations, streamlining content production, personalizing content for target audiences, strengthening the press’s influence and leadership and shaping public opinions.</p>
+      <br>
+
+      <p>Through a century of development, Vietnam’s revolutionary press has been on a splendid journey, always sided with the nation and the people, proven itself a core and pioneering force on the ideological and cultural front, and excellently contributed to national liberation, construction, defense and development. It now stands ready to follow the nation as it enters the ascending era of the nation.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

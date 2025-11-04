@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Revising Vietnam's Economic Strategy for New Era</h1>
+      <p class="meta">9:18:20 AM | 12/4/2024</p>
+      <p><b>The period of 2024-2025 is important as Vietnam completes its 2021-2025 development plan. Revising economic strategies and policies to address climate change and global uncertainties is an extremely important task.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business42.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Supporting policies should prioritize production and export, capitalize on trade agreements, and mitigate maritime transport risks amid geopolitical tensions
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>2024 - A difficult year</b></p><br>
+
+      <p>According to Dr. Tran Thi Hong Minh, Director of the Central Institute for Economic Management (CIEM), Ministry of Planning and Investment, the global economy is shifting between liberalization and protectionism, with growing trends in innovation, technology and environmental protection. In this context, countries, including Vietnam, are adjusting strategies to strengthen their position in the global value chain and attract trade and investment. 2024 presents hardships for Vietnam, with geopolitical instability, natural disasters and a still-weak domestic economy. Economic modernization is progressing slowly and regional economies are facing a slowdown.</p><br>
+
+      <p>Dr. Nguyen Huu Tho, Head of the Economic Analysis and Forecasting Department at CIEM, said that Vietnam has regained growth, leading ASEAN in recovery post-COVID, but the domestic economy remains weak in accessing international markets. Economic modernization is slow, and key cities like Ho Chi Minh City and Hanoi are showing signs of slowdown. In 2025, production and business conditions are expected to improve, with PMI above 50, but the number of enterprises may not rise much. State capital will remain dominant and FDI is expected to stay strong. While purchasing power will grow slightly, workers' incomes remain stagnant. Exports will benefit from global trade recovery and trade agreements.</p><br>
+
+      <p><b>Removing barriers</b></p><br>
+
+      <p>To promote economic growth in the new context, according to Dr. Nguyen Huu Tho, to improve institutions, it’s important to remove barriers in implementing laws from 2023 and 2024, and to reform business procedures to align with market needs. For development resources, private capital mobilization should be increased, while reducing waste in both public and private sectors. Continued investment in "hard" infrastructure is needed to boost regional connectivity, and address gaps in "soft" infrastructure, such as improving online services. Supporting policies should focus on production and export, leveraging trade agreements, and minimizing risks in maritime transport due to geopolitical tensions.</p><br>
+
+      <p>To improve production, business performance and technological progress in key industries, Dr. Luong Van Khoi, Deputy Director of CIEM, emphasized the need for ministries, branches and localities to effectively implement the Politburo's Resolutions, Government Decrees and Prime Minister’s Decisions. These include resolutions such as 23-NQ/TW, 124/NQ-CP, 29-NQ/TW, 111/NQ-CP, 52-NQ/TW, 50/NQ-CP, along with decisions like 1322/QD-TTg, 36/QD-TTg, and 1305/QD-TTg.</p><br>
+
+      <p>He said that a specific policy mechanism is needed to support the development of large ethnic groups and enterprises at the top of both domestic and global value chains, enhancing their productivity and competitiveness. This should include strengthening their linkages with other domestic businesses. Additionally, policies should be issued to improve capital efficiency in key, capital-intensive industries.</p><br>
+
+      <p>“Focus should be placed on managing and utilizing fixed assets in enterprises to improve capital efficiency. Solutions are needed to enhance the policy environment, boost international integration, and help businesses respond to both external shocks and internal challenges. These steps will help increase productivity and unlock greater economic growth potential,” said Khoi.</p><br>
+
+      <p>In particular, it is important to promote the application of science and technology, including supporting national-level scientific tasks to boost productivity in key industries. Solutions should focus on innovations in products, production processes, business methods, marketing and organization. For enterprises, this includes adopting suitable production models, improving production management, and upgrading machinery, equipment and technology.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

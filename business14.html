@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Green Transformation Enhances Competitiveness for Vietnamese Logistics Firms</h1>
+      <p class="meta">11:00:23 AM | 8/19/2025</p>
+      <p><b>According to the World Bank (WB), transport activities in Vietnam emit an average of more than 50 million metric tons of CO2 annually, with road transport accounting for 85%. Green logistics is becoming an essential trend as businesses must optimize efficiency and reduce their environmental impact in the context of globalization and climate change.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business14.png" alt="ADB Press Conference" class="article-img" style="margin: auto">     
+      </figure>
+      <br>
+      <p>The logistics industry is embracing a significant opportunity as Vietnam emerges as one of the countries with a booming e-commerce market. According to statistics, in 2024, Vietnam's retail e-commerce market size reached US$25 billion, a 20% growth from the previous year.</p>
+      <br>
+
+      <p>Vietnam's logistics growth averages 16% annually (according to the WB), playing a crucial role in the yearly growth of Vietnam's total import and export turnover. In 2023, Vietnam ranked 43rd in the Logistics Performance Index and was in the Top 5 among ASEAN countries.</p>
+      <br>
+
+      <p>In recent years, Vietnam has focused on investing in its infrastructure system, with continuous expansion of roads, airports, railways, seaports, warehousing systems and commercial centers. This is coupled with the development of related services, and import-export procedures have also been simplified to improve service quality.</p>
+      <br>
+
+      <p>Notably, the logistics sector has been facilitated for development as the Party and the Government have focused on investing in and promoting green development. For example, Decision 876/QD-TTg, which approves the action program on green energy transition, carbon and methane emission reduction for the transport sector, aims to develop a green transport system to achieve net-zero greenhouse gas emissions by 2050. The Logistics Service Development Strategy for the 2025-2035 period, with a vision to 2050, sets the goal of developing a sustainable, efficient, high-quality, and high-value-added Vietnamese logistics industry that is regionally and globally competitive, leveraging Vietnam's advantages in the global value chain.</p>
+      <br>
+
+      <p>Mr. Tran Thanh Hai, Deputy Director of the Agency of Foreign Trade (Ministry of Industry and Trade), said that the global market has witnessed major shocks in recent years that have not only affected the flow of global goods but also created an urgent demand for the adaptability and resilience of the global logistics industry. In this context, green logistics is defined as a key, a foothold for global businesses, including Vietnamese, to overcome those shocks.</p>
+      <br>
+
+      <p>Green logistics refers to logistics activities that aim for sustainable, environmentally friendly, and protective goals, minimizing negative environmental impacts. By investing in fuel-efficient vehicles, using smart containers, optimizing routes, and digitizing warehouse management, green logistics also helps businesses reduce long-term cost burdens. This is a much-needed “economic shield” when oil and transportation prices are always volatile.</p>
+      <br>
+
+      <p>In the face of the global trend of sustainable development, green logistics is becoming the new standard for the export market and a customer requirement. Major markets like Europe have implemented the Carbon Border Adjustment Mechanism (CBAM), which levies a carbon tax on high-emission imports. Especially, by obtaining green certificates, businesses are creating a significant competitive advantage in an increasingly fierce market.</p>
+      <br>
+
+      <p>Climate change is one of the biggest global challenges of the 21st century. The logistics industry alone contributes an estimated 7-8% of carbon emissions (CO2). Therefore, similar to other economic sectors, developing green logistics and reducing emissions is becoming a critical component of any supply chain.</p>
+      <br>
+
+      <p>However, in reality, according to the Ministry of Industry and Trade, the number of logistics companies implementing this green transition is very limited among the more than 34,000 logistics businesses nationwide because most of them have limited awareness, outdated habits, and infrastructure that does not support the development of green transport vehicles. Green transformation requires a significant investment cost, posing difficulties for businesses, especially SMEs. Additionally, businesses face challenges in choosing technology and a lack of experts with knowledge and capacity to implement these changes.</p>
+      <br>
+
+      <p>To effectively transition to green practices, the logistics sector first needs to shift to renewable energy, such as electric, hydrogen, and LNG-powered vehicles. Vietnam should encourage a shift to waterways and railways, which have large transport capacities. In addition, it is necessary to optimize processes through larger-scale transportation, reducing empty runs, and building smart warehouses and ports. Implementing emission offsets by participating in afforestation is also a recommended direction.</p>
+      <br>
+
+<p>He suggested businesses develop strategies aligned with green development goals; upgrade and expand warehousing systems; invest in modern equipment; and prioritize the use of environmentally friendly transport vehicles. Businesses need to share and cooperate, apply new technologies and AI to optimize operations, and build integrated green logistics models.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

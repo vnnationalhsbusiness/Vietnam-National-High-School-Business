@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>“Investors who are expanding their operations are the best advertisement for Vietnam“</h1>
+      <p class="meta">10:17:10 AM | 7/3/2025</p>
+      <p><b>Adam Sitkoff, Executive Director of the American Chamber of Commerce in Hanoi (AmCham), affirmed in an interview with Vietnam Business Forum that investors expanding their operations are the best advertisement for Vietnam.</b></p>
+      <br>
+      <p>Adam Sitkoff shared his views on Vietnam’s unique appeal to American investors, the emerging sectors attracting new capital, and key regulatory challenges that still need to be addressed. As multinational corporations continue to diversify supply chains, Vietnam’s strategic role has become more prominent than ever.Adam Sitkoff shared his views on Vietnam’s unique appeal to American investors, the emerging sectors attracting new capital, and key regulatory challenges that still need to be addressed. As multinational corporations continue to diversify supply chains, Vietnam’s strategic role has become more prominent than ever.</p>
+      <br>
+      <div style="display: flex; align-items: flex-start; gap: 20px;">
+        <div style="flex: 1;">
+          <p><b>What makes Vietnam an especially attractive destination for American investors?</b></p>
+          <br>
+          <p>In the early years, few American investors focused on Vietnam due to limited market access. 
+          The turning point came with the signing of the U.S.-Vietnam Bilateral Trade Agreement in 2001, 
+          followed by Vietnam’s accession to the World Trade Organization (WTO) in 2007. Since then, U.S. 
+          foreign direct investment has grown significantly, creating tens of thousands of direct jobs and 
+          making a substantial contribution to Vietnam’s exports and tax revenues.</p>
+        </div>
+        <div style="flex: 0 0 250px;">
+          <img src="business19.png" alt="Speaker photo" style="width: 100%; border-radius: 6px;">
+        </div>
+      </div>
+      <br>
+      <p>Vietnam is now considered a strategic partner in the U.S. effort to diversify global supply chains. With its favorable geographic location, young and tech-savvy workforce, and deepening integration into global trade frameworks, Vietnam has become an increasingly attractive investment destination.</p>
+      <br>
+
+      <p>Equally important, the United States remains Vietnam’s largest export market, which continues to drive investment and growth across many sectors. In a time of global uncertainty, when investors are becoming more cautious, I believe Vietnam is well-positioned to capture a new wave of high-quality investment.</p>
+      <br>
+
+      <p><b>Which sectors are drawing the most interest from American investors in Vietnam: high-tech, digital transformation, or green energy?</b></p>
+      <br>
+
+      <p>Vietnam is gradually moving up the global manufacturing value chain. U.S. businesses are not only expanding their factories and supply bases here but are also targeting future-oriented sectors such as semiconductors, artificial intelligence, and sustainable energy.</p>
+      <br>
+
+      <p>To attract more of this capital, close collaboration between the private sector and the Vietnamese government is essential. Businesses need a stable environment that supports innovation, talent development, and domestic supply chain integration.</p>
+      <br>
+
+      <p>At the same time, as Vietnam’s middle class continues to grow, many U.S. firms are increasing exports of agricultural products, aircraft, industrial equipment, healthcare solutions, and consumer technology to the country.</p>
+
+      <figure style="text-align:center; margin:0;">
+        <img src="business19_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Prime Minister Pham Minh Chinh and other delegates at the U.S.-Vietnam Business Summit organized by VCCI in collaboration with AmCham 
+        </figcaption>        
+      </figure>
+      <br>
+      <p>I believe that with continued cooperation between both governments and business communities, Vietnam and the United States can build a mutually beneficial growth model where citizens and enterprises alike benefit from this strategic partnership.</p>
+      <br>
+
+      <p><b>What common challenges do U.S. investors face in Vietnam? What are your recommendations to improve the investment climate?</b></p>
+      <br>
+
+      <p>Like many global investors, U.S. companies are facing a period of considerable economic and geopolitical uncertainty, making investment decisions more cautious. In this context, Vietnam’s ability to maintain its competitive advantage and improve the business environment is essential to attracting and retaining high-quality capital.</p>
+      <br>
+
+      <p>Feedback from AmCham members shows that the biggest challenges are not about market access, but about inconsistency and lack of predictability in policy implementation. Certain new regulations have introduced additional licensing, approval, and reporting procedures, leading to higher compliance costs and longer lead times. Regulations concerning foreign work permits, for instance, remain inconsistent across provinces, creating unnecessary confusion and delays.</p>
+      <br>
+
+      <p>In addition, non-tariff barriers and unclear legal provisions continue to affect the competitiveness of the investment environment. Some American exporters have reported procedural obstacles that distort competition and reduce supply chain reliability.</p>
+      <br>
+
+      <p>We believe that Vietnam needs to accelerate reforms in infrastructure, workforce development, and administrative efficiency. Most importantly, any new regulations should be carefully assessed based on their practical impact on businesses. Investors are not asking for privileges but for a fair, transparent, and predictable environment. As I have said, investors who are expanding their operations are the best advertisement for Vietnam.</p>
+      <br>
+
+      <p><b>After the upgrade to the Comprehensive Strategic Partnership, where does Vietnam stand in U.S. corporate long-term plans, and what will shape future investment decisions?</b></p>
+      <br>
+
+      <p>The upgrade in bilateral relations to a Comprehensive Strategic Partnership was a significant milestone, opening new opportunities for deeper collaboration between governments and business communities. However, from the investor perspective, what matters is not political declarations but the ability to translate strategic commitments into an effective, transparent, and business-friendly environment.</p>
+      <br>
+
+      <p>Vietnam is part of the long-term planning of many U.S. companies, but still largely at the stage of potential. Investors acknowledge Vietnam’s advantages in labor, geography, and trade openness, but they are also closely monitoring how the country addresses core concerns such as tax policy consistency, legal transparency, infrastructure readiness, and data governance.</p>
+      <br>
+
+      <p>No one expects Vietnam to solve everything overnight, but what investors need are clear signals of commitment to reform with timelines, measurable outcomes, and accountability. That is what builds investor confidence and motivates companies to choose Vietnam as a hub for innovation and global production.</p>
+      <br>
+
+      <p><b>As Vietnam prepares to implement global minimum tax rules under the OECD framework, how are U.S. businesses responding? Do you anticipate changes in investment patterns due to this shift?</b></p>
+      <br>
+
+      <p>U.S. companies are closely watching how Vietnam plans to implement global minimum tax rules. This represents a fundamental policy shift, especially for investment models built around tax incentives, which have long been part of Vietnam’s investment attraction strategy.</p>
+      <br>
+
+      <p>In principle, American businesses understand and support the global objective of the OECD to ensure fair taxation. However, what matters now is how Vietnam responds to maintain its appeal, particularly for large, export-oriented investors in sectors such as technology, energy, and supporting industries.</p>
+      <br>
+
+      <p>If traditional tax incentives lose their effectiveness, Vietnam will need to develop alternative support measures. This could include improving infrastructure, investing in high-quality workforce training, and simplifying administrative procedures. What matters most is for the government to deliver a clear, consistent, and predictable message, enabling investors to plan with long-term confidence.</p>
+      <br>
+
+      <p>We have recommended that Vietnam comprehensively review its current investment policy framework and adopt a modern approach aligned with global tax developments. Vietnam’s competitiveness can no longer depend solely on low tax rates. It must be based on an efficient, transparent, and sustainable investment ecosystem. That is the foundation for retaining and expanding American capital in the years to come.</p>
+      <br>
+
+      <p><b>Thank you very much!</b></p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

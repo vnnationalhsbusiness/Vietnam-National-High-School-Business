@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>German Market: Gateway to EU to Boost Vietnamese Exports</h1>
+      <p class="meta">10:11:17 AM | 9/15/2025</p>
+      <p><b>Over the past two decades, trade between Vietnam and Germany has grown significantly, establishing itself as one of the strongest pillars of bilateral cooperation. Serving as a key gateway to the European market, Germany also helps enhance Vietnam’s role in the global supply chain.</b></p>
+      <br>
+      <p>In 2005, two-way trade between Vietnam and Germany was only US$1.5 billion, with Vietnam’s exports to Germany at US$0.9 billion. Although modest, these initial figures formed the basis for the strong growth that followed. A significant turning point came in 2020, when the EU-Vietnam Free Trade Agreement (EVFTA) took effect, creating a policy breakthrough that eliminated tariff barriers and enhanced the competitive advantages of businesses from both countries.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business7.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Vietnamese fruits gain positive reception at a fair promoting Vietnamese goods in Germany
+        </figcaption>        
+      </figure>
+      <br>
+
+      <p>In 2024, bilateral trade reached US$11.7 billion. In 2025, Vietnam’s exports to Germany have shown strong momentum. In the first seven months alone, bilateral trade reached US$5.5 billion, up 20% year-on-year. Importantly, Vietnam has consistently maintained a large trade surplus, nearly US$2.8 billion in the first half of 2025, underscoring the effectiveness and resilience of its exports to this strategic market.</p><br>
+
+      <p>Coffee led the way, with nearly US$870 million in the seven months - double the same period last year. Industrial products surged: machinery, equipment, and spare parts reached US$700-815 million (up nearly 19%); computers, electronics, and components reached US$475-650 million (up over 30%). Textiles and footwear remained stable, while vehicles and parts grew more than 48%, and steel exports rose eightfold. This diversified structure shows that Vietnamese enterprises are gradually penetrating deeper into Germany’s industrial supply chains.</p><br>
+
+      <p>On the import side, Vietnam primarily purchases high-tech products and quality consumer goods from Germany. Machinery and industrial equipment remain the backbone, supporting Vietnam’s production modernization. Processed foods have also grown strongly: milk and dairy products reached about US$688 million (up nearly 13%), while confectionery and cereal products exceeded US$225 million (up nearly 40%).</p><br>
+
+      <p>Vietnam-Germany trade clearly reflects the complementarity between the two economies, given their different positions in the global value chain. Vietnam leverages tariff preferences under the EVFTA, cost advantages, and stable supply capacity to strengthen its presence in Germany, while also improving product quality to meet strict standards. In return, Germany supplies Vietnam with core technologies, machinery, and pharmaceuticals, which are traditional strengths of German industry and vital inputs for Vietnam’s industrialization process.</p><br>
+
+      <p>Germany is Europe’s largest economy with a population of more than 84 million and strong purchasing power, creating a vast, multi-layered, and highly promising market for Vietnamese goods. Beyond being a major consumer market, Germany is also seen as a vital gateway to the EU thanks to its advanced logistics, seaports, and distribution infrastructure. This allows Vietnamese goods not only to reach German consumers directly but also to expand into other European markets. Moreover, the nearly 200,000 Vietnamese people in Germany serve both as a stable customer base and as an effective cultural and trade bridge.</p><br>
+
+      <p>Consumer trends in Germany are shifting toward sustainable, health-safe, environmentally friendly, and socially responsible products. This creates opportunities for Vietnamese goods if they can meet organic standards, eco-labeling, and international certifications. Germans are known for brand loyalty, but they are also increasingly open to international products with good quality and competitive prices. Meanwhile, the rapid development of e-commerce and online shopping opens new distribution channels, requiring Vietnamese businesses to strengthen digital marketing, customer service, and online sales capabilities.</p><br>
+
+      <p>However, opportunities come with significant challenges. Germany is among the most demanding markets in the world, with strict requirements on food safety, quality, traceability, social responsibility, and environmental protection. Its rigorous legal system and inspection procedures require Vietnamese businesses to invest more in deep processing, quality control, brand building, and supply chain transparency. Competition is also fierce, as EU countries, Thailand, India, China, and others all target the same segments.</p><br>
+
+      <p>In other words, Germany is both a golden opportunity and a test of the competitiveness of Vietnamese goods. Businesses must take advantage of the EVFTA while persistently improving quality, upgrading technology, and building brands in order to secure a foothold in this market. Trade experts forecast that Vietnam-Germany trade will continue strong growth, potentially reaching US$15 billion by 2030, with prospects for deeper expansion based on free trade agreements and the complementary needs of the two economies.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

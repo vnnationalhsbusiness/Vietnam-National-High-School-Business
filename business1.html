@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Green Aquaculture – the Key to Sustaining Export Competitiveness</h1>
+      <p class="meta">12:46:45 PM | 10/7/2025</p>
+      <p><b>Facing challenges such as environmental pollution, disease outbreaks, rising costs, and pressure from export markets, the adoption of sustainable farming models has become a decisive factor for Vietnam’s seafood industry to maintain its position, enhance value, and ensure long-term growth.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </figure>
+      <br>
+      <p><b>An urgent demand</b></p><br>
+
+      <p>For decades, seafood has been one of Vietnam’s major export pillars, with annual export turnover consistently exceeding USD 9 billion, providing livelihoods for millions of workers in coastal and delta regions. However, the industry is now at a critical turning point. In the past, ensuring volume and quality was enough for seafood products to reach global markets. Today, the essential requirement for any shipment to enter major markets is the “green” factor.</p><br>
+
+      <p>Amid increasingly complex climate change, shrinking farming resources, and stricter environmental and social standards from key importing markets such as Europe, the US, and Japan, green transformation is no longer merely an external requirement. It has become an internal necessity for Vietnam’s seafood industry. In the coming decade, sustainable export will inevitably depend on the level of “greening” across farming areas, businesses, and the entire supply chain.</p><br>
+
+      <p>Domestically, aquaculture faces mounting challenges. Pollution from intensive farming has reached alarming levels, with untreated wastewater, organic waste, antibiotic and chemical residues directly harming natural ecosystems. As a result, water quality is deteriorating, disease outbreaks are more frequent, production costs are rising, and competitiveness is eroded. Meanwhile, the costs of feed, veterinary drugs, electricity, and water keep climbing, while disease risks constantly threaten, cutting into farmers’ profits under traditional practices.</p><br>
+
+      <p>Climate change makes the situation even more complex. Saltwater intrusion, drought, erratic floods, and rising water temperatures all exert pressure on the sector. Without shifting to sustainable models, it will be difficult to maintain stable supply for exports.</p><br>
+
+      <p>At the same time, domestic consumers are becoming more demanding. Major supermarket chains and restaurants now require VietGAP, ASC, and BAP certifications for seafood products, proving that green transformation is not only to meet international standards but also to secure the domestic market.</p><br>
+
+      <p>Externally, export markets are tightening. The EU is a pioneer in imposing green barriers with regulations on IUU fishing, the Carbon Border Adjustment Mechanism (CBAM), traceability, and emission reduction requirements. No matter how high the quality, shrimp or pangasius that fail to meet environmental standards cannot enter the EU.</p><br>
+
+      <p>The US is also raising the bar with strict food safety, anti-forced labor, traceability, and emission controls. Japan, South Korea, and Australia are following the same trend. Importers in these markets require international certifications such as ASC, BAP, and GlobalGAP. Free trade agreements like EVFTA and CPTPP not only provide tariff preferences but also embed stringent environmental and labor clauses.</p><br>
+
+      <p><b>Successful models</b></p><br>
+
+      <p>In many localities, green transformation in aquaculture is no longer a distant concept but a reality delivering clear benefits. In Quang Tri, high-tech shrimp farming has expanded to over 50 hectares with models such as Biofloc, Semi-Biofloc, and multi-phase farming in net houses. Thanks to synchronized techniques, productivity reaches 20–30 tons/ha/year, 10–15 tons higher than traditional methods, generating VND 500–800 million per hectare in revenue.</p><br>
+
+      <p>In Gia Lai, Viet-Uc Phu My Co., Ltd. has invested in dozens of modern net houses using Biofloc technology to control farming environments. Pioneer households expanded their farms from 1.6 ha to 8 ha, enabling off-season farming and fetching high market prices.</p><br>
+
+      <p>In Khanh Hoa, the “Chinh Floc” model developed by Le Minh Chinh has also achieved impressive results. Using probiotics and biological agents to balance water quality, ponds remain stable even during floods. Yields average 30–35 tons/ha, production costs stay below VND 60,000/kg of shrimp, while selling prices exceed VND 130,000/kg. This allows farmers to secure profits while reducing disease risks and environmental pressure. Beyond shrimp, companies such as Australis and Phuong Minh are investing in HDPE cage farming of marine fish with superior economic returns and sustainability prospects.</p><br>
+
+      <p>These cases demonstrate that with the right technology, farmers can cut input costs, boost productivity, better control disease and the environment, and produce certified seafood that is well-positioned to access premium export markets.</p><br>
+
+      <p><b>Solutions and opportunities for green transition</b></p><br>
+
+      <p>To meet both internal and external demands, Vietnam’s seafood sector needs a comprehensive set of solutions. First is the application of green farming technologies. Biofloc systems, water recirculation, high-tech greenhouse or floating pond shrimp farming are proving effective in cutting emissions, conserving water, and controlling disease. Renewable energy use is also crucial. In the Mekong Delta, solar panels have been installed over ponds, reducing production costs and contributing to lower greenhouse gas emissions.</p><br>
+
+      <p>Secondly, improving broodstock quality is critical to enhancing disease resistance, reducing antibiotic use, and moving toward a sustainable production chain. Expanding adoption of international certifications such as ASC, BAP, and GlobalGAP serves as a “green passport” for Vietnamese seafood to access demanding markets.</p><br>
+
+      <p>Another important path is digitalization and supply chain transparency. Blockchain and QR codes enable traceability from pond to plate, meeting importer requirements and strengthening consumer trust. For these solutions to take hold, policy support is essential. The government and industry associations must promote green credit packages, help businesses access clean technologies, and incentivize renewable energy investments.</p><br>
+
+      <p>Exporters should proactively invest in technology, target international certifications, and build green brands. Farmers need to change production habits, participate in value chain linkages, and ensure data transparency. Meanwhile, the government and associations must promptly issue supportive policies, facilitate preferential financing, transfer technology, and strengthen trade promotion aligned with green standards.</p><br>
+
+      <p>In short, green transformation is no longer a distant notion but an inevitable trend that will define the future of Vietnam’s seafood industry. Falling behind means losing out in the global arena.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+      <img src="business4.png" alt="Ad 1">
+      <a href="business4.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam’s Tilapia Exports in the First 8 Months of 2025 Hit a 5-year High</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

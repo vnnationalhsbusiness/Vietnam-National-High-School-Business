@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Enhancing Business Regulations to Drive Productivity Growth</h1>
+      <p class="meta">8:30:54 AM | 3/10/2025</p>
+      <p><b>To attain high-income status by 2045, Vietnam must accelerate regulatory reforms to drive productivity gains. While the country’s remarkable economic success over the past 30 years has been fueled by export-led foreign direct investment (FDI), sustaining this trajectory requires a sharper focus on accelerating productivity growth.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business29.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Vietnam is supposed to shift from low-value manufacturing to high-tech, skilled, and innovative industries
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>Limited quality of regulations</b></p><br>
+
+      <p>According to a <i>World Bank (WB)</i> report, achieving high-income status by 2045 demands an annual labor productivity growth rate of 6.3%, well above the 5.0% average of the past decade. Vietnam must shift from low-skilled, labor-intensive manufacturing with minimal domestic value-added to higher-value manufacturing and services driven by advanced technology, skills and innovation. Accelerating productivity growth in the domestic private sector will be essential to reaching this goal. However, most domestic private enterprises are micro and small businesses operating in relatively low-productivity service sectors (such as small-scale retail and restaurants) and simple manufacturing activities targeting the domestic market rather than the export market. Vietnam also has very few knowledge-based or innovative startups capable of surpassing existing companies and transforming industries. As a result, the productivity of the domestic private sector is only about one-fifth of that of foreign-invested enterprises. Government policies and regulations create an environment for private enterprises to operate and thus play an important role in promoting business efficiency and supporting productivity growth.</p><br>
+
+      <p>While establishing and running a successful business requires talent and capital, business regulations shape incentives and behaviors that can influence company entry, growth and upgrading, and the exit of less successful companies. Therefore, a clear and predictable legal framework that promotes business dynamism and efficient market functioning, along with effective administrative procedures and quality public services, is crucial to fostering productivity growth. As technology advances, for example, the development of <i>Artificial Intelligence (AI)</i>, the government needs to adjust the legal framework to accommodate new business activities. On the other hand, the global climate crisis and the need to green industries also require policies and regulations that promote business decision-making in line with these goals.</p><br>
+
+      <p>The WB's report <i>"Improving Business Regulations to Support Productivity Growth in Vietnam"</i> shows that Vietnam has undertaken many waves of regulatory reforms, but the quality of regulations remains one of the top concerns of the business community. The current 5-year regulatory reform program issued by <i>Resolution 68</i> aims to simplify or reduce business regulations; cut compliance costs by 20% by 2025. This is important as the percentage of businesses in Vietnam viewing business licenses as a constraint on their operations is higher than the regional average. 65% of respondents in the innovative startup survey said business regulations are a challenge. According to the <i>World Bank Worldwide Governance Indicators (WGI)</i>, Vietnam's regulatory quality score remains much lower than regional countries like Indonesia, Malaysia, Thailand and Singapore. Therefore, regulatory reform, within the broader institutional reform program, is considered one of the three breakthrough reform areas in the <i>10-year Socio-Economic Development Strategy 2021-2030</i>.</p><br>
+
+      <p>In practice, identifying regulations to simplify is mainly carried out in a "bottom-up" manner, whereby ministries propose based on their own assessments, combined with the Prime Minister's directives. However, without clear prioritization criteria, such as focusing on specific industries or regulatory areas, this can be ineffective. Reform efforts could focus on more burdensome regulations and more strategic industries important to Vietnam's growth strategy, such as electronics or renewable energy.</p><br>
+
+      <p>Despite progress, excessive pre-approval licenses, inconsistent terminology and limited risk-based methods pose regulatory challenges. A review identified 1,584 pre-approval and 649 renewal procedures, with the WB recommending restrictions to specific cases.</p><br>
+
+      <p>Inconsistent licensing terms across ministries hinders regulation. While reforms have eased burdens, many only cut paperwork or wait times. Online procedures still require paper submissions and in-person visits for final approvals.</p><br>
+
+      <p>Despite clear agency roles, gaps in implementing <i>Resolution 68</i> persist due to limited resources and weak accountability. It also lacks technical coordination mechanisms for complex regulatory evaluations, often leaving the <i>Office of the Government (OOG)</i> to lead efforts.</p><br>
+
+      <p><i>Resolution 68</i> promotes digital solutions for regulatory improvements, with notable progress in e-Government initiatives like online payments and services. However, the <i>National Database on Administrative Procedures (NDAP)</i>, which is manually updated, remains outdated and lacks legal authority, limiting its effectiveness.</p><br>
+
+      <p><b>Focusing resources on high-impact areas</b></p><br>
+
+      <p>To improve business regulations to support productivity growth and enhance the implementation of <i>Resolution 68</i>, the WB report suggests that, in the short term, Vietnam should prioritize resources in areas likely to achieve the highest results. Priority reforms should target strategic, export-driven sectors, address complex regulations using data and private sector feedback, and enhance OOG’s role in inter-agency coordination to clarify duties and reduce regulatory overlaps. Focusing on sectors will allow for easier coordination and collaboration than choosing individual regulations for reform.</p><br>
+
+      <p>In the medium term, a comprehensive approach to regulatory reform based on digital transformation in public service delivery as part of the next reform program (2026-2030) is needed. This requires developing an <i>e-Government Interoperability Framework (e-GIF)</i> to share and reuse data through standardized web forms and reinforcing the "digital first" principle in the legal framework. This will also involve adopting a risk-based approach to licensing and inspections, supported by a cross-sector legal framework for business licensing (for both legal entities and professionals), and re-evaluating sector-specific pre-approval licensing requirements.</p><br>
+
+      <p>Evaluation priorities could be based on sector relevance (in terms of productivity, employment, etc.); regulatory burden (based on surveys and private sector consultation); and the level of inter-agency coordination and capacity needed for reform. Greater impact could be achieved by leveraging private sector expertise and resources to drive reforms, particularly through the <i>Advisory Council for Administrative Procedures Reform (ACAPR)</i>.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

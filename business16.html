@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Administrative Boundary Restructuring Spurs Real Estate Investment in Vietnam</h1>
+      <p class="meta">9:57:27 AM | 7/25/2025</p>
+      <p><b>The simultaneous implementation of the two-tier local government model and administrative boundary restructuring is bringing significant changes to the local governance system. For the real estate market, this is a pivotal moment, creating breakthrough opportunities to eliminate procedural barriers, improve transparency, and broaden the scope for long-term investment strategies, reinforcing Vietnam's position as an appealing destination on the global real estate map.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business16.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          The two-tier government model is expected to streamline investment licensing and project approvals
+        </figcaption>        
+      </figure>
+      <br>
+      <p>On July 1, 2025, Vietnam officially adopted the two-tier urban government model and reduced the number of provincial-level administrative units from 63 to 34, comprising 28 provinces and 6 centrally governed cities. According to Asia Business Law Journal, this reform is described as “the most ambitious in decades,” aiming to reduce management costs, optimize resources, and promote sustainable socio-economic development.</p>
+      <br>
+
+      <p><b>Advancing transparency and digital transformation toward international standards</b></p>
+      <br>
+
+      <p>According to Do Thi Thu Giang, Director of Advisory Services at Savills Vietnam, the two-tier government model is expected to simplify administrative procedures, particularly in issuing investment licenses and approving construction and development projects. Decentralizing authority to local governments should shorten document processing times and reduce reliance on central agencies, which have often been bottlenecks in major urban projects. This, in turn, can accelerate project timelines, reduce delay-related costs, and boost profits for real estate investors.</p>
+      <br>
+
+      <p>Along with streamlining the administrative system, transparency and predictability in the legal framework are also expected to improve significantly. Consolidating decision-making authority at the provincial level helps remove overlapping responsibilities, one of the main causes of inconsistent interpretation and application of the law. At the same time, digital transformation efforts, such as developing a national land database and an electronic licensing system, will improve information access and reduce opportunities for arbitrary intervention. According to Do Thi Thu Giang, this is a step forward in bringing Vietnam’s real estate market closer to international transparency standards.</p>
+      <br>
+
+      <p>Another notable point is the impact of merging administrative units. Under the 2024 Land Law, merged localities will issue new land price lists. However, this does not mean that all areas in a new province will share the same prices. She explained that the law requires land prices to reflect specific areas and locations, even down to individual plots if sufficient data is available. Therefore, a province-wide price list can still show clear differences in land values, provided it is carefully designed and based on real conditions.</p>
+      <br>
+
+      <p>During the transition period, when the new list is not yet available, she recommended continuing to use the pre-merger land price lists to maintain stability and avoid disruptions in management and revenue collection. For example, the Department of Agriculture and Environment has proposed that Ho Chi Minh City continue to apply three existing land price lists, for Ho Chi Minh City, Binh Duong, and Ba Ria-Vung Tau, from July 1 to December 31, 2025. Starting January 1, 2026, a new land price list will be issued under the 2024 Land Law and Decree 151/2025. This period is also essential for local authorities to prepare databases, digital cadastral maps, and hire independent consultants to develop a more transparent and science-based land pricing system.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business16_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          In 2024, Vietnam attracted US$38 billion in FDI, with real estate making up around 24%
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>Promoting competition to attract investment</b></p>
+      <br>
+
+      <p>In addition to its advantages, decentralization also intensifies competition in investment policies among localities. With greater autonomy, provincial authorities can proactively offer incentives related to taxes, land use and infrastructure development. According to Giang, this compels international investors to adopt a more strategic approach, carefully analyzing regional competitiveness, local development orientations and how well a location aligns with their project goals.</p>
+      <br>
+
+      <p>Data from Savills shows that in 2024, foreign direct investment (FDI) in Vietnam reached US$38 billion, with real estate accounting for about 24%, equivalent to US$9.12 billion. In the first half of 2025, this figure rose to US$11.72 billion, up 8.1% over the same period, with real estate continuing to account for a large proportion at US$5.17 billion. This growth reflects the increasing confidence of international investors, driven by legal and administrative reforms, including the 2024 Land Law, the 2024 Housing Law and the revised Law on Real Estate Business.</p>
+      <br>
+
+      <p>According to Savills, due to land scarcity and rising prices in Hanoi, investors are shifting their focus to Hanoi’s satellite provinces such as Hung Yen, Bac Ninh, and Hai Phong. These areas have emerged as new investment destinations thanks to improved technical infrastructure and attractive incentive policies. For example, Hai Phong is considered to have strong development potential, supported by both domestic and foreign investment projects. In 2024, the city attracted US$3.2 billion in FDI, mostly in the industrial and real estate sectors.</p>
+      <br>
+
+      <p>Major infrastructure projects such as Long Thanh International Airport, Ring Road 3, and metro lines in Hanoi and Ho Chi Minh City are expected to continue driving real estate demand. According to Savills, approximately 9,000 apartments from 34 projects are scheduled for completion in Hanoi by 2025. In Ho Chi Minh City, more than 10,000 apartments are projected to be launched from 2025 onward, with 54% belonging to the B-class segment.</p>
+      <br>
+
+      <p>To fully capitalize on the opportunities brought by the reforms, experts highlighted the need to complete the legal framework and strengthen enforcement capacity. They emphasized that the success of the model depends on the clarity of central policies, the competence of local authorities, and ongoing legal reforms related to land, housing, and real estate investment.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

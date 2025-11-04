@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Ha Nam Ranks Among Vietnam's Top 10 Digital Economy Hubs</h1>
+      <p class="meta">11:08:18 AM | 3/3/2025</p>
+      <p><b>2024 marked a spectacular step forward for Ha Nam on the national digital economy map. With a strong digital transformation strategy, the province successfully entered the Top 10 digitally developed economies in the country and affirmed its position in the digital era.</b></p>
+      <br>
+      <p><b>Digital transformation: Driving force for sustainable growth</b></p>
+      <br>
+      <p>Ha Nam has constantly innovated and fostered technological applications in all economic and social aspects. The effective deployment of digital government, digital economy and digital society projects has yielded a strong catalyst for Ha Nam to achieve a gross regional domestic product (GRDP) growth of up to 10.93% - an impressive figure, likely a best performer in the country.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business30.png" alt="ADB Press Conference" class="article-img" style="margin: auto">    
+      </figure>
+      <br>
+      <p>Currently, Ha Nam has over 140 information technology, electronics and telecommunications companies, mainly residing in Phu Ly City and industrial parks in the province. In addition, about 2,800 local companies have used digital platforms and laid a solid foundation for digital economic development.</p><br>
+
+      <p>In particular, the province launched two main e-commerce platforms: buudien.vn of Vietnam Post Corporation and e-commerce platform of the Ha Nam Department of Industry and Trade. According to the Dashboard System of the Ministry of Information and Communications (tmdt.mic.gov.vn), Ha Nam has to date recorded 15,362 transactions on these platforms, with 92,811 active accounts, 69,747 agricultural production households on the platforms, 89,650 households trained in digital skills and 3,313 products offered on the platforms.</p><br>
+
+      <p><b>The secret to Ha Nam's success</b></p><br>
+
+      <p>This achievement did not come about by chance, but resulted from an effective strategy and strong leadership of the provincial government. Ha Nam focused on developing high-quality human resources, fostering digital skills training, supporting businesses in digital transformation, perfecting telecom infrastructure, and ensuring smooth connectivity.</p><br>
+
+      <p>Every year, the Provincial People's Committee approves budget-funded SME support tasks, including a digital transformation support program that embodies support for consulting costs and support for renting and purchasing digital transformation solutions for businesses. 2,697 small and medium-sized enterprises (SMEs) were estimated to join this program.</p><br>
+
+      <p>Moreover, the province is seen as a trailblazer in digitizing administrative procedures, building e-government and facilitating people and businesses to access public services quickly and effectively.</p><br>
+
+      <p>The Department of Justice has promoted communication measures and supported disseminating laws on online business and transactions to companies and business households. Ha Nam has strictly managed tax revenue from e-commerce activities and business on digital platforms; exploited and utilized e-commerce databases; resolutely fought against tax law violations, especially invoice fraud and tax refund fraud. The province has also effectively applied electronic tax policies to all companies using electronic tax declaration services. 99% of companies have paid taxes electronically via banks and 100% have used electronic invoices. In addition, the Tax Department has launched the "Lucky Invoice" Program to encourage people to get invoices on purchased goods and services as a habit.</p><br>
+
+      <p><b>Vision and aspiration for further growth</b></p><br>
+
+      <p>Being in the Top 10 provinces and cities with digital economic development is not only a proud milestone but also opens up opportunities for Ha Nam to go further. The province strives to have the digital economy account for 25-30% of GDP by 2030 and 40% of GDP by 2045 when it becomes a developed, high-income province that leads other localities in the country in innovation and digital transformation. At the same time, the province also aims to improve competitiveness, attract more technology corporations, develop breakthrough digital economic models to maintain growth momentum and affirm the Ha Nam brand on the map of Vietnam's digital economy.</p><br>
+
+      <p>With strategic steps and unceasing determination, Ha Nam has proven that digital transformation is not only a trend, but also the future, a key path to breakthrough and sustainable development.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

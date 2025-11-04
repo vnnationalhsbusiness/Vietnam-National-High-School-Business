@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>87% of Businesses in Vietnam Face Challenges with Succession Planning</h1>
+      <p class="meta">3:35:57 PM | 9/18/2025</p>
+      <p><b>Global talent solutions provider Robert Walters Vietnam has released a report on the state of succession planning in Vietnam. The study, “Success in succession: Building a leadership pipeline to keep your business thriving”, finds that 87% of businesses face challenges, with 44% lacking a plan and over one in five rating their strategies as ineffective.</b></p>
+      <br>
+      <p>More than half also cite unclear policies and procedures, underscoring the need for structured approaches. At the same time, the report highlights the benefits of effective succession planning, from ensuring leadership continuity and reducing disruptions to improving retention and helping organisations adapt to future challenges.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business6.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          An effective succession plan prepares the organization for the future by identifying, retaining, and developing internal talent into future leaders
+        </figcaption>        
+      </figure>
+      <br>
+
+      <p><b>A smaller and ageing workforce adds pressure</b></p><br>
+
+      <p>Vietnam’s workforce dynamics are adding complexity to these challenges. The country is facing the dual pressures of an ageing workforce and the reluctance of younger generations to step into leadership roles. According to the survey, 37% of organisations reported difficulties in transferring knowledge and expertise to younger employees, while 22% said younger generations are not interested in pursuing leadership positions. A further 16% highlighted challenges in finding suitable replacements for retiring employees, and 18% expressed concerns about losing critical skills and experience. This demographic shift is making it increasingly difficult for Vietnamese businesses to ensure smooth leadership transitions and safeguard long-term organisational resilience.</p><br>
+
+      <p>“In Vietnam’s fast-changing business environment, succession planning is more than a strategic move – it’s a necessity. With limited resources for development and few clear advancement pathways, companies must take proactive steps to identify high-potential talent and nurture them through structured development plans. This not only strengthens leadership pipelines but also ensures long-term organisational resilience,” said Phuc Pham, Country Manager of Robert Walters Vietnam.</p><br>
+
+      <p><b>Cultural norms and structural barriers complicate succession</b></p><br>
+
+      <p>In addition to demographic pressures, the report highlights cultural and organisational factors that shape how companies in Vietnam approach succession planning. Findings show that 67% of organisations emphasise maintaining harmony, 45% respect hierarchy and seniority, and 20% note family influence in business decisions.</p><br>
+
+      <p>On the organisational side, 59% of respondents cited a shortage of qualified talent, 55% pointed to rigid structures, and 35% said factors such as organisation size and industry type complicate the process. Other barriers include insufficient resources for training and leadership development (53%) and lack of leadership buy-in, both making it harder to sustain effective strategies. Together, these realities create substantial obstacles to building strong leadership pipelines and make succession planning in Vietnam particularly complex.</p><br>
+
+      <p>The scarcity of qualified leaders, combined with structural constraints, leaves many organisations unprepared for leadership changes. Larger businesses must navigate intricate hierarchies, while industries face specific requirements that further complicate planning. Without a robust plan, companies risk operational disruption, weakened morale, and loss of stakeholder confidence when transitions occur unexpectedly.</p>
+
+      <figure style="text-align:center; margin:0;">
+        <img src="business6_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Vietnamese businesses are grappling with dual pressures - an aging workforce and a younger generation less inclined to take on leadership roles - making succession planning increasingly challenging
+        </figcaption>        
+      </figure>    
+      <br>
+      <p><b>A roadmap to effective succession planning in Vietnam</b></p><br>
+
+      <p>To overcome these barriers, the report outlines a practical six-step framework to help organisations design and maintain effective succession plans. It encourages companies to first identify critical roles and align them with long-term business objectives, before selecting high-potential employees and assessing their readiness for leadership responsibilities. From there, businesses are urged to develop personalised career paths and retention plans to keep successors engaged, while also planning for positions that may require external recruitment. Finally, companies are advised to review and communicate their succession strategies regularly to ensure alignment with evolving organisational needs.</p><br>
+
+      <p>“Effective succession planning is not just about preparing replacements – it’s about preparing the organisation for the future. In a context where resources for development are limited and career progression opportunities are unclear, companies in Vietnam need to identify the right internal talent and create personalised development roadmaps to retain and nurture them into future leaders,” added Phuc Pham.</p><br>
+
+      <p>The “Success in succession: Building a leadership pipeline to keep your business thriving” report surveyed close to 100 organisations in Vietnam. Respondents came from a diverse range of industries, including manufacturing, FMCG, healthcare, technology, and logistics. The study provides an in-depth look into how Vietnamese companies currently approach succession planning, while also highlighting opportunities for businesses to strengthen their leadership pipelines and future-proof their organisations.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

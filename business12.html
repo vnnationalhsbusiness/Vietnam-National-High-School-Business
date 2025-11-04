@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam Leads Asia Pacific in B2B Card Payments - Visa Study</h1>
+      <p class="meta">10:42:07 AM | 8/28/2025</p>
+      <p><b>As Vietnam’s business landscape rapidly digitalises, a new study commissioned by Visa (NYSE: V), a global leader in digital payments, shows that while Vietnamese businesses are leading the Asia Pacific region in adopting B2B card payments, significant opportunities remain for further growth and business benefits.</b></p><br>
+      <p>The study conducted by KoreFusion, an international strategy consulting firm specialising in payments, found that card payments account for 8.3% of B2B payment volumes among B2B card-accepting merchants in Vietnam – the highest proportion in Asia Pacific, well above the regional average of 3.3%. While domestic bank transfers remain the primary payment method for B2B transactions in the region (92%), Vietnam’s strong card adoption signals the country’s advanced position in digital payments.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business12.png" alt="ADB Press Conference" class="article-img" style="margin: auto">       
+      </figure>
+      <br>
+      <p>Despite this leadership position, the research highlights that Vietnamese businesses can still unlock additional value by increasing card acceptance. The study shows that card payments deliver measurable improvements in operational efficiency, including reduced reconciliation costs, fewer payment disputes, and lower bad debt.</p>
+      <br>
+
+      <p>“Vietnam’s businesses are setting the pace for B2B card payments in the region, but there is still untapped potential. By further embracing digital payment solutions, companies in Vietnam can drive greater efficiency and unlock new revenue streams. Visa is committed to supporting Vietnamese businesses as they continue to modernise and grow alongside with the country’s digital transformation,” said Ms Dung Dang, Visa Country Manager for Vietnam and Laos.</p>
+      <br>
+
+      <p>On average, the research found that card acceptance can lead to a net profitability improvement of up to 52 basis points and a sales uplift of up to 2.14%, with half of card-based sales representing an entirely new business. Beyond these financial gains, card acceptance also delivers a seamless payment experience for customers and helps drive sustainable growth for businesses. Sectors such as Financial & Insurance and Manufacturing are already seeing above-average card payment volumes, but opportunities remain open across all industries. Furthermore, mobile-first acceptance, combined with tailored solutions for different business sizes and categories, helps remove cost and infrastructure barriers and supports merchants along their graduation path – from micro and small sellers to fully qualified, digitally enabled merchants.</p>
+      <br>
+      <div style="float:left; width:45%; margin:10px 20px 10px 0; border:1px solid #ccc; padding:10px; font-style:italic; font-size:15px; line-height:1.5;">
+      <p>In response, Visa is deepening its commitment to empowering businesses by expanding card acceptance and unlocking new digital payment capabilities tailored to the unique needs of the retail sector.</p>
+      <br>
+
+      <p>From streamlining supplier transactions to improving cash-flow visibility, Visa is helping merchants modernize the way they pay and get paid. By working closely with key partners, Visa is driving impactful change across Vietnam’s dynamic commerce ecosystem and laying the foundation for the future of supply chain payments.</p>
+
+      </div>
+      <p>This approach not only strengthens supply chain efficiency but also unlocks cross-border opportunities, enabling businesses to operate more seamlessly and expand into new markets. In line with these efforts, Visa has partnered with the Korea Trade-Investment Promotion Agency (KOTRA) to launch the Global Trade Payment Platform (GTPP) – the world’s first card-based trade payments platform. Through GTPP, Vietnamese companies, particularly SMB importers, can make cross-border B2B card payments to Korean exporters, enhancing working capital, security, and convenience. With Vietnam being Korea’s third-largest export market, this trade corridor presents a significant opportunity to shift from cash to card-based transactions, empowering smaller businesses, fostering growth, and driving greater efficiency in international trade.</p>
+      <br>
+      <p>Leveraging businesses’ growing capabilities and the availability of robust digital infrastructure, business owners now have more opportunities than ever to reach customers, expand offerings, and grow their businesses. Momentum for digitalisation is already building amongst early adopters, with 50% of card-accepting merchants in the study reporting growth in their card payment volumes. This ongoing trend demonstrates the strong and growing potential for B2B card payments to support Vietnam’s economic development.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

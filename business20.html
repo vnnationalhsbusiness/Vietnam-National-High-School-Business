@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Press and Business Strategic Partnership in Private Economic Development  </h1>
+      <p class="meta">9:54:38 AM | 6/23/2025</p>
+      <p><b>The press and businesses are inseparable. In the digital era, the press is not only a channel for information but also plays a role in shaping public opinion, building trust among consumers and investors, and siding with businesses in creating a favorable business environment, especially as the private sector becomes an important driver of growth.</b></p>
+      <br>
+      <p><b>Communicating Resolution 68 and inspiring entrepreneurship</b></p>
+      <br>
+      <p>Vietnam is stepping into a historic phase as its position and strength have matured and the entire political system and the people are all determined and united in preparing necessary conditions for the country to thrive in the new era - a time of prosperity and power. Resolution 68 of the Politburo on private economic development has opened a legal corridor, created an enabling investment environment, and promoted innovation and deep integration. This marks a new period where the private sector is not only a “pillar of support” but is officially recognized as a major “engine of growth” for the nation.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business20.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Journalists and reporters attend and cover a business event
+        </figcaption>        
+      </figure>
+      <br>
+      <p>According to Dr. Phan Van Thuong, a financial and banking expert, the press plays a crucial role in communicating and disseminating Resolution 68 with concrete actions and roles, including overseeing its implementation, providing policy critique, and pioneering the identification of violations and negative behaviors.</p>
+      <br>
+
+      <p>During this period, the role of the press is more important than ever. According to Mr. Le Hoang Chau, Chairman of the Ho Chi Minh City Real Estate Association (HOREA), the press not only reports news but also helps guide public awareness, foster social trust, spread best practices and successful business models, inspire innovations, and fight against behaviors that hinder the development of a healthy business environment.</p>
+      <br>
+
+      <p>The press not only reflects the development path of businesses but also acts as a bridge for businesses to share their brand stories, core values, societal contributions and challenges that require policy support. This partnership creates a positive information ecosystem where both the press and businesses together promote economic development and enhance social responsibility.</p>
+      <br>
+
+      <p>At the same time, the press helps spread positive stories about businesses’ efforts in caring for their employees’ lives and exercising social responsibility, hence contributing to building strong and trustworthy images of businesses to the public.</p>
+      <br>
+
+      <p>Importantly, journalism today is no longer a one-way form of communication. Thanks to digital platforms and technology, businesses can now interact directly with the public through the press - from Q&A columns to online forums and live televisions. This is also a valuable channel for businesses to consult with experts, policymakers and market feedback.</p>
+      <br>
+
+      <p>Mr. Pham Tan Cong, President of the Vietnam Chamber of Commerce and Industry (VCCI), said that the press plays a crucial role, adding that, in the new period when regulatory barriers are gradually being removed and the private economy is defined as a key engine of the economy, the press must engage in this process more deeply and more effectively. In the early days of Doi Moi (renovation), the press strongly supported pioneering people who dared to think, dared to act and dared to spend money on doing business. Today, as the business community has expanded extensively, the press must continue to serve as a bridge, a motivational force and an inspirational catalyst for entrepreneurs who are recognized as economic front-line fighters.</p>
+      <br>
+
+      <p>He affirmed that Resolution 68 is a strategic policy, demonstrating the willpower of central authorities to unlock production resources and enable stronger development of the private economic sector as a vital economic pillar. Previously, the private sector was fragmented and hesitant to grow, but with Resolution 68, there is hope for a new economic era where trust is restored and institutions are significantly improved.</p>
+      <br>
+
+      <p>According to Mr. Phan Xuan Thuy, Vice Chairman of the Party Central Committee’s Commission for Information and Education, and Mass Mobilization, Resolution 68 introduces many new perspectives, goals and solutions for developing the private economy. Therefore, the press must provide accurate, understandable and persuasive information so that all social classes, especially the entrepreneur community, can clearly and fully grasp it.</p>
+      <br>
+
+      <p><b>Close cooperation for timely and accurate information</b></p>
+      <br>
+
+      <p>As an official source of information, the press is a mainstream information channel that is increasingly asserting its irreplaceable role in the communication and sustainable development strategies of businesses. Close and professional cooperation with the press not only helps businesses increase media presence but also contributes to the transparency, fairness and vigor of the business environment in Vietnam. As such, experts recommend that businesses establish close relations with the press to maximize the benefits the latter offers. A more robust cooperation mechanism between press agencies and businesses is needed to convey timely and accurate information. Businesses should actively provide information while the press must have specialized journalists who are knowledgeable in economics and business to deliver insightful and objective coverage. This is especially important in the context where brand-counterfeiting entities may exploit information gaps to spread misinformation. Press agencies need to be invested with resources to conduct in-depth investigative journalism on counterfeit goods, unfair competition, commercial fraud and other issues.</p>
+      <br>
+
+      <p>In implementing Resolution 68, the press plays a particularly important role. According to Associate Professor, Dr. Huynh Thanh Dat, Member of the Party Central Committee and Deputy Head of the Party Central Committee’s Commission for Information and Education, and Mass Mobilization, Resolution 68-NQ/TW is a Party resolution, but its successful enforcement requires the synergized engagement of the entire political system. In this process, the press and authorities must act as comrades with a common goal. When central and local agencies “place orders” and actively provide full, timely information for the press, communication will be more persuasive and effective, avoiding information confusion.</p>
+      <br>
+
+      <p>VCCI President Pham Tan Cong said that VCCI will continue to carry out its assigned duties, with a focus on promoting the development of Vietnamese entrepreneurs and enterprises. To realize Resolution 68, VCCI has worked out specific plans that focus on improving institutions and the business environment and creating the best conditions for the private economic sector.</p>
+      <br>
+
+      <p>VCCI is operating a specialized center to coordinate closely with press agencies, providing complete, accurate and timely information, thus supporting businesses on their development journey, especially in the context of implementing Resolution 68. The press will continue to be a companion that helps foster momentum, trust and renewed vitality for the business community.</p>
+      <br>
+
+      <p>Last but not least, VCCI will further promote its business networking activities. In particular, training human resources and enhancing business ethics and business culture will be strategic focuses.</p>
+      <br>
+      <table style="width:90%; margin:auto; border-collapse:collapse; font-family:Arial, sans-serif; line-height:1.6; color:#222; border:2px solid #000; text-align:center;">
+        <!-- NGUYEN VAN -->
+        <tr>
+          <td style="width:68%; vertical-align:middle; padding:20px; text-align:justify;">
+            <p style="font-style:italic; color:#000; text-align:center;">The press partners with businesses</p>
+            <p style="text-align:center;"><b>Nguyen Van - Vice Chairman of the Hanoi Supporting Industry Business Association (HANSIBA)</b></p>
+            <p>
+              The press is a bridge to link businesses with society and consumers, with other businesses, and with authorities.
+              Moreover, the press is seen as a friend, a guide, and a contributor to the development of businesses and society
+              because it always plays an important and supporting role in assisting businesses in promoting overall development,
+              including environmental protection, job creation, business development, economic growth and social welfare guarantee.
+            </p>
+            <p>
+              The press also organizes philanthropic programs in collaboration with enterprises and entrepreneurs, delivers meaningful
+              and practical initiatives to remote, island, and disadvantaged areas as well as policy beneficiary families. The press
+              contributes to poverty alleviation and disaster and pandemic relief alongside the people.
+            </p>
+            <p>
+              As the first association established in Vietnam to represent supporting industries, the Hanoi Supporting Industry Business Association (HANSIBA) has,
+              since its official founding and operation in 2015, consistently focused on strengthening collaboration with its member businesses and accompanying media
+              agencies from the central level to VCCI’s affiliated units. These press agencies have actively supported and promptly reported on investment, production
+              and business activities of HANSIBA member companies as well as its operations - notably through Vietnam Business Forum Magazine.
+            </p>
+          </td>
+          <td style="width:32%; text-align:center; vertical-align:middle;">
+            <img src="business20_1.png" alt="Nguyen Van" style="width:90%; border-radius:8px;">
+          </td>
+        </tr>
+
+        <tr><td colspan="2" style="height:40px;"></td></tr>
+
+        <!-- VU NGOC -->
+        <tr style="font-style: italic;">
+          <td style="width:68%; vertical-align:middle; padding:20px; text-align:justify;">
+            <p style="font-style:italic; color:#000; text-align:center;">Strong symbiotic relationship in the digital era</p>
+            <p style="text-align:center;"><b>Vu Ngoc</b> - CEO of 9Pay Joint Stock Company</p>
+            <p>
+              In the ascending era of the nation, the role of the press goes beyond merely reporting information, but it also serves
+              as a vital bridge connecting businesses with consumers. The press helps businesses convey their messages truthfully,
+              inspire audiences, and most importantly, build public trust - a fundamental factor for sustainable development in the modern age.
+            </p>
+            <p>
+              As a fintech company, 9Pay shares a similar mission: acting as a payment intermediary that connects domestic and international
+              businesses with Vietnamese users. We take pride in being a safe, fast and transparent digital payment platform that not only
+              serves local users but also contributes to fostering economic trade across Asia as a digital financial bridge.
+            </p>
+            <p>
+              We see a fundamental similarity between the press and companies like 9Pay as they both serve as key connectors in modern society,
+              aiming to improve quality of life and deliver greater value to businesses, individuals and communities. In a rapidly evolving digital economy,
+              the partnership between the press and businesses is more crucial than ever to jointly support small retailers and small enterprises as they
+              gradually embrace digital transformation to keep pace with continuous development.
+            </p>
+            <p>
+              With a spirit of openness and aspirations of a Vietnamese company, 9Pay highly values its relationship with the press and looks forward to
+              further strengthening it. The support and dissemination efforts of the press will continue to be a driving force behind our unwavering
+              commitment to our mission: delivering comprehensive, safe, fast, and transparent digital financial solutions for Vietnamese users and
+              Vietnamese businesses as well as global customers and partners operating in Vietnam.
+            </p>
+            <p>
+              On this occasion, 9Pay would like to extend the best wishes to the business community under the Vietnam Chamber of Commerce and Industry (VCCI)
+              as well as to the whole team at Vietnam Business Forum - a prestigious publication and a vital platform for the business sector. We wish the
+              publication continued growth and success in upholding its role as a trusted voice and steadfast companion of Vietnamese enterprises on their
+              journey to regional and global reach.
+            </p>
+            <p>
+              We firmly believe that on the road ahead, the mutually supportive relationship between the media and businesses will continue to flourish,
+              contributing to the development of a healthy, progressive and sustainable digital ecosystem.
+            </p>
+          </td>
+          <td style="width:32%; text-align:center; vertical-align:middle;">
+            <img src="business20_2.png" alt="Vu Ngoc" style="width:90%; border-radius:8px;">
+          </td>
+        </tr>
+      </table>
+
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

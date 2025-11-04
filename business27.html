@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Navigating Opportunities and Risks in U.S.-China Trade War</h1>
+      <p class="meta">9:08:34 AM | 3/28/2025</p>
+      <p><b>The U.S.-China trade war is driving shifts in global supply chains. Vietnam sees new opportunities in exports and manufacturing, but challenges like rising costs and trade scrutiny pose risks.</b></p>
+      <br>  
+      <p><b>Supply chain diversification on the rise</b></p>
+      <br>
+      <p>Since 2018, the U.S.-China trade conflict has forced a reorganisation of supply chains from purely global to more regionalised networks, with companies prioritising risk management and supply chain resilience over pure cost efficiency.</p>
+      <br>
+      <p>The recently announced tit-for-tat tariffs between the U.S. and China indicate a continuity of the deglobalisation trend, in which the trade war's protective measures might cause negative ripple effects throughout supply chains.</p>
+      <p>According to Dr. Son Nguyen, Lecturer of Logistics and Supply Chain Management at RMIT University, cost implications this time could be substantial with potential price increases in industries directly targeted by the tariffs and related industries such as materials, energy, automotive, and electronics.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business27.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Vietnam should diversify trade through free trade agreements while balancing U.S.-China ties to reduce dependence and secure alternative export markets amid tensions
+        </figcaption>        
+      </figure>
+      <br>
+      <p>“While this creates short-term disruptions and higher operational costs, it is also opening opportunities for new market entrants and alternative manufacturing hubs. Southeast Asian nations, particularly Vietnam, have emerged as primary beneficiaries of this shift across various supply chains,” Dr. Son said.</p>
+      <br>
+      <p>Companies are actively diversifying manufacturing away from China to reduce geopolitical vulnerabilities. They have been establishing redundant supply networks ("China+1" strategy), accelerating automation, and strengthening regional integration.</p>
+      <br>
+      <p>“This diversification of production bases and suppliers ultimately contributes to greater supply chain resilience by reducing over-dependence and creating more flexible, adaptable networks capable of weathering future geopolitical challenges,” Dr. Son commented.</p>
+      <br>
+      <p><strong>Opportunities to increase exports to the U.S.</strong></p>
+      <br>
+      <p>The escalation of U.S. tariffs on Chinese goods presents a significant opportunity for Vietnamese businesses to enhance their exports, according to Dr. Irfan Ulhaq, Lecturer of Logistics and Supply Chain Management at RMIT University.</p>
+      <br>
+      <p>U.S. buyers are seeking alternative suppliers, and Vietnam's strong manufacturing sector, particularly in electronics, textiles, footwear, and furniture, makes it a leading contender. Vietnam's trade agreements and cost-effective production capabilities provide a competitive advantage to secure long-term contracts with U.S. importers.</p>
+      <br>
+      <p>“To fully exploit these opportunities, businesses should adhere to U.S. trade regulations, ensuring transparency in product origin and quality standards. Investing in branding, research and development (R&D), and advanced manufacturing techniques will enhance their competitiveness,” said Dr. Ulhaq.</p>
+      <br>
+      <p>The RMIT lecturer also highlighted the Vietnamese Government’s Decree 182/2024/ND-CP launching the Investment Support Fund to promote high-tech investments, including in semiconductors, AI, and R&D. Incentives under this decree offer additional financial support for expansion, innovation, and technological advancements, enabling businesses to secure their position in the U.S. market.</p>
+      <br>
+      <p>However, Vietnam’s high dependence on U.S. exports (currently accounting for around 30% of Vietnam’s total exports) also makes it vulnerable to U.S. policy changes. Another significant risk is the rising cost of raw materials due to global supply chain disruptions, which could elevate production expenses and diminish export competitiveness.</p>
+      <br>
+      <p>To maintain sustainable growth, Vietnam should see these coming tariff changes as a motivation to develop traceability in its supply chains, said Dr. Hung Nguyen, RMIT Senior Program Manager for Logistics and Supply Chain Management.</p>
+      <br>
+      <p>He explained that traceability in supply chains plays a critical role in helping Vietnam prove the originality of its products and distinguish them from Chinese products. This is especially important given the increasing scrutiny from the U.S. and other global markets over transhipment, where goods are repackaged or relabelled in Vietnam to avoid tariffs on Chinese products.</p>
+      <br>
+      <p>“This trade war offers Vietnam the opportunity to restructure its supply chains. It is not sustainable to become just a waystation for simple packaging. Instead, the country would need more effort for technological value-added processes,” Dr. Hung emphasized.</p>
+      <br>
+      <p>“Businesses should also proactively diversify sources of raw materials for production to avoid being affected by future anti-tax evasion investigations.”</p>
+      <br>
+      <p><strong>The way forward</strong></p>
+      <br>
+      <p>According to Dr. Son Nguyen, Vietnam needs to pursue a balanced, independent, and multi-pronged strategy to capitalise on trade war opportunities while managing associated risks. He proposed five key priorities:</p>
+      <br>
+      <p>First, Vietnam must strengthen its regulatory oversight to prevent trade violations, particularly the illegal trans-shipment of Chinese goods through Vietnam. This is crucial given previous U.S. concerns about Vietnam being used as a backdoor for Chinese exports, which led to punitive tariffs on Vietnamese steel exports.</p>
+      <br>
+      <p>Second, a lesson from the past is that Vietnam should carefully screen incoming FDI to ensure quality investments that bring technology transfer and skilled jobs, rather than just accepting outdated or polluting industries relocating from China. The government needs robust environmental and technical standards while streamlining administrative procedures to attract high-value manufacturing.</p>
+      <br>
+      <p>Third, Vietnam must accelerate infrastructure development, especially in transportation and logistics. Current bottlenecks in ports and roads have been causing concerns among manufacturers who are trying to improve the resilience of their supply chain. Without addressing these gaps, Vietnam risks losing opportunities to other regional competitors.</p>
+      <br>
+      <p>Fourth, Vietnam should intensify workforce development. The country needs to dramatically expand technical training programs to meet the demands of higher-value manufacturing, especially in building the workforce with higher productivity and innovation in the advent of AI technologies, particularly in emerging sectors like semiconductors.</p>
+      <br>
+      <p>Finally, Vietnam should continue diversifying its trade relationships through free trade agreements while maintaining balanced ties with both the U.S. and China. This helps reduce overdependence on any single market and provides alternative export destinations if trade tensions escalate.</p>
+      <br>
+      <p>“By implementing these measures, Vietnam can better position itself to benefit from supply chain shifts while building a more resilient, sustainable economy that moves up the value chain rather than just serving as a low-cost manufacturing alternative to China,” Dr. Son concluded.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

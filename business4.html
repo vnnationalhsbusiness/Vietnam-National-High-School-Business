@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam’s Tilapia Exports in the First 8 Months of 2025 Hit a 5-year High</h1>
+      <p class="meta">3:54:13 PM | 10/1/2025</p>
+      <p><b>According to Vietnam Customs, Vietnam’s tilapia exports (including red tilapia) reached over USD 63 million in the first 8 months of 2025, up 174% from the same period last year. This figure exceeded Vietnam’s tilapia export value over the past five years, since 2020. The US remained the largest importer, accounting for 62% of Vietnam’s tilapia exports.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business4.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </figure>
+      <br>
+      <p>In the same period, red tilapia exports reached USD 11 million, down 1% year-on-year, with the US market making up 25% of the share. Tilapia exports (excluding red tilapia) reached USD 52 million, a sharp increase of 359% from last year, of which 70% was shipped to the US.</p><br>
+
+      <p>According to the International Trade Center (ITC), the US is the world’s largest tilapia consumer, while China is the biggest supplier to both the US and the global market. As of July 2025, tilapia has become the most consumed whitefish in the US, surpassing cod and pangasius. Frozen tilapia fillets (HS code 030461) are the top product consumed by US buyers.</p><br>
+
+      <p>In the first seven months of this year, the US imported more than USD 1.1 billion worth of whitefish, up 8% year-on-year. Of this, frozen tilapia fillets (HS code 030461) alone accounted for USD 262 million, up 19% from the same period of 2024, making up 23% of the US’s total whitefish imports. Vietnam is currently the second-largest supplier of frozen tilapia fillets to the US, after China. This reflects the strong demand and growth potential for tilapia products.</p><br>
+
+      <p>Although Vietnam faces challenges in competing directly with major suppliers such as China, Indonesia, Egypt, and Brazil to become a key global source of tilapia, many Vietnamese enterprises, alongside pangasius, have recently started farming and producing tilapia for export.</p><br>
+
+      <p>The top five exporters of tilapia in the first eight months of 2025 include: INDIAN OCEAN CO., LTD, V FINANCIAL AND INVESTMENT MTV LIMITED COMPANY, NAMVIET JOINT-STOCK COMPANY, KIM PHAT SEAFOOD IMPORT EXPORT CO., LTD, and NVD SEAFOOD CO., LTD.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

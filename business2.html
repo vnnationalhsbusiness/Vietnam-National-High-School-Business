@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</h1>
+      <p class="meta">10:06:49 AM | 10/6/2025</p>
+      <p><b>With fires, accidents, and natural disasters growing more complex, fire safety is not only the responsibility of authorities but also of society as a whole. The Vietnam Fire and Rescue Association (VFRA) serves as a bridge connecting state agencies, businesses, and communities to promote legal awareness and strengthen capacity in fire safety and rescue.</b></p>
+      <br>
+      <p>On the occasion of National Fire Prevention, Fighting and Rescue Day, we conducted an interview with Mr. Nguyen Do Tung Cuong, Chairman of VFRA.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </figure>
+      <br>
+      <p><b>Since its establishment, how has VFRA affirmed its role in supporting state agencies, spreading legal policies, and protecting members’ legitimate rights?</b></p><br>
+
+      <p>VFRA is the only professional-social organization in the field of fire safety and rescue with official legal status and nationwide coverage. It operates under the state management of the Ministry of Home Affairs, the Ministry of Public Security, and other relevant ministries and agencies. The association was founded on a non-profit, non-commercial basis.</p><br>
+
+      <p>Among its core functions, VFRA cooperates closely with state management bodies to disseminate legal policies, knowledge, and skills on fire prevention, fighting, and rescue. Its communication efforts are diverse, combining traditional mass media with modern digital platforms such as VFRA’s online portal and social media channels including Facebook, YouTube, Zalo, and TikTok.</p><br>
+
+      <p>Specialized campaigns are organized to meet real-life needs, such as the “Safe Fire Safety Neighborhoods” model, the “Four On-the-Spot” solution, removing iron cage balconies from residential buildings, and fire safety solutions for mixed-use buildings combining housing and business. Recently, VFRA has also focused on promoting the new Law on Fire Prevention, Fighting, and Rescue 2024 and guiding documents effective from July 1, 2025.</p>
+
+      <figure style="text-align:center; margin:0;">
+        <img src="business2_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </figure>
+      <br>
+      <p>VFRA works closely with the Department of Fire Prevention, Fighting and Rescue (Ministry of Public Security) and provincial police departments to provide regular hands-on training for communities, strengthening overall capacity. It also unites members, protects their interests, supports enterprises, and serves as a bridge with state agencies. The association also guides members on new regulations, standards, and technical norms, while helping resolve implementation challenges.</p><br>
+
+      <p>Furthermore, the association collects and consolidates member enterprises’ feedback to submit recommendations to competent authorities on policies, regulations, and particularly on the development and supplementation of standards, norms, and the Law on Fire Prevention, Fighting, and Rescue 2024 and its implementing documents.</p><br>
+
+      <p><b>What are VFRA’s key priorities and main activities to meet the growing demands of fire safety and rescue today?</b></p><br>
+
+      <p>VFRA has outlined key priorities for the coming time as follows:</p><br>
+
+      <p>First, working closely with state management agencies to regularly disseminate knowledge and provide training for citizens, organizations, and businesses in fire prevention, fighting, and rescue, while strengthening the “All-People Join Hands in the Fire Prevention, Fighting, and Rescue Movement” to enhance overall social capacity.</p><br>
+
+      <p>Second, bringing together and supporting organizations, businesses, and individuals in or related to fire.</p><br>
+
+      <p>Third, actively engaging in research, policy consultation, and social feedback, with proposals for amending, supplementing, and introducing new regulations, standards, and technical norms that reflect practical needs.</p><br>
+
+      <p>Fourth, reinforcing ties with domestic and international associations and organizations to support Vietnamese enterprises in accessing export markets and to expand cooperation and international support in fire prevention, rescue, and disaster response.</p><br>
+
+      <p>Fifth, extending community support through the “For Peaceful Life” program, launched in December 2022, which assists victims of disasters and fires in recovery and livelihood stabilization, while seeking closer collaboration with charitable groups to ensure more effective implementation of humanitarian initiatives.</p><br>
+
+      <p><b>How has VFRA strengthened member connectivity, renewed its operations, and expanded international cooperation?</b></p><br>
+
+      <p>VFRA partners with research institutes and scientists to integrate fire safety technologies and solutions into enterprise production, while also supporting commercialization. The association has held meetings with leading domestic research institutions and universities to connect enterprises with practical, high-application research for production, and to develop projects upgrading technologies in line with real-world requirements.</p>
+
+      <figure style="text-align:center; margin:0;">
+        <img src="business2_2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </figure>
+      <br>
+      <p>VFRA also conducts visits to member enterprises to evaluate production capacity and understand their difficulties, working directly or in coordination to address them. To strengthen member connectivity and promote cross-use of products and services, VFRA organized a business cooperation forum, providing opportunities for enterprises to present products and exchange business opportunities.</p><br>
+
+      <p>On international cooperation, VFRA strengthens ties through Vietnamese overseas missions, international chambers of commerce in Vietnam, and global trade promotion organizations to support enterprise exports.</p><br>
+
+      <p>Significantly, VFRA has cooperated with the Department of Fire Prevention, Fighting and Rescue (Ministry of Public Security) and relevant agencies to organize the International Fire Safety, Rescue, Security Exhibition in 2023, 2024, and 2025.</p><br>
+
+      <p>VFRA has also built partnerships with many international associations, such as those in Japan, South Korea, Singapore, and India, to exchange knowledge, experiences, and cooperation in fire prevention, fighting, and rescue.</p><br>
+
+      <p><b>What is your assessment of Law 55/2024/QH15, Decree 105/2025/ND-CP, and Circular 36/2025/TT-BCA? What positive impacts do they have on member enterprises, and what recommendations does VFRA propose for effective implementation?</b></p><br>
+
+      <p>Law 55/2024/QH15 on Fire Prevention, Fighting, and Rescue, effective July 1, 2025, introduces major reforms and creates favorable conditions for deploying fire safety solutions.</p><br>
+
+      <p>The new law cuts 75% of administrative procedures in the sector (from 37 to 9), streamlining processes, reducing costs, and making services more convenient for citizens and enterprises, while opening the fire safety service sector to full social participation.</p>
+
+      <figure style="text-align:center; margin:0;">
+        <img src="business2_3.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+      </figure>
+      <br>
+      <p>Together with other innovations, these are breakthrough reforms to accelerate fire safety investment projects and promote social participation in fire prevention, fighting, and rescue.</p><br>
+
+      <p>To ensure effective implementation of the new law, VFRA has submitted two major recommendations to the Prime Minister and relevant ministries:</p><br>
+
+      <p>First, requesting the Ministry of Construction to urgently issue detailed guidance on design appraisal, acceptance, and inspection under the new law, and to continue holding annual training conferences in 2025 and 2026 with the participation of the Fire Prevention, Fighting and Rescue Police Department to ensure effective coordination.</p><br>
+
+      <p>Second, regarding the development of the fire safety equipment industry, VFRA recommends that the Ministry of Finance propose to the National Assembly the inclusion of “production and assembly of fire safety equipment and vehicles” in the list of incentivized investment sectors under the Law on Investment and its guiding decrees.</p><br>
+
+      <p>Additionally, as no preferential tax policies currently exist for the production or import of fire safety equipment and materials, VFRA proposes that the Government assign the Ministry of Finance to develop a detailed list of items eligible for tax incentives to encourage sector development.</p><br>
+
+      <p><b>Thank you very much!</b></p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+      <img src="business4.png" alt="Ad 2">
+      <a href="business4.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam’s Tilapia Exports in the First 8 Months of 2025 Hit a 5-year High</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

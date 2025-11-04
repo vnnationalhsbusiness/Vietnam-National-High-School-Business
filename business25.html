@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam Expands Agricultural Exports to China</h1>
+      <p class="meta">11:25:06 AM | 4/28/2025</p>
+      <p><b>Viet Nam and China have signed four new protocols allowing the official export of chilli, passion fruit, bird’s nest, and rice bran from Viet Nam to the Chinese market.</b></p>
+      <br>
+      <p>To date, 16 types of Vietnamese fruits and vegetables have been exported to China via official channels, including 10 items with signed export protocols: watermelon, mangosteen, black jelly, durian, frozen durian, fresh coconut, fresh banana, sweet potato, chili, and passion fruit.</p>
+      <br>
+      <p>Six export items have not yet been formalized through export protocols, consisting of dragon fruit, rambutan, mango, lychee, longan, and jackfruit.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business25.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Vietnamese bird's nest
+        </figcaption>        
+      </figure>
+      <br>
+      <p>China is actively working to license the import of other Vietnamese agricultural products, such as citrus fruits and traditional herbal medicine derived from plants.</p>
+      <br>
+
+      <p>China remains Viet Nam's largest agricultural export market, while Viet Nam is China's top trading partner in ASEAN. Last year alone, Chinese consumers spent approximately US$4.6 billion on Vietnamese fruits and vegetables.</p>
+      <br>
+
+      <p>Specifically, durian led the way with over US$2.84 billion in exports in the first 11 months, followed by dragon fruit at US$320 million, banana at US$220 million, and jackfruit at US$240 million.</p>
+      <br>
+
+      <p>According to <i>Dang Phuc Nguyen</i>, Secretary-General of the <i>Viet Nam Fruit and Vegetable Association</i>, the surge in fruit and vegetable exports to China is due to both countries participating in bilateral free trade agreements such as the <i>ASEAN–China Free Trade Agreement</i> and the <i>Regional Comprehensive Economic Partnership (RCEP)</i>, as well as export protocols signed between the two sides.</p>
+      <br>
+
+      <p><i>"With a population of 1.4 billion, China is the world's most attractive consumer market. Despite being geographically distant, even countries like the U.S. and Chile are actively vying for market share,"</i> Nguyen noted.</p>
+      <br>
+
+      <p>Opportunities for Vietnamese fruit exporters remain vast. Besides the 14 officially recognized agricultural products, most others are still exported through unofficial border trade.</p>
+      <br>
+
+      <p>Meanwhile, demand for quality agricultural products in China continues to grow, and Viet Nam is well-positioned with a steady supply of specialty fruits.</p>
+      <br>
+
+      <p>To date, the two countries have signed 24 memoranda of understanding and protocols on importing and exporting agricultural, forestry, and fishery products.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

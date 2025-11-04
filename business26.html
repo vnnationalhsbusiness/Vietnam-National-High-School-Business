@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>High-speed Railway: Strategic Leverage for Vietnam to Leapfrog in Global Value Chain</h1>
+      <p class="meta">9:14:36 AM | 4/23/2025</p>
+      <p><b>Vietnam is entering an important phase with two strategic railway projects: North-South High-speed Railway and Lao Cai-Hanoi-Hai Phong Railway. These projects are not only massive infrastructure investments but also a golden opportunity for Vietnam to boost supporting industries, upgrade supply chains and attract high-quality investment. In his talks with our reporter, Mr. Shi Jian Ya, Vice Chairman & General Secretary of the China Chamber of Commerce in Vietnam, shared valuable insights from China and recommended solutions for Vietnam to enhance its attractiveness and internal capacity on the regional production map.</b></p>
+      <br>
+      <div style="display: flex; align-items: flex-start; gap: 20px;">
+        <div style="flex: 1;">
+          <p><b>Vietnam is carrying out two important railway projects. What are your perspectives on these two projects’ role for the Vietnamese economy and the opportunities for industrial supporting companies in these projects?</b></p>
+          <br>
+          <p>North-South High-Speed Railway and Lao Cai-Hanoi-Hai Phong Railway are key measures to speed up national modernization and regional connectivity, with far-reaching economic significance. From a macro perspective, the North-South High-Speed Railway, running through the North-South Economic Corridor is expected to significantly reduce transportation time and costs, promote resource integration and labor division along the route, and foster balanced development between the North and the South. While the Lao Cai-Hanoi-Hai Phong Railway will strengthen the connection between the Hanoi-Hai Phong Economic Triangle and the China-Vietnam border, improve cross-border trade performance and consolidate Vietnam's position in the regional supply chain.</p>
+        </div>
+        <div style="flex: 0 0 250px;">
+          <img src="business26.png" alt="Speaker photo" style="width: 100%; border-radius: 6px;">
+        </div>
+      </div>
+      <br>
+      <p>The two major projects will open up many opportunities for supporting industries. First, the demand for infrastructure will directly bolster the growth of industries such as steel, building materials and construction machinery, and local suppliers can improve production capacity and quality standards through technical cooperation. Second, digital signaling systems supporting railways, new energy locomotives and other fields will open up new opportunities for technology companies to foster innovation. In addition, derivative industries such as logistics, warehousing and tourism services along the routes will expand when transportation efficiency is improved, stimulating the development of small and medium-sized enterprise clusters. If the projects can strengthen policy guidance in local procurement, professional training and other aspects, they can form internationally competitive supporting industrial chains and promote Vietnam's transformation from a “processing base” to a “production center.”</p>
+      <br>
+      <p><b>China has a broad railway network which has operated efficiently over time. Could you please tell us about your experience in rail construction and the participation of supporting industrial companies in China's railway projects?</b></p>
+      <br>
+      <p>After decades of development, China's railway system has become the largest and most technologically advanced and modern in the world. So far, the total operating length of China's high-speed railway has exceeded 45,000 km, accounting for more than two-thirds of the world's total operating length of high-speed railway. Its successful experience can be summarized in the following three aspects:</p>
+      <br>
+      <p>(1) The high-level planning framework and the market regime are promoted in a coordinated manner. China has included railways into the national strategy and clarified development plans through the Medium- and Long-term Railway Network Plan. At the same time, the country has introduced social capital and mixed ownership reforms to achieve the diversification of investment entities. For example, the Beijing-Shanghai High-Speed Railway has optimized its asset structure through by going public listing and become one of the world's most profitable high-speed railways. The combination of centralized resource allocation directed by the government and market-oriented operation ensures the efficient implementation of major projects.</p>
+      <br>
+      <p>(2) Technological innovation stimulates the upgrading of the entire industrial chain. China used the independence of the "Fuxing" EMU as a breakthrough and built a complete technical system including design, manufacturing, operation and maintenance. Through an integrated model of “production, training, research and application,” advanced technologies such as Beidou positioning, 5G communication and new materials have been rapidly adopted in the railway system. This has raised the localization rate of locomotives, signaling equipment, construction machinery and other components to over 90%. Driven by technology absorption and innovation, China has advanced from being an importer to an exporter of railway systems, as seen in projects like the China-Laos Railway, Malaysia’s East Coast Railway, the Mombasa-Nairobi Railway, and the Jakarta-Bandung High-Speed Railway in Indonesia.</p>
+      <br>
+      <p>(3) Industrial chain cooperation and the deep participation of small and medium-sized enterprises (SMEs). China's railway projects formed an ecosystem of "leading companies + supporting clusters". With China Communications Construction, CRRC and China Railway being the core, more than 100,000 supporting companies are involved in the supply chain, including sub-industries such as precision components, intelligent control systems and green building materials. For example, Zhejiang-based private companies account for more than 60% of the global market share of key components such as contact network insulators and bearings. The government guided SMEs to transform toward “specialization, precision and innovation” through special funds, tax incentives and other policies, and established a technology sharing platform to promote collaborative innovation in the industrial chain.</p>
+      <br>
+      <p>Impact on supporting industries: Railway construction created a major market opportunity. The equipment manufacturing industry was upgraded through the introduction of technical standards, digital operation and maintenance services (such as intelligent inspection robots and big data scheduling systems). At the same time, the “Railway Economic Belt” increased the value creation in logistics, tourism, real estate and other industries along the route and formed a regional development model of "linear corridor-led development". Chinese experience shows that railway modernization is not only a revolution in transportation but also a catalyst for a leap in the capacity of the entire industrial chain.</p>
+      <br>
+      <p>Currently, some Chinese supporting and high-tech companies are investing and manufacturing products in Vietnam. Could you tell us about the development potential in the market as well as their obstacles in operation?</p>
+      <br>
+      <p>Chinese investment in Vietnam's supporting and high-tech industries is emerging as a new driver of bilateral economic and trade cooperation, bringing both significant potential and notable challenges.</p>
+      <br>
+      <p><em>Development potential</em></p>
+      <br>
+      <p>Location and policy benefits: Vietnam is located in the heart of the RCEP (Regional Comprehensive Economic Partnership) area, enjoys tariff incentives under this free trade agreement, and is promoting the Industrialization 2.0 Strategy, with a focus on developing high-end manufacturing such as electronics and machinery. Industrial transfers of Chinese companies in semiconductor packaging, new energy batteries and other areas can allow them to cooperate with Vietnam to leverage each other's industrial chain advantages and integrate into the global supply chain.</p>
+      <br>
+      <p>Demand for supporting industrial chains: Vietnam's manufacturing sector still relies on imported commodities (accounting for about 65%). China's advantages in manufacturing capacity and know-how in supporting industries such as precision molds and motor controllers can fill the gap in Vietnam's domestic support. For example, Luxshare Precision's electronic components plants in Bac Giang province, Vietnam have strongly supported Samsung and Apple.</p>
+      <br>
+      <p>Digital infrastructure opportunities: Vietnam aims for the digital economy to contribute 30% of GDP by 2030. Huawei and ZTE are expected to supply technologies for 5G base stations and data centers, tapping into related markets like the Internet of Things and smart cities.</p>
+      <br>
+      <p><em>Challenges and difficulties</em></p>
+      <br>
+      <p>Policy uncertainties: Vietnam takes a long time to grant foreign investment licenses, strictly controls land ownership, enforces environmental protection regulations, and conducts tax compliance assessments. Some Chinese companies have faced operational risks due to unfamiliarity with local labor laws, such as handling strikes.</p>
+      <br>
+      <p>Supply chain bottlenecks: Domestic inputs are in short supply, making it important to import certain materials from China and other countries. Logistics costs make up over 15% of production expenses. Until railway projects like the Lao Cai-Hanoi-Hai Phong Railway are completed, the inefficiency of road transport limits the release of production capacity.</p>
+      <br>
+      <p>Outlook: Chinese companies need to strengthen localization, improve the level of Vietnam's supply chains through professional training and take advantage of China-Vietnam cross-border cooperation zones to optimize production capacity layout, transform the "China technology + Vietnam production" model into sustainable competitiveness.</p>   
+      <figure style="text-align:center; margin:0;">
+        <img src="business26_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Vietnam’s railway projects are key measures to speed up national modernization and regional connectivity, with far-reaching economic significance
+        </figcaption>        
+      </figure>
+      <br>
+      <p><strong>What steps does Vietnam need to adopt to facilitate foreign industrial supporting and high-tech investors, including those from China?</strong></p>
+      <br>
+      <p>Vietnam could further optimize the business environment for foreign investment in supporting industries and high-tech sector by focusing on the following five aspects:</p>
+      <br>
+      <p><em>Optimizing the policy system and enhancing transparency</em></p>
+      <br>
+      <p>Simplifying administrative procedures: Integrating the single-window mechanism in approving foreign investment, shortening the implementation cycle of high-tech projects (for example, by reducing waiting time for an industrial zone construction license to 30 days), and establishing an inter-sectoral coordination mechanism to reduce ambiguities in policy enforcement.</p>
+      <br>
+      <p>Stabilizing the legal framework: Issuing detailed regulations on tax incentives (such as extending the period of exempting and lowering corporate income tax), land lease (allowing foreign capital to use land for a long time), and localization requirements in order to minimize disruptive policy changes.</p>
+      <br>
+      <p><em>Upgrading infrastructure and supply chain support</em></p>
+      <br>
+      <p>Accelerating the construction of key projects like North-South High-Speed Railway, expanding Hai Phong Port, reducing cross-border logistics costs between China and Vietnam (for example, shortening the current 5-day road transport time from Hanoi to Shenzhen to match the 3-day standard of the China-Laos Railway); establishing a specialized fund to support industries, promote domestic input supply and reduce dependence on imported intermediate products (such as by supporting the local production of plastic resins and alloy materials).</p>
+      <br>
+      <p><em>Technical cooperation and talent reserve</em></p>
+      <br>
+      <p>Building a “government, industry, academia and research” collaboration platform: Encouraging Chinese companies to jointly build training bases with Vietnamese universities (such as the Huawei IT Academy model) to train technical workers in mechanical automation and semiconductor technology; providing incentives such as additional R&amp;D cost deductions for foreign companies introducing advanced technologies.</p>
+      <br>
+      <p>Relaxing visa restrictions on technical talent: Allowing foreign engineers to stay for a longer time, simplifying customs clearance procedures for equipment imports, and ensuring effective technology transfers.</p>
+      <br>
+      <p><em>Regional coordination and cross-border facilitation</em></p>
+      <br>
+      <p>Promoting the China-Vietnam cross-border economic cooperation: Piloting mechanisms such as “two countries, one inspection” and data interoperability to facilitate the a labor division chain of “China Research and Development - Vietnam Production - RCEP Market”; Implementing pilot projects for digital currency payments to help reduce foreign exchange risks.</p>
+      <br>
+      <p><em>Incentive mechanisms toward sustainable development</em></p>
+      <br>
+      <p>Foreign-invested projects involved in green technology (such as recycling new energy batteries), digital upgrading (smart factories), and other fields to be given priority in land use and carbon quota subsidies to guide investment and fulfill Vietnam's Net Zero 2050 goals.</p>
+      <br>
+      <p>Through above measures, it is believed that Vietnam could gradually build a competitive combination of “cost advantage + industrial chain resilience + innovation ecosystem”, while attracting foreign investment and promoting domestic industries which help to enhance the positions in the value chain.</p>
+      <br>
+      <p><b>Thank you very much!</b></p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam’s Gen Z Drives Secure and Inclusive Digital Payments</h1>
+      <p class="meta">2:24:50 PM | 9/5/2025</p>
+      <p><b>Findings highlight high financial ambition, frequent e‑commerce use, and elevated security expectations, signalling demand for trustworthy, easy‑to‑use payment experiences across platforms for young people in Vietnam.</b></p><br>
+      <p>A new wave of Vietnamese consumers is reshaping money management. Gen Z, who account for roughly a third of the total workforce in Vietnam with more than 19 million people aged 14–27, is financially aware, digitally fluent, and focused on personal fulfilment, changing how everyday payments are made, protected, and experienced. These Vietnam-specific findings were highlighted in Gen Z Decoded, a study commissioned by Visa (NYSE: V), a global leader in digital payments’s. Visa’s Insights & Analytics team surveyed more than 560 Gen Z respondents across 14 markets in December 2024.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business10.png" alt="ADB Press Conference" class="article-img" style="margin: auto">       
+      </figure>
+      <br>
+      <p>Young consumers are clear about what they need from payments. Many are working toward concrete goals – two thirds are actively pursuing financial targets and one in three lists financial independence as a top ambition – while also navigating the pressure of rising costs. They shop online frequently, often with small sellers or secondhand platforms, and discover products through social content. Above all, they want payment experiences that feel effortless and safe: fast when life moves quickly, simple when choices are overwhelming, and secure when risks aren’t always visible. With one in four worried about scams, trust has become a central feature of the payment experience, not an add-on.</p><br>
+      <p>Against this backdrop, consumers can expect stronger protections that work quietly in the background – smarter verification, clearer alerts, and fewer unnecessary declines – so legitimate purchases go through smoothly while suspicious activity is stopped early. As social and secondhand shopping grow, safeguards are extending to where young people spend their time, reducing scam exposure without adding friction. Whether paying by card, mobile wallet, or bank transfer, the experience is moving toward consistent security and easier issue resolution, alongside more tools and education to help people spot red flags and stay in control of their money.</p><br>
+      <div style="float:left; width:45%; margin:10px 20px 10px 0; border:1px solid #ccc; padding:10px; font-style:italic; font-size:15px; line-height:1.5;">
+          <p><b>Visa’s <span style="font-style:normal;">Marketing Services</span></b> help brands connect with Gen Z through data-driven insights and creative strategies that reflect what this generation values – authenticity, relevance, and well-being. From personalised campaigns to performance optimisation, these services support businesses in building trust and meaningful engagement with young audiences.</p>
+      </div>
+      <p>“Digital and financial inclusion are vital to Vietnam’s next phase of growth, and Gen Z is setting the pace. Consumers want payments that just work quickly, simply and safely they can focus on living, learning, and building businesses. Visa’s role is to be the connector across the payments ecosystem, linking banks, fintechs, merchants, platforms, and policymakers so innovation reaches people faster and more securely. We’re committed to expanding acceptance, strengthening protections, and building digital confidence through education and partnerships, so everyone can participate fully in Vietnam’s dynamic digital economy,” said Ms. Dung Dang, Country Manager for Visa Vietnam and Laos.</p>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

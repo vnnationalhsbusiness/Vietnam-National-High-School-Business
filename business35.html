@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Vietnam's State Budget Revenue Surpasses VND2,000 Trillion for First Time</h1>
+      <p class="meta">9:04:39 AM | 1/28/2025</p>
+      <p><b>In 2024, amid global and domestic challenges, the financial sector implemented innovative management solutions and flexible fiscal policies, effectively contributing to the success of financial and budgetary tasks. Our reporter has an interview on the above achievements with Deputy Minister of Finance Nguyen Duc Chi.</b></p>
+      <br>
+      <div style="display: flex; align-items: flex-start; gap: 20px;">
+        <div style="flex: 1;">
+          <p><b>The finance sector achieved over VND2,000 trillion in budget revenue for the first time, surpassing the target by VND324 trillion. Could you provide more details about this figure?</b></p>
+          <br>
+          <p>The financial and budgetary tasks in 2024 faced enormous challenges amid global headwinds. Under the leadership of the Party and the National Assembly and the close direction of the Government and the Prime Minister, from the first day of the year, the finance sector actively and resolutely carried out its tasks, successfully and comprehensively achieving its objectives. Particularly, it beat the fiscal revenue target in the year, estimated at VND2,025.4 trillion, 19.1% (VND324.4 trillion) higher than the target and 15.5% higher than in 2023 (central budget revenue was equal to 123.7% of the target and local budget revenue equaled 114.4% of the target). The ratio of State budget revenue to GDP was 17.8% and taxes and fees alone to GDP was 14.2%.</p>
+        </div>
+        <div style="flex: 0 0 250px;">
+          <img src="business35.png" alt="Speaker photo" style="width: 100%; border-radius: 6px;">
+        </div>
+      </div>
+      <br>
+      <p>Notably, in 2024, policies on exemption, reduction and extension of taxes, fees, charges and land rents practically supported people and businesses to recover, stabilize and develop production. At the same time, the financial sector was extremely determined to promote solutions for managing state budget revenue, ensure correct, full and timely collection, expand the collection base and prevent tax losses. In particular, the sector had many innovative tax management solutions for e-commerce, digital platforms and land-use fee collection; and strengthened inspection, examination, and handling of overdue taxes, thanks to which the budget revenue exceeded expectations.</p>
+
+      <figure style="text-align:center; margin:0;">
+        <img src="business35_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Prime Minister Pham Minh Chinh and delegates attend the conference reviewing financial and budget performance in 2024 and outlining tasks for 2025
+        </figcaption>        
+      </figure>
+      <br>
+      <b><p>What fiscal policies did the financial sector adopt to support people and businesses, promote production, and boost economic growth in this challenging context?</p></b>
+      <br>
+      <p>The Ministry of Finance actively researched and proposed solutions, implementing a focused, expansionary fiscal policy that coordinated with monetary and macroeconomic policies to support production, business, and drive growth. The total value of support packages on taxes, fees, charges and land rents in 2024 was about VND197 trillion. Many outstanding policies had broad effects. The 2% VAT reduction for most goods and services subject to 10% VAT led to a VND49 trillion decline in tax revenue. The cut in environmental protection duty on gasoline, oil and grease resulted in a tax reduction of VND42.5 trillion. The continued slash in 36 fees and charges led to a revenue reduction of VND700 billion. The 50% reduction in registration fees for domestically assembled automobiles resulted in a VND2,600 billion loss in revenue. The amount of VAT, corporate income tax and land rent extended was about VND98 trillion.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business35_2.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Delegates at interfaces of the conference reviewing financial and budget performance in 2024 and outlining tasks for 2025
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>How have digital transformation and AI application in budgetary and financial management been carried out?</b></p><br>
+
+      <p>The Ministry of Finance continued to lead information technology applications, modernize tax management, and move toward advanced and modern digital finance for e-government and digital government. Accordingly, the Minister of Finance issued Decision 837/QD-BTC on MoF’s Digital Transformation Plan for 2024, focusing on effectively implementing MoF’s digital transformation tasks in line with the goal of “Developing the digital economy with four pillars of information technology, digitalization of economic sectors, digital governance and digital data - Important driving force for rapid and sustainable socioeconomic development”.</p><br>
+
+      <p>Tax authorities took the lead in carrying out the digital transformation roadmap and applied information technology to shift from paper-based management and direct communication to modern online management. The launch of the Virtual Assistant Application in tax debt management (TLA) and the Virtual Assistant to support taxpayers (Chatbot) was a breakthrough step of the tax sector in bringing artificial intelligence (AI) into tax management.</p><br>
+
+      <p>Customs authorities resolutely and successfully adopted “Digital Customs”, “Smart Customs” and “Green Customs” to modernize the customs sector, simplify import and export clearance procedures, and create a favorable business environment for enterprises.</p><br>
+
+      <p>The State Treasury was honored to receive the award for the State agency with outstanding digital transformation with the “Digital Transformation from Traditional Transaction Treasury to Electronic Transaction Treasury” solution which enabled the State Treasury to complete deploying online public services to all its units.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business35_3.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          The launch of the Vietnam public expenditure and financial accountability (PEFA) assessment report, jointly held by the Ministry of Finance and the World Bank
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>What is your opinion on Vietnam's positive national credit rating assigned by international organizations in 2024?</b></p><br>
+
+      <p>Amid complex global and regional developments, conflicts from 2023 continued to create unpredictable challenges. The global economy still confronted many difficulties and challenges, but all three major credit rating agencies (<b>Moody's</b>, <b>S&amp;P</b> and <b>Fitch</b>) reaffirmed the positive national credit rating with optimistic forecasts.</p><br>
+
+      <p>They all highly appreciated Vietnam's economic growth along with favorable economic growth prospects in the medium and long terms. Sovereign debt was stable and much lower than that of countries with the same rating (<b>34% of GDP</b> versus the <b>BB average of 53% of GDP</b>). An active debt management strategy helped mitigate liquidity risks for the government. Debt structure was improved and eased dependence on external loans. The declining share of foreign currency debts helped reduce foreign exchange risks. According to them, Vietnam's strengths are attracting stronger <b>FDI flows</b> compared to other regional countries, with diversified sector allocations driven by stable exports and high annual growth. Challenges in real estate and banking sectors have been gradually resolved, with the real estate sector on the track of gradual recovery.</p><br>
+
+      <p>The continued improvement of the national credit rating was highly positive, boosting national prestige, increasing confidence among international investors, and reducing the cost of foreign fundraising for both the <b>Government</b> and <b>enterprises</b>.</p><br>
+
+      <p><b>Thank you very much!</b></p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

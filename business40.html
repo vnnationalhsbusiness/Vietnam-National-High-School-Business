@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Opportunity for Vietnam's Bakery Industry to Shine at VIBS 2024</h1>
+      <p class="meta">9:23:43 AM | 9/11/2025</p>
+      <p><b>The International Bakery Show (VIBS 2024) take place from December 11 to 14, 2024, at the Saigon Exhibition and Convention Center (SECC), District 7, Ho Chi Minh City.</b></p>
+      <br>
+      <p>The event is organized by Yorkers Exhibition Service Vietnam Co., Ltd. in collaboration with the Taipei Bakery Association (TBA). This year's exhibition marks a grand return after its inaugural event in 2019, with VIBS 2024 featuring nearly 200 booths from over 120 prestigious exhibitors representing both domestic and international brands. The exhibition promises to provide opportunities for trade and business promotion among bakery enterprises both locally and abroad. Notably, it will also serve as a platform for talented and professional bakers from Vietnam and around the world to showcase their most creative skills in baking competitions held during the exhibition.</p>
+      <br>
+      <p><b>Potential of the Vietnamese bakery market</b></p><br>
+      <p>Vietnam is regarded as a large and promising market for the bakery industry, which is expected to grow significantly in the near future. Therefore, the search for new solutions and technologies to enhance competitiveness and diversify products, as well as attract consumers, is a key focus for businesses in this sector.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business40.png" alt="ADB Press Conference" class="article-img" style="margin: auto">      
+      </figure>
+      <br>
+      <p>TBA has noted that the bakery industry, particularly the pastry segment in Vietnam, is recognized as one of the fastest-growing sectors and the most competitive segment within the consumer goods industry. With the advantage of a large and youthful population, Vietnam is considered one of the most promising bakery markets in Southeast Asia.</p>
+      <br>
+      <p><b>The organizing committee is reputable, professional, and experienced</b></p>
+      <br>
+      <p>VIBS 2024 is organized by the Taipei Bakery Association (TBA) and Chan Chao International Co., Ltd. – a professional and renowned organizing committee known for the Taipei International Bakery Show, the emblematic event of the Asian bakery industry over the past decade. This year, the organizing committee is also receiving special support from the Vietnam Bakery Association and Asia Candy and Bakery Joint Stock Company – ABC Bakery, which will create a perfect and harmonious blend of international exhibition quality while still showcasing the distinctive characteristics of Vietnam.</p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business40_1.png" alt="ADB Press Conference" class="article-img" style="margin: auto">      
+      </figure>
+      <br>
+      <p><b>Prominent brands, diverse display categories</b></p><br>
+
+      <p>VIBS 2024 will feature a wide range of diverse products, from modern baking machinery and high-quality ingredients to finished baked goods. Attendees will have the opportunity to experience a comprehensive view of the rapidly growing Vietnamese bakery industry, along with quality products from the international market.</p><br>
+
+      <p>The event will welcome leading brands from Vietnam, Taiwan, China, Japan, and many other countries and regions. Notable names include ABC Bakery, Anchor, Bao Phuc, Shineroad, Ly Gia Vien, Nhat Hương, Uni-President from Vietnam; Sun-Mate, Yang JenQ, Hundred Machinery Enterprise from Taiwan; Rheon, Sanko, Nakai from Japan; and Meichu, Namchow, Bestway Automation Equipment from Shanghai.</p><br>
+
+      <p><b>Vibrant trade activities</b></p><br>
+
+      <p>VIBS 2024 attracts significant interest from the global bakery community, especially representatives from countries and territories that are members of the International Federation of Chinese Pastry Associations (IFCBCA), including the Philippines, Singapore, Malaysia, Myanmar, China, Taiwan, and Hong Kong, along with representatives from the world's leading bakery exhibition organizing unit.</p><br>
+
+      <p>Attendees will have the opportunity to participate in exciting activities during the exhibition, including the final round of the 2024 Vietnam Talented Baker Competition, where talented chefs and trainees will showcase their baking artistry. Notably, renowned baker Tzu-Ching Wu, honored as the World Baker of the Year 2023 by the International Union of Bakers and Confectioners (UIBC), will hold a sharing session at the exhibition about trends in professional baking.</p><br>
+
+      <p>Additionally, seven top bakery brands from Taiwan (Saint Peter, Wu Tzu Ching, Wholesome Cake, Amo, EZ MADE, Coville, Lucky Gift) will present their exquisite products and seek collaboration opportunities with Vietnamese partners. They will also unveil their most distinctive products at the special exhibition area TAIWAN’S FINEST BAKERY for visitors to explore and enjoy. Detailed information about four tasting sessions will be updated on VIBS's official website.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

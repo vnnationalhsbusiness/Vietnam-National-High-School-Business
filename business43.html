@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>Strong Measures Enforced against Counterfeit Goods</h1>
+      <p class="meta">4:10:55 PM | 11/28/2024</p>
+      <p><b>The authorities have consistently identified and confiscated numerous products bearing counterfeit of well-known brands. These violations not only result in economic losses for businesses but also tarnish their reputation and brand image. To better regulate the market, authorities will intensify inspections and enforcement of intellectual property laws through the end of the year.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business43.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Market surveillance authorities are intensifying inspections to combat counterfeit goods, substandard products, and items of unknown origin
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>Strengthening market inspection and control</b></p><br>
+
+      <p>In reality, many products currently sold in the market display signs of counterfeiting well-known brands protected in Vietnam. Despite recent efforts by authorities to actively inspect and address these issues, the situation remains widespread, increasingly complex, and challenging to control.</p><br>
+
+      <p>Counterfeiting is rampant across many products, particularly in clothing, shoes, handbags, watches, and cosmetics. These counterfeit items often mimic globally renowned brands such as Louis Vuitton, Hermes, Dior, Chanel, Gucci, Burberry, Adidas, and others.</p><br>
+
+      <p>In addition to the issue of counterfeit foreign brands, the market is also flooded with counterfeit goods imitating "Made in Vietnam" brands from reputable domestic companies. These counterfeit products are most commonly found in categories such as confectionery, alcohol, cigarettes, instant noodles, blankets, toilet paper, shower gel, shampoo, soft drinks, and auto and motorbike spare parts.</p><br>
+
+      <p>Recently, Market Surveillance Team No. 1 of the Soc Trang Market Surveillance Department conducted a surprise inspection of a fashion business in Soc Trang City. The inspection resulted in the discovery of administrative violations. An administrative fine of VND45 million was imposed, and the confiscated goods, including pants and shirts of unknown origin that were counterfeiting Adidas and Louis Vuitton brands, were ordered to be destroyed.</p><br>
+
+      <p>In the fight against counterfeit goods, goods of unknown origin, and intellectual property rights violations in 2024, Market Surveillance Team No. 4 of the Thua Thien Hue Market Surveillance Department reported discoveries of many violations. In September 2024, the team inspected and sanctioned 19 violations. Notably, on September 24 and 26, the team uncovered and addressed two intellectual property violations. Specifically, on September 24, a surprise inspection was conducted at the business household H.L, located at the Quang Dien Trade Center in Sia town, Quang Dien district, Thua Thien Hue province. Additionally, many counterfeit goods cases have been detected and fined in other regions such as Quang Tri, Tay Ninh, Ha Nam, and Ho Chi Minh City.</p><br>
+
+      <p>Mr. Vu Van Son, Deputy Director of the Market Surveillance Department of Ha Nam province, said that counterfeit branded goods are becoming increasingly sophisticated, often sold alongside genuine products, making it difficult for consumers to differentiate between them. Currently, counterfeit goods are also being marketed through social media platforms such as Facebook, Zalo, and TikTok, where sellers run advertisements and livestream sales. These sellers typically livestream from one location while operating their warehouses elsewhere. The delivery, transportation, and payment transactions are often managed through banks or third parties, complicating inspection and control by authorities. Furthermore, many legal regulations related to intellectual property protection, counterfeit goods, and imitations are overlapping and inconsistent, causing confusion among enforcement agencies when addressing violations.</p><br>
+
+      <p><b>Promoting propaganda and dissemination of laws</b></p><br>
+
+      <p>According to Mr. Nguyen Thanh Phong at the Tay Ninh Market Surveillance Department, Market Surveillance Team No. 4 determined that the fight against counterfeit goods, substandard products, and goods of unknown origin is a long-term undertaking. In the coming time, the team will continue to enhance legal education and awareness in business activities, incorporating inspections alongside efforts to guide organizations and individuals on how to distinguish between genuine and counterfeit products, particularly spare parts bearing the Honda and Yamaha brands. The team will also encourage proactive commitments from businesses to refrain from producing or trading counterfeit goods and goods that infringe on intellectual property rights. At the same time, the team will maintain strict enforcement of violations.</p><br>
+
+      <p>A representative from the Ha Nam Market Surveillance Department said that the department will focus on guiding its subordinate teams to integrate local management efforts with analysis, evaluation, and forecasting of the situation. This approach aims to promptly identify methods and tactics used by individuals and groups involved in producing and trading counterfeit and fake goods. Based on these findings, the department will develop targeted plans for specialized and surprise inspections.</p><br>
+
+      <p>According to authorities, it is expected that from now until the Lunar New Year 2025, the buying, selling, and exchange of goods will be highly active due to increased demand, while smuggling and trade fraud will remain complex and unpredictable. Consumers are urged to stay vigilant and choose reputable sources to avoid purchasing substandard products. If a business is found selling counterfeit, prohibited, or unregistered goods, or products with unclear origin or that infringe on intellectual property rights, consumers should promptly report the issue to the authorities for inspection and enforcement.</p><br>
+
+      <p>Mr. Tran Huu Linh, Director General of the Vietnam Directorate of Market Surveillance (DMS), said that 2024 is a challenging year, marking the transition to a unified DMS model from the central to local level in its second five-year phase. This period is characterized by the increased use of advanced technology to boost labor productivity and the growing popularity of e-commerce. However, the rapid expansion of e-commerce also presents new challenges for market surveillance, particularly concerning counterfeit goods, smuggled products, and goods of unknown origin, both in the physical market and online. Addressing these issues will be a key priority for the market surveillance force, which will focus on strengthening inspections and control in the coming period.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

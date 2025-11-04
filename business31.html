@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+</head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+  /* HEADER */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-size: 20px; font-weight: bold; color: #c00; }
+  .menu {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 70%; height: 100%;
+    background: #fff;
+    display: flex; flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 9;
+  }
+  .menu.active { left: 0; }
+  .menu a { text-decoration: none; color: #111; font-weight: bold; }
+  .menu-toggle {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ARTICLE PAGE */
+  .article-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  .article-content { flex: 3; }
+  .article-content h1 { margin-bottom: 10px; font-size: 24px; }
+  .article-content .meta { font-size: 14px; color: #666; margin-bottom: 15px; }
+  .article-img { width: 100%; margin: 15px 0; border-radius: 5px; }
+  .caption { font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; }
+  blockquote {
+    border-left: 4px solid #c00;
+    padding-left: 10px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ADS */
+  .article-ads {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .article-ads img { width: 100%; border: 1px solid #ddd; border-radius: 5px; }
+
+  /* OTHER NEWS */
+  .other-news { padding: 20px; background: #f9f9f9; }
+  .other-news h2 { margin-bottom: 15px; color: #c00; }
+  .other-news ul { list-style: none; }
+  .other-news li { margin: 8px 0; }
+  .other-news a { text-decoration: none; color: #000; }
+  .other-news a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+
+  /* PC Layout */
+  @media (min-width: 992px) {
+    .menu { position: static; flex-direction: row; width: auto; height: auto; left: 0; background: none; }
+    .menu-toggle { display: none; }
+
+    .article-page { flex-direction: row; align-items: flex-start; }
+  }
+  .menu .active{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+  }
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo" style="color: navy;">VNHSBM - Business</div>
+    <button class="menu-toggle">☰</button>
+    <nav class="menu">
+      <a href="index.html" style="color: navy;">🏠</a>
+      <a href="economy.html" style="color: navy;">Economy</a>
+      <a href="business.html" class="active" style="color: navy;">Business</a>
+      <a href="investment.html" style="color: navy;">Start-up</a>
+      <a href="insights&lesson.html" style="color: navy;">Insights & Lessons</a>
+      <a href="founder&president.html" style="color: navy;">Founder & President</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE PAGE -->
+  <main class="article-page"> 
+    <!-- Left content -->
+    <div class="article-content">
+      <h1>16% Credit Growth Aimed to Spur Economic Development</h1>
+      <p class="meta">8:38:30 AM | 2/27/2025</p>
+      <p><b>The Government of Vietnam aims for an economic growth of 8% or higher in 2025, to create a solid foundation for achieving double-digit growth in 2026-2030. In fact, credit in the economy importantly affects Vietnam's GDP growth. Therefore, the State Bank of Vietnam (SBV) set a credit growth target of about 16% in 2025 and may revise it based on actual developments and situations.</b></p>
+      <figure style="text-align:center; margin:0;">
+        <img src="business31.png" alt="ADB Press Conference" class="article-img" style="margin: auto">
+        <figcaption style="font-size:14px; font-style:italic; margin-top:6px;">
+          Many lenders are committed to strong credit growth
+        </figcaption>        
+      </figure>
+      <br>
+      <p><b>Many banks set strong credit growth targets</b></p><br>
+
+      <p>Bank credit flows have always played an important role in supporting economic growth in the past years. In 2023, GDP rose by nearly 7% and credit growth was 14.55%. In 2024, GDP growth was 7.09% and credit growth was 15.08%. On average, credit growth of 2% yielded a GDP growth of 1%. Therefore, in 2025, the SBV set a credit growth target of 16% for an economic growth of 8%. According to experts, this target is grounded on practical conditions, demonstrating efforts and drastic actions to economic development and striving to lay the foundation for the next stage this year.</p><br>
+
+      <p>To achieve this goal, at the beginning of the year, the SBV issued Directive 01/CT-NHNN on key banking tasks in 2025, stating that the SBV will manage credit in line with macroeconomic developments to support economic growth, control inflation, stabilize macroeconomic performance and ensure safe operations of credit institutions. At the same time, the central bank will continue to reform credit growth administration, taking appropriate adjustments to practical developments into account.</p><br>
+
+      <p>According to Governor Nguyen Thi Hong, the SBV set a credit growth target of 16%, but it may revise it up if inflation is reined in, macroeconomic indicators are within the allowable threshold and growth targets are achieved. The SBV will continue to facilitate commercial banks to lend more if they actively lend to right borrowers, raise capital efficiency and ensure capital adequacy. At the same time, the central bank will control and ensure the overall credit growth of the economy. In 2025, it will also continue to research credit solutions, especially credit for production, trading and consumption to boost domestic demand.</p><br>
+
+      <p>To realize this goal, many lenders are committed to have strong credit growth. Notably, Vietnam Joint Stock Commercial Bank for Industry and Trade (VietinBank) aimed for a 17-18% credit growth and Vietcombank eyed 16%. Tien Phong Commercial Joint Stock Bank (TPBank) pledged to ensure a credit growth of at least 16% and likely beat the performance in 2024 (20.25%) if it can. Besides, the lender is committed to maintaining a low lending interest rate and launching preferential credit packages to support businesses and households.</p><br>
+
+      <p>Bank for Investment and Development of Vietnam (BIDV) aimed for a credit growth of 15-16%, with focus on financing priority areas that are the growth drivers of the economy and supporting businesses to join global supply chains like processing and manufacturing industries, export, high-tech agriculture, industrial parks, export processing zones, food processing, pharmaceuticals, transport infrastructure, logistics, telecommunications, energy, digital economy, circular economy and lending programs for small and medium-sized enterprises (SMEs).</p><br>
+
+      <p>In fact, credit growth has shown positive signs since the beginning of 2025. By February 3, 2025, outstanding credit of the whole system reached VND15,650 trillion, slightly (0.19%) higher than the same period of 2024 when it rose 0.6% year on year.</p><br>
+
+      <p>Lenders have adopted many solutions since the beginning of the year, including continued prioritized funding for manufacturing and business sectors, prioritized sectors and growth drivers of the economy. They have focused on providing adequate and timely credit to businesses, people, key economic sectors and green projects; effectively applied preferential credit packages as per the guidance of the Government and the SBV; and provided continued soft loans for large corporations, importers, exporters, FDI firms and SMEs.</p><br>
+
+      <p>Banks also pledged to reduce costs; reorganize operations to be more effective; especially sacrifice part of their profits to trim lending rates, support the economy, people and businesses and create livelihoods for people; pioneer in digital transformation, scientific and technological application; and adopt smart governance and build smart banks.</p><br>
+
+      <p><b>Reducing profit to lower lending rates to support economic growth</b></p><br>
+
+      <p>Credit growth in 2025 is expected to remain positive, driven by strong supportive factors that will help banks boost revenue and profit. These solutions include maintaining low interest rates to stimulate credit demand and supporting economic recovery in the wake of pandemics and global fluctuations. SMEs can access credit more easily and support credit growth, especially consumer credit for housing and vehicle purchases. In particular, the recovery of real estate and retail markets affords a huge capital demand for construction, urban, industrial development and real estate projects. Transport, energy and logistics projects also strongly attract investment capital from both domestic and foreign sources.</p><br>
+
+      <p>To accelerate growth, control inflation and create a breakthrough for the economy, at the Government’s recent meeting with commercial banks, Prime Minister Pham Minh Chinh outlined tasks and solutions the banking sector needs to focus on. These tasks and products include cutting costs, reorganizing operations to be more effective, and especially "sacrificing" part of profits to slash lending interest rates, supporting the economy, people and businesses. Lenders need to focus on credit and renew three growth drivers: investment, consumption and export, and promote new growth drivers. Accordingly, public investment should lead private investment. There should be consumer credit packages, credit for key job-intensive industries, and economic restructuring; preferential credit for priority industries, sectors and subjects; credit for BOT projects, public-private partnerships; and credit to remove difficulties for real estate projects.</p><br>
+
+      <p>Prime Minister Chinh said, the SBV and commercial banks also must be a pioneer in digital transformation, scientific and technological application and innovation; build databases and carry out Project 06; execute Resolution 57 of the Politburo on breakthroughs in science and technology development, innovation and digital transformation; and have measures to pilot virtual bank deployment and management. The central bank also needs to further streamline administrative procedures, avoid causing inconvenience and harassment; fight corruption and waste in banking activities; reduce bad debts and facilitate people and businesses; and adopt smart governance and build smart banks.</p><br>
+
+      <p>He added that banks need to more actively and effectively carry out three strategic breakthroughs in institutions, infrastructure and human resources, give opinions to lawmakers, mobilize resources for developing strategic infrastructure and training human resources for the country in the new era of development. The SBV and commercial banks should research and continue to have preferential credit packages for both supply and demand sides to develop social housing, affordable housing for young people aged 35 and under and housing for the disadvantaged; and actively help clear temporary and dilapidated houses nationwide.</p><br>
+
+      <p>Needless to say, although 2025 is challenging due to global economic fluctuations, the Vietnamese banking industry still has many opportunities for development. In particular, given the recovery of important sectors such as real estate, consumption, infrastructure, digitalization and green transformation, banks can take advantage of these opportunities to expand their scale and improve business performance.</p><br>
+
+    </div>
+
+    <!-- Right sidebar (ads) -->
+    <aside class="article-ads">
+      <h3>Other News</h3>
+      <img src="business1.png" alt="Ad 1">
+      <a href="business1.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Green Aquaculture – the Key to Sustaining Export Competitiveness</p></a>
+      <img src="business2.png" alt="Ad 2">
+      <a href="business2.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Vietnam Fire and Rescue Association Collective Efforts for Safe, Sustainable Living Environment</p></a>
+      <img src="business3.png" alt="Ad 3">
+      <a href="business3.html" style="text-decoration: none; color: black;"><p class="caption" style="font-size: 15px;">Fire Safety and Rescue Forces Partnering with Enterprises for Safe, Efficient Business Environment</p></a>
+    </aside>
+  </main>
+
+  <!-- OTHER NEWS -->
+  <section class="other-news">
+
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
